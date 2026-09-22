@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, CheckCircle2, ArrowLeft, ShieldCheck, Mail, MapPin, Phone, User, MessageSquare, Check } from 'lucide-react';
+import { Sparkles, ArrowLeft, ShieldCheck, Mail, MapPin, Phone, User, MessageSquare, Check, CalendarCheck } from 'lucide-react';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -15,14 +15,15 @@ export default function ContactSection() {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [focusedInput, setFocusedInput] = useState<string | null>(null);
 
   const scopeOptions = [
-    'دهانات داخلية وخارجية',
-    'بديل خشب وبديل رخام',
-    'جبس بورد وأسقف معلقة',
-    'إطارات فوم وبانوهات',
-    'سواتر ومظلات وبرجولات',
-    'تشطيب فيلا متكامل'
+    'دهانات وتشطيب',
+    'بديل خشب ورخام',
+    'جبس بورد وأسقف',
+    'إطارات وبانوهات',
+    'سواتر ومظلات',
+    'تشطيب متكامل'
   ];
 
   const areaPresets = [50, 150, 300, 600];
@@ -33,421 +34,326 @@ export default function ContactSection() {
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 800);
+    }, 1200);
   };
 
   const getWhatsAppLink = () => {
-    const text = `السلام عليكم ورحمة الله،
+    const text = `السلام عليكم،
 الاسم: ${formData.name || 'عميل'}
 الخدمة المطلوبة: ${formData.projectScope}
 الموقع: ${formData.projectLocation}
 المساحة التقريبية: ${formData.surfaceArea} م²
 ${formData.message ? `ملاحظات: ${formData.message}` : ''}
-أرغب في حجز موعد للمعاينة وعرض السعر.`;
+أرغب في حجز موعد للمعاينة.`;
     return `https://wa.me/966536402106?text=${encodeURIComponent(text)}`;
   };
 
   return (
     <section
       id="contact"
-      className="relative w-full py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-16 bg-[#050505] border-t border-white/10 overflow-hidden text-right"
+      className="relative w-full py-16 md:py-28 px-4 sm:px-6 md:px-16 bg-[#030205] border-t border-white/[0.03] overflow-hidden text-right"
     >
-      {/* Background Soft Glow */}
-      <div className="pointer-events-none absolute top-1/3 left-1/4 w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] bg-[#C19A6B]/8 rounded-full blur-[120px] sm:blur-[180px]" />
+      {/* Absolute Ambient Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute -top-[20%] -right-[10%] w-[600px] h-[600px] bg-gradient-to-b from-[#C19A6B]/10 to-transparent rounded-full blur-[150px] opacity-70 mix-blend-screen" />
+        <div className="absolute bottom-[10%] -left-[10%] w-[500px] h-[500px] bg-gradient-to-t from-[#C19A6B]/5 to-transparent rounded-full blur-[120px] opacity-50 mix-blend-screen" />
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay" />
+      </div>
 
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-14 items-start">
-          {/* Right Column in RTL: Contact details & quick contact */}
-          <div className="lg:col-span-5">
-            <div className="flex items-center gap-2 text-xs text-[#C19A6B] mb-2 sm:mb-3 font-semibold font-sans-clean">
-              <Sparkles size={13} />
-              <span>معاينة فورية ورفع مقاسات مجاناً</span>
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-16 md:mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#120F0D] border border-[#C19A6B]/20 text-[#C19A6B] text-[11px] font-bold tracking-widest mb-4 uppercase"
+          >
+            <Sparkles size={12} className="animate-pulse" />
+            <span>نحن في خدمتك دائماً</span>
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="font-serif-luxury text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-b from-white via-white to-white/60 bg-clip-text text-transparent"
+          >
+            تواصل مع خبرائنا
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-[#8C867D] text-sm md:text-base max-w-2xl mx-auto mt-4 font-sans-clean leading-relaxed"
+          >
+            دعنا نحول رؤيتك إلى واقع ملموس. احجز موعداً للمعاينة المجانية ورفع المقاسات، وسنقدم لك استشارة احترافية وتصميماً يليق بتطلعاتك.
+          </motion.p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+          
+          {/* Right Column: Premium Form (Col-Span 7) */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="lg:col-span-7"
+          >
+            <div className="relative p-6 sm:p-10 rounded-[2rem] bg-gradient-to-br from-[#12100E]/90 to-[#0A0806]/90 border border-white/[0.04] backdrop-blur-3xl shadow-2xl overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#C19A6B]/30 to-transparent" />
+              
+              <AnimatePresence mode="wait">
+                {isSubmitted ? (
+                  <motion.div
+                    key="success"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="flex flex-col items-center justify-center text-center py-20"
+                  >
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#C19A6B]/20 to-transparent border border-[#C19A6B]/30 flex items-center justify-center mb-6 shadow-[0_0_40px_rgba(193,154,107,0.2)]">
+                      <CheckCircle2 size={40} className="text-[#C19A6B]" />
+                    </div>
+                    <h3 className="text-2xl font-serif-luxury font-bold text-white mb-2">تم استلام طلبك بنجاح</h3>
+                    <p className="text-[#A0A0A5] text-sm max-w-sm font-sans-clean leading-relaxed">
+                      شكراً لثقتك بـ "وجد الأصايل". سيقوم أحد خبرائنا بالتواصل معك قريباً جداً لتحديد موعد المعاينة.
+                    </p>
+                    <button
+                      onClick={() => setIsSubmitted(false)}
+                      className="mt-8 px-6 py-2.5 rounded-full border border-white/10 text-white/70 hover:text-white hover:bg-white/5 transition-colors text-sm font-sans-clean"
+                    >
+                      إرسال طلب آخر
+                    </button>
+                  </motion.div>
+                ) : (
+                  <motion.form
+                    key="form"
+                    onSubmit={handleSubmit}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="space-y-7 font-sans-clean"
+                  >
+                    {/* Project Scope Grid */}
+                    <div>
+                      <label className="text-xs text-[#C19A6B] block mb-3 font-bold uppercase tracking-widest">
+                        ١. نوع الخدمة
+                      </label>
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                        {scopeOptions.map((scope) => {
+                          const isSelected = formData.projectScope === scope;
+                          return (
+                            <button
+                              type="button"
+                              key={scope}
+                              onClick={() => setFormData({ ...formData, projectScope: scope })}
+                              className={`px-4 py-3 rounded-xl text-xs sm:text-[13px] font-medium transition-all duration-300 flex items-center justify-center gap-2 border ${
+                                isSelected
+                                  ? 'bg-[#C19A6B]/10 border-[#C19A6B]/50 text-[#C19A6B] shadow-[0_0_20px_rgba(193,154,107,0.15)]'
+                                  : 'bg-[#181512]/50 border-white/5 text-[#8C867D] hover:bg-[#181512] hover:text-white hover:border-white/10'
+                              }`}
+                            >
+                              {isSelected && <Check size={14} />}
+                              {scope}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    <div className="w-full h-px bg-gradient-to-r from-transparent via-white/5 to-transparent my-6" />
+
+                    {/* Area Slider */}
+                    <div>
+                      <div className="flex justify-between items-end mb-4">
+                        <label className="text-xs text-[#C19A6B] block font-bold uppercase tracking-widest">
+                          ٢. المساحة التقريبية
+                        </label>
+                        <span className="font-display-luxury text-2xl text-white font-bold leading-none">
+                          {formData.surfaceArea} <span className="text-sm text-white/40">م²</span>
+                        </span>
+                      </div>
+                      
+                      <div className="relative w-full h-1.5 bg-[#1F1B17] rounded-full overflow-hidden">
+                        <div 
+                          className="absolute top-0 right-0 h-full bg-gradient-to-l from-[#E6C280] to-[#C19A6B] rounded-full" 
+                          style={{ width: `${(formData.surfaceArea / 1000) * 100}%` }}
+                        />
+                        <input
+                          type="range"
+                          min="20"
+                          max="1000"
+                          step="10"
+                          value={formData.surfaceArea}
+                          onChange={(e) => setFormData({ ...formData, surfaceArea: Number(e.target.value) })}
+                          className="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer"
+                        />
+                      </div>
+
+                      <div className="flex items-center gap-2 mt-4">
+                        {areaPresets.map((preset) => (
+                          <button
+                            type="button"
+                            key={preset}
+                            onClick={() => setFormData({ ...formData, surfaceArea: preset })}
+                            className={`flex-1 py-1.5 rounded-md text-[11px] transition-all border ${
+                              formData.surfaceArea === preset
+                                ? 'bg-white/10 border-white/20 text-white'
+                                : 'bg-transparent border-white/5 text-[#8C867D] hover:bg-white/5'
+                            }`}
+                          >
+                            {preset} م²
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="w-full h-px bg-gradient-to-r from-transparent via-white/5 to-transparent my-6" />
+
+                    {/* Input Fields */}
+                    <div className="space-y-4">
+                      <label className="text-xs text-[#C19A6B] block font-bold uppercase tracking-widest mb-1">
+                        ٣. بيانات التواصل
+                      </label>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div 
+                          className={`relative rounded-xl border transition-colors duration-300 ${focusedInput === 'name' ? 'bg-[#15120F] border-[#C19A6B]/50' : 'bg-[#181512]/50 border-white/5 hover:border-white/10'}`}
+                        >
+                          <User size={16} className={`absolute right-4 top-1/2 -translate-y-1/2 transition-colors ${focusedInput === 'name' ? 'text-[#C19A6B]' : 'text-white/20'}`} />
+                          <input
+                            type="text"
+                            required
+                            placeholder="الاسم الكريم"
+                            value={formData.name}
+                            onFocus={() => setFocusedInput('name')}
+                            onBlur={() => setFocusedInput(null)}
+                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                            className="w-full bg-transparent outline-none py-3.5 pr-11 pl-4 text-sm text-white placeholder-white/30"
+                          />
+                        </div>
+
+                        <div 
+                          className={`relative rounded-xl border transition-colors duration-300 ${focusedInput === 'phone' ? 'bg-[#15120F] border-[#C19A6B]/50' : 'bg-[#181512]/50 border-white/5 hover:border-white/10'}`}
+                        >
+                          <Phone size={16} className={`absolute right-4 top-1/2 -translate-y-1/2 transition-colors ${focusedInput === 'phone' ? 'text-[#C19A6B]' : 'text-white/20'}`} />
+                          <input
+                            type="tel"
+                            required
+                            dir="ltr"
+                            placeholder="05XXXXXXXX"
+                            value={formData.phone}
+                            onFocus={() => setFocusedInput('phone')}
+                            onBlur={() => setFocusedInput(null)}
+                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                            className="w-full bg-transparent outline-none py-3.5 pl-4 pr-11 text-sm text-right text-white placeholder-white/30 font-mono"
+                          />
+                        </div>
+                      </div>
+
+                      <div 
+                        className={`relative rounded-xl border transition-colors duration-300 ${focusedInput === 'location' ? 'bg-[#15120F] border-[#C19A6B]/50' : 'bg-[#181512]/50 border-white/5 hover:border-white/10'}`}
+                      >
+                        <MapPin size={16} className={`absolute right-4 top-1/2 -translate-y-1/2 transition-colors ${focusedInput === 'location' ? 'text-[#C19A6B]' : 'text-white/20'}`} />
+                        <input
+                          type="text"
+                          required
+                          placeholder="المدينة والحي (مثال: الدمام - حي الشاطئ)"
+                          value={formData.projectLocation}
+                          onFocus={() => setFocusedInput('location')}
+                          onBlur={() => setFocusedInput(null)}
+                          onChange={(e) => setFormData({ ...formData, projectLocation: e.target.value })}
+                          className="w-full bg-transparent outline-none py-3.5 pr-11 pl-4 text-sm text-white placeholder-white/30"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Actions */}
+                    <div className="pt-4 flex flex-col gap-3">
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="relative overflow-hidden w-full group py-4 rounded-xl gold-gradient-bg text-[#050505] text-sm font-bold tracking-wide transition-all shadow-[0_0_20px_rgba(193,154,107,0.2)] hover:shadow-[0_0_30px_rgba(193,154,107,0.4)] active:scale-[0.98]"
+                      >
+                        <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+                        <span className="relative flex items-center justify-center gap-2">
+                          {isSubmitting ? 'جاري المعالجة...' : 'تأكيد وحجز موعد المعاينة'}
+                          {!isSubmitting && <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />}
+                        </span>
+                      </button>
+
+                      <a
+                        href={getWhatsAppLink()}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-[#09150E] border border-[#25D366]/30 text-[#25D366] text-sm font-bold transition-all hover:bg-[#25D366] hover:text-[#050505] active:scale-[0.98]"
+                      >
+                        <MessageSquare size={16} />
+                        إرسال الطلب سريعاً عبر واتساب
+                      </a>
+                    </div>
+                  </motion.form>
+                )}
+              </AnimatePresence>
             </div>
-            <h2 className="font-serif-luxury text-3xl sm:text-5xl md:text-6xl font-bold text-[#EDE8DF] mb-4 sm:mb-6 leading-[1.15]">
-              تواصل مع معلم وجد الأصايل
-            </h2>
-            <p className="text-xs sm:text-sm text-[#BDB7AB] leading-relaxed font-sans-clean mb-6 sm:mb-8">
-              يسعدنا خدمتك في تنفيذ كافة أعمال الدهانات والديكورات الحديثة والجبس بورد والسواتر والمظلات بالدمام والخبر بأعلى دقة وأفضل الأسعار، مع ضمان الجودة وسرعة الإنجاز.
-            </p>
+          </motion.div>
 
-            {/* Direct Quick Iconic Action Dock */}
-            <div className="flex items-center gap-3.5 mb-8">
-              {/* Phone Icon Button */}
-              <a
-                href="tel:0536402106"
-                data-cursor="اتصال"
-                aria-label="اتصال هاتفي مباشر"
-                title="اتصال هاتفي: 0536402106"
-                className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl gold-gradient-bg text-[#050505] flex items-center justify-center shadow-[0_4px_20px_rgba(193,154,107,0.4)] hover:shadow-[0_6px_30px_rgba(193,154,107,0.6)] hover:scale-110 active:scale-95 transition-all duration-300"
-              >
-                <Phone size={22} className="text-[#050505]" />
-              </a>
-
-              {/* WhatsApp Icon Button */}
-              <a
-                href="https://wa.me/966536402106"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-cursor="واتساب"
-                aria-label="مراسلة واتساب"
-                title="مراسلة واتساب"
-                className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-[#128C7E] to-[#25D366] text-white flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:shadow-[0_6px_30px_rgba(37,211,102,0.6)] hover:scale-110 active:scale-95 transition-all duration-300"
-              >
-                <svg className="w-6 h-6 sm:w-7 sm:h-7 fill-current" viewBox="0 0 24 24">
-                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
-                </svg>
-              </a>
-
-              {/* TikTok Icon Button */}
-              <a
-                href="https://vt.tiktok.com/ZSqwspsQj/"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-cursor="تيك توك"
-                aria-label="حساب تيك توك"
-                title="تيك توك"
-                className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-[#0e0e10] border border-[#25F4EE]/40 text-white flex items-center justify-center shadow-[0_4px_20px_rgba(254,44,85,0.3)] hover:shadow-[0_6px_30px_rgba(254,44,85,0.55)] hover:border-[#FE2C55] hover:scale-110 active:scale-95 transition-all duration-300"
-              >
-                <svg className="w-6 h-6 sm:w-7 sm:h-7 fill-current text-white" viewBox="0 0 24 24">
-                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.49 6.3 6.3 0 0 0 1.86-4.49V8.58a8.31 8.31 0 0 0 4.91 1.62V6.69z" />
-                </svg>
-              </a>
-            </div>
-
-            {/* Direct Contacts Info */}
-            <div className="space-y-4 border-t border-white/10 pt-6 text-xs text-[#EDE8DF] font-sans-clean">
-              <div className="flex items-start gap-4">
-                <div className="p-2.5 rounded-full bg-[#1A1612] border border-[#C19A6B]/30 text-[#C19A6B]">
-                  <Phone size={15} />
-                </div>
-                <div>
-                  <span className="text-[11px] text-[#A0A0A5] block">
-                    رقم الهاتف المباشر
-                  </span>
-                  <a href="tel:0536402106" className="text-sm font-bold text-[#EDE8DF] hover:text-[#C19A6B] transition-colors mt-0.5 block font-mono" dir="ltr">
-                    0536402106
-                  </a>
-                </div>
+          {/* Left Column: Direct Contact Info (Col-Span 5) */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="lg:col-span-5 flex flex-col justify-center space-y-6"
+          >
+            {/* Premium Info Cards */}
+            <div className="p-6 rounded-3xl bg-[#12100E]/50 border border-white/[0.03] backdrop-blur-md flex items-start gap-5 hover:bg-[#12100E] transition-colors duration-300 group">
+              <div className="w-12 h-12 rounded-2xl bg-[#C19A6B]/10 border border-[#C19A6B]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#C19A6B] group-hover:text-[#050505] text-[#C19A6B] transition-all duration-300">
+                <Phone size={22} />
               </div>
-
-              <div className="flex items-start gap-4">
-                <div className="p-2.5 rounded-full bg-[#1A1612] border border-[#C19A6B]/30 text-[#C19A6B]">
-                  <Mail size={15} />
-                </div>
-                <div>
-                  <span className="text-[11px] text-[#A0A0A5] block">
-                    البريد الإلكتروني
-                  </span>
-                  <a href="mailto:nabelnagy5050@gmail.com" className="text-sm text-[#EDE8DF] hover:text-[#C19A6B] transition-colors mt-0.5 block" dir="ltr">
-                    nabelnagy5050@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="p-2.5 rounded-full bg-[#1A1612] border border-[#C19A6B]/30 text-[#C19A6B]">
-                  <MapPin size={15} />
-                </div>
-                <div>
-                  <span className="text-[11px] text-[#A0A0A5] block">
-                    مناطق العمل والخدمة
-                  </span>
-                  <p className="text-sm font-medium text-[#EDE8DF] mt-0.5">
-                    الدمام • الخبر • الظهران • سيهات • وكافة المنطقة الشرقية
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Guarantee Plaque */}
-            <div className="mt-8 p-4 rounded-xl bg-[#141210] border border-[#C19A6B]/25 flex items-center gap-3">
-              <ShieldCheck size={26} className="text-[#C19A6B] flex-shrink-0" />
               <div>
-                <span className="text-xs text-[#EDE8DF] block font-bold">
-                  ضمان على العمل واستخدام دهانات أصلية
-                </span>
-                <p className="text-[11px] text-[#A0A0A5] mt-0.5">
-                  نستخدم دهانات جوتن والجزيرة الأصلية، مع التزام تام بالمواعيد ونظافة المكان.
+                <span className="text-xs text-[#8C867D] block mb-1">خط التواصل المباشر</span>
+                <a href="tel:0536402106" className="text-xl font-bold text-white tracking-wider font-mono hover:text-[#C19A6B] transition-colors" dir="ltr">
+                  0536 402 106
+                </a>
+              </div>
+            </div>
+
+            <div className="p-6 rounded-3xl bg-[#12100E]/50 border border-white/[0.03] backdrop-blur-md flex items-start gap-5 hover:bg-[#12100E] transition-colors duration-300 group">
+              <div className="w-12 h-12 rounded-2xl bg-[#181512] border border-white/5 flex items-center justify-center flex-shrink-0 text-white/50 group-hover:text-white transition-colors duration-300">
+                <CalendarCheck size={22} />
+              </div>
+              <div>
+                <span className="text-xs text-[#8C867D] block mb-1">أوقات العمل والمعاينة</span>
+                <p className="text-sm font-medium text-white/90 leading-relaxed">
+                  نستقبل طلباتكم واستفساراتكم يومياً من الساعة 8 صباحاً حتى 10 مساءً. المعاينة الميدانية مجانية وتتم في الوقت المناسب لكم.
                 </p>
               </div>
             </div>
-          </div>
 
-          {/* Left Column in RTL: Enhanced Luxury Quote Request Form */}
-          <div className="lg:col-span-7">
-            <div className="p-6 sm:p-10 rounded-3xl bg-[#120F0D]/95 border border-[#C19A6B]/35 shadow-[0_25px_60px_rgba(0,0,0,0.85)] relative backdrop-blur-xl">
-              {/* Form Title & Top Indicators */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-white/10 mb-6 gap-2">
-                <div>
-                  <h3 className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#F5E6C8]">
-                    طلب معاينة وتسعير فوري
-                  </h3>
-                  <p className="text-xs text-[#A0A0A5] font-sans-clean mt-0.5">
-                    أدخل بياناتك وسنتواصل معك فوراً لتحديد موعد المعاينة
-                  </p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="px-3 py-1 rounded-full bg-[#C19A6B]/15 border border-[#C19A6B]/35 text-[11px] font-sans-clean text-[#C19A6B] font-semibold">
-                    معاينة مجانية 100%
-                  </span>
-                </div>
+            <div className="p-6 rounded-3xl bg-[#12100E]/50 border border-white/[0.03] backdrop-blur-md flex items-start gap-5 hover:bg-[#12100E] transition-colors duration-300 group">
+              <div className="w-12 h-12 rounded-2xl bg-[#181512] border border-white/5 flex items-center justify-center flex-shrink-0 text-white/50 group-hover:text-white transition-colors duration-300">
+                <ShieldCheck size={22} />
               </div>
-
-              <form onSubmit={handleSubmit} className="space-y-6 font-sans-clean">
-                {/* Project Scope Selector */}
-                <div>
-                  <label className="text-xs text-[#C19A6B] block mb-2.5 font-bold">
-                    ١. اختر نوع الخدمة المطلوبة:
-                  </label>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                    {scopeOptions.map((scope) => {
-                      const isSelected = formData.projectScope === scope;
-                      return (
-                        <button
-                          type="button"
-                          key={scope}
-                          onClick={() => setFormData({ ...formData, projectScope: scope })}
-                          data-cursor="اختيار"
-                          className={`px-3 py-2.5 rounded-xl text-xs transition-all duration-300 flex items-center justify-center gap-1.5 active:scale-95 text-center ${
-                            isSelected
-                              ? 'gold-gradient-bg text-[#050505] font-bold shadow-[0_0_15px_rgba(193,154,107,0.35)] scale-[1.02]'
-                              : 'btn-pill-inactive hover:scale-[1.01]'
-                          }`}
-                        >
-                          {isSelected && <Check size={13} className="text-[#050505] flex-shrink-0" />}
-                          <span className="truncate">{scope}</span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Surface Area Slider with Quick Presets */}
-                <div className="p-4 sm:p-5 rounded-2xl bg-[#181512] border border-white/10">
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="text-xs text-[#EDE8DF] font-semibold">
-                      ٢. المساحة التقديرية للعمل:
-                    </span>
-                    <span className="font-display-luxury text-xl sm:text-2xl text-[#C19A6B] font-bold">
-                      {formData.surfaceArea} م²
-                    </span>
-                  </div>
-
-                  <input
-                    type="range"
-                    min="20"
-                    max="1000"
-                    step="10"
-                    value={formData.surfaceArea}
-                    onChange={(e) => setFormData({ ...formData, surfaceArea: Number(e.target.value) })}
-                    className="w-full accent-[#C19A6B] bg-[#2A241E] cursor-pointer h-2 rounded-lg"
-                  />
-
-                  {/* Area Presets */}
-                  <div className="flex items-center justify-between gap-2 mt-3 pt-3 border-t border-white/5">
-                    <span className="text-[11px] text-[#8C867D]">خيارات سريعة:</span>
-                    <div className="flex items-center gap-1.5">
-                      {areaPresets.map((preset) => (
-                        <button
-                          type="button"
-                          key={preset}
-                          onClick={() => setFormData({ ...formData, surfaceArea: preset })}
-                          className={`px-2.5 py-1 rounded-lg text-[11px] transition-all ${
-                            formData.surfaceArea === preset
-                              ? 'bg-[#C19A6B] text-[#050505] font-bold'
-                              : 'bg-[#25211D] text-[#EDE8DF] hover:bg-[#352E28] border border-white/5'
-                          }`}
-                        >
-                          {preset} م²
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Name & Phone Inputs */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Name */}
-                  <div className="relative">
-                    <label htmlFor="client-name" className="text-xs text-[#EDE8DF] block mb-1.5 font-medium">
-                      الاسم الكريم <span className="text-[#C19A6B]">*</span>
-                    </label>
-                    <div className="relative flex items-center">
-                      <input
-                        type="text"
-                        required
-                        id="client-name"
-                        placeholder="مثال: أبو فهد"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full bg-[#181512] border border-white/15 focus:border-[#C19A6B] focus:ring-1 focus:ring-[#C19A6B]/50 rounded-xl pr-10 pl-4 py-3 text-sm text-[#EDE8DF] placeholder-[#666] outline-none transition-all text-right"
-                      />
-                      <User size={16} className="absolute right-3.5 text-[#C19A6B]/70 pointer-events-none" />
-                    </div>
-                  </div>
-
-                  {/* Phone */}
-                  <div className="relative">
-                    <label htmlFor="client-phone" className="text-xs text-[#EDE8DF] block mb-1.5 font-medium">
-                      رقم الجوال للتواصل <span className="text-[#C19A6B]">*</span>
-                    </label>
-                    <div className="relative flex items-center">
-                      <input
-                        type="tel"
-                        required
-                        id="client-phone"
-                        placeholder="05XXXXXXXX"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full bg-[#181512] border border-white/15 focus:border-[#C19A6B] focus:ring-1 focus:ring-[#C19A6B]/50 rounded-xl pr-10 pl-4 py-3 text-sm text-[#EDE8DF] placeholder-[#666] outline-none transition-all text-right font-mono"
-                        dir="ltr"
-                      />
-                      <Phone size={16} className="absolute right-3.5 text-[#C19A6B]/70 pointer-events-none" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Location */}
-                <div className="relative">
-                  <label htmlFor="client-location" className="text-xs text-[#EDE8DF] block mb-1.5 font-medium">
-                    المدينة والحي بالمنطقة الشرقية <span className="text-[#C19A6B]">*</span>
-                  </label>
-                  <div className="relative flex items-center">
-                    <input
-                      type="text"
-                      required
-                      id="client-location"
-                      placeholder="مثال: الدمام - حي الشاطئ / الخبر - حي العزيزية"
-                      value={formData.projectLocation}
-                      onChange={(e) => setFormData({ ...formData, projectLocation: e.target.value })}
-                      className="w-full bg-[#181512] border border-white/15 focus:border-[#C19A6B] focus:ring-1 focus:ring-[#C19A6B]/50 rounded-xl pr-10 pl-4 py-3 text-sm text-[#EDE8DF] placeholder-[#666] outline-none transition-all text-right"
-                    />
-                    <MapPin size={16} className="absolute right-3.5 text-[#C19A6B]/70 pointer-events-none" />
-                  </div>
-                </div>
-
-                {/* Message / Notes */}
-                <div className="relative">
-                  <label htmlFor="client-message" className="text-xs text-[#EDE8DF] block mb-1.5 font-medium">
-                    ملاحظات إضافية أو تفاصيل العمل (اختياري):
-                  </label>
-                  <div className="relative">
-                    <textarea
-                      rows={2}
-                      id="client-message"
-                      placeholder="اكتب هنا أي تفاصيل تود توضيحها أو الوقت المفضل للمعاينة..."
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full bg-[#181512] border border-white/15 focus:border-[#C19A6B] focus:ring-1 focus:ring-[#C19A6B]/50 rounded-xl pr-10 pl-4 py-3 text-sm text-[#EDE8DF] placeholder-[#666] outline-none transition-all text-right resize-none"
-                    />
-                    <MessageSquare size={16} className="absolute right-3.5 top-3.5 text-[#C19A6B]/70 pointer-events-none" />
-                  </div>
-                </div>
-
-                {/* Checkbox for Free Measurement */}
-                <label className="flex items-center gap-3 cursor-pointer group select-none py-1">
-                  <input
-                    type="checkbox"
-                    checked={formData.requestedSampleKit}
-                    onChange={(e) => setFormData({ ...formData, requestedSampleKit: e.target.checked })}
-                    className="w-4 h-4 accent-[#C19A6B] rounded cursor-pointer"
-                  />
-                  <span className="text-xs text-[#EDE8DF] group-hover:text-[#C19A6B] transition-colors">
-                    أرغب في زيارة ميدانية للمعاينة ورفع المقاسات الدقيقة وعرض كتالوج الألوان مجاناً
-                  </span>
-                </label>
-
-                {/* Dual Submit Actions: Main Submit & Fast-track WhatsApp */}
-                <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                  {/* Primary Submit Button */}
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    data-cursor="إرسال"
-                    className="flex-1 relative group py-3.5 sm:py-4 px-6 rounded-xl gold-gradient-bg text-[#050505] text-xs sm:text-sm font-bold tracking-wide transition-all shadow-[0_4px_25px_rgba(193,154,107,0.35)] hover:shadow-[0_6px_35px_rgba(193,154,107,0.55)] active:scale-98"
-                  >
-                    <span className="flex items-center justify-center gap-2">
-                      {isSubmitting ? (
-                        <span>جاري إرسال الطلب...</span>
-                      ) : (
-                        <>
-                          <span>إرسال طلب المعاينة وعرض السعر</span>
-                          <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-                        </>
-                      )}
-                    </span>
-                  </button>
-
-                  {/* Fast-track Direct WhatsApp Submission */}
-                  <a
-                    href={getWhatsAppLink()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-cursor="واتساب"
-                    className="flex items-center justify-center gap-2 py-3.5 sm:py-4 px-5 rounded-xl bg-[#1B2921] border border-[#25D366]/40 hover:border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-[#050505] text-xs sm:text-sm font-bold transition-all duration-300 shadow-md active:scale-98"
-                    title="إرسال التفاصيل مباشرة عبر واتساب"
-                  >
-                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
-                    </svg>
-                    <span>إرسال عبر واتساب</span>
-                  </a>
-                </div>
-              </form>
+              <div>
+                <span className="text-xs text-[#8C867D] block mb-1">ضمان الجودة والأصالة</span>
+                <p className="text-sm font-medium text-white/90 leading-relaxed">
+                  نعتمد على مواد ودهانات أصلية 100% من جوتن والجزيرة، مع تنفيذ احترافي يضمن بقاء الجودة لسنوات طويلة بدون تشققات.
+                </p>
+              </div>
             </div>
-          </div>
+            
+            {/* Minimal Location Indicator */}
+            <div className="pt-4 flex items-center gap-3 px-2">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C19A6B] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-[#C19A6B]"></span>
+              </span>
+              <span className="text-xs text-[#8C867D]">متواجدون حالياً لخدمة: الدمام، الخبر، والظهران</span>
+            </div>
+          </motion.div>
+
         </div>
       </div>
-
-      {/* CONFIRMATION BESPOKE MODAL */}
-      <AnimatePresence>
-        {isSubmitted && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md"
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="max-w-md w-full p-6 sm:p-8 rounded-3xl bg-[#14110E] border border-[#C19A6B] text-center shadow-2xl"
-            >
-              <div className="w-14 h-14 rounded-full border border-[#C19A6B] mx-auto mb-4 flex items-center justify-center text-[#C19A6B] shadow-[0_0_25px_rgba(193,154,107,0.3)]">
-                <CheckCircle2 size={28} />
-              </div>
-
-              <span className="text-xs text-[#C19A6B] block mb-1 font-semibold">
-                تم استلام طلبكم بنجاح
-              </span>
-              <h3 className="font-serif-luxury text-2xl text-[#EDE8DF] font-bold mb-2">
-                مؤسسة وجد الأصايل
-              </h3>
-              <p className="text-xs text-[#BDB7AB] leading-relaxed mb-6 font-sans-clean">
-                شكراً لك يا {formData.name || 'عزيزنا العميل'}. تم تسجيل طلبك لـ {formData.projectScope} في {formData.projectLocation}. سنتواصل معك مباشرة على الرقم {formData.phone || 'المسجل'} لتنسيق المعاينة وعرض السعر المناسب في أسرع وقت.
-              </p>
-
-              <div className="flex flex-col gap-2">
-                <a
-                  href={`https://wa.me/966536402106?text=${encodeURIComponent(`السلام عليكم، أنا ${formData.name} أرسلت طلب معاينة لـ ${formData.projectScope} في ${formData.projectLocation}`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-3 rounded-full gold-gradient-bg text-[#050505] text-xs font-bold font-sans-clean"
-                >
-                  متابعة الطلب فوراً عبر واتساب
-                </a>
-                <button
-                  onClick={() => setIsSubmitted(false)}
-                  className="w-full py-2.5 rounded-full btn-pill-inactive text-xs font-sans-clean font-medium transition-all"
-                >
-                  إغلاق
-                </button>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }

@@ -5,25 +5,55 @@
     --font-serif: 'Amiri', 'Cormorant Garamond', Georgia, serif;
     --font-display: 'Amiri', 'Italiana', 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'Cairo', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    
+    /* Light Mode: Warm Alabaster Marble Theme */
+    --bg-primary: #FAF8F5;
+    --bg-secondary: #F3EFE9;
+    --bg-surface: #FFFFFF;
+    --bg-elevated: #EDE7DE;
+    --text-primary: #1C1917;
+    --text-secondary: #57534E;
+    --text-muted: #78716C;
+    --border-light: rgba(193, 154, 107, 0.35);
+    --border-subtle: rgba(0, 0, 0, 0.08);
+    --glass-nav: rgba(250, 248, 245, 0.92);
+    --glass-card: rgba(255, 255, 255, 0.92);
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
     --color-gold: #C19A6B;
     --color-gold-light: #E6C280;
     --color-gold-dark: #8C693E;
-    --color-nocturne: #050505;
-    --color-slate-elevated: #111113;
+    --color-cyan: #38BDF8;
+  }
+
+  html.dark {
+    /* Dark Mode: Obsidian Noir Theme */
+    --bg-primary: #050505;
+    --bg-secondary: #0A0A0C;
+    --bg-surface: #110E0C;
+    --bg-elevated: #181512;
+    --text-primary: #F5F5F7;
+    --text-secondary: #D0D0D6;
+    --text-muted: #8C867D;
+    --border-light: rgba(255, 255, 255, 0.1);
+    --border-subtle: rgba(255, 255, 255, 0.05);
+    --glass-nav: rgba(10, 10, 12, 0.85);
+    --glass-card: rgba(16, 16, 18, 0.7);
+    --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
   }
 
   body {
     font-family: var(--font-sans);
-    background-color: #050505;
-    color: #F5F5F7;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.35s ease, color 0.35s ease;
   }
 
   ::selection {
-    background-color: rgba(193, 154, 107, 0.35);
+    background-color: rgba(56, 189, 248, 0.3);
     color: #ffffff;
   }
 }
@@ -42,24 +72,28 @@
 
 /* Glassmorphism */
 .glass-nav {
-  background: rgba(10, 10, 12, 0.65);
+  background: var(--glass-nav);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(193, 154, 107, 0.15);
+  border: 1px solid var(--border-light);
+  transition: background-color 0.35s ease, border-color 0.35s ease;
 }
 
 .glass-card {
-  background: rgba(16, 16, 18, 0.6);
+  background: var(--glass-card);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--card-shadow);
+  transition: background-color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
 .glass-card-gold {
-  background: rgba(18, 16, 14, 0.7);
+  background: var(--glass-card);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(193, 154, 107, 0.22);
+  border: 1px solid rgba(193, 154, 107, 0.35);
+  box-shadow: var(--card-shadow);
 }
 
 /* Gold Accents & Gradients */
@@ -123,11 +157,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: var(--bg-primary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #282420;
+  background: var(--border-light);
   border-radius: 3px;
 }
 
@@ -172,34 +206,33 @@
 }
 
 /* Luxury Inactive Button & Filter Pill Styling:
-   Provides high visibility, crisp contrast, and warm bronze-gold elegance across the entire app.
-   Never black or hidden against the dark background. */
+   Adapts dynamically to both Light (Alabaster) and Dark (Obsidian) modes */
 .btn-pill-inactive {
-  background-color: #25211D !important;
-  color: #EDE8DF !important;
-  border: 1px solid rgba(193, 154, 107, 0.4) !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  background-color: var(--bg-surface) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-light) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-pill-inactive:hover {
-  background-color: #342B23 !important;
-  color: #FFFFFF !important;
+  background-color: var(--bg-elevated) !important;
+  color: #C19A6B !important;
   border-color: #C19A6B !important;
-  box-shadow: 0 0 16px rgba(193, 154, 107, 0.3);
+  box-shadow: 0 0 16px rgba(193, 154, 107, 0.25);
 }
 
 .btn-surface-inactive {
-  background-color: #201C18 !important;
-  color: #E8E2D8 !important;
-  border: 1px solid rgba(193, 154, 107, 0.35) !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  background-color: var(--bg-surface) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-light) !important;
+  box-shadow: var(--card-shadow);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-surface-inactive:hover {
-  background-color: #2D251E !important;
-  color: #FFFFFF !important;
+  background-color: var(--bg-elevated) !important;
+  color: #C19A6B !important;
   border-color: #C19A6B !important;
   box-shadow: 0 0 20px rgba(193, 154, 107, 0.25);
 }

@@ -6,52 +6,52 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative w-full bg-[#050505] text-[#EDE8DF] pt-14 sm:pt-20 pb-8 sm:pb-12 px-4 sm:px-6 md:px-16 border-t border-white/10 overflow-hidden text-right">
+    <footer className="relative w-full bg-[var(--bg-secondary)] text-[var(--text-primary)] pt-10 sm:py-16 pb-6 sm:pb-10 px-4 sm:px-6 md:px-16 border-t border-[var(--border-subtle)] overflow-hidden text-right transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         {/* Top Direct Contact Bar */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pb-10 sm:pb-14 border-b border-white/10 text-xs font-sans-clean">
-          <div className="p-4 rounded-xl bg-[#141210] border border-white/5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pb-10 sm:pb-14 border-b border-[var(--border-subtle)] text-xs font-sans-clean">
+          <div className="p-4 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-light)] shadow-sm">
             <div className="flex items-center gap-2 text-[#C19A6B] font-semibold mb-1">
               <Phone size={15} />
               <span>الاتصال الهاتفي المباشر</span>
             </div>
-            <a href="tel:0536402106" className="text-base sm:text-lg font-bold text-[#F5E6C8] hover:text-[#C19A6B] transition-colors block font-mono" dir="ltr">
+            <a href="tel:0536402106" className="text-base sm:text-lg font-bold text-[var(--text-primary)] hover:text-[#38BDF8] transition-colors block font-mono" dir="ltr">
               0536402106
             </a>
-            <span className="text-[11px] text-[#A0A0A5] block mt-1">متاح طوال أيام الأسبوع للمعاينة</span>
+            <span className="text-[11px] text-[var(--text-muted)] block mt-1">متاح طوال أيام الأسبوع للمعاينة</span>
           </div>
 
-          <div className="p-4 rounded-xl bg-[#141210] border border-white/5">
+          <div className="p-4 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-light)] shadow-sm">
             <div className="flex items-center gap-2 text-[#25D366] font-semibold mb-1">
               <MessageCircle size={15} />
               <span>المراسلة الفورية واتساب</span>
             </div>
-            <a href="https://wa.me/966536402106" target="_blank" rel="noopener noreferrer" className="text-base sm:text-lg font-bold text-[#EDE8DF] hover:text-[#25D366] transition-colors block font-mono" dir="ltr">
+            <a href="https://wa.me/966536402106" target="_blank" rel="noopener noreferrer" className="text-base sm:text-lg font-bold text-[var(--text-primary)] hover:text-[#25D366] transition-colors block font-mono" dir="ltr">
               0536402106
             </a>
-            <span className="text-[11px] text-[#A0A0A5] block mt-1">إرسال الصور وطلب المقايسة سريعاً</span>
+            <span className="text-[11px] text-[var(--text-muted)] block mt-1">إرسال الصور وطلب المقايسة سريعاً</span>
           </div>
 
-          <div className="p-4 rounded-xl bg-[#141210] border border-white/5">
+          <div className="p-4 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-light)] shadow-sm">
             <div className="flex items-center gap-2 text-[#C19A6B] font-semibold mb-1">
               <Mail size={15} />
               <span>البريد الإلكتروني</span>
             </div>
-            <a href="mailto:nabelnagy5050@gmail.com" className="text-xs sm:text-sm font-semibold text-[#EDE8DF] hover:text-[#C19A6B] transition-colors block truncate" dir="ltr">
+            <a href="mailto:nabelnagy5050@gmail.com" className="text-xs sm:text-sm font-semibold text-[var(--text-primary)] hover:text-[#38BDF8] transition-colors block truncate" dir="ltr">
               nabelnagy5050@gmail.com
             </a>
-            <span className="text-[11px] text-[#A0A0A5] block mt-1">للمراسلات والعروض والمقاولات</span>
+            <span className="text-[11px] text-[var(--text-muted)] block mt-1">للمراسلات والعروض والمقاولات</span>
           </div>
 
-          <div className="p-4 rounded-xl bg-[#141210] border border-white/5">
+          <div className="p-4 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-light)] shadow-sm">
             <div className="flex items-center gap-2 text-[#C19A6B] font-semibold mb-1">
               <MapPin size={15} />
               <span>مناطق التغطية والعمل</span>
             </div>
-            <span className="text-xs sm:text-sm font-semibold text-[#EDE8DF] block">
+            <span className="text-xs sm:text-sm font-semibold text-[var(--text-primary)] block">
               الدمام • الخبر • الظهران
             </span>
-            <span className="text-[11px] text-[#A0A0A5] block mt-1">وكافة مدن المنطقة الشرقية</span>
+            <span className="text-[11px] text-[var(--text-muted)] block mt-1">وكافة مدن المنطقة الشرقية</span>
           </div>
         </div>
 

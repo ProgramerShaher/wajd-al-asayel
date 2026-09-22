@@ -13,6 +13,8 @@ import ArtisanProcess from './components/ArtisanProcess';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import FloatingGalleryButton from './components/FloatingGalleryButton';
+import { ThemeProvider } from './context/ThemeContext';
 
 export default function App() {
   const [preloaderComplete, setPreloaderComplete] = useState(false);
@@ -39,7 +41,8 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#050505] text-[#F5F5F7] overflow-x-hidden selection:bg-[#C19A6B]/30 selection:text-[#F5F5F7]">
+    <ThemeProvider>
+      <div className="relative min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] overflow-x-hidden selection:bg-[#38BDF8]/30 transition-colors duration-500">
       {/* High-End Entrance Preloader */}
       <Preloader onComplete={() => setPreloaderComplete(true)} />
 
@@ -79,8 +82,12 @@ export default function App() {
       {/* Luxury Footer with World Clocks & Colophon */}
       <Footer />
 
+      {/* Persistent Floating Gallery Action Button */}
+      <FloatingGalleryButton />
+
       {/* Persistent Floating WhatsApp Action Button */}
       <FloatingWhatsApp />
     </div>
+    </ThemeProvider>
   );
 }

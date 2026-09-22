@@ -61,30 +61,16 @@ export default function ServicesHorizontal({ onSelectServiceForSample }: Service
     };
   }, []);
 
-  // 5-second automatic sliding ONLY runs when the user is scrolled to this section
+  // 7-second automatic sliding that resets whenever activeIndex changes (e.g. user clicks or scrolls)
   useEffect(() => {
-    if (!isInView) return; // Completely idle when user is at the top or bottom of the page
+    if (!isInView) return;
 
-    const timer = setInterval(() => {
-      setActiveIndex((prev) => {
-        const nextIndex = (prev + 1) % SERVICES_DATA.length;
-        const cardEl = cardRefs.current[nextIndex];
-        const container = scrollContainerRef.current;
-        if (cardEl && container) {
-          const containerRect = container.getBoundingClientRect();
-          const cardRect = cardEl.getBoundingClientRect();
-          const delta = (cardRect.left + cardRect.width / 2) - (containerRect.left + containerRect.width / 2);
-          container.scrollBy({
-            left: delta,
-            behavior: 'smooth',
-          });
-        }
-        return nextIndex;
-      });
-    }, 5000);
+    const timer = setTimeout(() => {
+      handleNext();
+    }, 7000);
 
-    return () => clearInterval(timer);
-  }, [isInView]);
+    return () => clearTimeout(timer);
+  }, [isInView, activeIndex, handleNext]);
 
   // Track manual scrolling to keep dots synced
   const handleContainerScroll = useCallback(() => {
@@ -114,20 +100,20 @@ export default function ServicesHorizontal({ onSelectServiceForSample }: Service
     <section
       ref={sectionRef}
       id="services"
-      className="relative w-full py-20 sm:py-28 md:py-36 bg-[#050505] overflow-hidden border-t border-white/5"
+      className="relative w-full py-10 sm:py-14 md:py-20 bg-[var(--bg-primary)] overflow-hidden border-t border-[var(--border-subtle)] transition-colors duration-300"
     >
       {/* Background Accent Ambient Radial Glow */}
       <div className="pointer-events-none absolute bottom-0 left-0 w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] bg-[#C19A6B]/5 rounded-full blur-[120px] sm:blur-[160px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-16 mb-8 sm:mb-12">
         {/* Top Header Row with Navigation Controls */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 sm:gap-6 text-right">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 sm:gap-8 text-right">
           <div>
             <div className="flex items-center gap-2 text-xs text-[#C19A6B] mb-2 sm:mb-3 font-semibold font-sans-clean">
               <Sparkles size={13} />
               <span>خدماتنا المعتمدة بالدمام والخبر</span>
             </div>
-            <h2 className="font-serif-luxury text-3xl sm:text-5xl md:text-6xl font-bold text-[#EDE8DF]">
+            <h2 className="font-serif-luxury text-3xl sm:text-5xl md:text-6xl font-bold text-[var(--text-primary)]">
               خدمات الدهانات والديكورات
             </h2>
           </div>
@@ -166,7 +152,7 @@ export default function ServicesHorizontal({ onSelectServiceForSample }: Service
               className={`h-1.5 rounded-full transition-all duration-500 cursor-pointer ${
                 activeIndex === idx
                   ? 'w-10 sm:w-14 gold-gradient-bg shadow-[0_0_10px_rgba(193,154,107,0.5)]'
-                  : 'w-3 sm:w-4 bg-white/20 hover:bg-white/40'
+                  : 'w-3 sm:w-4 bg-[var(--border-light)] hover:bg-[#C19A6B]/40'
               }`}
               title={service.title}
               aria-label={`الانتقال إلى ${service.title}`}
@@ -189,61 +175,61 @@ export default function ServicesHorizontal({ onSelectServiceForSample }: Service
               cardRefs.current[index] = el;
             }}
             data-cursor="فحص"
-            className={`flex-none w-[86vw] sm:w-[480px] md:w-[540px] snap-center rounded-2xl glass-card transition-all duration-500 overflow-hidden flex flex-col justify-between group ${
+            className={`flex-none w-[86vw] sm:w-[480px] md:w-[540px] snap-center rounded-2xl bg-[var(--bg-surface)] transition-all duration-500 overflow-hidden flex flex-col justify-between group border shadow-[var(--card-shadow)] ${
               activeIndex === index
-                ? 'border border-[#C19A6B] shadow-[0_0_30px_rgba(193,154,107,0.25)]'
-                : 'border border-white/10 hover:border-[#C19A6B]/40'
+                ? 'border-[#C19A6B] shadow-[0_0_30px_rgba(193,154,107,0.25)]'
+                : 'border-[var(--border-light)] hover:border-[#C19A6B]/40'
             }`}
           >
             {/* Top Media Container with Luxury Tilt Feel */}
-            <div className="relative aspect-[16/10] overflow-hidden bg-[#0A0A0C]">
+            <div className="relative aspect-[16/10] overflow-hidden bg-[var(--bg-elevated)]">
               <img
                 src={service.imageUrl}
                 alt={service.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-transparent to-black/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
 
               {/* Number and Category Badge */}
               <div className="absolute top-4 right-4 left-4 sm:top-5 sm:right-5 sm:left-5 flex justify-between items-center">
-                <span className="font-display-luxury text-2xl sm:text-3xl text-[#C19A6B] font-bold">
+                <span className="font-display-luxury text-2xl sm:text-3xl text-[#38BDF8] font-bold">
                   {service.number}
                 </span>
-                <span className="px-3 py-1 rounded-full bg-[#050505]/75 backdrop-blur-md border border-white/10 text-[11px] sm:text-xs text-[#E6C280] font-sans-clean">
+                <span className="px-3 py-1 rounded-full bg-[#050505]/80 backdrop-blur-md border border-[#38BDF8]/30 text-[11px] sm:text-xs text-[#38BDF8] font-sans-clean shadow-sm">
                   {service.category}
                 </span>
               </div>
 
               {/* Specimen Tag */}
               <div className="absolute bottom-3 right-4 sm:bottom-4 sm:right-5 text-[10px] sm:text-xs text-[#A0A0A5] font-mono">
-                رمز الخدمة: <span className="text-[#C19A6B] font-bold">{service.sampleCode}</span>
+                رمز الخدمة: <span className="text-[#38BDF8] font-bold">{service.sampleCode}</span>
               </div>
             </div>
 
             {/* Bottom Content Body */}
             <div className="p-5 sm:p-7 flex flex-col justify-between flex-grow">
               <div>
-                <h3 className="font-serif-luxury text-xl sm:text-2xl md:text-3xl text-[#F5F5F7] font-normal leading-tight mb-1.5 group-hover:text-[#C19A6B] transition-colors">
+                <h3 className="font-serif-luxury text-xl sm:text-2xl md:text-3xl text-[var(--text-primary)] font-normal leading-tight mb-1.5 group-hover:text-[#38BDF8] transition-colors duration-300">
                   {service.title}
                 </h3>
-                <p className="font-serif-luxury text-xs sm:text-sm md:text-base text-[#C19A6B]/90 italic mb-3 sm:mb-4">
+                <p className="font-serif-luxury text-xs sm:text-sm md:text-base text-[#C19A6B] italic mb-3 sm:mb-4">
                   &ldquo;{service.tagline}&rdquo;
                 </p>
-                <p className="text-[11px] sm:text-xs text-[#A0A0A5] leading-relaxed mb-4 sm:mb-6 font-light font-sans-clean">
+                <p className="text-[11px] sm:text-xs text-[var(--text-secondary)] leading-relaxed mb-4 sm:mb-6 font-light font-sans-clean">
                   {service.description}
                 </p>
 
                 {/* Key Material Chips */}
                 <div className="mb-4 sm:mb-6">
-                  <span className="text-[11px] sm:text-xs text-[#8C867D] block mb-2 font-semibold font-sans-clean">
+                  <span className="text-[11px] sm:text-xs text-[var(--text-muted)] block mb-2 font-semibold font-sans-clean">
                     المواد والتقنيات المستخدمة:
                   </span>
                   <div className="flex flex-wrap gap-1.5">
                     {service.materials.map((mat) => (
                       <span
                         key={mat}
-                        className="text-xs px-2.5 py-1 rounded-md bg-[#25211D] text-[#EDE8DF] border border-[#C19A6B]/30 font-sans-clean"
+                        className="text-xs px-2.5 py-1 rounded-md bg-[var(--bg-elevated)] text-[var(--text-primary)] border border-[var(--border-light)] font-sans-clean"
                       >
                         {mat}
                       </span>
@@ -254,7 +240,7 @@ export default function ServicesHorizontal({ onSelectServiceForSample }: Service
                 {/* Architectural Features */}
                 <ul className="space-y-2 mb-6">
                   {service.features.map((feat) => (
-                    <li key={feat} className="flex items-center gap-2 text-xs text-[#EDE8DF] font-sans-clean">
+                    <li key={feat} className="flex items-center gap-2 text-xs text-[var(--text-primary)] font-sans-clean">
                       <Check size={12} className="text-[#C19A6B] flex-shrink-0" />
                       <span>{feat}</span>
                     </li>
@@ -263,16 +249,16 @@ export default function ServicesHorizontal({ onSelectServiceForSample }: Service
               </div>
 
               {/* Action Button */}
-              <div className="pt-4 border-t border-white/5 flex items-center justify-between">
+              <div className="pt-4 border-t border-[var(--border-subtle)] flex items-center justify-between">
                 <a
                   href="#contact"
                   onClick={() => onSelectServiceForSample && onSelectServiceForSample(service)}
-                  className="inline-flex items-center gap-2 text-xs text-[#C19A6B] hover:text-[#FFFFFF] transition-colors duration-300 font-sans-clean font-bold"
+                  className="inline-flex items-center gap-2 text-xs text-[#C19A6B] hover:text-[var(--text-primary)] transition-colors duration-300 font-sans-clean font-bold"
                 >
                   <Sparkles size={13} />
                   <span>طلب معاينة واستشارة مجانية</span>
                 </a>
-                <span className="text-[10px] text-[#A0988A] font-sans-clean">
+                <span className="text-[10px] text-[var(--text-muted)] font-sans-clean">
                   معاينة موقع بالدمام والخبر
                 </span>
               </div>

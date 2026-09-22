@@ -9,20 +9,26 @@ export default function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Check if device is touch-primary (mobile/tablet)
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+    if (isTouchDevice) {
+      // On mobile/tablet, native touch gestures feel best without an artificial cursor
+      return;
+    }
+
     let posX = -100;
     let posY = -100;
-    let isTouchActive = false;
 
-    // Direct 1:1 hardware-accelerated update - perfectly centered with zero lag or offset
+    // Laser-precise 1:1 hardware-accelerated update centered exactly with translate(-50%, -50%)
     const updatePosition = (clientX: number, clientY: number, target: EventTarget | null) => {
       posX = clientX;
       posY = clientY;
 
       if (dotRef.current) {
-        dotRef.current.style.transform = `translate3d(${posX}px, ${posY}px, 0)`;
+        dotRef.current.style.transform = `translate3d(${posX}px, ${posY}px, 0) translate(-50%, -50%)`;
       }
       if (ringRef.current) {
-        ringRef.current.style.transform = `translate3d(${posX}px, ${posY}px, 0)`;
+        ringRef.current.style.transform = `translate3d(${posX}px, ${posY}px, 0) translate(-50%, -50%)`;
       }
 
       setIsVisible(true);
@@ -42,30 +48,7 @@ export default function CustomCursor() {
     };
 
     const handleMouseMove = (e: MouseEvent) => {
-      if (isTouchActive) return;
       updatePosition(e.clientX, e.clientY, e.target);
-    };
-
-    const handleTouchStart = (e: TouchEvent) => {
-      isTouchActive = true;
-      if (e.touches && e.touches[0]) {
-        updatePosition(e.touches[0].clientX, e.touches[0].clientY, e.target);
-      }
-    };
-
-    const handleTouchMove = (e: TouchEvent) => {
-      isTouchActive = true;
-      if (e.touches && e.touches[0]) {
-        updatePosition(e.touches[0].clientX, e.touches[0].clientY, e.target);
-      }
-    };
-
-    const handleTouchEnd = () => {
-      setTimeout(() => {
-        setIsVisible(false);
-        setIsHovered(false);
-        isTouchActive = false;
-      }, 150);
     };
 
     const handleMouseDown = () => setIsClicking(true);
@@ -73,18 +56,12 @@ export default function CustomCursor() {
     const handleMouseLeave = () => setIsVisible(false);
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    window.addEventListener('touchstart', handleTouchStart, { passive: true });
-    window.addEventListener('touchmove', handleTouchMove, { passive: true });
-    window.addEventListener('touchend', handleTouchEnd, { passive: true });
     window.addEventListener('mousedown', handleMouseDown);
     window.addEventListener('mouseup', handleMouseUp);
     document.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('touchstart', handleTouchStart);
-      window.removeEventListener('touchmove', handleTouchMove);
-      window.removeEventListener('touchend', handleTouchEnd);
       window.removeEventListener('mousedown', handleMouseDown);
       window.removeEventListener('mouseup', handleMouseUp);
       document.removeEventListener('mouseleave', handleMouseLeave);
@@ -93,33 +70,34 @@ export default function CustomCursor() {
 
   return (
     <div
-      className={`pointer-events-none fixed inset-0 z-[9999] overflow-hidden select-none transition-opacity duration-200 ${
+      className={`pointer-events-none fixed inset-0 z-[9999] overflow-hidden select-none transition-opacity duration-200 hidden md:block ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
+      aria-hidden="true"
     >
-      {/* Precision Center Pinpoint Dot - exactly centered at mouse / finger */}
+      {/* Precision Center Pinpoint Dot - Vibrant Electric Cyan */}
       <div
         ref={dotRef}
-        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-[#C19A6B] -translate-x-1/2 -translate-y-1/2 pointer-events-none shadow-[0_0_8px_#C19A6B] will-change-transform"
+        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-[#38BDF8] pointer-events-none shadow-[0_0_10px_#38BDF8] will-change-transform"
         style={{
-          transform: 'translate3d(-100px, -100px, 0)',
+          transform: 'translate3d(-100px, -100px, 0) translate(-50%, -50%)',
         }}
       />
 
-      {/* Precision Tracking Ring - centered exactly on the cursor / finger pointer */}
+      {/* Precision Tracking Ring - Centered 100% on the pointer */}
       <div
         ref={ringRef}
-        className={`fixed top-0 left-0 -translate-x-1/2 -translate-y-1/2 rounded-full border pointer-events-none flex items-center justify-center will-change-transform transition-[width,height,background-color,border-color,opacity] duration-150 ease-out ${
+        className={`fixed top-0 left-0 rounded-full border pointer-events-none flex items-center justify-center will-change-transform transition-[width,height,background-color,border-color,transform] duration-200 ease-out ${
           isHovered
-            ? 'w-14 h-14 bg-[#C19A6B]/20 border-[#C19A6B] backdrop-blur-[1px] shadow-[0_0_20px_rgba(193,154,107,0.4)]'
-            : 'w-8 h-8 border-[#C19A6B]/70 bg-transparent'
-        } ${isClicking ? 'scale-90' : 'scale-100'}`}
+            ? 'w-14 h-14 bg-[#38BDF8]/15 border-[#38BDF8] backdrop-blur-[2px] shadow-[0_0_25px_rgba(56,189,248,0.45)]'
+            : 'w-9 h-9 border-[#38BDF8]/70 bg-transparent shadow-[0_0_8px_rgba(56,189,248,0.2)]'
+        } ${isClicking ? 'scale-85' : 'scale-100'}`}
         style={{
-          transform: 'translate3d(-100px, -100px, 0)',
+          transform: 'translate3d(-100px, -100px, 0) translate(-50%, -50%)',
         }}
       >
         {cursorText && (
-          <span className="text-[9px] font-sans tracking-wide text-[#F5F5F7] font-bold select-none px-1">
+          <span className="text-[10px] font-sans font-bold tracking-wide text-white select-none px-1 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
             {cursorText}
           </span>
         )}
@@ -127,4 +105,3 @@ export default function CustomCursor() {
     </div>
   );
 }
-

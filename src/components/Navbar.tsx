@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Volume2, VolumeX, Menu, X, Phone, MessageCircle } from 'lucide-react';
+import { Volume2, VolumeX, Menu, X, Phone, MessageCircle, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useTheme } from '../context/ThemeContext';
 
 interface NavbarProps {
   onOpenSampleKit?: () => void;
@@ -12,6 +13,7 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const audioCtxRef = useRef<AudioContext | null>(null);
   const gainNodeRef = useRef<GainNode | null>(null);
+  const { theme, toggleTheme, isDark } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -97,10 +99,10 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
         }`}
       >
         <nav
-          className={`w-full max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all duration-500 ${
+          className={`w-full max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all duration-500 glass-nav ${
             scrolled
-              ? 'glass-nav shadow-[0_10px_40px_-10px_rgba(0,0,0,0.8)] border-[#C19A6B]/35'
-              : 'bg-[#0E0D0C]/85 backdrop-blur-md border border-[#C19A6B]/25'
+              ? 'shadow-[0_10px_40px_-10px_rgba(0,0,0,0.4)]'
+              : ''
           }`}
         >
           {/* Atelier Monogram & Brand */}
@@ -126,12 +128,9 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
                 </text>
               </svg>
             </div>
-            <div className="flex flex-col text-right">
-              <span className="font-serif-luxury text-base sm:text-lg font-bold text-[#F5F5F7] group-hover:text-[#C19A6B] transition-colors leading-tight">
+            <div className="flex items-center text-right">
+              <span className="font-serif-luxury text-xl sm:text-2xl md:text-3xl font-black tracking-wide leading-normal pb-1.5 pt-1 bg-gradient-to-r from-[#FFF0D4] via-[#E6C280] to-[#C19A6B] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(230,194,128,0.35)] group-hover:scale-105 transition-transform duration-300 select-none">
                 وجد الأصايل
-              </span>
-              <span className="text-[10px] sm:text-[11px] text-[#C19A6B] font-sans-clean leading-tight">
-                دهانات • ديكورات • جبس بورد • سواتر
               </span>
             </div>
           </a>
@@ -145,7 +144,7 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
                 onMouseMove={handleMagneticMove}
                 onMouseLeave={handleMagneticLeave}
                 data-cursor="انتقال"
-                className="relative px-3 py-1.5 text-xs font-sans-clean font-medium text-[#EDE8DF] hover:text-[#C19A6B] transition-colors duration-200 rounded-full hover:bg-white/5"
+                className="relative px-3 py-1.5 text-xs font-sans-clean font-medium text-[var(--text-secondary)] hover:text-[#C19A6B] transition-colors duration-200 rounded-full hover:bg-[var(--bg-elevated)]/60"
               >
                 {link.name}
               </a>
@@ -155,7 +154,7 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
           {/* Right Action Cluster */}
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Location & Experience Badge */}
-            <div className="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-[#201C18] border border-[#C19A6B]/30 text-[11px] text-[#EDE8DF] font-sans-clean font-light">
+            <div className="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--bg-elevated)] border border-[#C19A6B]/30 text-[11px] text-[var(--text-secondary)] font-sans-clean font-light">
               <span className="w-1.5 h-1.5 rounded-full bg-[#C19A6B] animate-pulse" />
               <span>الدمام والخبر • خبرة +٣٠ سنة</span>
             </div>
@@ -182,8 +181,24 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
               title="مراسلة عبر واتساب"
             >
               <MessageCircle size={14} className="text-[#25D366]" />
-              <span className="hidden md:inline text-[#EDE8DF]">واتساب</span>
+              <span className="hidden md:inline text-[var(--text-secondary)]">واتساب</span>
             </a>
+
+            {/* Theme Toggle Button (Dark / Light Mode) */}
+            <button
+              id="theme-toggle-btn"
+              onClick={toggleTheme}
+              data-cursor={isDark ? 'نهاري' : 'ليلي'}
+              aria-label={isDark ? 'التبديل إلى الوضع النهاري' : 'التبديل إلى الوضع الليلي'}
+              title={isDark ? 'التبديل إلى الوضع النهاري الفاخر' : 'التبديل إلى الوضع الليلي الملكي'}
+              className="p-2 rounded-full btn-pill-inactive transition-all duration-300 flex items-center justify-center active:scale-95 text-[#C19A6B] hover:text-[#38BDF8]"
+            >
+              {isDark ? (
+                <Sun size={16} className="text-[#FFAE42] transition-transform duration-500 hover:rotate-90" />
+              ) : (
+                <Moon size={16} className="text-[#38BDF8] transition-transform duration-500 hover:-rotate-12" />
+              )}
+            </button>
 
             {/* Ambient Sound Toggle */}
             <button
@@ -222,16 +237,22 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-x-4 top-20 z-40 lg:hidden glass-nav rounded-2xl p-5 border border-[#C19A6B]/35 shadow-2xl text-right bg-[#100E0C]/95"
+            className="fixed inset-x-4 top-20 z-40 lg:hidden glass-nav rounded-2xl p-5 border border-[#C19A6B]/35 shadow-2xl text-right"
           >
             <div className="flex flex-col gap-3">
               <div className="flex items-center justify-between pb-3 border-b border-white/10">
-                <span className="text-xs font-serif-luxury text-[#C19A6B]">
+                <span className="text-xs font-serif-luxury text-[#C19A6B] font-bold">
                   وجد الأصايل • الدمام والخبر
                 </span>
-                <span className="text-[11px] text-[#EDE8DF] font-sans-clean">
-                  خبرة أكثر من ٣٠ سنة
-                </span>
+                {/* Mobile Theme Switch Button */}
+                <button
+                  type="button"
+                  onClick={toggleTheme}
+                  className="px-3 py-1 rounded-full btn-pill-inactive text-xs flex items-center gap-1.5"
+                >
+                  {isDark ? <Sun size={13} className="text-[#FFAE42]" /> : <Moon size={13} className="text-[#38BDF8]" />}
+                  <span>{isDark ? 'الوضع النهاري' : 'الوضع الليلي'}</span>
+                </button>
               </div>
 
               {navLinks.map((link) => (
@@ -239,7 +260,7 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="font-serif-luxury text-lg text-[#F5F5F7] hover:text-[#C19A6B] transition-colors py-1.5 flex items-center justify-between border-b border-white/5"
+                  className="font-serif-luxury text-lg text-[var(--text-primary)] hover:text-[#C19A6B] transition-colors py-1.5 flex items-center justify-between border-b border-[var(--border-subtle)]"
                 >
                   <span>{link.name}</span>
                   <span className="text-[#C19A6B] text-xs">←</span>
@@ -269,7 +290,7 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
                   href="https://vt.tiktok.com/ZSqwspsQj/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full text-center py-2 rounded-full bg-[#181512] border border-[#C19A6B]/30 text-[#EDE8DF] text-[11px] font-sans-clean flex items-center justify-center gap-2 hover:border-[#C19A6B]"
+                  className="w-full text-center py-2 rounded-full bg-[var(--bg-elevated)] border border-[#C19A6B]/30 text-[var(--text-secondary)] text-[11px] font-sans-clean flex items-center justify-center gap-2 hover:border-[#C19A6B]"
                 >
                   <span>شاهد أعمالنا على تيك توك (TikTok)</span>
                 </a>
