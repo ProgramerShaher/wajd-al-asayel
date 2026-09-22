@@ -1,0 +1,205 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Amiri', 'Cormorant Garamond', Georgia, serif;
+    --font-display: 'Amiri', 'Italiana', 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Cairo', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --color-gold: #C19A6B;
+    --color-gold-light: #E6C280;
+    --color-gold-dark: #8C693E;
+    --color-nocturne: #050505;
+    --color-slate-elevated: #111113;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #050505;
+    color: #F5F5F7;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: rgba(193, 154, 107, 0.35);
+    color: #ffffff;
+  }
+}
+
+.font-serif-luxury {
+  font-family: 'Amiri', 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-display-luxury {
+  font-family: 'Amiri', 'Italiana', 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-sans-clean {
+  font-family: 'Cairo', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Glassmorphism */
+.glass-nav {
+  background: rgba(10, 10, 12, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(193, 154, 107, 0.15);
+}
+
+.glass-card {
+  background: rgba(16, 16, 18, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card-gold {
+  background: rgba(18, 16, 14, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(193, 154, 107, 0.22);
+}
+
+/* Gold Accents & Gradients */
+.gold-text-gradient {
+  background: linear-gradient(135deg, #FFF0D4 0%, #C19A6B 50%, #8E6B3E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #E6C280 0%, #C19A6B 50%, #8C693E 100%);
+}
+
+.gold-border {
+  border-color: rgba(193, 154, 107, 0.3);
+}
+
+.gold-glow {
+  box-shadow: 0 0 35px -5px rgba(193, 154, 107, 0.25);
+}
+
+.gold-glow-lg {
+  box-shadow: 0 0 70px -10px rgba(193, 154, 107, 0.35);
+}
+
+/* Video Text Masking */
+.video-mask-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.video-mask-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gold Stroke Dash Animation */
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
+
+.animate-gold-dash {
+  stroke-dasharray: 60, 40;
+  animation: dash 5s linear infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #282420;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C19A6B;
+}
+
+/* Grain Noise Overlay */
+.grain-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Floating Label Animation Helper */
+.floating-input:focus ~ .floating-label,
+.floating-input:not(:placeholder-shown) ~ .floating-label {
+  transform: translateY(-1.35rem) scale(0.82);
+  transform-origin: right top;
+  color: #C19A6B;
+}
+
+/* Hide scrollbar for clean luxury horizontal swipe carousels on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Touch optimization */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Perspective Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Luxury Inactive Button & Filter Pill Styling:
+   Provides high visibility, crisp contrast, and warm bronze-gold elegance across the entire app.
+   Never black or hidden against the dark background. */
+.btn-pill-inactive {
+  background-color: #25211D !important;
+  color: #EDE8DF !important;
+  border: 1px solid rgba(193, 154, 107, 0.4) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-pill-inactive:hover {
+  background-color: #342B23 !important;
+  color: #FFFFFF !important;
+  border-color: #C19A6B !important;
+  box-shadow: 0 0 16px rgba(193, 154, 107, 0.3);
+}
+
+.btn-surface-inactive {
+  background-color: #201C18 !important;
+  color: #E8E2D8 !important;
+  border: 1px solid rgba(193, 154, 107, 0.35) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-surface-inactive:hover {
+  background-color: #2D251E !important;
+  color: #FFFFFF !important;
+  border-color: #C19A6B !important;
+  box-shadow: 0 0 20px rgba(193, 154, 107, 0.25);
+}
