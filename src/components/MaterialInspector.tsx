@@ -52,46 +52,53 @@ export default function MaterialInspector() {
           {/* Right/First Column in RTL: Finish Selector List (Side-by-side horizontally on mobile/tablet, vertical list on desktop) */}
           <div className="lg:col-span-4 flex flex-col gap-2.5 sm:gap-3 w-full">
             <div className="flex items-center justify-between">
-              <span className="text-xs text-[#C19A6B] font-semibold font-serif-luxury">
+              <span className="text-xs sm:text-sm text-[#C19A6B] font-semibold font-serif-luxury">
                 اختر العينة الفنية لمعاينتها:
               </span>
-              <span className="text-[10px] text-[#8C867D] lg:hidden font-sans-clean">
-                (اسحب أفريقياً للتنقل ⟵)
+              <span className="text-[11px] text-[#A69B8D] lg:hidden font-sans-clean">
+                (اسحب أفقياً للتنقل ⟵)
               </span>
             </div>
 
             {/* Side-by-side buttons row on small screens, vertical column on desktop */}
-            <div className="flex flex-row lg:flex-col gap-2.5 sm:gap-3 overflow-x-auto no-scrollbar scroll-smooth pb-2 lg:pb-0 snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0">
+            <div className="flex flex-row lg:flex-col gap-3 overflow-x-auto no-scrollbar scroll-smooth pb-3 lg:pb-0 snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0">
               {SWATCH_FINISHES.map((swatch) => {
                 const isSelected = selectedFinish.id === swatch.id;
                 return (
                   <button
                     key={swatch.id}
                     onClick={() => setSelectedFinish(swatch)}
-                    data-cursor="فحص"
-                    className={`text-right p-3 sm:p-4 rounded-xl transition-all duration-300 flex items-center justify-between border active:scale-98 flex-shrink-0 w-[230px] sm:w-[260px] lg:w-full snap-start ${
+                    className={`text-right p-3.5 sm:p-4 rounded-xl transition-all duration-300 flex flex-col gap-2.5 border active:scale-98 flex-shrink-0 w-[270px] sm:w-[300px] lg:w-full snap-start cursor-pointer ${
                       isSelected
-                        ? 'bg-[#2E241B] border-[#C19A6B] text-[#FFFFFF] shadow-[0_0_22px_rgba(193,154,107,0.35)]'
+                        ? 'bg-[#2E241B] border-[#C19A6B] text-[#FFFFFF] shadow-[0_0_24px_rgba(193,154,107,0.35)] ring-1 ring-[#C19A6B]/60'
                         : 'btn-surface-inactive hover:border-[#C19A6B]/50'
                     }`}
                   >
-                    <div className="flex items-center gap-2.5 sm:gap-3 truncate">
+                    {/* Top Row: Swatch Color Circle + Complete Name & Category */}
+                    <div className="flex items-center gap-3 w-full text-right">
                       <div
-                        className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#C19A6B]/40 shadow-inner flex-shrink-0"
+                        className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-[#C19A6B]/50 shadow-inner flex-shrink-0"
                         style={{ backgroundColor: swatch.baseHex }}
                       />
-                      <div className="truncate text-right">
-                        <h4 className="font-serif-luxury text-xs sm:text-sm md:text-base text-[#F5F5F7] font-medium leading-none mb-1 truncate">
+                      <div className="flex-1 min-w-0 text-right">
+                        <h4 className="font-serif-luxury text-sm sm:text-base text-[#F5F5F7] font-bold leading-tight">
                           {swatch.name}
                         </h4>
-                        <span className="text-[10px] sm:text-[11px] text-[#C19A6B] font-sans-clean block truncate">
+                        <span className="text-[11px] sm:text-xs text-[#C19A6B] font-sans-clean block mt-0.5 font-medium">
                           {swatch.category}
                         </span>
                       </div>
                     </div>
-                    <span className="inline-block text-[10px] px-2 py-0.5 rounded-full bg-[#322A22] text-[#EDE8DF] border border-[#C19A6B]/25 font-sans-clean flex-shrink-0 mr-2">
-                      {swatch.sheen}
-                    </span>
+
+                    {/* Bottom Row: Sheen Badge & Reflection Value */}
+                    <div className="flex items-center justify-between pt-2 border-t border-[#C19A6B]/20 w-full text-[11px] font-sans-clean">
+                      <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#1A1612] text-[#EDE8DF] border border-[#C19A6B]/30 text-[10px] sm:text-[11px]">
+                        {swatch.sheen}
+                      </span>
+                      <span className="text-[10px] text-[#A69B8D]">
+                        انعكاس: {Math.round(swatch.goldReflectance * 100)}%
+                      </span>
+                    </div>
                   </button>
                 );
               })}

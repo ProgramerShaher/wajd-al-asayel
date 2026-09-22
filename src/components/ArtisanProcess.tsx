@@ -43,7 +43,7 @@ export default function ArtisanProcess() {
                 }`}
               >
                 <span className="font-mono font-bold">٠{step.step}</span>
-                <span className="truncate max-w-[120px]">{step.name}</span>
+                <span className="whitespace-nowrap">{step.name}</span>
               </button>
             );
           })}
