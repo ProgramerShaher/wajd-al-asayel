@@ -11,8 +11,7 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
-  const audioCtxRef = useRef<AudioContext | null>(null);
-  const gainNodeRef = useRef<GainNode | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   const { theme, toggleTheme, isDark } = useTheme();
 
   useEffect(() => {
@@ -23,48 +22,45 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Web Audio ambient tone synthesis
+  // Initialize and auto-play audio on first interaction
+  useEffect(() => {
+    const audio = new Audio('/audio/sheila.mp3');
+    audio.loop = true;
+    audioRef.current = audio;
+
+    const handleFirstInteraction = () => {
+      if (audioRef.current && audioRef.current.paused) {
+        audioRef.current.play().then(() => {
+          setIsPlayingAudio(true);
+        }).catch(() => {});
+      }
+      window.removeEventListener('click', handleFirstInteraction);
+      window.removeEventListener('touchstart', handleFirstInteraction);
+    };
+
+    window.addEventListener('click', handleFirstInteraction, { once: true });
+    window.addEventListener('touchstart', handleFirstInteraction, { once: true });
+
+    return () => {
+      window.removeEventListener('click', handleFirstInteraction);
+      window.removeEventListener('touchstart', handleFirstInteraction);
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.src = '';
+      }
+    };
+  }, []);
+
   const toggleAmbientSound = () => {
+    if (!audioRef.current) return;
+    
     if (!isPlayingAudio) {
-      try {
-        const AudioContextClass = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
-        const ctx = new AudioContextClass();
-        audioCtxRef.current = ctx;
-
-        const masterGain = ctx.createGain();
-        masterGain.gain.setValueAtTime(0.001, ctx.currentTime);
-        masterGain.gain.exponentialRampToValueAtTime(0.06, ctx.currentTime + 3);
-        masterGain.connect(ctx.destination);
-        gainNodeRef.current = masterGain;
-
-        const freqs = [73.42, 110.00, 174.61, 261.63];
-        freqs.forEach((freq) => {
-          const osc = ctx.createOscillator();
-          const filter = ctx.createBiquadFilter();
-          filter.type = 'lowpass';
-          filter.frequency.value = 380;
-
-          osc.type = 'sine';
-          osc.frequency.setValueAtTime(freq, ctx.currentTime);
-          osc.connect(filter);
-          filter.connect(masterGain);
-          osc.start();
-        });
-
+      audioRef.current.play().then(() => {
         setIsPlayingAudio(true);
-      } catch (e) {
-        console.warn('Audio context initialization prevented:', e);
-      }
+      }).catch((e) => console.warn('Audio play prevented:', e));
     } else {
-      if (gainNodeRef.current && audioCtxRef.current) {
-        gainNodeRef.current.gain.exponentialRampToValueAtTime(0.0001, audioCtxRef.current.currentTime + 1);
-        setTimeout(() => {
-          audioCtxRef.current?.close();
-          setIsPlayingAudio(false);
-        }, 1100);
-      } else {
-        setIsPlayingAudio(false);
-      }
+      audioRef.current.pause();
+      setIsPlayingAudio(false);
     }
   };
 
