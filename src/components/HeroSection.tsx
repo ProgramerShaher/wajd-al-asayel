@@ -109,12 +109,12 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.1 }}
-            className="font-display-luxury font-bold leading-normal text-[14vw] sm:text-[10vw] md:text-[9vw] lg:text-[8vw] select-none"
+            className="font-display-luxury font-bold leading-[1.2] text-[14vw] sm:text-[10vw] md:text-[9vw] lg:text-[8vw] select-none"
             style={{
               backgroundImage: 'linear-gradient(180deg, #FFFFFF 0%, #F5E6C8 45%, #C19A6B 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              paddingBottom: '0.3em',
+              paddingBottom: '0.12em',
             }}
           >
             وجد الأصايل
@@ -177,11 +177,10 @@ export default function HeroSection() {
             {SLIDESHOW_IMAGES.map((_, i) => (
               <div
                 key={i}
-                className={`rounded-full transition-all duration-500 ${
-                  slideIndex === i
+                className={`rounded-full transition-all duration-500 ${slideIndex === i
                     ? 'w-6 h-2 bg-[#C19A6B] shadow-[0_0_8px_rgba(193,154,107,0.7)]'
                     : 'w-2 h-2 bg-white/25'
-                }`}
+                  }`}
               />
             ))}
           </motion.div>
@@ -198,11 +197,10 @@ export default function HeroSection() {
               {SLIDESHOW_IMAGES.map((img, i) => (
                 <div
                   key={i}
-                  className={`relative rounded-lg overflow-hidden transition-all duration-500 border-2 ${
-                    slideIndex === i
+                  className={`relative rounded-lg overflow-hidden transition-all duration-500 border-2 ${slideIndex === i
                       ? 'border-[#C19A6B] w-16 h-10 sm:w-20 sm:h-14 opacity-100 scale-110 shadow-[0_0_12px_rgba(193,154,107,0.5)]'
                       : 'border-white/20 w-12 h-8 sm:w-14 sm:h-10 opacity-50 scale-100'
-                  }`}
+                    }`}
                 >
                   <img
                     src={img.url}
