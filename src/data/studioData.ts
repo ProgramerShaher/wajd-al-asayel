@@ -147,6 +147,21 @@ export const SERVICES_DATA: ServiceItem[] = [
 
 export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
+    id: 'video-showcase-1',
+    title: 'تغطية مرئية لتشطيبات فاخرة متكاملة',
+    category: 'تشطيب متكامل',
+    location: 'الدمام والخبر',
+    year: '٢٠٢٥',
+    technique: 'تنفيذ أعمال دهانات وديكورات وبديل رخام وجبس بورد',
+    dimensions: 'مساحات داخلية',
+    curatorNotes: 'جولة مرئية توضح تفاصيل التنفيذ الحرفي لأعمال الدهانات والديكورات وبديل الرخام، لتعكس جودة الشغل على أرض الواقع من أرض الحدث.',
+    imageUrl: IMG('IMG-20260921-WA0012.jpg'),
+    videoUrl: '/videos/portfolio-video.mp4',
+    featured: true,
+    accentColor: '#C19A6B',
+    colSpan: 'md:col-span-12'
+  },
+  {
     id: 'villa-tv-unit-modern',
     title: 'وحدة تلفاز مودرن مع إضاءة ليد ذهبية',
     category: 'وحدات التلفاز والديكورات',

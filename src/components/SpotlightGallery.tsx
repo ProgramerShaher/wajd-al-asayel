@@ -110,14 +110,22 @@ export default function SpotlightGallery() {
                 onClick={() => handleOpenModal(item)}
                 data-cursor="عرض"
               >
-                {/* Background Image with Slow Zoom on Hover */}
+                {/* Background Image/Video with Slow Zoom on Hover */}
                 <div className="absolute inset-0 overflow-hidden bg-[#0A0A0C]">
-                  <img
-                    src={item.imageUrl}
-                    alt={item.title}
-                    className="w-full h-full object-cover grayscale-[25%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out"
-                    loading="lazy"
-                  />
+                  {item.videoUrl ? (
+                    <video
+                      src={item.videoUrl}
+                      className="w-full h-full object-cover grayscale-[25%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out"
+                      autoPlay loop muted playsInline
+                    />
+                  ) : (
+                    <img
+                      src={item.imageUrl}
+                      alt={item.title}
+                      className="w-full h-full object-cover grayscale-[25%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out"
+                      loading="lazy"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/45 to-black/20" />
                 </div>
 
@@ -188,26 +196,36 @@ export default function SpotlightGallery() {
               <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-7 items-center">
                 {/* Media Showcase Column */}
                 <div className="md:col-span-6 flex flex-col gap-2.5">
-                  <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-[var(--border-subtle)] bg-[var(--bg-elevated)] shadow-inner">
-                    <img
-                      src={
-                        activeImageTab === 'detail' && activeModalItem.detailImageUrl
-                          ? activeModalItem.detailImageUrl
-                          : activeModalItem.imageUrl
-                      }
-                      alt={activeModalItem.title}
-                      className="w-full h-full object-cover transition-opacity duration-300"
-                    />
+                  <div className="relative aspect-[4/3] sm:aspect-video rounded-xl overflow-hidden border border-[var(--border-subtle)] bg-[var(--bg-elevated)] shadow-inner">
+                    {activeModalItem.videoUrl ? (
+                      <video
+                        src={activeModalItem.videoUrl}
+                        className="w-full h-full object-contain bg-black transition-opacity duration-300"
+                        controls autoPlay playsInline
+                      />
+                    ) : (
+                      <img
+                        src={
+                          activeImageTab === 'detail' && activeModalItem.detailImageUrl
+                            ? activeModalItem.detailImageUrl
+                            : activeModalItem.imageUrl
+                        }
+                        alt={activeModalItem.title}
+                        className="w-full h-full object-cover transition-opacity duration-300"
+                      />
+                    )}
 
                     {/* Active view badge */}
-                    <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-[var(--bg-surface)]/85 backdrop-blur-md border border-[var(--border-subtle)] text-[10px] text-[#38BDF8] font-sans-clean flex items-center gap-1.5 shadow-sm">
-                      {activeImageTab === 'detail' ? <ZoomIn size={11} /> : <ImageIcon size={11} />}
-                      <span>{activeImageTab === 'detail' ? 'ملمس ميكروسكوبي مقرب' : 'المشهد المعماري العام'}</span>
-                    </div>
+                    {!activeModalItem.videoUrl && (
+                      <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-[var(--bg-surface)]/85 backdrop-blur-md border border-[var(--border-subtle)] text-[10px] text-[#38BDF8] font-sans-clean flex items-center gap-1.5 shadow-sm">
+                        {activeImageTab === 'detail' ? <ZoomIn size={11} /> : <ImageIcon size={11} />}
+                        <span>{activeImageTab === 'detail' ? 'ملمس ميكروسكوبي مقرب' : 'المشهد المعماري العام'}</span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Thumbnail Switcher (if detail photo exists) */}
-                  {activeModalItem.detailImageUrl && (
+                  {!activeModalItem.videoUrl && activeModalItem.detailImageUrl && (
                     <div className="flex items-center gap-2">
                       <button
                         type="button"

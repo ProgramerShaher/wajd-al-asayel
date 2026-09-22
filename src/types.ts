@@ -22,6 +22,7 @@ export interface PortfolioItem {
   dimensions: string;
   curatorNotes: string;
   imageUrl: string;
+  videoUrl?: string;
   detailImageUrl?: string;
   featured?: boolean;
   accentColor?: string;
