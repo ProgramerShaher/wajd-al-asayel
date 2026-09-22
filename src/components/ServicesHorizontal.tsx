@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect, useCallback } from 'react';
-import { ArrowLeft, ArrowRight, Sparkles, Check, Play, Pause } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Sparkles, Check } from 'lucide-react';
 import { SERVICES_DATA } from '../data/studioData';
 import { ServiceItem } from '../types';
 
@@ -8,20 +8,24 @@ interface ServicesHorizontalProps {
 }
 
 export default function ServicesHorizontal({ onSelectServiceForSample }: ServicesHorizontalProps) {
+  const sectionRef = useRef<HTMLElement | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const [isInView, setIsInView] = useState(false);
 
-  // Scroll to active index smoothly
+  // Safely scroll ONLY within the horizontal container, never moving the page/window
   const scrollToService = useCallback((index: number) => {
     setActiveIndex(index);
     const cardEl = cardRefs.current[index];
-    if (cardEl && scrollContainerRef.current) {
-      cardEl.scrollIntoView({
+    const container = scrollContainerRef.current;
+    if (cardEl && container) {
+      const containerRect = container.getBoundingClientRect();
+      const cardRect = cardEl.getBoundingClientRect();
+      const delta = (cardRect.left + cardRect.width / 2) - (containerRect.left + containerRect.width / 2);
+      container.scrollBy({
+        left: delta,
         behavior: 'smooth',
-        inline: 'center',
-        block: 'nearest',
       });
     }
   }, []);
@@ -36,25 +40,81 @@ export default function ServicesHorizontal({ onSelectServiceForSample }: Service
     scrollToService(prevIndex);
   }, [activeIndex, scrollToService]);
 
-  // 5-second automatic navigation timer
+  // Track if the services section is currently in the viewport
   useEffect(() => {
-    if (isPaused) return;
+    const sectionEl = sectionRef.current;
+    if (!sectionEl) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      {
+        threshold: 0.2, // Only active when at least 20% of the section is visible on screen
+      }
+    );
+
+    observer.observe(sectionEl);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  // 5-second automatic sliding ONLY runs when the user is scrolled to this section
+  useEffect(() => {
+    if (!isInView) return; // Completely idle when user is at the top or bottom of the page
 
     const timer = setInterval(() => {
-      handleNext();
+      setActiveIndex((prev) => {
+        const nextIndex = (prev + 1) % SERVICES_DATA.length;
+        const cardEl = cardRefs.current[nextIndex];
+        const container = scrollContainerRef.current;
+        if (cardEl && container) {
+          const containerRect = container.getBoundingClientRect();
+          const cardRect = cardEl.getBoundingClientRect();
+          const delta = (cardRect.left + cardRect.width / 2) - (containerRect.left + containerRect.width / 2);
+          container.scrollBy({
+            left: delta,
+            behavior: 'smooth',
+          });
+        }
+        return nextIndex;
+      });
     }, 5000);
 
     return () => clearInterval(timer);
-  }, [isPaused, handleNext]);
+  }, [isInView]);
+
+  // Track manual scrolling to keep dots synced
+  const handleContainerScroll = useCallback(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    const containerRect = container.getBoundingClientRect();
+    const containerCenter = containerRect.left + containerRect.width / 2;
+
+    let closestIdx = 0;
+    let minDiff = Infinity;
+
+    cardRefs.current.forEach((card, idx) => {
+      if (!card) return;
+      const cardRect = card.getBoundingClientRect();
+      const cardCenter = cardRect.left + cardRect.width / 2;
+      const diff = Math.abs(cardCenter - containerCenter);
+      if (diff < minDiff) {
+        minDiff = diff;
+        closestIdx = idx;
+      }
+    });
+
+    setActiveIndex(closestIdx);
+  }, []);
 
   return (
     <section
+      ref={sectionRef}
       id="services"
       className="relative w-full py-20 sm:py-28 md:py-36 bg-[#050505] overflow-hidden border-t border-white/5"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      onTouchStart={() => setIsPaused(true)}
-      onTouchEnd={() => setIsPaused(false)}
     >
       {/* Background Accent Ambient Radial Glow */}
       <div className="pointer-events-none absolute bottom-0 left-0 w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] bg-[#C19A6B]/5 rounded-full blur-[120px] sm:blur-[160px]" />
@@ -72,21 +132,7 @@ export default function ServicesHorizontal({ onSelectServiceForSample }: Service
             </h2>
           </div>
 
-          <div className="flex flex-wrap items-center justify-between sm:justify-end gap-3 sm:gap-4">
-            {/* Auto-Slide Indicator & Pause Toggle */}
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#181512] border border-[#C19A6B]/25 text-[11px] text-[#EDE8DF] font-sans-clean">
-              <button
-                type="button"
-                onClick={() => setIsPaused(!isPaused)}
-                className="text-[#C19A6B] hover:text-white transition-colors"
-                title={isPaused ? 'استئناف التنقل التلقائي' : 'إيقاف مؤقت'}
-              >
-                {isPaused ? <Play size={12} /> : <Pause size={12} />}
-              </button>
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C19A6B] animate-pulse" />
-              <span>{isPaused ? 'التنقل التلقائي متوقف' : 'تقليب تلقائي كل ٥ ثوانٍ'}</span>
-            </div>
-
+          <div className="flex items-center justify-between sm:justify-end gap-3 sm:gap-4">
             {/* Manual Arrow Navigation Buttons */}
             <div className="flex items-center gap-2">
               <button
@@ -132,6 +178,7 @@ export default function ServicesHorizontal({ onSelectServiceForSample }: Service
       {/* HORIZONTAL SCROLL CAROUSEL CONTAINER */}
       <div
         ref={scrollContainerRef}
+        onScroll={handleContainerScroll}
         className="w-full overflow-x-auto no-scrollbar scroll-smooth flex gap-4 sm:gap-6 md:gap-8 px-4 sm:px-6 md:px-16 pb-6 sm:pb-8 cursor-grab active:cursor-grabbing text-right snap-x snap-mandatory"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >

@@ -49,12 +49,19 @@ export default function MaterialInspector() {
 
         {/* Studio Workstation: Swatch Selector, Center Interactive Surface, Material Specs */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
-          {/* Right/First Column in RTL: Finish Selector List (2x2 on mobile, vertical list on desktop) */}
-          <div className="lg:col-span-4 flex flex-col gap-2.5 sm:gap-3">
-            <span className="text-xs text-[#707075] mb-1 font-semibold font-serif-luxury">
-              اختر العينة الفنية لمعاينتها:
-            </span>
-            <div className="grid grid-cols-2 lg:grid-cols-1 gap-2.5 sm:gap-3">
+          {/* Right/First Column in RTL: Finish Selector List (Side-by-side horizontally on mobile/tablet, vertical list on desktop) */}
+          <div className="lg:col-span-4 flex flex-col gap-2.5 sm:gap-3 w-full">
+            <div className="flex items-center justify-between">
+              <span className="text-xs text-[#C19A6B] font-semibold font-serif-luxury">
+                اختر العينة الفنية لمعاينتها:
+              </span>
+              <span className="text-[10px] text-[#8C867D] lg:hidden font-sans-clean">
+                (اسحب أفريقياً للتنقل ⟵)
+              </span>
+            </div>
+
+            {/* Side-by-side buttons row on small screens, vertical column on desktop */}
+            <div className="flex flex-row lg:flex-col gap-2.5 sm:gap-3 overflow-x-auto no-scrollbar scroll-smooth pb-2 lg:pb-0 snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0">
               {SWATCH_FINISHES.map((swatch) => {
                 const isSelected = selectedFinish.id === swatch.id;
                 return (
@@ -62,10 +69,10 @@ export default function MaterialInspector() {
                     key={swatch.id}
                     onClick={() => setSelectedFinish(swatch)}
                     data-cursor="فحص"
-                    className={`text-right p-3 sm:p-4 rounded-xl transition-all duration-300 flex items-center justify-between border active:scale-98 ${
+                    className={`text-right p-3 sm:p-4 rounded-xl transition-all duration-300 flex items-center justify-between border active:scale-98 flex-shrink-0 w-[230px] sm:w-[260px] lg:w-full snap-start ${
                       isSelected
                         ? 'bg-[#2E241B] border-[#C19A6B] text-[#FFFFFF] shadow-[0_0_22px_rgba(193,154,107,0.35)]'
-                        : 'btn-surface-inactive'
+                        : 'btn-surface-inactive hover:border-[#C19A6B]/50'
                     }`}
                   >
                     <div className="flex items-center gap-2.5 sm:gap-3 truncate">
@@ -73,8 +80,8 @@ export default function MaterialInspector() {
                         className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#C19A6B]/40 shadow-inner flex-shrink-0"
                         style={{ backgroundColor: swatch.baseHex }}
                       />
-                      <div className="truncate">
-                        <h4 className="font-serif-luxury text-sm sm:text-base text-[#F5F5F7] font-medium leading-none mb-1 truncate">
+                      <div className="truncate text-right">
+                        <h4 className="font-serif-luxury text-xs sm:text-sm md:text-base text-[#F5F5F7] font-medium leading-none mb-1 truncate">
                           {swatch.name}
                         </h4>
                         <span className="text-[10px] sm:text-[11px] text-[#C19A6B] font-sans-clean block truncate">
@@ -82,7 +89,7 @@ export default function MaterialInspector() {
                         </span>
                       </div>
                     </div>
-                    <span className="hidden sm:inline-block text-[10px] px-2 py-0.5 rounded-full bg-[#322A22] text-[#EDE8DF] border border-[#C19A6B]/25 font-sans-clean flex-shrink-0">
+                    <span className="inline-block text-[10px] px-2 py-0.5 rounded-full bg-[#322A22] text-[#EDE8DF] border border-[#C19A6B]/25 font-sans-clean flex-shrink-0 mr-2">
                       {swatch.sheen}
                     </span>
                   </button>

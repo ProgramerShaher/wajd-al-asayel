@@ -1,65 +1,79 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Sparkles, Play, Pause, Film, Phone, MessageCircle, MapPin, CheckCircle2, ArrowDown } from 'lucide-react';
+import { Sparkles, Phone, MapPin, CheckCircle2, ArrowDown, Eye, Sun, Compass } from 'lucide-react';
 import { motion } from 'motion/react';
 
+interface ArchitecturalScene {
+  id: string;
+  name: string;
+  category: string;
+  imageUrl: string;
+  lightingType: string;
+  details: string;
+}
+
+const ARCHITECTURAL_SCENES: ArchitecturalScene[] = [
+  {
+    id: 'villa-modern-salon',
+    name: 'صالة فيلا مودرن',
+    category: 'جبس بورد وإنارة ليد مخفية 3000K',
+    imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=85&w=2400&auto=format&fit=crop',
+    lightingType: 'إضاءة دافئة معمارية 3000K',
+    details: 'أسقف جبس مستعارة بإنارة مخفية، تكسيات جدارية خشبية، ومساحات مفتوحة فخمة',
+  },
+  {
+    id: 'majlis-wood-marble',
+    name: 'مجلس ملكي فخم',
+    category: 'بديل الرخام وبديل الخشب وإضاءة خطية',
+    imageUrl: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=85&w=2400&auto=format&fit=crop',
+    lightingType: 'إضاءة ليد مخفية ذهبية',
+    details: 'خلفية شاشة بديل رخام عروق ذهبية مع شرائح بديل خشب وإضاءات سبوت لايت',
+  },
+  {
+    id: 'reception-classic-modern',
+    name: 'صالون استقبال حديث',
+    category: 'بانوهات فوم ودهانات ناعمة معمارية',
+    imageUrl: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=85&w=2400&auto=format&fit=crop',
+    lightingType: 'إضاءة سينمائية ليلية',
+    details: 'دهانات جوتن أصلية هادئة، إطارات فوم كلاسيكية، وثريات مسائية راقية',
+  },
+];
+
+type LightMood = 'warm-gold' | 'soft-luxe' | 'twilight';
+
 export default function HeroSection() {
+  const [activeSceneIndex, setActiveSceneIndex] = useState(0);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [playbackSpeed, setPlaybackSpeed] = useState<number>(0.5); // Default slow motion (0.5x)
+  const [is3DActive, setIs3DActive] = useState(true);
+  const [lightMood, setLightMood] = useState<LightMood>('warm-gold');
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  // Apply playback speed to video element for authentic slow motion
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.muted = true;
-      videoRef.current.playbackRate = playbackSpeed;
-      videoRef.current.defaultPlaybackRate = playbackSpeed;
-      if (isPlaying) {
-        const playPromise = videoRef.current.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(() => {
-            // Handled browser autoplay policy
-          });
-        }
-      } else {
-        videoRef.current.pause();
-      }
-    }
-  }, [playbackSpeed, isPlaying]);
+  const currentScene = ARCHITECTURAL_SCENES[activeSceneIndex];
 
-  // Toggle video playback
-  const handleTogglePlay = () => {
-    if (!videoRef.current) return;
-    if (isPlaying) {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    } else {
-      videoRef.current.play().catch(() => {});
-      setIsPlaying(true);
-    }
-  };
-
-  // Cycle speed presets: 0.35x (فائق البطء) -> 0.5x (بطيء ناعم) -> 0.75x (حركة هادئة)
-  const handleCycleSpeed = () => {
-    setPlaybackSpeed((prev) => {
-      if (prev === 0.35) return 0.5;
-      if (prev === 0.5) return 0.75;
-      return 0.35;
-    });
-  };
-
-  // 3D Perspective tilt handler
+  // 3D Perspective interactive tilt handler
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
     const y = (e.clientY - rect.top) / rect.height - 0.5;
-    setTilt({ x: x * 12, y: -y * 12 });
+    setTilt({ x: x * 14, y: -y * 14 });
   };
 
   const handleMouseLeave = () => {
     setTilt({ x: 0, y: 0 });
+  };
+
+  // Cycle through 3D villa scenes
+  const nextScene = () => {
+    setActiveSceneIndex((prev) => (prev + 1) % ARCHITECTURAL_SCENES.length);
+  };
+
+  // Toggle ambient light mood
+  const cycleLightMood = () => {
+    setLightMood((prev) => {
+      if (prev === 'warm-gold') return 'soft-luxe';
+      if (prev === 'soft-luxe') return 'twilight';
+      return 'warm-gold';
+    });
   };
 
   return (
@@ -70,28 +84,63 @@ export default function HeroSection() {
       onMouseLeave={handleMouseLeave}
       className="relative min-h-screen w-full flex flex-col justify-between pt-24 sm:pt-32 pb-8 sm:pb-12 px-4 sm:px-6 md:px-16 overflow-hidden bg-[#050505] selection:bg-[#C19A6B]/30"
     >
-      {/* CINEMATIC SLOW-MOTION BACKGROUND VIDEO */}
+      {/* 3D LUXURY ARCHITECTURAL INTERIOR SHOWCASE BACKGROUND */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className="w-full h-full object-cover scale-105 opacity-60 filter contrast-105 brightness-90 transition-opacity duration-700"
+        {/* Continuous 3D Camera Orbit Container */}
+        <div
+          style={{
+            transform: `perspective(1200px) rotateX(${tilt.y * 0.8}deg) rotateY(${tilt.x * 0.8}deg) translateZ(0)`,
+            transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+          }}
+          className="relative w-full h-full preserve-3d"
         >
-          <source src="/video/hero.mp4" type="video/mp4" />
-        </video>
+          {/* Main 3D Moving Architecture Layer */}
+          <div
+            className={`absolute inset-[-4%] w-[108%] h-[108%] bg-cover bg-center transition-all duration-1000 ${
+              is3DActive ? 'animate-camera-3d' : ''
+            }`}
+            style={{
+              backgroundImage: `url(${currentScene.imageUrl})`,
+              filter:
+                lightMood === 'warm-gold'
+                  ? 'brightness(0.92) contrast(1.08) saturate(1.15)'
+                  : lightMood === 'soft-luxe'
+                  ? 'brightness(1.02) contrast(1.04) saturate(1.05)'
+                  : 'brightness(0.78) contrast(1.15) saturate(1.25)',
+            }}
+          />
 
-        {/* Multi-layered luxury depth masks: preserves legibility while keeping slow-motion video clearly visible */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/75 via-[#050505]/45 to-[#050505]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(193,154,107,0.08)_0%,rgba(5,5,5,0.4)_70%,#050505_100%)]" />
+          {/* Dynamic 3D Architectural Lighting Overlays */}
+          {/* Layer 1: Ceiling Gypsum Hidden LED Cove Lighting (Warm Golden Glow 3000K) */}
+          <div
+            className={`absolute top-0 left-0 right-0 h-[40%] bg-gradient-to-b ${
+              lightMood === 'warm-gold'
+                ? 'from-[#FFAE42]/25 via-[#C19A6B]/15 to-transparent'
+                : lightMood === 'soft-luxe'
+                ? 'from-[#FFF0D4]/20 via-[#E6C280]/10 to-transparent'
+                : 'from-[#D99A45]/30 via-[#7A4B1A]/20 to-transparent'
+            } pointer-events-none animate-ambient-pulse`}
+          />
+
+          {/* Layer 2: Moving 3D Light Sweep across the Wall Panels & Ceilings */}
+          <div className="absolute inset-0 w-[60%] h-full bg-gradient-to-r from-transparent via-[#FFE8B8]/12 to-transparent pointer-events-none animate-light-sweep" />
+
+          {/* Layer 3: Spotlights & Wall Wash Accent Lights */}
+          <div className="absolute top-1/4 right-1/4 w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] bg-[#E6C280]/15 rounded-full blur-[100px] pointer-events-none animate-ambient-pulse" />
+          <div className="absolute bottom-1/4 left-1/4 w-[300px] sm:w-[450px] h-[300px] sm:h-[450px] bg-[#C19A6B]/10 rounded-full blur-[120px] pointer-events-none" />
+
+          {/* Floating Warm Golden Micro-particles */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-40">
+            <span className="absolute top-[20%] right-[30%] w-1.5 h-1.5 rounded-full bg-[#FFE2A4] blur-[1px] animate-ping duration-[3500ms]" />
+            <span className="absolute top-[45%] left-[25%] w-2 h-2 rounded-full bg-[#E6C280] blur-[1px] animate-pulse duration-[4200ms]" />
+            <span className="absolute top-[70%] right-[15%] w-1 h-1 rounded-full bg-[#FFF0D4] blur-[0.5px] animate-ping duration-[5000ms]" />
+          </div>
+        </div>
+
+        {/* Multi-layered luxury depth masks: preserves legibility while keeping 3D house decor clearly visible */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/75 via-[#050505]/40 to-[#050505]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(193,154,107,0.06)_0%,rgba(5,5,5,0.45)_70%,#050505_100%)]" />
       </div>
-
-      {/* Background Ambience: Subtle Radial Gold Gradient Glow */}
-      <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[700px] h-[350px] sm:h-[500px] bg-[#C19A6B]/10 rounded-full blur-[100px] sm:blur-[140px] opacity-60 z-[1]" />
-      <div className="pointer-events-none absolute bottom-10 right-10 w-[300px] sm:w-[500px] h-[300px] sm:h-[400px] bg-[#8C693E]/10 rounded-full blur-[120px] sm:blur-[160px] opacity-40 z-[1]" />
 
       {/* Top Editorial Bar: Location & Experience */}
       <motion.div
@@ -110,7 +159,7 @@ export default function HeroSection() {
         </div>
       </motion.div>
 
-      {/* Hero Centerpiece: Giant Text-Masking with Cinematic Video */}
+      {/* Hero Centerpiece: Giant Brand Typography with 3D Depth */}
       <div className="relative z-10 my-auto w-full max-w-7xl mx-auto py-8 sm:py-12 md:py-16">
         <motion.div
           style={{
@@ -119,20 +168,20 @@ export default function HeroSection() {
           }}
           className="relative flex flex-col items-center text-center preserve-3d"
         >
-          {/* Badge */}
+          {/* Badge: 3D Showcase Indicator */}
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-4 sm:mb-6 flex items-center gap-2 px-4 sm:px-6 py-1.5 rounded-full border border-[#C19A6B]/40 bg-[#1A1612]/80 backdrop-blur-md max-w-[94vw] shadow-md"
+            className="mb-4 sm:mb-6 flex items-center gap-2 px-4 sm:px-6 py-1.5 rounded-full border border-[#C19A6B]/40 bg-[#1A1612]/85 backdrop-blur-md max-w-[94vw] shadow-[0_4px_20px_rgba(0,0,0,0.5)]"
           >
-            <Sparkles size={12} className="text-[#C19A6B] flex-shrink-0" />
+            <Sparkles size={12} className="text-[#C19A6B] flex-shrink-0 animate-pulse" />
             <span className="text-xs sm:text-sm text-[#EDE8DF] font-medium font-sans-clean truncate">
               معلم دهانات وديكورات وجبس بورد وسواتر
             </span>
           </motion.div>
 
-          {/* GIANT TEXT-MASKING: Video plays inside the typography */}
+          {/* GIANT DISPLAY TYPOGRAPHY: Floating with 3D Depth */}
           <div className="relative w-full overflow-hidden select-none py-1 sm:py-2">
             <div className="relative mx-auto">
               <div className="relative flex items-center justify-center">
@@ -142,7 +191,7 @@ export default function HeroSection() {
                     backgroundImage: `linear-gradient(180deg, #FFFFFF 0%, #F5E6C8 40%, #C19A6B 100%)`,
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
-                    textShadow: '0 0 40px rgba(193,154,107,0.25)',
+                    textShadow: '0 0 50px rgba(193,154,107,0.3)',
                   }}
                 >
                   وجد الأصايل
@@ -233,29 +282,49 @@ export default function HeroSection() {
               </a>
             </div>
 
-            {/* Slow Motion Video Controller & Status Pill */}
-            <div className="flex flex-wrap justify-center items-center gap-2 pt-2 text-[10px] sm:text-[11px]">
+            {/* 3D Showcase & Lighting Controls Dock */}
+            <div className="flex flex-wrap justify-center items-center gap-2 pt-2 text-[10px] sm:text-[11px] font-sans-clean">
+              {/* Scene Switcher */}
               <button
                 type="button"
-                onClick={handleTogglePlay}
-                data-cursor={isPlaying ? 'إيقاف مؤقت' : 'تشغيل'}
-                className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-full btn-pill-inactive transition-all active:scale-95 shadow-sm"
-                title={isPlaying ? 'إيقاف حركة الفيديو مؤقتاً' : 'تشغيل حركة الفيديو'}
+                onClick={nextScene}
+                data-cursor="تبديل المشهد"
+                className="flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full btn-pill-inactive transition-all active:scale-95 shadow-sm"
+                title="استعراض زوايا وديكورات الفيلا"
               >
-                <span className={`w-1.5 h-1.5 rounded-full ${isPlaying ? 'bg-[#C19A6B] animate-pulse' : 'bg-white/40'}`} />
-                <Film size={11} className="text-[#C19A6B]" />
-                <span>{isPlaying ? 'حركة الفيديو: نشطة' : 'حركة الفيديو: متوقفة'}</span>
-                {isPlaying ? <Pause size={10} className="text-[#EDE8DF]" /> : <Play size={10} className="text-[#C19A6B]" />}
+                <Eye size={12} className="text-[#C19A6B]" />
+                <span>المشهد: {currentScene.name}</span>
+                <span className="text-[#C19A6B] mr-1">({activeSceneIndex + 1}/3 ⟵)</span>
               </button>
 
+              {/* Lighting Mood Switcher */}
               <button
                 type="button"
-                onClick={handleCycleSpeed}
-                data-cursor="السرعة"
-                className="px-3 py-1.5 rounded-full btn-pill-inactive transition-all font-mono active:scale-95 shadow-sm"
-                title="تغيير سرعة الحركة البطيئة"
+                onClick={cycleLightMood}
+                data-cursor="الإضاءة"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full btn-pill-inactive transition-all active:scale-95 shadow-sm"
+                title="تغيير نمط الإضاءة المعمارية"
               >
-                <span>السرعة: {playbackSpeed}x {playbackSpeed <= 0.35 ? '(فائق البطء)' : playbackSpeed <= 0.5 ? '(حركة بطيئة)' : '(حركة هادئة)'}</span>
+                <Sun size={12} className="text-[#C19A6B]" />
+                <span>
+                  {lightMood === 'warm-gold'
+                    ? 'إضاءة دافئة 3000K'
+                    : lightMood === 'soft-luxe'
+                    ? 'إضاءة نهارية راقية'
+                    : 'إضاءة ليلية سينمائية'}
+                </span>
+              </button>
+
+              {/* 3D Motion Toggle */}
+              <button
+                type="button"
+                onClick={() => setIs3DActive(!is3DActive)}
+                data-cursor="حركة 3D"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full btn-pill-inactive transition-all active:scale-95 shadow-sm"
+                title={is3DActive ? 'إيقاف حركة الكاميرا ثلاثية الأبعاد' : 'تشغيل حركة الكاميرا ثلاثية الأبعاد'}
+              >
+                <Compass size={12} className={`text-[#C19A6B] ${is3DActive ? 'animate-spin' : ''}`} style={{ animationDuration: '10s' }} />
+                <span>{is3DActive ? 'حركة 3D: نشطة' : 'حركة 3D: متوقفة'}</span>
               </button>
             </div>
           </motion.div>
@@ -298,3 +367,4 @@ export default function HeroSection() {
     </section>
   );
 }
+
