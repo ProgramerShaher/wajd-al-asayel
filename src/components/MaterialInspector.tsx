@@ -114,12 +114,7 @@ export default function MaterialInspector() {
                 onMouseMove={handleLightMove}
                 onTouchStart={handleTouchMove}
                 onTouchMove={handleTouchMove}
-                data-cursor="ضوء"
-                className="relative aspect-square w-full max-w-[420px] mx-auto rounded-2xl overflow-hidden border border-[#C19A6B]/30 glass-card shadow-[0_20px_60px_rgba(0,0,0,0.9)] cursor-crosshair preserve-3d touch-none"
-                style={{
-                  transform: `perspective(800px) rotateX(${(lightPos.y - 50) * -0.15}deg) rotateY(${(lightPos.x - 50) * 0.15}deg)`,
-                  transition: 'transform 0.1s ease-out',
-                }}
+                className="relative aspect-square w-full max-w-[420px] mx-auto rounded-2xl overflow-hidden border border-[#C19A6B]/30 glass-card shadow-[0_20px_60px_rgba(0,0,0,0.9)] cursor-crosshair touch-none"
               >
                 {/* Real High-Res Texture Layer */}
                 <img
@@ -150,12 +145,12 @@ export default function MaterialInspector() {
                   }}
                 />
 
-                {/* Floating Light Coordinate Marker */}
+                {/* Floating Light Coordinate Marker - Exactly aligned with cursor & finger */}
                 <div
-                  className="pointer-events-none absolute w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-white/60 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center shadow-[0_0_20px_#FFF]"
+                  className="pointer-events-none absolute w-8 h-8 rounded-full border-2 border-white/80 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center shadow-[0_0_20px_#FFF] will-change-transform"
                   style={{ left: `${lightPos.x}%`, top: `${lightPos.y}%` }}
                 >
-                  <div className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
+                  <div className="w-2 h-2 rounded-full bg-white shadow-[0_0_8px_#FFF]" />
                 </div>
 
                 {/* Top Corner Instruction Tag */}
