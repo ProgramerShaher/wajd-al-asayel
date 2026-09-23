@@ -79,12 +79,16 @@ export default function ArtisanProcess() {
               className="rounded-2xl bg-[var(--bg-surface)] border border-[#C19A6B]/40 overflow-hidden shadow-lg"
             >
               {/* Image */}
-              <div className="relative w-full aspect-[16/9] overflow-hidden group">
-                <img
-                  src={activeStep.image}
-                  alt={activeStep.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+              <div className="relative w-full aspect-[16/9] overflow-hidden group flex">
+                {activeStep.images.map((img, i) => (
+                  <img
+                    key={i}
+                    src={img}
+                    alt={`${activeStep.name} - مقاول دهانات الشرقية وبديل رخام`}
+                    loading="lazy"
+                    className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${activeStep.images.length > 1 ? 'w-1/2 border-r border-[#C19A6B]/20' : ''}`}
+                  />
+                ))}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30 pointer-events-none" />
 
                 {/* Top Controls */}
@@ -161,7 +165,7 @@ export default function ArtisanProcess() {
                   }`}
                 >
                   <div className="relative w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 border border-[#C19A6B]/30">
-                    <img src={step.image} alt={step.name} className="w-full h-full object-cover" />
+                    <img src={step.images[0]} alt={step.name} loading="lazy" className="w-full h-full object-cover" />
                     <span className="absolute bottom-0 right-0 bg-black/85 px-1 py-0.5 text-[8px] font-mono text-[#E6C280] font-bold">{step.step}</span>
                   </div>
                   <div className="min-w-0 flex-1 text-right">
@@ -204,8 +208,9 @@ export default function ArtisanProcess() {
                     <div className="flex items-center gap-3 min-w-0">
                       <div className="relative w-12 h-12 rounded-xl overflow-hidden flex-shrink-0 border border-[#C19A6B]/30">
                         <img
-                          src={step.image}
-                          alt={step.name}
+                          src={step.images[0]}
+                          alt={`${step.name} ديكورات الدمام`}
+                          loading="lazy"
                           className={`w-full h-full object-cover transition-transform duration-500 ${isActive ? 'scale-110' : 'group-hover:scale-105 opacity-75'}`}
                         />
                         <span className="absolute bottom-0 right-0 bg-black/85 px-1 py-0.5 text-[9px] font-mono text-[#E6C280] font-bold">٠{step.step}</span>
@@ -258,12 +263,16 @@ export default function ArtisanProcess() {
                 transition={{ duration: 0.3, ease: 'easeOut' }}
                 className="rounded-2xl bg-[var(--bg-surface)] border border-[#C19A6B]/40 overflow-hidden shadow-xl flex flex-col"
               >
-                <div className="relative w-full h-[320px] sm:h-[420px] lg:h-[480px] bg-[var(--bg-elevated)] overflow-hidden group">
-                  <img
-                    src={activeStep.image}
-                    alt={activeStep.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
+                <div className="relative w-full h-[320px] sm:h-[420px] lg:h-[480px] bg-[var(--bg-elevated)] overflow-hidden group flex">
+                  {activeStep.images.map((img, i) => (
+                    <img
+                      key={i}
+                      src={img}
+                      alt={`${activeStep.name} - مقاول دهانات وديكور الشرقية`}
+                      loading="lazy"
+                      className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${activeStep.images.length > 1 ? 'w-1/2 border-r border-[#C19A6B]/20' : ''}`}
+                    />
+                  ))}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/35 pointer-events-none" />
 
                   <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
@@ -348,12 +357,16 @@ export default function ArtisanProcess() {
                 <X size={20} />
               </button>
             </div>
-            <div className="flex-1 flex items-center justify-center max-w-6xl mx-auto w-full">
-              <img
-                src={activeStep.image}
-                alt={activeStep.name}
-                className="max-h-[82vh] max-w-full object-contain rounded-xl border border-[#C19A6B]/40 shadow-2xl"
-              />
+            <div className="flex-1 flex gap-4 items-center justify-center max-w-6xl mx-auto w-full">
+              {activeStep.images.map((img, i) => (
+                <img
+                  key={i}
+                  src={img}
+                  alt={activeStep.name}
+                  loading="lazy"
+                  className="max-h-[82vh] max-w-full object-contain rounded-xl border border-[#C19A6B]/40 shadow-2xl flex-1"
+                />
+              ))}
             </div>
           </motion.div>
         )}

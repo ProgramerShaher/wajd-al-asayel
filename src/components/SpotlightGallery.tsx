@@ -121,7 +121,7 @@ export default function SpotlightGallery() {
                   ) : (
                     <img
                       src={item.imageUrl}
-                      alt={item.title}
+                      alt={`${item.title} - ديكورات الشرقية مقاولات عامة`}
                       className="w-full h-full object-cover grayscale-[25%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out"
                       loading="lazy"
                     />
@@ -210,7 +210,8 @@ export default function SpotlightGallery() {
                             ? activeModalItem.detailImageUrl
                             : activeModalItem.imageUrl
                         }
-                        alt={activeModalItem.title}
+                        alt={`${activeModalItem.title} تصميم وتنفيذ بالدمام`}
+                        loading="lazy"
                         className="w-full h-full object-cover transition-opacity duration-300"
                       />
                     )}

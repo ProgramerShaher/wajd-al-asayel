@@ -49,7 +49,7 @@ export interface ArtisanStep {
   description: string;
   detail: string;
   materials: string;
-  image: string;
+  images: string[];
 }
 
 export interface StudioMetric {

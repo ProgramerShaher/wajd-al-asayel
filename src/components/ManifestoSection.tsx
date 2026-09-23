@@ -86,6 +86,30 @@ export default function ManifestoSection() {
                 <span className="text-[#C19A6B] font-medium">الدمام والخبر • الشرقية</span>
               </div>
             </motion.div>
+
+            {/* Official Certification Badge */}
+            <motion.div
+              whileHover={{ y: -3 }}
+              className="p-4 sm:p-5 rounded-2xl bg-[var(--bg-surface)] border border-[#C19A6B]/30 shadow-lg text-right flex items-center gap-4 transition-colors duration-300"
+            >
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-1.5">
+                  <CheckCircle size={16} className="text-[#38BDF8]" />
+                  <span className="text-[#C19A6B] font-bold text-sm">مؤسسة رسمية معتمدة</span>
+                </div>
+                <p className="text-xs text-[var(--text-secondary)] leading-relaxed font-sans-clean">
+                  مؤسسة وجد الأصايل مسجلة رسمياً بسجل تجاري معتمد لمزاولة أعمال المقاولات والديكور والدهانات في المنطقة الشرقية.
+                </p>
+              </div>
+              <div className="w-20 h-24 sm:w-24 sm:h-28 rounded-xl overflow-hidden border border-[#C19A6B]/40 shrink-0 shadow-inner">
+                <img 
+                  src="/images/cr-certificate.jpg" 
+                  alt="سجل تجاري مؤسسة وجد الأصايل مقاولات ديكور دهانات الدمام" 
+                  loading="lazy" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
           </div>
 
           {/* Right Column: Key Commitments & Tabs */}

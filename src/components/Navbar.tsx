@@ -108,21 +108,7 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
             data-cursor="الرئيسية"
           >
             <div className="relative w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center flex-shrink-0">
-              <svg width="36" height="36" viewBox="0 0 100 100" fill="none" className="transition-transform duration-700 group-hover:rotate-45">
-                <circle cx="50" cy="50" r="44" stroke="#C19A6B" strokeWidth="1.2" strokeOpacity="0.4" />
-                <circle cx="50" cy="50" r="36" stroke="#C19A6B" strokeWidth="1.8" className="animate-gold-dash" />
-                <text
-                  x="50"
-                  y="58"
-                  textAnchor="middle"
-                  fill="#C19A6B"
-                  fontFamily="Amiri, serif"
-                  fontSize="28"
-                  fontWeight="bold"
-                >
-                  وا
-                </text>
-              </svg>
+              <img src="/wa-logo.svg" alt="شعار وجد الأصايل" className="w-full h-full object-contain transition-transform duration-700 group-hover:rotate-12" loading="lazy" />
             </div>
             <div className="flex items-center text-right">
               <span className="font-serif-luxury text-xl sm:text-2xl md:text-3xl font-black tracking-wide leading-normal pb-1.5 pt-1 bg-gradient-to-r from-[#FFF0D4] via-[#E6C280] to-[#C19A6B] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(230,194,128,0.35)] group-hover:scale-105 transition-transform duration-300 select-none">
