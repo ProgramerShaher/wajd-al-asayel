@@ -27,7 +27,7 @@ export default function ManifestoSection() {
             </h2>
           </div>
           <p className="max-w-md text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed font-sans-clean">
-            نحرص على تأسيس الأسطح ومعالجتها باحترافية، واستخدام أجود أنواع البويات والديكورات التي تقاوم عوامل الرطوبة والحرارة بالشرقية.
+            نحرص على التأسيس الصحيح والمعالجة الجذرية، واستخدام أجود الخامات في الدهانات والديكورات والعوازل المائية والسطحية والفرايش والأرضيات والأسقف والجدران التي تقاوم عوامل الرطوبة والحرارة بالشرقية.
           </p>
         </div>
 
@@ -101,9 +101,9 @@ export default function ManifestoSection() {
                   مؤسسة وجد الأصايل مسجلة رسمياً بسجل تجاري معتمد لمزاولة أعمال المقاولات والديكور والدهانات في المنطقة الشرقية.
                 </p>
               </div>
-              <div className="w-20 h-24 sm:w-24 sm:h-28 rounded-xl overflow-hidden border border-[#C19A6B]/40 shrink-0 shadow-inner">
+              <div className="w-20 h-24 sm:w-24 sm:h-28 rounded-xl overflow-hidden border border-[#C19A6B]/40 shrink-0 shadow-inner bg-[var(--bg-primary)]">
                 <img 
-                  src="/images/cr-certificate.jpg" 
+                  src="/images/IMG-202609421-WA0002.jpg" 
                   alt="سجل تجاري مؤسسة وجد الأصايل مقاولات ديكور دهانات الدمام" 
                   loading="lazy" 
                   className="w-full h-full object-cover"

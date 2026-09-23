@@ -67,12 +67,12 @@ export default function Footer() {
                   وجد الأصايل
                 </h3>
                 <p className="text-xs text-[#C19A6B] font-sans-clean">
-                  معلم دهانات وديكورات وجبس بورد وسواتر الدمام الخبر
+                  دهانات وديكورات • عوازل مائية وسطحية • فرايش وأرضيات • أسقف وجدران بالدمام والخبر
                 </p>
               </div>
             </div>
             <p className="text-xs sm:text-sm text-[#BDB7AB] font-sans-clean max-w-xl leading-relaxed">
-              تنفيذ احترافي لأعمال الدهانات الداخلية والخارجية، تكسيات بديل الخشب وبديل الرخام، إطارات الفوم، الجبس بورد، والسواتر والمظلات بخبرة أكثر من ثلاثين سنة.
+              تنفيذ احترافي لخدمات الدهانات والديكورات والعوازل المائية والسطحية، وأعمال الفرايش والأرضيات، والأسقف والجدران، وتكسيات بديل الخشب والرخام والسواتر بخبرة أكثر من 30 عاماً.
             </p>
           </div>
 
@@ -143,7 +143,7 @@ export default function Footer() {
                 </svg>
               </a>
 
-              {/* Direct Phone Call Icon */}
+              {/* Direct Phone Call Icon 1 */}
               <a
                 href="tel:0536402106"
                 data-cursor="اتصال"
@@ -152,6 +152,17 @@ export default function Footer() {
                 className="group relative w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center gold-gradient-bg text-[#050505] shadow-[0_8px_20px_rgba(193,154,107,0.4)] hover:shadow-[0_12px_30px_rgba(193,154,107,0.7)] hover:scale-110 active:scale-95 transition-all duration-300"
               >
                 <Phone size={22} className="text-[#050505] transition-transform group-hover:rotate-12" />
+              </a>
+
+              {/* Direct Phone Call Icon 2 */}
+              <a
+                href="tel:0556557498"
+                data-cursor="اتصال"
+                aria-label="اتصال هاتفي مباشر 2"
+                title="اتصال هاتفي مباشر: 0556557498"
+                className="group relative w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center border border-[#C19A6B] bg-[#171412] text-[#C19A6B] shadow-[0_8px_20px_rgba(193,154,107,0.1)] hover:shadow-[0_12px_30px_rgba(193,154,107,0.3)] hover:scale-110 active:scale-95 transition-all duration-300"
+              >
+                <Phone size={22} className="text-[#C19A6B] transition-transform group-hover:rotate-12" />
               </a>
 
               {/* Scroll to Top */}

@@ -1,12 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, MapPin, Maximize2, X, Compass, ArrowUpRight, Image as ImageIcon, ZoomIn } from 'lucide-react';
+import { Sparkles, MapPin, Maximize2, X, Compass, ArrowUpRight, Image as ImageIcon, ZoomIn, Images } from 'lucide-react';
 import { PORTFOLIO_ITEMS } from '../data/studioData';
 import { PortfolioItem } from '../types';
+import ProfessionalGallery from './ProfessionalGallery';
 
 export default function SpotlightGallery() {
   const [selectedCategory, setSelectedCategory] = useState<string>('الكل');
   const [activeModalItem, setActiveModalItem] = useState<PortfolioItem | null>(null);
+  const [isProfessionalGalleryOpen, setIsProfessionalGalleryOpen] = useState(false);
   const [activeImageTab, setActiveImageTab] = useState<'main' | 'detail'>('main');
   const [spotlightPos, setSpotlightPos] = useState({ x: 0, y: 0 });
   const galleryRef = useRef<HTMLDivElement | null>(null);
@@ -14,7 +16,10 @@ export default function SpotlightGallery() {
   const categories = ['الكل', 'وحدات التلفاز والديكورات', 'أسقف جبس بورد', 'ديكورات إنارة فاخرة', 'بديل الرخام والتكسيات', 'بديل الخشب', 'تشطيب متكامل'];
 
   const filteredItems = selectedCategory === 'الكل'
-    ? PORTFOLIO_ITEMS
+    ? [
+        ...PORTFOLIO_ITEMS.filter(item => item.imageUrl.includes('IMG-20260921')).slice(0, 7),
+        ...PORTFOLIO_ITEMS.filter(item => item.imageUrl.includes('IMG-20260923')).slice(0, 4)
+      ]
     : PORTFOLIO_ITEMS.filter((item) => item.category === selectedCategory);
 
   // Close modal on Escape key
@@ -70,7 +75,7 @@ export default function SpotlightGallery() {
               <span>أعمال منفذة في الدمام والخبر</span>
             </div>
             <h2 className="font-serif-luxury text-3xl sm:text-5xl md:text-6xl font-bold text-[var(--text-primary)]">
-              معرض أعمال وجد الأصايل
+              معرض أعمال جود الأصايل
             </h2>
           </div>
 
@@ -93,75 +98,68 @@ export default function SpotlightGallery() {
           </div>
         </div>
 
-        {/* SPOTLIGHT BENTO GRID: Proportional, flawless mobile image ratios */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-8">
+        {/* CLEAN GRID LAYOUT */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-6 mt-10">
           {filteredItems.map((item, index) => {
-            const colClass = item.colSpan || (index % 3 === 0 ? 'md:col-span-8' : 'md:col-span-4');
-
             return (
               <motion.div
                 key={item.id}
                 layout
-                initial={{ opacity: 0, y: 25 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: index * 0.08 }}
-                className={`${colClass} group relative rounded-2xl overflow-hidden glass-card border border-white/10 hover:border-[#38BDF8]/50 transition-all duration-500 flex flex-col justify-end h-[390px] sm:h-[450px] md:h-auto md:min-h-[480px] cursor-pointer`}
+                transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
+                className="group relative rounded-2xl overflow-hidden bg-[var(--bg-elevated)] border border-[var(--border-light)] shadow-lg cursor-pointer"
+                style={{ aspectRatio: '4/5' }}
                 onClick={() => handleOpenModal(item)}
-                data-cursor="عرض"
               >
-                {/* Background Image/Video with Slow Zoom on Hover */}
-                <div className="absolute inset-0 overflow-hidden bg-[#0A0A0C]">
-                  {item.videoUrl ? (
-                    <video
-                      src={item.videoUrl}
-                      className="w-full h-full object-cover grayscale-[25%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out"
-                      autoPlay loop muted playsInline
-                    />
-                  ) : (
-                    <img
-                      src={item.imageUrl}
-                      alt={`${item.title} - ديكورات الشرقية مقاولات عامة`}
-                      className="w-full h-full object-cover grayscale-[25%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out"
-                      loading="lazy"
-                    />
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/45 to-black/20" />
-                </div>
-
-                {/* Top Corner Metadata */}
-                <div className="relative z-10 p-4 sm:p-6 flex justify-between items-start">
-                  <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#050505]/80 backdrop-blur-md border border-[#38BDF8]/30 text-[11px] sm:text-xs text-[#38BDF8] font-sans-clean shadow-sm">
-                    <MapPin size={11} className="text-[#38BDF8]" />
-                    <span>{item.location}</span>
+                {/* Background Image/Video */}
+                {item.videoUrl ? (
+                  <video
+                    src={item.videoUrl}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    autoPlay loop muted playsInline
+                  />
+                ) : (
+                  <img
+                    src={item.imageUrl}
+                    alt={`${item.title} - ديكورات الشرقية مقاولات عامة`}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                )}
+                
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+                
+                {/* Content */}
+                <div className="absolute bottom-0 left-0 right-0 p-5 flex flex-col justify-end translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <div className="text-[11px] text-[#C19A6B] font-bold font-sans-clean mb-1.5 uppercase tracking-wider">
+                    {item.category}
                   </div>
-                  <div className="w-8 h-8 rounded-full bg-[#050505]/75 backdrop-blur-md border border-white/10 flex items-center justify-center text-[#A0A0A5] group-hover:text-[#38BDF8] group-hover:border-[#38BDF8] transition-colors">
-                    <Maximize2 size={13} />
-                  </div>
-                </div>
-
-                {/* Bottom Content Area */}
-                <div className="relative z-10 p-5 sm:p-6 md:p-8 mt-auto flex flex-col justify-end">
-                  <div className="text-[11px] sm:text-xs text-[#38BDF8] mb-1.5 font-medium font-serif-luxury tracking-wide">
-                    {item.category} • {item.year}
-                  </div>
-                  <h3 className="font-serif-luxury text-xl sm:text-2xl md:text-3xl text-[#F5F5F7] font-normal leading-tight mb-2 group-hover:text-[#38BDF8] transition-colors duration-300">
+                  <h3 className="font-serif-luxury text-lg text-white font-normal leading-tight mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-[11px] sm:text-xs text-[#D0D0D6] font-light mb-3 line-clamp-2 font-sans-clean leading-relaxed">
-                    {item.technique}
-                  </p>
-
-                  <div className="pt-2.5 border-t border-white/10 flex items-center justify-between text-[11px] sm:text-xs text-[#A0A0A5] font-sans-clean">
-                    <span>{item.dimensions}</span>
-                    <span className="flex items-center gap-1 text-[#38BDF8] group-hover:underline font-semibold transition-colors">
-                      تفاصيل العمل والتشطيب <ArrowUpRight size={13} />
-                    </span>
+                  <div className="text-xs text-white/60 flex items-center gap-1.5">
+                    <MapPin size={12} />
+                    <span>{item.location}</span>
                   </div>
                 </div>
               </motion.div>
             );
           })}
+        </div>
+
+        {/* View All Button */}
+        <div className="mt-14 sm:mt-20 flex justify-center">
+          <button 
+            onClick={() => setIsProfessionalGalleryOpen(true)}
+            className="group relative flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-tr from-[#9B784B] via-[#C19A6B] to-[#E6C280] text-[#050505] font-bold text-lg font-sans-clean shadow-[0_10px_30px_rgba(193,154,107,0.3)] hover:shadow-[0_12px_40px_rgba(193,154,107,0.5)] hover:scale-105 active:scale-95 transition-all duration-300"
+          >
+            <span className="absolute -inset-1 rounded-full bg-[#C19A6B] opacity-30 animate-pulse pointer-events-none" />
+            <Images size={24} className="drop-shadow-sm transition-transform group-hover:scale-110 duration-200" />
+            <span>عرض الكل</span>
+          </button>
         </div>
       </div>
 
@@ -314,6 +312,8 @@ export default function SpotlightGallery() {
           </motion.div>
         )}
       </AnimatePresence>
+      <ProfessionalGallery isOpen={isProfessionalGalleryOpen} onClose={() => setIsProfessionalGalleryOpen(false)} />
     </section>
   );
 }
+

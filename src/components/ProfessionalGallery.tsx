@@ -11,143 +11,17 @@ interface GalleryPhoto {
   tag: string;
 }
 
-const GALLERY_PHOTOS: GalleryPhoto[] = [
-  {
-    id: 'g1',
-    src: '/images/IMG-20260921-WA0007.jpg',
-    title: 'وحدة تلفاز مودرن',
-    description: 'تصميم أبيض وأسود احترافي مع خطوط عمودية وأرفف وإضاءة ليد ذهبية دافئة',
-    tag: 'وحدات التلفاز',
-  },
-  {
-    id: 'g2',
-    src: '/images/IMG-20260921-WA0008.jpg',
-    title: 'وحدة تلفاز — زاوية أخرى',
-    description: 'الإضاءة الذهبية تعكس انعكاساً جميلاً على الأرضية الرمادية اللامعة',
-    tag: 'وحدات التلفاز',
-  },
-  {
-    id: 'g3',
-    src: '/images/IMG-20260921-WA0018.jpg',
-    title: 'صالة جلوس بكريستال مضاء',
-    description: 'بانوهات كريستال مضاءة من الخلف بليد ذهبي دافئ مع أريكة بيج أنيقة',
-    tag: 'ديكور فاخر',
-  },
-  {
-    id: 'g4',
-    src: '/images/IMG-20260921-WA0019.jpg',
-    title: 'سقف خلية النحل المضاء',
-    description: 'تصميم سقف جبس هندسي سداسي بإطار مستطيل وإضاءة ليد ذهبية محيطية',
-    tag: 'أسقف جبس',
-  },
-  {
-    id: 'g5',
-    src: '/images/IMG-20260921-WA0015.jpg',
-    title: 'جدار تلفاز بديل رخام روز',
-    description: 'خلفية بديل رخام روز بيج مع إطار بيضاوي وإضاءة سبوت مركزية',
-    tag: 'بديل الرخام',
-  },
-  {
-    id: 'g6',
-    src: '/images/IMG-20260921-WA0017.jpg',
-    title: 'جدار رخام روز — زاوية جانبية',
-    description: 'النسيج الطبيعي لألواح بديل الرخام الروز مع الكونسول الخشبي الداكن',
-    tag: 'بديل الرخام',
-  },
-  {
-    id: 'g7',
-    src: '/images/IMG-20260921-WA0011.jpg',
-    title: 'جدار بديل الخشب العمودي',
-    description: 'شرائح بديل خشب جوزي بني داكن بترتيب عمودي متناسق مع إضاءة سبوت',
-    tag: 'بديل الخشب',
-  },
-  {
-    id: 'g8',
-    src: '/images/IMG-20260921-WA0010.jpg',
-    title: 'صالة تشطيب متكامل',
-    description: 'سقف جبس مستعار بليد وأعمدة بديل خشب بني داكن وأرضية بيضاء لامعة',
-    tag: 'تشطيب متكامل',
-  },
-  {
-    id: 'g9',
-    src: '/images/IMG-20260921-WA0012.jpg',
-    title: 'صالة واسعة قيد التجهيز',
-    description: 'مرحلة تشطيب صالة رئيسية واسعة مع تركيب بديل الخشب على الأعمدة',
-    tag: 'تشطيب متكامل',
-  },
-  {
-    id: 'g10',
-    src: '/images/IMG-20260921-WA0004.jpg',
-    title: 'صالة استقبال مكتملة',
-    description: 'أرضية رخام أبيض لامعة مع بانوهات ديكور وقوسين وإضاءة سبوت لايت',
-    tag: 'تشطيب متكامل',
-  },
-  {
-    id: 'g11',
-    src: '/images/IMG-20260921-WA0005.jpg',
-    title: 'وحدة تلفاز بانوهات بيضاء',
-    description: 'بانوهات أبيض لامع مع رفوف مفتوحة بديل خشب وتلفاز بشاشة كبيرة',
-    tag: 'وحدات التلفاز',
-  },
-  {
-    id: 'g12',
-    src: '/images/IMG-20260921-WA0022.jpg',
-    title: 'سقف خلية النحل مكتمل',
-    description: 'الشكل السداسي المضاء بليد ذهبي دافئ بعد اكتمال التشطيب والدهان',
-    tag: 'أسقف جبس',
-  },
-  {
-    id: 'g13',
-    src: '/images/IMG-20260921-WA0003.jpg',
-    title: 'مرحلة تركيب الجبس بورد',
-    description: 'ألواح جبس بورد خضراء مقاومة للرطوبة أثناء التركيب في مجرى السلم',
-    tag: 'أسقف جبس',
-  },
-  {
-    id: 'g14',
-    src: '/images/IMG-20260921-WA0006.jpg',
-    title: 'وحدة تلفاز قيد الإنشاء',
-    description: 'هيكل وحدة التلفاز بالبانوهات والرفوف قبل التشطيب النهائي',
-    tag: 'وحدات التلفاز',
-  },
-  {
-    id: 'g15',
-    src: '/images/IMG-20260921-WA0009.jpg',
-    title: 'صالة جبس بانوهات — مرحلة التنفيذ',
-    description: 'الصالة الرئيسية بعد تركيب بانوهات الجبس والإضاءة قبل الدهان',
-    tag: 'تشطيب متكامل',
-  },
-  {
-    id: 'g16',
-    src: '/images/IMG-20260921-WA0014.jpg',
-    title: 'جدار تلفاز مختلط خشب وبانوهات',
-    description: 'مزيج من بانوهات الجبس الأبيض وبانوهات بديل خشب بني مع إضاءة خطية',
-    tag: 'وحدات التلفاز',
-  },
-  {
-    id: 'g17',
-    src: '/images/IMG-20260921-WA0016.jpg',
-    title: 'مدخل مع مرآة دائرية كبيرة',
-    description: 'مرآة دائرية كبيرة مع جدار بانوهات رمادي ومدخل سلم مزخرف',
-    tag: 'ديكور فاخر',
-  },
-  {
-    id: 'g18',
-    src: '/images/IMG-20260921-WA0024.jpg',
-    title: 'سقف جبس هندسي متقدم',
-    description: 'تصميم سقف جبس بأطر وأشكال هندسية متداخلة معقدة قبل التشطيب',
-    tag: 'أسقف جبس',
-  },
-  {
-    id: 'g19',
-    src: '/images/IMG-20260921-WA0025.jpg',
-    title: 'سقف جبس كلاسيكي معين',
-    description: 'تصميم كلاسيكي بأشكال معين متداخلة في سقف الجبس بورد',
-    tag: 'أسقف جبس',
-  },
-];
+import { PORTFOLIO_ITEMS } from '../data/studioData';
 
-const ALL_TAGS = ['الكل', 'وحدات التلفاز', 'ديكور فاخر', 'أسقف جبس', 'بديل الرخام', 'بديل الخشب', 'تشطيب متكامل'];
+const GALLERY_PHOTOS: GalleryPhoto[] = PORTFOLIO_ITEMS.map((item) => ({
+  id: item.id,
+  src: item.imageUrl,
+  title: item.title,
+  description: item.curatorNotes,
+  tag: item.category,
+}));
+
+const ALL_TAGS = ['الكل', ...new Set(GALLERY_PHOTOS.map((p) => p.tag))];
 
 // ── نافذة عرض كاملة ───────────────────────────────────────────────────
 function LightboxModal({
@@ -293,8 +167,7 @@ function PhotoCard({
       transition={{ duration: 0.6, delay: (index % 6) * 0.06 }}
       className="relative cursor-pointer group"
       style={{
-        // Slight polygon clip for angled look
-        transform: hovered ? `rotate(0deg) scale(1.03)` : `rotate(${tiltDir * 0.6}deg)`,
+        transform: hovered ? 'scale(1.03)' : 'scale(1)',
         transition: 'transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1)',
       }}
       onMouseEnter={() => setHovered(true)}
@@ -305,7 +178,6 @@ function PhotoCard({
       <div
         className="relative overflow-hidden bg-[#111] rounded-xl shadow-[0_4px_24px_rgba(0,0,0,0.45)]"
         style={{
-          clipPath: 'polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px))',
           border: hovered ? '1.5px solid rgba(193,154,107,0.7)' : '1.5px solid rgba(255,255,255,0.08)',
           transition: 'border 0.3s',
         }}
@@ -399,14 +271,19 @@ export default function ProfessionalGallery({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[900] bg-[#06050a]/97 backdrop-blur-sm"
+            className="fixed inset-0 z-[900] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 md:p-8"
             dir="rtl"
+            onClick={onClose}
           >
             <div 
-              className="absolute inset-0 overflow-y-auto overscroll-y-contain pb-10" 
-              style={{ WebkitOverflowScrolling: 'touch' }}
-              data-lenis-prevent="true"
+              className="w-full max-w-[1400px] h-[92vh] sm:h-[88vh] overflow-hidden bg-[var(--bg-surface)] rounded-2xl border border-[var(--border-light)] shadow-2xl relative flex flex-col"
+              onClick={(e) => e.stopPropagation()}
             >
+              <div 
+                className="flex-1 overflow-y-auto overscroll-y-contain pb-10" 
+                style={{ WebkitOverflowScrolling: 'touch' }}
+                data-lenis-prevent="true"
+              >
               {/* Header */}
               <div className="sticky top-0 z-10 bg-[#06050a]/95 backdrop-blur-md border-b border-white/[0.07] px-4 sm:px-8 py-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -473,6 +350,7 @@ export default function ProfessionalGallery({
                     لا توجد صور في هذا التصنيف
                   </div>
                 )}
+              </div>
               </div>
             </div>
           </motion.div>

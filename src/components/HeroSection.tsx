@@ -100,7 +100,7 @@ export default function HeroSection() {
           >
             <Sparkles size={11} className="text-[#C19A6B] animate-pulse flex-shrink-0" />
             <span className="text-[11px] sm:text-sm text-white/85 font-medium font-sans-clean">
-              معلم دهانات • ديكورات • جبس بورد • سواتر
+              دهانات وديكورات • عوازل مائية وسطحية • فرايش وأرضيات • أسقف وجدران
             </span>
           </motion.div>
 
@@ -109,15 +109,16 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.1 }}
-            className="font-display-luxury font-bold leading-[1.2] text-[14vw] sm:text-[10vw] md:text-[9vw] lg:text-[8vw] select-none"
+            className="font-display-luxury font-bold leading-[1.3] text-[14vw] sm:text-[10vw] md:text-[9vw] lg:text-[8vw] select-none"
             style={{
               backgroundImage: 'linear-gradient(180deg, #FFFFFF 0%, #F5E6C8 45%, #C19A6B 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               paddingBottom: '0.12em',
+              paddingTop: '0.2em',
             }}
           >
-            وجد الأصايل
+            جود الأصايل
           </motion.h1>
 
           <motion.p
@@ -126,7 +127,7 @@ export default function HeroSection() {
             transition={{ duration: 1, delay: 0.3 }}
             className="mt-3 sm:mt-4 max-w-xl text-sm sm:text-lg md:text-xl text-white/80 font-serif-luxury leading-relaxed px-2"
           >
-            تنفيذ أعمال الدهانات والديكورات الداخلية، بديل الخشب والرخام، الجبس بورد والأسقف، والسواتر والمظلات بأعلى مستويات الجودة.
+            تنفيذ خدمات الدهانات والديكورات والعوازل المائية والسطحية، بالإضافة إلى أعمال الفرايش والأرضيات، الأسقف والجدران، وبديل الخشب والرخام.
           </motion.p>
 
           <motion.p

@@ -21,8 +21,8 @@ export default function ContactSection() {
     'دهانات وتشطيب',
     'بديل خشب ورخام',
     'جبس بورد وأسقف',
-    'إطارات وبانوهات',
-    'سواتر ومظلات',
+    'عوازل مائية وسطحية',
+    'فرايش وأرضيات',
     'تشطيب متكامل'
   ];
 
@@ -116,7 +116,7 @@ ${formData.message ? `ملاحظات: ${formData.message}` : ''}
                     </div>
                     <h3 className="text-xl font-serif-luxury font-bold text-[var(--text-primary)] dark:text-white mb-2">تم استلام طلبك بنجاح</h3>
                     <p className="text-[var(--text-secondary)] dark:text-[#A0A0A5] text-[13px] max-w-sm font-sans-clean leading-relaxed">
-                      شكراً لثقتك بـ "وجد الأصايل". سيقوم أحد خبرائنا بالتواصل معك قريباً جداً لتحديد موعد المعاينة.
+                      شكراً لثقتك بـ "جود الأصايل". سيقوم أحد خبرائنا بالتواصل معك قريباً جداً لتحديد موعد المعاينة.
                     </p>
                     <button
                       onClick={() => setIsSubmitted(false)}
@@ -313,7 +313,7 @@ ${formData.message ? `ملاحظات: ${formData.message}` : ''}
               <div>
                 <span className="text-[11px] text-[var(--text-secondary)] dark:text-[#8C867D] block mb-0.5">خط التواصل المباشر</span>
                 <a href="tel:0536402106" className="text-lg font-bold text-[var(--text-primary)] dark:text-white tracking-wider font-mono hover:text-[#C19A6B] transition-colors" dir="ltr">
-                  0536 402 106
+                  0536402106 <br /> 0556557498
                 </a>
               </div>
             </div>

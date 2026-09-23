@@ -1,0 +1,47 @@
+﻿# robots.txt - جود الأصايل للدهانات والديكورات
+# https://wajd-al-asayel.vercel.app/
+
+# السماح لجميع محركات البحث
+User-agent: *
+Allow: /
+
+# السماح لـ Google بكل الأقسام
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# السماح لـ Googlebot بالصور
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /videos/
+Allow: /*.webp$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.mp4$
+
+# السماح لـ Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# السماح لـ Yandex
+User-agent: YandexBot
+Allow: /
+
+# حجب الملفات غير الضرورية
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /.git/
+Disallow: /bun.lock
+Disallow: /package.json
+Disallow: /vite.config.ts
+Disallow: /tsconfig.json
+
+# خريطة الموقع
+Sitemap: https://wajd-al-asayel.vercel.app/sitemap.xml
+
+# الموقع المُضيف
+Host: https://wajd-al-asayel.vercel.app
+
+
