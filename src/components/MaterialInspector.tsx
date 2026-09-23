@@ -9,16 +9,15 @@ export default function MaterialInspector() {
   const swatchRef = useRef<HTMLDivElement | null>(null);
 
   const handleLightMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!swatchRef.current) return;
-    const rect = swatchRef.current.getBoundingClientRect();
+    const rect = e.currentTarget.getBoundingClientRect();
     const x = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
     const y = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
     setLightPos({ x, y });
   };
 
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    if (!swatchRef.current || !e.touches[0]) return;
-    const rect = swatchRef.current.getBoundingClientRect();
+    if (!e.touches[0]) return;
+    const rect = e.currentTarget.getBoundingClientRect();
     const touch = e.touches[0];
     const x = Math.max(0, Math.min(100, ((touch.clientX - rect.left) / rect.width) * 100));
     const y = Math.max(0, Math.min(100, ((touch.clientY - rect.top) / rect.height) * 100));
