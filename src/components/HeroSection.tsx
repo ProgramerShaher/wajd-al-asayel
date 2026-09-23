@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Sparkles, Phone, MapPin, CheckCircle2, ArrowDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTheme } from '../context/ThemeContext';
@@ -99,8 +99,8 @@ export default function HeroSection() {
             className="mb-4 flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#C19A6B]/40 bg-black/50 backdrop-blur-md shadow-lg"
           >
             <Sparkles size={11} className="text-[#C19A6B] animate-pulse flex-shrink-0" />
-            <span className="text-[11px] sm:text-sm text-white/85 font-medium font-sans-clean">
-              دهانات وديكورات • عوازل مائية وسطحية • فرايش وأرضيات • أسقف وجدران
+            <span className="text-xs sm:text-base font-bold text-[#C19A6B] tracking-wide font-sans-clean drop-shadow-sm">
+              دهانات وديكورات • عوازل صوتية ومائية • درايش وأرضيات • أسقف وجدران
             </span>
           </motion.div>
 
@@ -127,7 +127,7 @@ export default function HeroSection() {
             transition={{ duration: 1, delay: 0.3 }}
             className="mt-3 sm:mt-4 max-w-xl text-sm sm:text-lg md:text-xl text-white/80 font-serif-luxury leading-relaxed px-2"
           >
-            تنفيذ خدمات الدهانات والديكورات والعوازل المائية والسطحية، بالإضافة إلى أعمال الفرايش والأرضيات، الأسقف والجدران، وبديل الخشب والرخام.
+            تنفيذ خدمات الدهانات والديكورات وعوازل الصوت للجدران والأرضيات والأسقف والدرايش، والعوازل المائية والسطحية، بالإضافة إلى أعمال الأرضيات، الأسقف والجدران، وبديل الخشب والرخام.
           </motion.p>
 
           <motion.p
@@ -179,8 +179,8 @@ export default function HeroSection() {
               <div
                 key={i}
                 className={`rounded-full transition-all duration-500 ${slideIndex === i
-                    ? 'w-6 h-2 bg-[#C19A6B] shadow-[0_0_8px_rgba(193,154,107,0.7)]'
-                    : 'w-2 h-2 bg-white/25'
+                  ? 'w-6 h-2 bg-[#C19A6B] shadow-[0_0_8px_rgba(193,154,107,0.7)]'
+                  : 'w-2 h-2 bg-white/25'
                   }`}
               />
             ))}
@@ -199,8 +199,8 @@ export default function HeroSection() {
                 <div
                   key={i}
                   className={`relative rounded-lg overflow-hidden transition-all duration-500 border-2 ${slideIndex === i
-                      ? 'border-[#C19A6B] w-16 h-10 sm:w-20 sm:h-14 opacity-100 scale-110 shadow-[0_0_12px_rgba(193,154,107,0.5)]'
-                      : 'border-white/20 w-12 h-8 sm:w-14 sm:h-10 opacity-50 scale-100'
+                    ? 'border-[#C19A6B] w-16 h-10 sm:w-20 sm:h-14 opacity-100 scale-110 shadow-[0_0_12px_rgba(193,154,107,0.5)]'
+                    : 'border-white/20 w-12 h-8 sm:w-14 sm:h-10 opacity-50 scale-100'
                     }`}
                 >
                   <img
