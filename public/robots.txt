@@ -1,4 +1,4 @@
-﻿# robots.txt - جود الأصايل للدهانات والديكورات
+﻿# robots.txt - وجد الأصايل للدهانات والديكورات
 # https://wajd-al-asayel.vercel.app/
 
 # السماح لجميع محركات البحث
@@ -43,5 +43,6 @@ Sitemap: https://wajd-al-asayel.vercel.app/sitemap.xml
 
 # الموقع المُضيف
 Host: https://wajd-al-asayel.vercel.app
+
 
 

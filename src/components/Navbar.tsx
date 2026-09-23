@@ -108,11 +108,11 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
             data-cursor="الرئيسية"
           >
             <div className="relative w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center flex-shrink-0">
-              <img src="/wa-logo.svg" alt="شعار جود الأصايل" className="w-full h-full object-contain transition-transform duration-700 group-hover:rotate-12" loading="lazy" />
+              <img src="/wa-logo.png" alt="شعار وجد الأصايل" className="w-full h-full object-contain transition-transform duration-700 group-hover:rotate-12" loading="lazy" />
             </div>
             <div className="flex items-center text-right">
               <span className="font-serif-luxury text-xl sm:text-2xl md:text-3xl font-black tracking-wide leading-normal pb-1.5 pt-1 bg-gradient-to-r from-[#FFF0D4] via-[#E6C280] to-[#C19A6B] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(230,194,128,0.35)] group-hover:scale-105 transition-transform duration-300 select-none">
-                جود الأصايل
+                وجد الأصايل
               </span>
             </div>
           </a>
@@ -224,7 +224,7 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
             <div className="flex flex-col gap-3">
               <div className="flex items-center justify-between pb-3 border-b border-white/10">
                 <span className="text-xs font-serif-luxury text-[#C19A6B] font-bold">
-                  جود الأصايل • الدمام والخبر
+                  وجد الأصايل • الدمام والخبر
                 </span>
                 {/* Mobile Theme Switch Button */}
                 <button
@@ -284,3 +284,6 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
     </>
   );
 }
+
+
+

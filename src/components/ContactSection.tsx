@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, ArrowLeft, ShieldCheck, Mail, MapPin, Phone, User, MessageSquare, Check, CalendarCheck, CheckCircle2 } from 'lucide-react';
 
@@ -116,7 +116,7 @@ ${formData.message ? `ملاحظات: ${formData.message}` : ''}
                     </div>
                     <h3 className="text-xl font-serif-luxury font-bold text-[var(--text-primary)] dark:text-white mb-2">تم استلام طلبك بنجاح</h3>
                     <p className="text-[var(--text-secondary)] dark:text-[#A0A0A5] text-[13px] max-w-sm font-sans-clean leading-relaxed">
-                      شكراً لثقتك بـ "جود الأصايل". سيقوم أحد خبرائنا بالتواصل معك قريباً جداً لتحديد موعد المعاينة.
+                      شكراً لثقتك بـ "وجد الأصايل". سيقوم أحد خبرائنا بالتواصل معك قريباً جداً لتحديد موعد المعاينة.
                     </p>
                     <button
                       onClick={() => setIsSubmitted(false)}
@@ -368,3 +368,4 @@ ${formData.message ? `ملاحظات: ${formData.message}` : ''}
     </section>
   );
 }
+

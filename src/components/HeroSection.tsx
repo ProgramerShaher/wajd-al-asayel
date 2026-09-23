@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { Sparkles, Phone, MapPin, CheckCircle2, ArrowDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTheme } from '../context/ThemeContext';
@@ -118,7 +118,7 @@ export default function HeroSection() {
               paddingTop: '0.2em',
             }}
           >
-            جود الأصايل
+            وجد الأصايل
           </motion.h1>
 
           <motion.p
@@ -245,3 +245,4 @@ export default function HeroSection() {
     </section>
   );
 }
+

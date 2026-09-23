@@ -17,12 +17,12 @@
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://wajd-al-asayel.vercel.app/images/IMG-20260921-WA0008.webp</image:loc>
-      <image:title>جود الأصايل - دهانات وديكورات الدمام والخبر</image:title>
-      <image:caption>أعمال ديكور وتشطيبات جود الأصايل في الدمام والخبر</image:caption>
+      <image:title>وجد الأصايل - دهانات وديكورات الدمام والخبر</image:title>
+      <image:caption>أعمال ديكور وتشطيبات وجد الأصايل في الدمام والخبر</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://wajd-al-asayel.vercel.app/images/IMG-20260921-WA0017.webp</image:loc>
-      <image:title>عوازل مائية وسطحية - جود الأصايل</image:title>
+      <image:title>عوازل مائية وسطحية - وجد الأصايل</image:title>
       <image:caption>خدمات العوازل المائية والسطحية بالمنطقة الشرقية</image:caption>
     </image:image>
   </url>
@@ -68,5 +68,6 @@
   </url>
 
 </urlset>
+
 
 

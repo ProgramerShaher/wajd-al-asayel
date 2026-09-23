@@ -48,7 +48,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
           <div className="flex items-center justify-between text-xs tracking-[0.2em] text-[#C19A6B]/90 font-serif-luxury">
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#C19A6B] animate-ping" />
-              جود الأصايل • معلم دهانات وديكورات وجبس بورد وسواتر
+              وجد الأصايل • معلم دهانات وديكورات وجبس بورد وسواتر
             </span>
             <span className="hidden sm:inline">الدمام • الخبر • خبرة أكثر من ٣٠ سنة</span>
           </div>
@@ -114,3 +114,4 @@ export default function Preloader({ onComplete }: PreloaderProps) {
     </AnimatePresence>
   );
 }
+

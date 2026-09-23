@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+﻿import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, MapPin, Maximize2, X, Compass, ArrowUpRight, Image as ImageIcon, ZoomIn, Images } from 'lucide-react';
 import { PORTFOLIO_ITEMS } from '../data/studioData';
@@ -75,7 +75,7 @@ export default function SpotlightGallery() {
               <span>أعمال منفذة في الدمام والخبر</span>
             </div>
             <h2 className="font-serif-luxury text-3xl sm:text-5xl md:text-6xl font-bold text-[var(--text-primary)]">
-              معرض أعمال جود الأصايل
+              معرض أعمال وجد الأصايل
             </h2>
           </div>
 
@@ -316,4 +316,5 @@ export default function SpotlightGallery() {
     </section>
   );
 }
+
 
