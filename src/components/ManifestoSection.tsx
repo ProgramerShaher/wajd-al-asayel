@@ -106,7 +106,7 @@ export default function ManifestoSection() {
                   src="/images/IMG-202609421-WA0002.jpg" 
                   alt="سجل تجاري مؤسسة وجد الأصايل مقاولات ديكور دهانات الدمام" 
                   loading="lazy" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain p-1"
                 />
               </div>
             </motion.div>
