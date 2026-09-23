@@ -322,11 +322,22 @@ ${formData.message ? `ملاحظات: ${formData.message}` : ''}
               <div className="w-10 h-10 rounded-xl bg-[var(--bg-elevated)] dark:bg-[#181512] border border-[var(--border-subtle)] dark:border-white/5 flex items-center justify-center flex-shrink-0 text-[var(--text-muted)] dark:text-white/50 group-hover:text-[#C19A6B] dark:group-hover:text-white transition-colors duration-300">
                 <CalendarCheck size={18} />
               </div>
-              <div>
-                <span className="text-[11px] text-[var(--text-secondary)] dark:text-[#8C867D] block mb-1">أوقات العمل والمعاينة</span>
-                <p className="text-[13px] font-medium text-[var(--text-primary)] dark:text-white/90 leading-relaxed">
-                  نستقبل طلباتكم واستفساراتكم يومياً من الساعة 8 صباحاً حتى 10 مساءً. المعاينة الميدانية مجانية وتتم في الوقت المناسب لكم.
-                </p>
+              <div className="w-full">
+                <span className="text-[11px] text-[var(--text-secondary)] dark:text-[#8C867D] block mb-2">أوقات العمل والمعاينة</span>
+                <div className="space-y-1 w-full">
+                  <div className="flex items-center justify-between py-1.5 border-b border-[var(--border-subtle)] dark:border-white/5">
+                    <span className="text-[12px] text-[var(--text-secondary)] dark:text-[#8C867D]">أيام العمل</span>
+                    <span className="text-[11px] font-bold text-[#C19A6B] bg-[#C19A6B]/10 border border-[#C19A6B]/20 px-2 py-0.5 rounded-full">طوال أيام الأسبوع (يومياً)</span>
+                  </div>
+                  <div className="flex items-center justify-between py-1.5 border-b border-[var(--border-subtle)] dark:border-white/5">
+                    <span className="text-[12px] text-[var(--text-secondary)] dark:text-[#8C867D]">ساعات العمل</span>
+                    <span className="text-[12px] font-medium text-[var(--text-primary)] dark:text-white/90" dir="ltr">08:00 AM - 10:00 PM</span>
+                  </div>
+                  <div className="flex items-center justify-between py-1.5">
+                    <span className="text-[12px] text-[var(--text-secondary)] dark:text-[#8C867D]">المعاينة الميدانية</span>
+                    <span className="text-[12px] font-medium text-[var(--text-primary)] dark:text-white/90">مجانية ومتاحة دائماً</span>
+                  </div>
+                </div>
               </div>
             </div>
 
