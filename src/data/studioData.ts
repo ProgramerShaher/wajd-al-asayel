@@ -145,7 +145,7 @@ export const SERVICES_DATA: ServiceItem[] = [
   }
 ];
 
-export const PORTFOLIO_ITEMS: PortfolioItem[] = [
+export const VIDEO_ITEMS: PortfolioItem[] = [
   {
     id: 'video-showcase-1',
     title: 'تغطية مرئية لتشطيبات فاخرة متكاملة',
@@ -161,6 +161,39 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-12'
   },
+  {
+    id: 'video-showcase-2',
+    title: 'خلفية سرير بديل الشايبرد مع إضاءة',
+    category: 'ديكور غرف النوم',
+    location: 'الدمام',
+    year: '٢٠٢٥',
+    technique: 'تكسية جدارية بشايبرد مع إضاءة ليد مخفية',
+    dimensions: 'خلفية سرير كاملة',
+    curatorNotes: 'فيديو يوضح تفاصيل تنفيذ خلفية سرير فخمة باستخدام الشايبرد والإضاءة المخفية، تعطي طابعاً فندقياً راقياً لغرفة النوم.',
+    imageUrl: IMG('white-bed.jpg'),
+    videoUrl: '/videos/bed-video.mp4',
+    featured: true,
+    accentColor: '#C19A6B',
+    colSpan: 'md:col-span-6'
+  },
+  {
+    id: 'video-showcase-3',
+    title: 'تصميم داخلي فاخر - تفاصيل متقنة',
+    category: 'تشطيب متكامل',
+    location: 'الخبر',
+    year: '٢٠٢٥',
+    technique: 'أعمال ديكور وتشطيب عالية الجودة',
+    dimensions: 'مساحات داخلية',
+    curatorNotes: 'تغطية مرئية لتفاصيل التشطيبات المتقنة والديكورات الحديثة التي تبرز جودة التنفيذ والاهتمام بأدق التفاصيل.',
+    imageUrl: IMG('IMG-20260921-WA0012.jpg'),
+    videoUrl: '/videos/vid-wa0026.mp4',
+    featured: false,
+    accentColor: '#9B784B',
+    colSpan: 'md:col-span-6'
+  }
+];
+
+export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
     id: 'villa-tv-unit-modern',
     title: 'وحدة تلفاز مودرن مع إضاءة ليد ذهبية',
@@ -208,13 +241,13 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   },
   {
     id: 'tv-wall-rose-marble',
-    title: 'جدار تلفاز بديل رخام روز فاخر',
+    title: 'جدار تلفاز بديل رخام روز فاخر (شاشة كرفات)',
     category: 'بديل الرخام والتكسيات',
     location: 'الخبر',
     year: '٢٠٢٥',
     technique: 'بديل رخام روز مع إطار جبس بيضاوي وسبوت لايت',
     dimensions: 'جدار تلفاز متكامل',
-    curatorNotes: 'جدار تلفاز متميز بخلفية بديل رخام روز بيج ذو ملمس طبيعي، مع إطار مدور فاخر وإنارة سبوت لايت مركزية، وكونسول خشبي دافئ اللون.',
+    curatorNotes: 'جدار تلفاز متميز بخلفية بديل رخام روز بيج ذو ملمس طبيعي، مع إطار مدور فاخر وإنارة سبوت لايت مركزية، وكونسول خشبي دافئ اللون ومخصص لشاشة كرفات متطورة.',
     imageUrl: IMG('IMG-20260921-WA0015.jpg'),
     detailImageUrl: IMG('IMG-20260921-WA0017.jpg'),
     featured: true,
@@ -238,17 +271,31 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   },
   {
     id: 'hall-full-decor',
-    title: 'صالة تشطيب متكامل مع جبس وبديل خشب',
+    title: 'صالة تشطيب متكامل مع جبس وشايبرد',
     category: 'تشطيب متكامل',
     location: 'الدمام',
     year: '٢٠٢٥',
-    technique: 'سقف جبس بورد + أعمدة بديل خشب + دهانات ناعمة',
+    technique: 'سقف جبس بورد + أعمدة شايبرد + دهانات ناعمة',
     dimensions: 'صالة رئيسية واسعة',
-    curatorNotes: 'تشطيب صالة متكامل يشمل سقف جبس مستعار بإنارة ليد وخطوط سوداء مع أعمدة مكسوة ببديل خشب بني داكن وأرضية بيضاء لامعة، والنتيجة مذهلة.',
+    curatorNotes: 'تشطيب صالة متكامل يشمل سقف جبس مستعار بإنارة ليد وخطوط سوداء مع أعمدة مكسوة بشايبرد بني داكن وأرضية بيضاء لامعة، والنتيجة مذهلة.',
     imageUrl: IMG('IMG-20260921-WA0012.jpg'),
     detailImageUrl: IMG('IMG-20260921-WA0010.jpg'),
     featured: false,
     accentColor: '#E6C280',
+    colSpan: 'md:col-span-6'
+  },
+  {
+    id: 'bed-headboard-shaboard',
+    title: 'خلفية سرير بديل الشايبرد مع إضاءة',
+    category: 'ديكور غرف النوم',
+    location: 'الدمام',
+    year: '٢٠٢٥',
+    technique: 'تكسية جدارية بشايبرد مع إضاءة ليد مخفية',
+    dimensions: 'خلفية سرير كاملة',
+    curatorNotes: 'تصميم راقي لخلفية سرير باستخدام الشايبرد وتطعيمه بإضاءة ليد مخفية تعطي أجواء فندقية فاخرة ومريحة.',
+    imageUrl: IMG('white-bed.jpg'),
+    featured: true,
+    accentColor: '#C19A6B',
     colSpan: 'md:col-span-6'
   }
 ];

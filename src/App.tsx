@@ -9,6 +9,7 @@ import ManifestoSection from './components/ManifestoSection';
 import ServicesHorizontal from './components/ServicesHorizontal';
 import MaterialInspector from './components/MaterialInspector';
 import SpotlightGallery from './components/SpotlightGallery';
+import VideoGallery from './components/VideoGallery';
 import ArtisanProcess from './components/ArtisanProcess';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
@@ -71,6 +72,9 @@ export default function App() {
 
         {/* 05. The Private Archive (Interactive Spotlight Grid) */}
         <SpotlightGallery />
+
+        {/* 05.5 Video Showcase */}
+        <VideoGallery />
 
         {/* 06. The 5-Stage Artisan Alchemy */}
         <ArtisanProcess />

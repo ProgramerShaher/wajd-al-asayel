@@ -58,6 +58,22 @@
   }
 }
 
+html {
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 18px; /* Slightly larger text on tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 20px; /* Prominent text on desktops */
+  }
+}
+
 .font-serif-luxury {
   font-family: 'Amiri', 'Cormorant Garamond', Georgia, serif;
 }
