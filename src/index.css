@@ -64,13 +64,13 @@ html {
 
 @media (min-width: 768px) {
   html {
-    font-size: 18px; /* Slightly larger text on tablets */
+    font-size: 16.5px;
   }
 }
 
 @media (min-width: 1024px) {
   html {
-    font-size: 20px; /* Prominent text on desktops */
+    font-size: 17px;
   }
 }
 
