@@ -1,4 +1,4 @@
-﻿import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, MapPin, Maximize2, X, Compass, ArrowUpRight, Image as ImageIcon, ZoomIn, Images } from 'lucide-react';
 import { PORTFOLIO_ITEMS } from '../data/studioData';
@@ -185,10 +185,10 @@ export default function SpotlightGallery() {
               <button
                 onClick={() => setActiveModalItem(null)}
                 data-cursor="إغلاق"
-                className="absolute top-4 left-4 sm:top-6 sm:left-6 w-8 h-8 rounded-full bg-black/10 dark:bg-white/10 hover:bg-[#C19A6B] hover:text-black flex items-center justify-center text-[var(--text-primary)] transition-colors z-20"
+                className="absolute top-4 left-4 sm:top-6 sm:left-6 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-red-600 hover:bg-red-700 shadow-[0_0_15px_rgba(220,38,38,0.5)] flex items-center justify-center text-white transition-all z-[100]"
                 aria-label="إغلاق النافذة"
               >
-                <X size={16} />
+                <X size={20} />
               </button>
 
               <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-7 items-center">

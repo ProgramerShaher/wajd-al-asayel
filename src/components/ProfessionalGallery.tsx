@@ -301,9 +301,10 @@ export default function ProfessionalGallery({
                 </div>
                 <button
                   onClick={onClose}
-                  className="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/60 hover:text-white hover:border-white/40 hover:bg-white/5 transition-all"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-red-600 hover:bg-red-700 shadow-[0_0_15px_rgba(220,38,38,0.5)] flex items-center justify-center text-white transition-all flex-shrink-0 mr-auto"
+                  aria-label="إغلاق المعرض"
                 >
-                  <X size={17} />
+                  <X size={20} />
                 </button>
               </div>
 

@@ -113,9 +113,10 @@ export default function VideoGallery() {
         >
           <button
             onClick={closeVideo}
-            className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white backdrop-blur-md transition-colors z-50"
+            className="fixed top-6 right-6 sm:top-8 sm:right-8 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-red-600 hover:bg-red-700 shadow-[0_0_25px_rgba(220,38,38,0.7)] flex items-center justify-center text-white backdrop-blur-md transition-all z-[100]"
+            aria-label="إغلاق الفيديو"
           >
-            <X className="w-6 h-6" />
+            <X className="w-7 h-7 sm:w-8 sm:h-8" />
           </button>
           
           <div 
