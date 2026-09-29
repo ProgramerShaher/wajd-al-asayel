@@ -4,6 +4,7 @@ import { Sparkles, MapPin, Maximize2, X, Compass, ArrowUpRight, Image as ImageIc
 import { PORTFOLIO_ITEMS } from '@/data/studioData';
 import { PortfolioItem } from '@/types';
 import ProfessionalGallery from '@/components/features/ProfessionalGallery';
+import SmartPicture from '@/components/common/SmartPicture';
 
 export default function SpotlightGallery() {
   const [selectedCategory, setSelectedCategory] = useState<string>('الكل');
@@ -16,10 +17,7 @@ export default function SpotlightGallery() {
   const categories = ['الكل', 'وحدات التلفاز والديكورات', 'أسقف جبس بورد', 'ديكورات إنارة فاخرة', 'بديل الرخام والتكسيات', 'بديل الخشب', 'تشطيب متكامل'];
 
   const filteredItems = selectedCategory === 'الكل'
-    ? [
-        ...PORTFOLIO_ITEMS.filter(item => item.imageUrl.includes('IMG-20260921')).slice(0, 7),
-        ...PORTFOLIO_ITEMS.filter(item => item.imageUrl.includes('IMG-20260923')).slice(0, 4)
-      ]
+    ? PORTFOLIO_ITEMS.slice(0, 11)
     : PORTFOLIO_ITEMS.filter((item) => item.category === selectedCategory);
 
   // Close modal on Escape key
@@ -121,11 +119,12 @@ export default function SpotlightGallery() {
                     autoPlay loop muted playsInline
                   />
                 ) : (
-                  <img
+                  <SmartPicture
                     src={item.imageUrl}
                     alt={`${item.title} - ديكورات الشرقية مقاولات عامة`}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
+                    decoding="async"
                   />
                 )}
                 
@@ -202,7 +201,7 @@ export default function SpotlightGallery() {
                         controls autoPlay playsInline
                       />
                     ) : (
-                      <img
+                      <SmartPicture
                         src={
                           activeImageTab === 'detail' && activeModalItem.detailImageUrl
                             ? activeModalItem.detailImageUrl
@@ -211,6 +210,7 @@ export default function SpotlightGallery() {
                         alt={`${activeModalItem.title} تصميم وتنفيذ بالدمام`}
                         loading="lazy"
                         className="w-full h-full object-cover transition-opacity duration-300"
+                        decoding="async"
                       />
                     )}
 
