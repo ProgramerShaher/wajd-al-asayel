@@ -22,7 +22,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     description: 'تصميم فاخر للمجالس باستخدام بانوهات الكريستال المضاءة خلفياً بالليد الذهبي الدافئ، مما يضفي أجواء فندقية راقية على الصالة وتتناسق مع الأثاث الكلاسيكي والحديث.',
     materials: ['ألواح كريستال مضاءة', 'شريط ليد دافئ', 'هياكل تثبيت مخفية'],
     features: ['إضاءة دراماتيكية فخمة', 'تصميم فندقي للمجالس', 'دمج بين الكلاسيكي والمودرن'],
-    imageUrl: IMG('IMG-20260921-WA0018.webp'),
+    imageUrl: IMG('crystal-panels-led-lighting-decor.webp'),
     aspectRatio: 'aspect-[4/5]',
     sampleCode: 'WA-LGT-01'
   },
@@ -35,7 +35,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     description: 'تنفيذ وحدات تلفاز مودرن باللونين الأبيض والأسود مع أرفف جانبية، وتطعيمها بخطوط طولية وإضاءة ليد سفلية ذهبية تعكس فخامة التصميم على الأرضيات.',
     materials: ['خشب مطلي أبيض وأسود', 'شريط ليد 3000K', 'رفوف جدارية مدمجة'],
     features: ['تباين لوني أنيق', 'مساحات تخزين ورفوف ديكورية', 'إضاءة سفلية عاكسة'],
-    imageUrl: IMG('IMG-20260921-WA0007.webp'),
+    imageUrl: IMG('modern-tv-wall-decor.webp'),
     aspectRatio: 'aspect-[4/5]',
     sampleCode: 'WA-TVU-02'
   },
@@ -48,7 +48,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     description: 'تنفيذ تشطيبات ودهانات داخلية ناعمة باللون الأبيض النقي، وتصميم قناطر وأقواس جدارية مزينة بالبانوهات الكلاسيكية الكبيرة مع توزيع دقيق لإضاءة السبوت لايت.',
     materials: ['دهانات جوتن بيضاء', 'إطارات جبسية للأقواس', 'معجون أملس للتأسيس'],
     features: ['تصميم قناطر وأقواس', 'ألوان نقية تزيد الاتساع', 'استواء تام للجدران'],
-    imageUrl: IMG('IMG-20260921-WA0004.webp'),
+    imageUrl: IMG('joten-interior-painting-dammam.webp'),
     aspectRatio: 'aspect-[4/5]',
     sampleCode: 'WA-PNT-03'
   },
@@ -61,7 +61,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     description: 'تكسية جدارية كاملة باستخدام شرائح بديل الخشب المضلع باللون الجوزي الداكن بترتيب عمودي متناسق، تضفي دفئاً طبيعياً للمكان وتبرز جماليات الإضاءة العلوية.',
     materials: ['شرائح بديل خشب جوزي', 'سيليكون تثبيت فائق', 'زوايا إقفال خشبية'],
     features: ['مظهر خشبي طبيعي دافئ', 'تركيب طولي يرفع السقف بصرياً', 'متين ومقاوم للرطوبة'],
-    imageUrl: IMG('IMG-20260921-WA0011.webp'),
+    imageUrl: IMG('wood-alternative-wall-cladding.webp'),
     aspectRatio: 'aspect-[4/5]',
     sampleCode: 'WA-WOD-04'
   },
@@ -74,7 +74,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     description: 'تركيب ألواح بديل الرخام الفاخرة بلون الروز بيج، وتأطيرها بتصميم بيضاوي أنيق مع إضاءة سبوت مركزية، لإنشاء خلفية جدارية مميزة تخطف الأنظار.',
     materials: ['بديل رخام روز بيج', 'إطارات جبسية بيضاوية', 'لواصق تثبيت صناعية'],
     features: ['تصميم بيضاوي لافت', 'عروق رخامية طبيعية', 'إضاءة مركزة على التفاصيل'],
-    imageUrl: IMG('IMG-20260921-WA0015.webp'),
+    imageUrl: IMG('gypsum-board-ceiling-design.webp'),
     aspectRatio: 'aspect-[4/5]',
     sampleCode: 'WA-MRB-05'
   },
@@ -87,7 +87,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     description: 'تصميم وتنفيذ أسقف جبس بورد بأشكال هندسية متداخلة كتصميم خلية النحل السداسية، وتدعيمها بإضاءة ليد محيطية لتكوين سقف مودرن غير تقليدي.',
     materials: ['ألواح جبس بورد', 'قطاعات تشكيل هندسية', 'شريط ليد للإضاءة المحيطية'],
     features: ['أشكال سداسية هندسية', 'إضاءة محيطية مخفية', 'تنفيذ دقيق للزوايا'],
-    imageUrl: IMG('IMG-20260921-WA0019.webp'),
+    imageUrl: IMG('living-room-decor-marble-tv.webp'),
     aspectRatio: 'aspect-[4/5]',
     sampleCode: 'WA-GYP-06'
   },
@@ -100,7 +100,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     description: 'تنفيذ وتركيب ألواح الجبس بورد الأخضر المقاوم للرطوبة باحترافية عالية للأسقف ومجاري السلالم، وضمان تأسيس الهياكل المعدنية بمتانة فائقة قبل مرحلة المعجون والدهان.',
     materials: ['ألواح جبس أخضر مقاوم', 'شاسي معدني متين', 'براغي تثبيت مجلفنة'],
     features: ['مقاومة للرطوبة', 'تدعيم قوي لمجاري السلالم', 'تأسيس احترافي للتشطيب'],
-    imageUrl: IMG('IMG-20260921-WA0003.webp'),
+    imageUrl: IMG('classic-foam-panels-design.webp'),
     aspectRatio: 'aspect-[4/5]',
     sampleCode: 'WA-PRT-07'
   },
@@ -113,7 +113,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     description: 'تشطيب متكامل للصالات الواسعة يشمل تكسية الأعمدة الدائرية أو المربعة بشرائح بديل الخشب لتتناغم مع الأسقف المستعارة وتبرز فخامة المكان المفتوح.',
     materials: ['شرائح تغليف بديل الخشب', 'أسقف جبسية', 'إضاءات مخفية'],
     features: ['تحويل الأعمدة لتحف ديكورية', 'دمج الخشب مع الجبس', 'مناسب للصالات الواسعة'],
-    imageUrl: IMG('IMG-20260921-WA0012.webp'),
+    imageUrl: IMG('bedroom-modern-gypsum-decor.webp'),
     aspectRatio: 'aspect-[4/5]',
     sampleCode: 'WA-HLL-08'
   },
@@ -126,7 +126,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     description: 'تجهيز المداخل الفخمة وتزيينها بمرايا دائرية كبيرة محاطة ببانوهات رمادية أنيقة، وإضافة إضاءة جدارية (أبليك) كلاسيكية لإعطاء انطباع بالاتساع من أول نظرة.',
     materials: ['مرايا جدارية نقية', 'بانوهات خشبية أو فوم', 'إضاءة جدارية (أبليك)'],
     features: ['اتساع بصري للمداخل', 'مرآة دائرية جذابة', 'تناسق مع البانوهات الرمادية'],
-    imageUrl: IMG('IMG-20260921-WA0016.webp'),
+    imageUrl: IMG('garden-pergolas-and-umbrellas.webp'),
     aspectRatio: 'aspect-[4/5]',
     sampleCode: 'WA-ENT-09'
   },
@@ -139,7 +139,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     description: 'الدقة في مرحلة تأسيس وتركيب إطارات وبانوهات الجبس والفوم على الجدران، مع ضمان الاستواء التام والتقسيم الهندسي المتساوي لتجهيز السطح لمرحلة الدهان النهائي.',
     materials: ['إطارات بانوهات فوم', 'معجون تسوية الفواصل', 'أجهزة ليزر لضبط الاستقامة'],
     features: ['تقسيم جداري هندسي', 'استواء تام قبل الدهان', 'زوايا بانوهات متقنة'],
-    imageUrl: IMG('IMG-20260921-WA0009.webp'),
+    imageUrl: IMG('exterior-villa-painting-khobar.webp'),
     aspectRatio: 'aspect-[4/5]',
     sampleCode: 'WA-REP-10'
   },
@@ -152,7 +152,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     description: 'تركيب أنظمة عزل الصوت المتطورة للجدران والأبواب والأسقف باستخدام أفضل المواد المعتمدة التي تضمن منع انتقال الضوضاء وتوفير بيئة هادئة ومريحة.',
     materials: ['ألواح عزل صوتي', 'فوم كاتم للصوت', 'مواد عزل مطاطية'],
     features: ['منع انتقال الضوضاء', 'توفير بيئة هادئة', 'عزل احترافي مضمون'],
-    imageUrl: IMG('IMG-20260923-WA0015.webp'),
+    imageUrl: IMG('interior-decor-project-15.webp'),
     aspectRatio: 'aspect-[4/5]',
     sampleCode: 'WA-INS-11'
   },
@@ -165,7 +165,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     description: 'تنفيذ أعمال تجهيز الأرضيات وتكسيتها بالمواد العازلة (الفرايش) والأرضيات الحديثة باستخدام مواد لاصقة قوية مثل (هيل بوند) لضمان ثباتها وعزلها تماماً.',
     materials: ['رولات فرايش عازلة', 'غراء هيل بوند', 'أرضيات متنوعة'],
     features: ['تجهيز أرضيات احترافي', 'عزل إضافي للأرضيات', 'تركيب متين لا يتحرك'],
-    imageUrl: IMG('IMG-20260923-WA0018.webp'),
+    imageUrl: IMG('interior-decor-project-18.webp'),
     aspectRatio: 'aspect-[4/5]',
     sampleCode: 'WA-FLR-12'
   },
@@ -178,7 +178,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     description: 'تصميم وتنفيذ تنجيد الجدران وتلبيس الأبواب بالجلد أو الأقمشة الفاخرة مع طبقات عزل الصوت، مثالي للغرف والمجالس لضمان الخصوصية وإضفاء لمسة فندقية.',
     materials: ['مواد عزل صوتي', 'جلد أو قماش فندقي', 'ألواح مبطنة'],
     features: ['عزل صوتي ممتاز', 'فخامة فندقية', 'تصميم عصري جذاب'],
-    imageUrl: IMG('IMG-20260923-WA0028.webp'),
+    imageUrl: IMG('interior-decor-project-28.webp'),
     aspectRatio: 'aspect-[4/5]',
     sampleCode: 'WA-UPH-13'
   },
@@ -191,7 +191,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     description: 'تأسيس وتركيب أسقف جبسية معلقة بتصاميم مستوية أو متعددة المستويات، مع دمج شرائط الليد والسبوت لايت لتوزيع الإضاءة بشكل جمالي وعملي.',
     materials: ['ألواح جبس مستوية', 'إطارات تعليق', 'إضاءات مخفية'],
     features: ['توزيع إضاءة ذكي', 'إخفاء عيوب الأسقف', 'تصميم مستوي ناعم'],
-    imageUrl: IMG('IMG-20260923-WA0032.webp'),
+    imageUrl: IMG('interior-decor-project-32.webp'),
     aspectRatio: 'aspect-[4/5]',
     sampleCode: 'WA-CEI-14'
   },
@@ -204,7 +204,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     description: 'الاهتمام بأدق تفاصيل التأسيس من خلال سد التشققات، معالجة الرطوبة، وصنفرة الجدران بطبقات المعجون للحصول على أسطح ناعمة ومستوية تماماً للدهان.',
     materials: ['معجون أساس قوي', 'مواد عزل للرطوبة', 'أدوات صنفرة احترافية'],
     features: ['سطح مستوٍ تماماً', 'عمر أطول للدهان', 'منع ظهور التشققات'],
-    imageUrl: IMG('IMG-20260923-WA0019.webp'), 
+    imageUrl: IMG('interior-decor-project-19.webp'), 
     aspectRatio: 'aspect-[4/5]',
     sampleCode: 'WA-PRP-15'
   }
@@ -220,7 +220,7 @@ export const VIDEO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ أعمال دهانات وديكورات وبديل رخام وجبس بورد',
     dimensions: 'مساحات داخلية',
     curatorNotes: 'جولة مرئية توضح تفاصيل التنفيذ الحرفي لأعمال الدهانات والديكورات وبديل الرخام، لتعكس جودة الشغل على أرض الواقع من أرض الحدث.',
-    imageUrl: IMG('IMG-20260921-WA0012.webp'),
+    imageUrl: IMG('bedroom-modern-gypsum-decor.webp'),
     videoUrl: 'https://youtube.com/shorts/4dnJaOiNkWE?si=NbpGhjJmz13eqfXb',
     featured: true,
     accentColor: '#C19A6B',
@@ -250,7 +250,7 @@ export const VIDEO_ITEMS: PortfolioItem[] = [
     technique: 'أعمال ديكور وتشطيب عالية الجودة',
     dimensions: 'مساحات داخلية',
     curatorNotes: 'تغطية مرئية لتفاصيل التشطيبات المتقنة والديكورات الحديثة التي تبرز جودة التنفيذ والاهتمام بأدق التفاصيل.',
-    imageUrl: IMG('IMG-20260921-WA0012.webp'),
+    imageUrl: IMG('bedroom-modern-gypsum-decor.webp'),
     videoUrl: 'https://youtube.com/shorts/_b01o6EA6eQ?si=WIBT_NI_zqXoXCo9',
     featured: false,
     accentColor: '#9B784B',
@@ -265,7 +265,7 @@ export const VIDEO_ITEMS: PortfolioItem[] = [
     technique: 'تجهيز وعزل أرضيات',
     dimensions: 'مساحات متعددة',
     curatorNotes: 'استعراض مباشر لطريقة عزل وتركيب الأرضيات والفرايش بمتانة عالية.',
-    imageUrl: IMG('IMG-20260923-WA0018.webp'),
+    imageUrl: IMG('interior-decor-project-18.webp'),
     videoUrl: 'https://youtube.com/shorts/nUVIdu26K4w?si=rnuVIXBrhEeIvcG-',
     featured: true,
     accentColor: '#C19A6B',
@@ -280,7 +280,7 @@ export const VIDEO_ITEMS: PortfolioItem[] = [
     technique: 'أنظمة عزل صوتي',
     dimensions: 'غرف وجدران',
     curatorNotes: 'تغطية مرئية توضح تفاصيل تركيب العوازل الصوتية لمنع انتقال الصوت وتقليل الضوضاء.',
-    imageUrl: IMG('IMG-20260923-WA0015.webp'),
+    imageUrl: IMG('interior-decor-project-15.webp'),
     videoUrl: 'https://youtube.com/shorts/-XAoaWEt_I8?si=rVQqaxN-M-7U2uUw',
     featured: true,
     accentColor: '#C19A6B',
@@ -295,7 +295,7 @@ export const VIDEO_ITEMS: PortfolioItem[] = [
     technique: 'تبطين وتلبيس جداري',
     dimensions: 'غرف نوم ومجالس',
     curatorNotes: 'تفاصيل تنفيذ تجليد الجدران المبطن بالجلد الفاخر لمنح المكان طابعاً فندقياً راقياً.',
-    imageUrl: IMG('IMG-20260923-WA0028.webp'),
+    imageUrl: IMG('interior-decor-project-28.webp'),
     videoUrl: 'https://youtube.com/shorts/c7Y_kMLWDyw?si=526ecOYsYB-3s0__',
     featured: false,
     accentColor: '#9B784B',
@@ -310,7 +310,7 @@ export const VIDEO_ITEMS: PortfolioItem[] = [
     technique: 'تشكيل جبس بورد مع إنارة ذكية',
     dimensions: 'صالات واسعة',
     curatorNotes: 'فيديو لاستعراض ديكورات الأسقف الجبسية المعلقة مع توزيع متناسق للإنارة.',
-    imageUrl: IMG('IMG-20260923-WA0032.webp'),
+    imageUrl: IMG('interior-decor-project-32.webp'),
     videoUrl: 'https://youtube.com/shorts/QXqgpxyriko?si=UrSBGGZHck_VG8bW',
     featured: false,
     accentColor: '#9B784B',
@@ -325,7 +325,7 @@ export const VIDEO_ITEMS: PortfolioItem[] = [
     technique: 'معالجة وصنفرة دقيقة',
     dimensions: 'جدران داخلية',
     curatorNotes: 'خطوات التحضير الصحيحة للجدران قبل الدهان لضمان عدم ظهور تشققات مستقبلاً.',
-    imageUrl: IMG('IMG-20260923-WA0019.webp'),
+    imageUrl: IMG('interior-decor-project-19.webp'),
     videoUrl: '/videos/VID-20260923-WA0038.mp4',
     featured: false,
     accentColor: '#E6C280',
@@ -340,7 +340,7 @@ export const VIDEO_ITEMS: PortfolioItem[] = [
     technique: 'تركيب إطارات فوم فخمة',
     dimensions: 'ممرات وصالات',
     curatorNotes: 'اللمسات الجمالية البارزة عبر تركيب بانوهات الفوم الحديثة للجدران.',
-    imageUrl: IMG('IMG-20260923-WA0014.webp'),
+    imageUrl: IMG('interior-decor-project-14.webp'),
     videoUrl: '/videos/VID-20260923-WA0039.mp4',
     featured: false,
     accentColor: '#E6C280',
@@ -355,7 +355,7 @@ export const VIDEO_ITEMS: PortfolioItem[] = [
     technique: 'جودة استثنائية',
     dimensions: 'فلل وقصور',
     curatorNotes: 'لمحات عن مدى نظافة ودقة التشطيب النهائي قبل تسليم المشروع للعميل.',
-    imageUrl: IMG('IMG-20260923-WA0033.webp'),
+    imageUrl: IMG('interior-decor-project-33.webp'),
     videoUrl: '/videos/VID-20260923-WA0040.mp4',
     featured: true,
     accentColor: '#C19A6B',
@@ -373,8 +373,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'جبس بورد + بديل خشب أسود + إضاءة ليد دافئة',
     dimensions: 'وحدة تلفاز ورفوف بعرض ٤ أمتار',
     curatorNotes: 'وحدة تلفاز حديثة بتصميم أبيض وأسود احترافي مع خطوط عمودية سوداء وأرفف جانبية مع إضاءة ليد ذهبية من الأسفل تعكس على الأرضية الرمادية اللامعة.',
-    imageUrl: IMG('IMG-20260921-WA0007.webp'),
-    detailImageUrl: IMG('IMG-20260921-WA0008.webp'),
+    imageUrl: IMG('modern-tv-wall-decor.webp'),
+    detailImageUrl: IMG('dammam-luxury-decor-main.webp'),
     featured: true,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-8'
@@ -388,8 +388,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'جبس بورد بشكل هندسي سداسي مع إضاءة ليد ذهبية محيطية',
     dimensions: 'سقف صالة رئيسية',
     curatorNotes: 'تصميم سقف جبس هندسي بشكل خلايا النحل السداسية مع إطار مستطيل وإضاءة ليد ذهبية دافئة محيطية تعطي طابعاً فريداً وفاخراً للصالة.',
-    imageUrl: IMG('IMG-20260921-WA0019.webp'),
-    detailImageUrl: IMG('IMG-20260921-WA0022.webp'),
+    imageUrl: IMG('living-room-decor-marble-tv.webp'),
+    detailImageUrl: IMG('luxury-interior-finishing-details.webp'),
     featured: false,
     accentColor: '#E6C280',
     colSpan: 'md:col-span-4'
@@ -403,8 +403,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'بانوهات كريستال مع ليد خلفي وسقف ليد مخفي',
     dimensions: 'صالة جلوس كاملة',
     curatorNotes: 'تركيب بانوهات كريستال عمودية مضاءة من الخلف بليد ذهبي دافئ مع سقف ليد مخفي، يعطي الصالة مظهراً فندقياً راقياً مع أريكة بيج أنيقة.',
-    imageUrl: IMG('IMG-20260921-WA0018.webp'),
-    detailImageUrl: IMG('IMG-20260921-WA0018.webp'),
+    imageUrl: IMG('crystal-panels-led-lighting-decor.webp'),
+    detailImageUrl: IMG('crystal-panels-led-lighting-decor.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -418,8 +418,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'بديل رخام روز مع إطار جبس بيضاوي وسبوت لايت',
     dimensions: 'جدار تلفاز متكامل',
     curatorNotes: 'جدار تلفاز متميز بخلفية بديل رخام روز بيج ذو ملمس طبيعي، مع إطار مدور فاخر وإنارة سبوت لايت مركزية، وكونسول خشبي دافئ اللون ومخصص لشاشة كرفات متطورة.',
-    imageUrl: IMG('IMG-20260921-WA0015.webp'),
-    detailImageUrl: IMG('IMG-20260921-WA0017.webp'),
+    imageUrl: IMG('gypsum-board-ceiling-design.webp'),
+    detailImageUrl: IMG('roof-waterproofing-foam-insulation.webp'),
     featured: true,
     accentColor: '#9B784B',
     colSpan: 'md:col-span-8'
@@ -433,8 +433,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'شرائح بديل خشب جوزي مضلع عمودي مع سبوت لايت',
     dimensions: 'جدار خلفي للمجلس',
     curatorNotes: 'تركيب شرائح بديل خشب جوزي بني داكن بترتيب عمودي متناسق على كامل ارتفاع الجدار، مع دهان حوائط أبيض ناعم وإضاءة سبوت علوية.',
-    imageUrl: IMG('IMG-20260921-WA0011.webp'),
-    detailImageUrl: IMG('IMG-20260921-WA0011.webp'),
+    imageUrl: IMG('wood-alternative-wall-cladding.webp'),
+    detailImageUrl: IMG('wood-alternative-wall-cladding.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-6'
@@ -448,8 +448,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'سقف جبس بورد + أعمدة شايبرد + دهانات ناعمة',
     dimensions: 'صالة رئيسية واسعة',
     curatorNotes: 'تشطيب صالة متكامل يشمل سقف جبس مستعار بإنارة ليد وخطوط سوداء مع أعمدة مكسوة بشايبرد بني داكن وأرضية بيضاء لامعة، والنتيجة مذهلة.',
-    imageUrl: IMG('IMG-20260921-WA0012.webp'),
-    detailImageUrl: IMG('IMG-20260921-WA0010.webp'),
+    imageUrl: IMG('bedroom-modern-gypsum-decor.webp'),
+    detailImageUrl: IMG('wajd-decor-project-3.webp'),
     featured: false,
     accentColor: '#E6C280',
     colSpan: 'md:col-span-6'
@@ -477,7 +477,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تأطير وتركيب ديكورات راقية',
     dimensions: 'الممرات والمداخل',
     curatorNotes: 'إبراز جماليات المداخل والممرات بتكسيات جدارية مبتكرة تعزز من فخامة المكان.',
-    imageUrl: IMG('IMG-20260923-WA0014.webp'),
+    imageUrl: IMG('interior-decor-project-14.webp'),
     featured: false,
     accentColor: '#E6C280',
     colSpan: 'md:col-span-4'
@@ -491,7 +491,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'عزل مائي وحراري',
     dimensions: 'أسطح المباني',
     curatorNotes: 'تركيب ألواح العزل المائي والحراري للأسطح بعناية لضمان عدم تسرب المياه في الشتاء وتقليل الحرارة صيفاً.',
-    imageUrl: IMG('IMG-20260923-WA0015.webp'),
+    imageUrl: IMG('interior-decor-project-15.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -505,7 +505,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'عزل وتثبيت الفرايش',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'استخدام أحدث أنواع العوازل ومواد اللصق لتجهيز وتأسيس الفرايش والأرضيات لتدوم طويلاً.',
-    imageUrl: IMG('IMG-20260923-WA0018.webp'),
+    imageUrl: IMG('interior-decor-project-18.webp'),
     featured: true,
     accentColor: '#9B784B',
     colSpan: 'md:col-span-4'
@@ -519,7 +519,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنجيد مبطن',
     dimensions: 'خلفية سرير',
     curatorNotes: 'تلبيس الجدران بالجلد المبطن الراقي وتثبيته بدقة لإضفاء لمسة فندقية دافئة.',
-    imageUrl: IMG('IMG-20260923-WA0028.webp'),
+    imageUrl: IMG('interior-decor-project-28.webp'),
     featured: true,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-6'
@@ -533,7 +533,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'هندسة الأسقف المعلقة',
     dimensions: 'صالات الاستقبال',
     curatorNotes: 'تكوين أسقف جبسية معلقة تعطي اتساعاً للمكان مع دمجها بالإضاءة الحديثة.',
-    imageUrl: IMG('IMG-20260923-WA0032.webp'),
+    imageUrl: IMG('interior-decor-project-32.webp'),
     featured: false,
     accentColor: '#E6C280',
     colSpan: 'md:col-span-6'
@@ -547,7 +547,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260921-WA0003.webp'),
+    imageUrl: IMG('classic-foam-panels-design.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -561,7 +561,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260921-WA0004.webp'),
+    imageUrl: IMG('joten-interior-painting-dammam.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -575,7 +575,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260921-WA0005.webp'),
+    imageUrl: IMG('wajd-decor-project-1.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -589,7 +589,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260921-WA0006.webp'),
+    imageUrl: IMG('wajd-decor-project-2.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -603,7 +603,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260921-WA0008.webp'),
+    imageUrl: IMG('dammam-luxury-decor-main.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -617,7 +617,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260921-WA0009.webp'),
+    imageUrl: IMG('exterior-villa-painting-khobar.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -631,7 +631,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260921-WA0010.webp'),
+    imageUrl: IMG('wajd-decor-project-3.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -645,7 +645,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260921-WA0013.webp'),
+    imageUrl: IMG('wajd-decor-project-4.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -659,7 +659,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260921-WA0016.webp'),
+    imageUrl: IMG('garden-pergolas-and-umbrellas.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -673,7 +673,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260921-WA0017.webp'),
+    imageUrl: IMG('roof-waterproofing-foam-insulation.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -687,7 +687,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260921-WA0020.webp'),
+    imageUrl: IMG('wajd-decor-project-5.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -701,7 +701,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260921-WA0021.webp'),
+    imageUrl: IMG('wajd-decor-project-6.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -715,7 +715,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260921-WA0022.webp'),
+    imageUrl: IMG('luxury-interior-finishing-details.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -729,7 +729,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260921-WA0023.webp'),
+    imageUrl: IMG('wajd-decor-project-7.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -743,7 +743,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260921-WA0024.webp'),
+    imageUrl: IMG('wajd-decor-project-8.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -757,7 +757,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260921-WA0025.webp'),
+    imageUrl: IMG('wajd-decor-project-9.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -771,7 +771,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260923-WA0016.webp'),
+    imageUrl: IMG('wajd-decor-project-10.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -785,7 +785,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260923-WA0017.webp'),
+    imageUrl: IMG('wajd-decor-project-11.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -799,7 +799,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260923-WA0019.webp'),
+    imageUrl: IMG('interior-decor-project-19.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -813,7 +813,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260923-WA0020.webp'),
+    imageUrl: IMG('wajd-decor-project-12.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -827,7 +827,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260923-WA0021.webp'),
+    imageUrl: IMG('wajd-decor-project-13.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -841,7 +841,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260923-WA0023.webp'),
+    imageUrl: IMG('wajd-decor-project-14.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -855,7 +855,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260923-WA0024.webp'),
+    imageUrl: IMG('wajd-decor-project-15.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -869,7 +869,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260923-WA0025.webp'),
+    imageUrl: IMG('wajd-decor-project-16.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -883,7 +883,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260923-WA0026.webp'),
+    imageUrl: IMG('wajd-decor-project-17.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -897,7 +897,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260923-WA0027.webp'),
+    imageUrl: IMG('wajd-decor-project-18.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -911,7 +911,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260923-WA0029.webp'),
+    imageUrl: IMG('wajd-decor-project-19.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -925,7 +925,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260923-WA0030.webp'),
+    imageUrl: IMG('wajd-decor-project-20.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -939,7 +939,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260923-WA0031.webp'),
+    imageUrl: IMG('wajd-decor-project-21.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -953,7 +953,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     technique: 'تنفيذ شامل وتصميم عصري',
     dimensions: 'مساحات داخلية متنوعة',
     curatorNotes: 'نماذج وتصاميم منفذة باحترافية لتناسب تطلعاتكم وتضفي فخامة للمكان.',
-    imageUrl: IMG('IMG-20260923-WA0033.webp'),
+    imageUrl: IMG('interior-decor-project-33.webp'),
     featured: false,
     accentColor: '#C19A6B',
     colSpan: 'md:col-span-4'
@@ -969,7 +969,7 @@ export const SWATCH_FINISHES: SwatchFinish[] = [
     sheen: 'مطفي ربع لمعة (قابل للغسيل)',
     description: 'دهان فينوماستيك ناعم يمنح الغرف اتساعاً وإضاءة طبيعية مريحة، مقاوم للبقع وسهل التنظيف.',
     composition: 'أكريليك نقي مائي، بدون رائحة نفاذة، تغطية عالية',
-    imageUrl: IMG('IMG-20260921-WA0004.webp'),
+    imageUrl: IMG('joten-interior-painting-dammam.webp'),
     baseHex: '#F2EFEB',
     goldReflectance: 0.20
   },
@@ -981,7 +981,7 @@ export const SWATCH_FINISHES: SwatchFinish[] = [
     sheen: 'ملمس خشبي واقعي بدون لمعة',
     description: 'شرائح بديل الخشب المقاومة للماء والرطوبة بتضليع متناسق يضفي دفئاً عصرياً على خلفيات الشاشات والمداخل.',
     composition: 'بوليمر خشبي معالج، مقاوم لحشرات الخشب والرطوبة',
-    imageUrl: IMG('IMG-20260921-WA0011.webp'),
+    imageUrl: IMG('wood-alternative-wall-cladding.webp'),
     baseHex: '#5C4033',
     goldReflectance: 0.40
   },
@@ -993,7 +993,7 @@ export const SWATCH_FINISHES: SwatchFinish[] = [
     sheen: 'لمعان متوسط كالحجر المصقول',
     description: 'ألواح بديل رخام روز ذات ملمس دافئ وعروق طبيعية، سهلة التركيب والتنظيف وتعطي فخامة حجرية بوزن خفيف.',
     composition: 'طبقات PVC مقواة مع حماية UV ضد الخدش والبهتان',
-    imageUrl: IMG('IMG-20260921-WA0015.webp'),
+    imageUrl: IMG('gypsum-board-ceiling-design.webp'),
     baseHex: '#C2A090',
     goldReflectance: 0.65
   },
@@ -1005,7 +1005,7 @@ export const SWATCH_FINISHES: SwatchFinish[] = [
     sheen: 'لمعة اللاكيه الأبيض مع الأسود المطفي',
     description: 'وحدة تلفاز بتصميم أبيض وأسود عصري مع خطوط عمودية مميزة وإضاءة ليد ذهبية دافئة من الأسفل تعكس على الأرضية.',
     composition: 'جبس بورد ملون + شرائح بديل خشب + شريط ليد 3000K',
-    imageUrl: IMG('IMG-20260921-WA0007.webp'),
+    imageUrl: IMG('modern-tv-wall-decor.webp'),
     baseHex: '#E8E8E8',
     goldReflectance: 0.75
   },
@@ -1017,7 +1017,7 @@ export const SWATCH_FINISHES: SwatchFinish[] = [
     sheen: 'توهج ليد ناعم من الخلف',
     description: 'بانوهات كريستال عمودية مضاءة من الخلف بليد ذهبي دافئ، تحول جدران الصالة لإطار فني مضيء يبهر الزوار.',
     composition: 'زجاج بلوري مطفي + شريط ليد عالي الكثافة + هيكل حديدي',
-    imageUrl: IMG('IMG-20260921-WA0018.webp'),
+    imageUrl: IMG('crystal-panels-led-lighting-decor.webp'),
     baseHex: '#F8F0D8',
     goldReflectance: 0.90
   }
@@ -1031,7 +1031,7 @@ export const ARTISAN_STEPS: ArtisanStep[] = [
     description: 'زيارة موقع العمل ومطالعة المساحات وفحص حالة الجدران والأسقف مجاناً.',
     detail: 'نقوم بالاطلاع على متطلباتكم، عرض عينات الألوان والكتالوجات المناسبة للدهانات وبديل الخشب والرخام والجبس بورد، وتحديد التكلفة بدقة وبدون أي رسوم خفية.',
     materials: 'كتالوجات جوتن والجزيرة، عينات خشب ورخام، أجهزة ليزر دقيقة',
-    images: [IMG('IMG-20260921-WA0003.webp')]
+    images: [IMG('classic-foam-panels-design.webp')]
   },
   {
     step: '٢',
@@ -1040,7 +1040,7 @@ export const ARTISAN_STEPS: ArtisanStep[] = [
     description: 'تركيب قطاعات الحديد وألواح الجبس بورد لتشكيل الأسقف والقواطع والأشكال الهندسية.',
     detail: 'يبدأ الفريق بتركيب هيكل القطاعات الحديدية المجلفنة بدقة ليزرية، ثم تثبيت ألواح الجبس بورد الأخضر المقاوم للرطوبة وفق التصميم المتفق عليه.',
     materials: 'قطاعات حديد مجلفن، ألواح جبس بورد أخضر، مسامير ومنزلات، شريط فايبر',
-    images: [IMG('IMG-20260921-WA0012.webp')]
+    images: [IMG('bedroom-modern-gypsum-decor.webp')]
   },
   {
     step: '٣',
@@ -1049,7 +1049,7 @@ export const ARTISAN_STEPS: ArtisanStep[] = [
     description: 'تنفيذ الأشكال الهندسية المعقدة كالمعين والخلية السداسية والأطر المتداخلة.',
     detail: 'يقوم الفنيون المتخصصون بتقطيع وتشكيل ألواح الجبس بمهارة عالية لتنفيذ التصاميم الهندسية المتقنة، مع معالجة الفواصل بالمعجون لضمان سطح أملس تماماً.',
     materials: 'معجون جبس أصلي، شريط مقاوم للتشققات، أدوات تشكيل دقيقة',
-    images: [IMG('IMG-20260921-WA0023.webp'), IMG('IMG-20260921-WA0020.webp')]
+    images: [IMG('wajd-decor-project-7.webp'), IMG('wajd-decor-project-5.webp')]
   },
   {
     step: '٤',
@@ -1058,7 +1058,7 @@ export const ARTISAN_STEPS: ArtisanStep[] = [
     description: 'تثبيت شرائح بديل الخشب وألواح بديل الرخام لخلفيات الشاشات والجدران.',
     detail: 'يتم تركيب الشرائح والألواح بواسطة غراء ألماني وتثبيتات دقيقة مع مراعاة الإستيل الفاصل والاتجاه الهندسي الصحيح لكل لوحة، وصولاً لنتيجة نظيفة واحترافية.',
     materials: 'شرائح بديل خشب (WPC)، ألواح بديل رخام (PVC)، غراء ألماني، إستيل فاصل',
-    images: [IMG('IMG-20260921-WA0017.webp'), IMG('IMG-20260921-WA0014.webp')]
+    images: [IMG('roof-waterproofing-foam-insulation.webp'), IMG('wood-and-marble-alternative-panels.webp')]
   },
   {
     step: '٥',
@@ -1067,7 +1067,7 @@ export const ARTISAN_STEPS: ArtisanStep[] = [
     description: 'توصيل شرائط الليد المخفية ثم الدهانات النهائية وتنظيف وتسليم العمل.',
     detail: 'تُثبّت شرائط الليد الدافئة في القنوات المخصصة داخل الجبس والديكور، ثم تطبق طبقات الدهان النهائية، وينتهي العمل بتنظيف كامل للموقع وتسليم مع الضمان.',
     materials: 'شريط ليد 3000K، محولات ثابتة، أصباغ جوتن نهائية، معدات تنظيف',
-    images: [IMG('IMG-20260921-WA0010.webp')]
+    images: [IMG('wajd-decor-project-3.webp')]
   }
 ];
 

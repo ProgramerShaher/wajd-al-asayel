@@ -81,11 +81,11 @@ export default function ArtisanProcess() {
               {/* Image */}
               <div className="relative w-full aspect-[16/9] sm:aspect-[16/10] overflow-hidden group flex">
                 {activeStep.images.map((img, i) => (
-                  <img
-                    key={i}
+                  <img key={i}
                     src={img}
                     alt={`${activeStep.name} - مقاول دهانات الشرقية وبديل رخام`}
                     loading="lazy"
+                    decoding="async"
                     className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${activeStep.images.length > 1 ? 'w-1/2 border-r border-[#C19A6B]/20' : ''}`}
                   />
                 ))}
@@ -166,7 +166,7 @@ export default function ArtisanProcess() {
                   }`}
                 >
                   <div className="relative w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 border border-[#C19A6B]/30">
-                    <img src={step.images[0]} alt={step.name} loading="lazy" className="w-full h-full object-cover" />
+                    <img src={step.images[0]} alt={step.name} loading="lazy" className="w-full h-full object-cover" decoding="async" />
                     <span className="absolute bottom-0 right-0 bg-black/85 px-1 py-0.5 text-[8px] font-mono text-[#E6C280] font-bold">{step.step}</span>
                   </div>
                   <div className="min-w-0 flex-1 text-right">
@@ -208,12 +208,10 @@ export default function ArtisanProcess() {
                   <div className="flex items-center justify-between gap-3">
                     <div className="flex items-center gap-3 min-w-0">
                       <div className="relative w-12 h-12 rounded-xl overflow-hidden flex-shrink-0 border border-[#C19A6B]/30">
-                        <img
-                          src={step.images[0]}
+                        <img src={step.images[0]}
                           alt={`${step.name} ديكورات الدمام`}
                           loading="lazy"
-                          className={`w-full h-full object-cover transition-transform duration-500 ${isActive ? 'scale-110' : 'group-hover:scale-105 opacity-75'}`}
-                        />
+                          className={`w-full h-full object-cover transition-transform duration-500 ${isActive ? 'scale-110' : 'group-hover:scale-105 opacity-75'}`} decoding="async" />
                         <span className="absolute bottom-0 right-0 bg-black/85 px-1 py-0.5 text-[9px] font-mono text-[#E6C280] font-bold">٠{step.step}</span>
                       </div>
                       <div className="min-w-0 text-right">
@@ -266,12 +264,12 @@ export default function ArtisanProcess() {
               >
                 <div className="relative w-full h-[320px] sm:h-[420px] lg:h-[480px] bg-[var(--bg-elevated)] overflow-hidden group flex">
                   {activeStep.images.map((img, i) => (
-                    <img
-                      key={i}
+                    <img key={i}
                       src={img}
                       alt={`${activeStep.name} - مقاول دهانات وديكور الشرقية`}
                       loading="lazy"
                       className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${activeStep.images.length > 1 ? 'w-1/2 border-r border-[#C19A6B]/20' : ''}`}
+                      decoding="async"
                     />
                   ))}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/35 pointer-events-none" />
@@ -360,13 +358,11 @@ export default function ArtisanProcess() {
             </div>
             <div className="flex-1 flex gap-4 items-center justify-center max-w-6xl mx-auto w-full">
               {activeStep.images.map((img, i) => (
-                <img
-                  key={i}
+                <img key={i}
                   src={img}
                   alt={activeStep.name}
                   loading="lazy"
-                  className="max-h-[82vh] max-w-full object-contain rounded-xl border border-[#C19A6B]/40 shadow-2xl flex-1"
-                />
+                  className="max-h-[82vh] max-w-full object-contain rounded-xl border border-[#C19A6B]/40 shadow-2xl flex-1" decoding="async" />
               ))}
             </div>
           </motion.div>

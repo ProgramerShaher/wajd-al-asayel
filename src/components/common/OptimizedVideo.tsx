@@ -87,12 +87,10 @@ export default function OptimizedVideo({
     >
       {/* Fallback Poster & Shimmer Placeholder */}
       {poster && !isLoaded && (
-        <img
-          src={poster}
+        <img src={poster}
           alt={title}
           className="absolute inset-0 w-full h-full object-cover blur-sm scale-105 transition-opacity duration-500"
-          loading="lazy"
-        />
+          loading="lazy" decoding="async" />
       )}
 
       {/* Video Element with Dual Sources */}

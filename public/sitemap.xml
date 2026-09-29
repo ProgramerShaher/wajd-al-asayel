@@ -10,115 +10,123 @@
     http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
 
   <!-- ══════════════════════════════════════════════════════════════════════ -->
-  <!-- الصفحة الرئيسية: الأولوية القصوى 1.0 — "ديكورات | الدمام | وجد"     -->
+  <!-- الصفحة الرئيسية — دهانات وديكورات الدمام                              -->
   <!-- ══════════════════════════════════════════════════════════════════════ -->
   <url>
-    <loc>https://wajd-al-asayel.vercel.app/</loc>
+    <loc>https://wajdalasayel.com/</loc>
     <lastmod>2026-09-29</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    
-    <!-- صور الديكورات الرئيسية للأرشفة في Google Images -->
+
+    <!-- صور الديكورات الرئيسية لأرشفة Google Images -->
     <image:image>
-      <image:loc>https://wajd-al-asayel.vercel.app/images/IMG-20260921-WA0008.webp</image:loc>
-      <image:title>ديكورات الدمام والخبر - مؤسسة وجد الأصايل</image:title>
-      <image:caption>تنفيذ أرقى أعمال الديكورات والدهانات وتشطيب الفلل والقصور بالدمام والخبر</image:caption>
+      <image:loc>https://wajdalasayel.com/images/dammam-luxury-decor-main.webp</image:loc>
+      <image:title>ديكورات فاخرة في الدمام — مؤسسة وجد الأصايل</image:title>
+      <image:caption>تنفيذ ديكورات عصرية ودهانات احترافية للفلل والشقق بالدمام والخبر</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://wajd-al-asayel.vercel.app/images/IMG-20260921-WA0018.webp</image:loc>
-      <image:title>ديكورات بانوهات مضيئة وكريستال جداري بالدمام</image:title>
-      <image:caption>بانوهات كريستال وإضاءة ليد ذهبية مخفية لتزيين صالات الاستقبال والمجالس</image:caption>
+      <image:loc>https://wajdalasayel.com/images/crystal-panels-led-lighting-decor.webp</image:loc>
+      <image:title>بانوهات مضيئة وكريستال جداري — وجد الأصايل الدمام</image:title>
+      <image:caption>بانوهات كريستال وإضاءة ليد ذهبية مخفية لتزيين صالات الاستقبال</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://wajd-al-asayel.vercel.app/images/IMG-20260921-WA0007.webp</image:loc>
-      <image:title>ديكورات شاشات تلفزيون وبديل الرخام والخشب بالخبر</image:title>
-      <image:caption>أحدث تصميمات ديكورات الشاشات الجدارية والرفوف العصرية بالدمام والخبر</image:caption>
+      <image:loc>https://wajdalasayel.com/images/wood-and-marble-alternative-panels.webp</image:loc>
+      <image:title>تكسيات بديل الخشب والرخام — ديكورات الدمام</image:title>
+      <image:caption>تركيب شرائح بديل الخشب وبديل الرخام بمواصفات عالية في الدمام</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://wajd-al-asayel.vercel.app/images/IMG-20260921-WA0014.webp</image:loc>
-      <image:title>ديكورات بديل الخشب الكوري وبديل الرخام للجدران</image:title>
-      <image:caption>تركيب شرائح وتكسيات بديل الخشب وبديل الرخام بمواصفات عالية ومقاومة للرطوبة</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://wajd-al-asayel.vercel.app/images/IMG-20260921-WA0015.webp</image:loc>
-      <image:title>ديكورات جبس بورد وأسقف معلقة بالدمام</image:title>
-      <image:caption>تصاميم جبس بورد ناعمة وفخمة مع بيوت نور مخفية وتوزيع سبوت لايت هندسي</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://wajd-al-asayel.vercel.app/images/IMG-20260921-WA0004.webp</image:loc>
-      <image:title>ديكورات أقواس ودهانات داخلية جوتن بالدمام</image:title>
-      <image:caption>تنفيذ أقواس وقناطر كلاسيكية وبانوهات فوم مع دهانات جوتن الفاخرة</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://wajd-al-asayel.vercel.app/images/IMG-20260921-WA0017.webp</image:loc>
-      <image:title>عوازل مائية وحرارية للأسطح بالدمام والخبر</image:title>
-      <image:caption>عزل أسطح فوم وعوازل مائية معتمدة ضد تسربات الأمطار والحرارة مع ضمان 10 سنوات</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://wajd-al-asayel.vercel.app/images/IMG-20260921-WA0016.webp</image:loc>
-      <image:title>ديكورات سواتر ومظلات وبرجولات حدائق بالدمام</image:title>
-      <image:caption>تصميم وتنفيذ أحدث السواتر والمظلات العصرية للمنازل والفلل بالشرقية</image:caption>
+      <image:loc>https://wajdalasayel.com/images/gypsum-board-ceiling-design.webp</image:loc>
+      <image:title>أسقف جبس بورد معلقة — ديكورات الدمام والخبر</image:title>
+      <image:caption>تصاميم جبس بورد فاخرة مع بيوت نور مخفية وإضاءة سبوت هندسي</image:caption>
     </image:image>
   </url>
 
   <!-- ══════════════════════════════════════════════════════════════════════ -->
-  <!-- قسم الخدمات: ديكورات الدمام والخبر (priority: 0.9)                    -->
+  <!-- صفحة ديكورات الدمام — Primary: ديكورات الدمام                         -->
   <!-- ══════════════════════════════════════════════════════════════════════ -->
   <url>
-    <loc>https://wajd-al-asayel.vercel.app/#services</loc>
+    <loc>https://wajdalasayel.com/dikurat</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+
+    <image:image>
+      <image:loc>https://wajdalasayel.com/images/crystal-panels-led-lighting-decor.webp</image:loc>
+      <image:title>ديكورات الدمام — بانوهات كريستال وإضاءة فاخرة</image:title>
+      <image:caption>تنفيذ ديكورات عصرية للمجالس والصالات بالدمام والخبر</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wajdalasayel.com/images/wood-alternative-wall-cladding.webp</image:loc>
+      <image:title>بديل الخشب الجداري — ديكورات الدمام</image:title>
+      <image:caption>تكسية جدارية بشرائح بديل الخشب المضلع الجوزي الداكن</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wajdalasayel.com/images/gypsum-board-ceiling-design.webp</image:loc>
+      <image:title>بديل الرخام الفاخر — ديكورات الخبر</image:title>
+      <image:caption>تركيب ألواح بديل الرخام بتأطير بيضاوي وإضاءة مركزية</image:caption>
+    </image:image>
   </url>
 
   <!-- ══════════════════════════════════════════════════════════════════════ -->
-  <!-- قسم فاحص المواد: دهانات وبدائل الخشب والرخام (priority: 0.85)         -->
+  <!-- صفحة دهانات الدمام — Primary: دهانات الدمام                           -->
   <!-- ══════════════════════════════════════════════════════════════════════ -->
   <url>
-    <loc>https://wajd-al-asayel.vercel.app/#inspector</loc>
+    <loc>https://wajdalasayel.com/dakhanat</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.9</priority>
+
+    <image:image>
+      <image:loc>https://wajdalasayel.com/images/joten-interior-painting-dammam.webp</image:loc>
+      <image:title>دهانات داخلية وبانوهات جدارية — دهانات الدمام</image:title>
+      <image:caption>دهانات جوتن البيضاء مع قناطر وأقواس كلاسيكية بالدمام</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wajdalasayel.com/images/exterior-villa-painting-khobar.webp</image:loc>
+      <image:title>دهانات خارجية للفلل — الدمام والخبر</image:title>
+      <image:caption>دهانات خارجية احترافية بأجود المواد لمقاومة الحرارة</image:caption>
+    </image:image>
   </url>
 
   <!-- ══════════════════════════════════════════════════════════════════════ -->
-  <!-- معرض أعمال وجد الأصايل: ديكورات وصور حقيقية (priority: 0.85)         -->
+  <!-- صفحة معرض الأعمال — صور ديكورات الدمام                                -->
   <!-- ══════════════════════════════════════════════════════════════════════ -->
   <url>
-    <loc>https://wajd-al-asayel.vercel.app/#portfolio</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- ══════════════════════════════════════════════════════════════════════ -->
-  <!-- معرض الفيديو: أعمال الديكورات والدهانات الحقيقية (priority: 0.8)      -->
-  <!-- ══════════════════════════════════════════════════════════════════════ -->
-  <url>
-    <loc>https://wajd-al-asayel.vercel.app/#video-gallery</loc>
-    <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ══════════════════════════════════════════════════════════════════════ -->
-  <!-- عملية التنفيذ الاحترافية: 5 مراحل فن الديكور (priority: 0.75)         -->
-  <!-- ══════════════════════════════════════════════════════════════════════ -->
-  <url>
-    <loc>https://wajd-al-asayel.vercel.app/#process</loc>
+    <loc>https://wajdalasayel.com/amal</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
+    <priority>0.8</priority>
 
+    <image:image>
+      <image:loc>https://wajdalasayel.com/images/modern-tv-wall-decor.webp</image:loc>
+      <image:title>معرض ديكورات الدمام — وحدات تلفاز وبديل الرخام</image:title>
+      <image:caption>أحدث تصميمات ديكورات الشاشات الجدارية والرفوف بالدمام والخبر</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wajdalasayel.com/images/roof-waterproofing-foam-insulation.webp</image:loc>
+      <image:title>عوازل مائية وحرارية للأسطح بالدمام والخبر</image:title>
+      <image:caption>عزل أسطح فوم وعوازل مائية معتمدة ضد التسربات بضمان 10 سنوات</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wajdalasayel.com/images/garden-pergolas-and-umbrellas.webp</image:loc>
+      <image:title>سواتر ومظلات وبرجولات حدائق بالدمام</image:title>
+      <image:caption>تصميم وتنفيذ أحدث السواتر والمظلات للمنازل والفلل</image:caption>
+    </image:image>
+  </url>
   <!-- ══════════════════════════════════════════════════════════════════════ -->
-  <!-- تواصل معنا: حجز معاينة ديكورات الدمام (priority: 0.9)                 -->
+  <!-- صفحة عوازل الدمام — Primary: عوازل الدمام                             -->
   <!-- ══════════════════════════════════════════════════════════════════════ -->
   <url>
-    <loc>https://wajd-al-asayel.vercel.app/#contact</loc>
+    <loc>https://wajdalasayel.com/awazel</loc>
     <lastmod>2026-09-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+
+    <image:image>
+      <image:loc>https://wajdalasayel.com/images/roof-waterproofing-foam-insulation.webp</image:loc>
+      <image:title>عوازل أسطح مائية وحرارية بالدمام والخبر</image:title>
+      <image:caption>خدمات عزل الأسطح المائي والحراري بضمان رسمي حتى 10 سنوات — وجد الأصايل</image:caption>
+    </image:image>
   </url>
 
 </urlset>

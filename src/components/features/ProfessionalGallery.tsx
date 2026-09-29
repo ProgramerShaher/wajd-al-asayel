@@ -92,16 +92,14 @@ function LightboxModal({
       >
         {/* Image */}
         <AnimatePresence mode="wait">
-          <motion.img
-            key={current}
+          <motion.img key={current}
             src={photo.src}
             alt={photo.title}
             initial={{ opacity: 0, scale: 1.04 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="w-full max-h-[58dvh] sm:max-h-[70vh] object-contain sm:object-cover bg-black/60"
-          />
+            className="w-full max-h-[58dvh] sm:max-h-[70vh] object-contain sm:object-cover bg-black/60" loading="lazy" decoding="async" />
         </AnimatePresence>
 
         {/* Caption overlay */}
@@ -183,15 +181,13 @@ function PhotoCard({
         }}
       >
         {/* Image */}
-        <img
-          src={photo.src}
+        <img src={photo.src}
           alt={photo.title}
           loading="lazy"
           className="w-full h-48 sm:h-52 object-cover transition-transform duration-700"
           style={{
             transform: hovered ? 'scale(1.1)' : 'scale(1)',
-          }}
-        />
+          }} decoding="async" />
 
         {/* Zoom icon */}
         <div

@@ -150,8 +150,7 @@ export default function OptimizedImage({
           />
 
           {/* Fallback Image with Strict CLS Prevention & Priority Tags */}
-          <img
-            src={src}
+          <img src={src}
             alt={alt}
             title={title}
             width={width}

@@ -37,14 +37,12 @@ export default function ManifestoSection() {
           <div className="lg:col-span-7 flex flex-col gap-4 sm:gap-5">
             {/* Visual Architecture Showcase */}
             <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-[var(--border-light)] group shadow-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop"
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop"
                 alt="تنفيذ دهانات وديكورات داخلية حديثة بالدمام والخبر"
                 width={1600}
                 height={1000}
                 className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700 ease-out"
-                loading="lazy"
-              />
+                loading="lazy" decoding="async" />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-[var(--bg-primary)]/40 to-transparent" />
 
               {/* Bottom Caption Overlay */}
@@ -104,12 +102,10 @@ export default function ManifestoSection() {
                 </p>
               </div>
               <div className="w-16 h-20 xs:w-20 xs:h-24 sm:w-24 sm:h-28 rounded-xl overflow-hidden border border-[#C19A6B]/40 shrink-0 shadow-inner bg-[var(--bg-primary)] flex items-center justify-center">
-                <img 
-                  src="/images/IMG-202609421-WA0002.jpg" 
+                <img src="/images/dammam-decor-artisan-work.jpg" 
                   alt="سجل تجاري مؤسسة وجد الأصايل مقاولات ديكور دهانات الدمام" 
                   loading="lazy" 
-                  className="w-full h-full object-contain p-1"
-                />
+                  className="w-full h-full object-contain p-1" decoding="async" />
               </div>
             </motion.div>
           </div>

@@ -56,11 +56,9 @@ export default function MaterialInspector() {
             onTouchMove={handleTouchMove}
             className="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-2xl overflow-hidden border border-[#C19A6B]/30 shadow-xl cursor-crosshair touch-none"
           >
-            <img
-              src={selectedFinish.imageUrl}
+            <img src={selectedFinish.imageUrl}
               alt={selectedFinish.name}
-              className="w-full h-full object-cover select-none pointer-events-none"
-            />
+              className="w-full h-full object-cover select-none pointer-events-none" loading="lazy" decoding="async" />
             {/* Specular light */}
             <div
               className="pointer-events-none absolute inset-0 transition-opacity duration-150"
@@ -213,11 +211,9 @@ export default function MaterialInspector() {
                 onTouchMove={handleTouchMove}
                 className="relative aspect-square w-full max-w-[400px] mx-auto rounded-2xl overflow-hidden border border-[#C19A6B]/30 bg-[var(--bg-surface)] shadow-[0_20px_60px_rgba(0,0,0,0.4)] cursor-crosshair touch-none"
               >
-                <img
-                  src={selectedFinish.imageUrl}
+                <img src={selectedFinish.imageUrl}
                   alt={selectedFinish.name}
-                  className="w-full h-full object-cover select-none pointer-events-none"
-                />
+                  className="w-full h-full object-cover select-none pointer-events-none" loading="lazy" decoding="async" />
                 <div
                   className="pointer-events-none absolute inset-0 transition-opacity duration-150"
                   style={{

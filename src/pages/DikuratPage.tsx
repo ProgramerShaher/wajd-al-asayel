@@ -1,14 +1,16 @@
 /**
  * pages/DikuratPage.tsx — صفحة ديكورات الدمام
- * تستهدف: "ديكورات" / "ديكورات الدمام" / "معلم ديكورات"
- * تعتمد على: SERVICES_DATA + PORTFOLIO_ITEMS + TESTIMONIALS من studioData
+ * Primary Keyword: ديكورات الدمام
+ * Secondary: معلم ديكورات الدمام، ديكورات فلل، جبس بورد، بديل الخشب
+ * Intent: Commercial
  */
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Sparkles, CheckCircle2, ArrowLeft, Star, MapPin, Phone, MessageCircle } from 'lucide-react';
+import { Sparkles, CheckCircle2, ArrowLeft, Star, MapPin, Phone, MessageCircle, HelpCircle } from 'lucide-react';
 import { SERVICES_DATA, PORTFOLIO_ITEMS, TESTIMONIALS, STUDIO_METRICS } from '@/data/studioData';
 import ContactSection from '@/components/features/ContactSection';
+import PageSEO from '@/components/seo/PageSEO';
+import { DIKURAT_SEO, DIKURAT_JSONLD } from '@/data/seoData';
 
 // ── فلترة الخدمات المتعلقة بالديكورات
 const DECOR_SERVICES = SERVICES_DATA.filter(s =>
@@ -20,51 +22,37 @@ const DECOR_PORTFOLIO = PORTFOLIO_ITEMS.filter(p =>
   ['وحدات التلفاز والديكورات', 'أسقف جبس بورد', 'ديكورات إنارة فاخرة', 'بديل الرخام والتكسيات', 'بديل الخشب', 'تشطيب متكامل', 'ديكور غرف النوم'].includes(p.category)
 ).slice(0, 9);
 
-// ── بيانات SEO لـ JSON-LD
-const PAGE_SCHEMA = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'Service',
-      name: 'ديكورات الدمام والخبر',
-      alternateName: ['ديكورات', 'ديكورات الدمام', 'معلم ديكورات الدمام', 'ديكور فلل الدمام'],
-      description: 'أحدث الديكورات العصرية بالدمام والخبر: بديل الخشب، بديل الرخام، جبس بورد، بانوهات، أسقف معلقة. خبرة 30 عاماً.',
-      url: 'https://wajd-al-asayel.vercel.app/dikurat',
-      provider: {
-        '@type': 'HomeAndConstructionBusiness',
-        name: 'مؤسسة وجد الأصايل',
-        telephone: '+966556557498',
-        address: { '@type': 'PostalAddress', addressLocality: 'الدمام', addressCountry: 'SA' },
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '186', bestRating: '5' },
-      },
-      areaServed: ['الدمام', 'الخبر', 'الظهران', 'القطيف'],
-    },
-    {
-      '@type': 'FAQPage',
-      mainEntity: [
-        { '@type': 'Question', name: 'ما أفضل ديكورات الدمام؟', acceptedAnswer: { '@type': 'Answer', text: 'وجد الأصايل الأفضل بخبرة 30 عاماً وأكثر من 200 مشروع.' } },
-        { '@type': 'Question', name: 'كم تكلفة ديكورات صالة بالدمام؟', acceptedAnswer: { '@type': 'Answer', text: 'تبدأ من 2000 ريال حسب المساحة والمواد. معاينة مجانية: 0556557498.' } },
-      ],
-    },
-  ],
-};
+const FAQ_ITEMS = [
+  {
+    q: 'ما أنواع الديكورات التي تنفذها مؤسسة وجد الأصايل في الدمام؟',
+    a: 'نتخصص في تنفيذ ديكورات بديل الخشب الكوري، بديل الرخام الفاخر، أسقف جبس بورد معلقة، بانوهات فوم كلاسيكية، وحدات تلفاز حديثة، وديكورات الإنارة المخفية. نخدم الدمام والخبر والظهران وكافة مدن المنطقة الشرقية.',
+  },
+  {
+    q: 'كم تكلفة ديكورات صالة في الدمام؟',
+    a: 'تبدأ أسعار ديكورات الصالة من ٢٠٠٠ ريال وتتفاوت حسب المساحة ونوع المواد المختارة. نوفر معاينة مجانية وعرض سعر تفصيلي بلا أي التزام. تواصل معنا: 0556557498',
+  },
+  {
+    q: 'هل تقدمون ضماناً على أعمال الديكورات؟',
+    a: 'نعم، نقدم ضماناً رسمياً على جميع أعمال الديكورات التي ننفذها، مع التزام كامل بالجودة وتسليم الأعمال في الموعد المحدد.',
+  },
+  {
+    q: 'هل تغطون منطقة الخبر أيضاً؟',
+    a: 'نعم، نغطي الدمام والخبر والظهران وسيهات والقطيف والجبيل وجميع مدن المنطقة الشرقية.',
+  },
+];
 
 export default function DikuratPage() {
-  // ── تحديث meta tags
-  useEffect(() => {
-    const prev = document.title;
-    document.title = 'ديكورات الدمام والخبر | معلم ديكورات متخصص — مؤسسة وجد الأصايل';
-    setMeta('description', 'أحدث الديكورات العصرية في الدمام والخبر: بديل الخشب، بديل الرخام، جبس بورد، أسقف معلقة. خبرة 30 عاماً وضمان رسمي. اتصل: 0556557498');
-    setMeta('keywords', 'ديكورات الدمام, ديكورات, معلم ديكورات الدمام, ديكورات فلل, جبس بورد, بديل الخشب, بديل الرخام, ديكورات الخبر');
-    setCanonical('https://wajd-al-asayel.vercel.app/dikurat');
-    return () => { document.title = prev; };
-  }, []);
-
   return (
     <main id="dikurat-main" className="relative z-20 text-right" dir="rtl">
-      {/* JSON-LD */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(PAGE_SCHEMA) }} />
-
+      {/* SEO Component مركزي */}
+      <PageSEO
+        title={DIKURAT_SEO.title}
+        description={DIKURAT_SEO.description}
+        canonical={DIKURAT_SEO.canonical}
+        ogTitle={DIKURAT_SEO.ogTitle}
+        ogImage={DIKURAT_SEO.ogImage}
+        jsonLd={DIKURAT_JSONLD}
+      />
       {/* ══ HERO ══ */}
       <section
         id="dikurat-hero"
@@ -73,13 +61,11 @@ export default function DikuratPage() {
       >
         {/* خلفية: أول صورة ديكور حقيقية */}
         <div className="absolute inset-0 z-0">
-          <img
-            src="/images/IMG-20260921-WA0018.webp"
+          <img src="/images/crystal-panels-led-lighting-decor.webp"
             alt="ديكورات الدمام — مؤسسة وجد الأصايل"
             className="w-full h-full object-cover"
             loading="eager"
-            fetchPriority="high"
-          />
+            fetchPriority="high" decoding="sync" />
           <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-[var(--bg-primary)]/60 to-[var(--bg-primary)]/20" />
         </div>
 
@@ -180,13 +166,11 @@ export default function DikuratPage() {
               >
                 {/* صورة حقيقية من المشروع */}
                 <div className="relative aspect-[4/3] overflow-hidden bg-[var(--bg-elevated)]">
-                  <img
-                    src={service.imageUrl}
+                  <img src={service.imageUrl}
                     alt={service.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     loading="lazy"
-                    itemProp="image"
-                  />
+                    itemProp="image" decoding="async" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
                   <span className="absolute top-3 right-3 px-3 py-1 rounded-full bg-[#050505]/80 backdrop-blur-md border border-[#38BDF8]/30 text-[10px] text-[#38BDF8] font-sans-clean">
                     {service.category}
@@ -252,12 +236,10 @@ export default function DikuratPage() {
                 transition={{ delay: idx * 0.06 }}
                 className="relative rounded-xl overflow-hidden group cursor-pointer aspect-square"
               >
-                <img
-                  src={item.imageUrl}
+                <img src={item.imageUrl}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  loading="lazy"
-                />
+                  loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <figcaption className="absolute bottom-0 right-0 left-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                   <p className="text-xs font-bold text-white font-sans-clean">{item.title}</p>
@@ -314,20 +296,36 @@ export default function DikuratPage() {
         </div>
       </section>
 
+      {/* ══ أسئلة شائعة ══ */}
+      <section id="dikurat-faq" className="py-12 sm:py-16 px-4 sm:px-6 md:px-12 lg:px-16 bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)]">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center gap-2 text-xs text-[#C19A6B] mb-3 font-semibold font-sans-clean">
+            <HelpCircle size={13} />
+            <span>أسئلة يسألها عملاؤنا</span>
+          </div>
+          <h2 className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[var(--text-primary)] mb-8">
+            أسئلة شائعة حول ديكورات الدمام
+          </h2>
+          <dl className="space-y-5">
+            {FAQ_ITEMS.map((item, i) => (
+              <div
+                key={i}
+                className="rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-light)] p-5 sm:p-6"
+              >
+                <dt className="font-bold text-sm sm:text-base text-[var(--text-primary)] font-sans-clean mb-2">
+                  {item.q}
+                </dt>
+                <dd className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed font-sans-clean">
+                  {item.a}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
       {/* ══ قسم التواصل الكامل ══ */}
       <ContactSection />
     </main>
   );
-}
-
-// ── helpers
-function setMeta(name: string, content: string) {
-  let el = document.querySelector<HTMLMetaElement>(`meta[name="${name}"]`);
-  if (!el) { el = document.createElement('meta'); el.name = name; document.head.appendChild(el); }
-  el.content = content;
-}
-function setCanonical(href: string) {
-  let el = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-  if (!el) { el = document.createElement('link'); el.rel = 'canonical'; document.head.appendChild(el); }
-  el.href = href;
 }

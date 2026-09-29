@@ -1,6 +1,6 @@
 # ====================================================================
 # robots.txt - مؤسسة وجد الأصايل للديكورات والدهانات والعوازل
-# الموقع الرسمي: https://wajd-al-asayel.vercel.app/
+# الموقع الرسمي: https://wajdalasayel.com/
 # استراتيجية الفهرسة الكاملة لمحركات البحث وبوتات الذكاء الاصطناعي
 # ====================================================================
 
@@ -46,5 +46,5 @@ User-agent: Diffbot
 Allow: /
 
 # 4. خريطة الموقع والمضيف الرسمي
-Sitemap: https://wajd-al-asayel.vercel.app/sitemap.xml
-Host: https://wajd-al-asayel.vercel.app
+Sitemap: https://wajdalasayel.com/sitemap.xml
+Host: https://wajdalasayel.com

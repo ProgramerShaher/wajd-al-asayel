@@ -1,8 +1,8 @@
 import { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
-import Preloader from '@/components/common/Preloader';
-import CustomCursor from '@/components/common/CustomCursor';
+
+
 import NoiseCanvas from '@/components/common/NoiseCanvas';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -15,6 +15,7 @@ import Home from '@/pages/Home';
 const DikuratPage = lazy(() => import('@/pages/DikuratPage'));
 const DahanatPage = lazy(() => import('@/pages/DahanatPage'));
 const AmalPage = lazy(() => import('@/pages/AmalPage'));
+const AwazelPage = lazy(() => import('@/pages/AwazelPage'));
 
 // ── Loader
 function PageLoader() {
@@ -53,9 +54,8 @@ function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider>
       <div className="relative min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] overflow-x-hidden selection:bg-[#38BDF8]/30 transition-colors duration-500">
-        <Preloader onComplete={() => {}} />
+
         <NoiseCanvas />
-        <CustomCursor />
         <Navbar />
         <Suspense fallback={<PageLoader />}>
           {children}
@@ -86,6 +86,9 @@ export default function App() {
 
           {/* /amal — معرض الأعمال الكامل */}
           <Route path="/amal" element={<AmalPage />} />
+
+          {/* /awazel — عوازل الدمام */}
+          <Route path="/awazel" element={<AwazelPage />} />
 
           {/* Fallback */}
           <Route path="*" element={<Home />} />

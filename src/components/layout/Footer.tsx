@@ -113,35 +113,7 @@ export default function Footer() {
                 </svg>
               </a>
 
-              {/* Instagram Icon */}
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-cursor="انستقرام"
-                aria-label="حساب انستقرام"
-                title="انستقرام"
-                className="group relative w-11 h-11 xs:w-12 xs:h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center bg-gradient-to-tr from-[#f09433] via-[#dc2743] via-[#cc2366] to-[#bc1888] text-white shadow-[0_8px_20px_rgba(225,48,108,0.35)] hover:shadow-[0_12px_30px_rgba(225,48,108,0.65)] hover:scale-110 active:scale-95 transition-all duration-300"
-              >
-                <svg className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 fill-current drop-shadow-sm transition-transform group-hover:scale-110" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                </svg>
-              </a>
 
-              {/* Facebook Icon */}
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-cursor="فيسبوك"
-                aria-label="صفحة فيسبوك"
-                title="فيسبوك"
-                className="group relative w-11 h-11 xs:w-12 xs:h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center bg-gradient-to-tr from-[#1877F2] to-[#0D65D9] text-white shadow-[0_8px_20px_rgba(24,119,242,0.35)] hover:shadow-[0_12px_30px_rgba(24,119,242,0.65)] hover:scale-110 active:scale-95 transition-all duration-300"
-              >
-                <svg className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 fill-current drop-shadow-sm transition-transform group-hover:scale-110" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                </svg>
-              </a>
 
               {/* Direct Phone Call Icon 1 */}
               <a
@@ -186,34 +158,34 @@ export default function Footer() {
               دليل خدمات الديكورات والدهانات والعوازل — مؤسسة وجد الأصايل:
             </span>
             <div className="flex flex-wrap gap-2 sm:gap-2.5 text-[11px] sm:text-xs text-[var(--text-secondary)]">
-              <a href="#services" className="px-3 py-1 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[#C19A6B] hover:text-[#C19A6B] transition-colors">
+              <a href="/dikurat" className="px-3 py-1 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[#C19A6B] hover:text-[#C19A6B] transition-colors">
                 ديكورات الدمام
               </a>
-              <a href="#services" className="px-3 py-1 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[#C19A6B] hover:text-[#C19A6B] transition-colors">
+              <a href="/dakhanat" className="px-3 py-1 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[#C19A6B] hover:text-[#C19A6B] transition-colors">
                 دهانات الدمام والخبر
               </a>
-              <a href="#services" className="px-3 py-1 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[#C19A6B] hover:text-[#C19A6B] transition-colors">
+              <a href="/dikurat" className="px-3 py-1 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[#C19A6B] hover:text-[#C19A6B] transition-colors">
                 معلم ديكورات الدمام
               </a>
-              <a href="#inspector" className="px-3 py-1 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[#C19A6B] hover:text-[#C19A6B] transition-colors">
+              <a href="/dakhanat" className="px-3 py-1 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[#C19A6B] hover:text-[#C19A6B] transition-colors">
                 معلم دهانات الدمام
               </a>
-              <a href="#services" className="px-3 py-1 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[#C19A6B] hover:text-[#C19A6B] transition-colors">
+              <a href="/dikurat" className="px-3 py-1 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[#C19A6B] hover:text-[#C19A6B] transition-colors">
                 بديل الرخام وبديل الخشب الدمام
               </a>
-              <a href="#services" className="px-3 py-1 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[#C19A6B] hover:text-[#C19A6B] transition-colors">
+              <a href="/awazel" className="px-3 py-1 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[#C19A6B] hover:text-[#C19A6B] transition-colors">
                 عوازل مائية وعزل اسطح بالدمام
               </a>
-              <a href="#inspector" className="px-3 py-1 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[#C19A6B] hover:text-[#C19A6B] transition-colors">
+              <a href="/dikurat" className="px-3 py-1 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[#C19A6B] hover:text-[#C19A6B] transition-colors">
                 جبس بورد وأسقف معلقة بالخبر
               </a>
-              <a href="#portfolio" className="px-3 py-1 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[#C19A6B] hover:text-[#C19A6B] transition-colors">
+              <a href="/amal" className="px-3 py-1 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[#C19A6B] hover:text-[#C19A6B] transition-colors">
                 بانوهات فوم وشاشات تلفزيون مودرن
               </a>
-              <a href="#manifesto" className="px-3 py-1 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[#C19A6B] hover:text-[#C19A6B] transition-colors">
+              <a href="/" className="px-3 py-1 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[#C19A6B] hover:text-[#C19A6B] transition-colors">
                 مؤسسة وجد الأصايل للمقاولات
               </a>
-              <a href="#contact" className="px-3 py-1 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[#C19A6B] hover:text-[#C19A6B] transition-colors">
+              <a href="https://wa.me/966556557498" className="px-3 py-1 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[#C19A6B] hover:text-[#C19A6B] transition-colors">
                 طلب معاينة ديكورات مجاناً
               </a>
             </div>

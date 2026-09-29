@@ -76,8 +76,7 @@ const LazyImage: React.FC<LazyImageProps> = ({
 
       {/* الصورة الفعلية */}
       {isInView && !hasError && (
-        <img
-          src={src}
+        <img src={src}
           alt={alt}
           title={title}
           loading={priority ? 'eager' : 'lazy'}

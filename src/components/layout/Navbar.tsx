@@ -23,17 +23,23 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Initialize and auto-play audio on first interaction
+  // تشغيل الصوت عند أول تفاعل (لا يعمل على الهاتف الجوال لتوفير البيانات)
   useEffect(() => {
-    const audio = new Audio('/audio/sheila.mp3');
-    audio.loop = true;
-    audioRef.current = audio;
+    const isMobile = window.matchMedia('(hover: none)').matches;
+    if (isMobile) return; // لا نحمل صوتاً على الهاتف
 
     const handleFirstInteraction = () => {
-      if (audioRef.current && audioRef.current.paused) {
+      if (!audioRef.current) {
+        const audio = new Audio('/audio/sheila.mp3');
+        audio.loop = true;
+        audioRef.current = audio;
+        audio.play().then(() => {
+          setIsPlayingAudio(true);
+        }).catch(() => {});
+      } else if (audioRef.current.paused) {
         audioRef.current.play().then(() => {
           setIsPlayingAudio(true);
-        }).catch(() => { });
+        }).catch(() => {});
       }
       window.removeEventListener('click', handleFirstInteraction);
       window.removeEventListener('touchstart', handleFirstInteraction);
@@ -48,6 +54,7 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current.src = '';
+        audioRef.current = null;
       }
     };
   }, []);
@@ -85,6 +92,7 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
     { name: 'الرئيسية', href: '/', isRoute: true },
     { name: 'ديكورات الدمام', href: '/dikurat', isRoute: true },
     { name: 'دهانات الدمام', href: '/dakhanat', isRoute: true },
+    { name: 'عوازل الدمام', href: '/awazel', isRoute: true },
     { name: 'معرض الأعمال', href: '/amal', isRoute: true },
     { name: 'خدماتنا', href: isHome ? '#services' : '/#services', isRoute: false },
     { name: 'اتصل بنا', href: isHome ? '#contact' : '/#contact', isRoute: false },
@@ -110,12 +118,10 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
             data-cursor="الرئيسية"
           >
             <div className="relative w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 flex items-center justify-center flex-shrink-0">
-              <img
-                src="/wa-logo.png"
+              <img src="/wa-logo.png"
                 alt="شعار وجد الأصايل — ديكورات ودهانات الدمام"
                 className="w-full h-full object-contain transition-transform duration-700 group-hover:rotate-12"
-                loading="eager"
-              />
+                loading="eager" decoding="sync" />
             </div>
             <div className="flex items-center text-right truncate">
               <span className="font-serif-luxury text-lg xs:text-xl sm:text-2xl md:text-3xl font-black tracking-wide leading-normal pb-1 pt-0.5 bg-gradient-to-r from-[#FFF0D4] via-[#E6C280] to-[#C19A6B] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(230,194,128,0.35)] group-hover:scale-105 transition-transform duration-300 select-none whitespace-nowrap">

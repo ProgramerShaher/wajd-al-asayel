@@ -1,71 +1,63 @@
 /**
  * pages/DahanatPage.tsx — صفحة دهانات الدمام
- * تستهدف: "دهانات" / "دهانات الدمام" / "معلم دهانات"
+ * Primary Keyword: دهانات الدمام
+ * Secondary: معلم دهانات الدمام، دهانات جوتن، دهانات داخلية وخارجية
+ * Intent: Commercial
  */
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Sparkles, CheckCircle2, Phone, MessageCircle, Sun } from 'lucide-react';
-import { SERVICES_DATA, SWATCH_FINISHES, STUDIO_METRICS, TESTIMONIALS } from '@/data/studioData';
+import { Sparkles, CheckCircle2, Phone, MessageCircle, Sun, HelpCircle } from 'lucide-react';
+import { SERVICES_DATA, STUDIO_METRICS, TESTIMONIALS } from '@/data/studioData';
 import MaterialInspector from '@/components/features/MaterialInspector';
 import ContactSection from '@/components/features/ContactSection';
+import PageSEO from '@/components/seo/PageSEO';
+import { DAKHANAT_SEO, DAKHANAT_JSONLD } from '@/data/seoData';
 
-// ── فلترة خدمات الدهانات فقط
+// فلترة خدمات الدهانات فقط
 const PAINT_SERVICES = SERVICES_DATA.filter(s =>
   ['دهانات وتشطيب', 'تأسيس وإنشاء', 'تشطيب متكامل'].includes(s.category)
 );
 
-const PAGE_SCHEMA = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'Service',
-      name: 'دهانات الدمام والخبر — مؤسسة وجد الأصايل',
-      alternateName: ['دهانات', 'دهانات الدمام', 'معلم دهانات الدمام', 'دهانات جوتن الدمام', 'افضل دهانات الدمام'],
-      description: 'أفضل معلم دهانات بالدمام والخبر: دهانات داخلية وخارجية فاخرة بأحدث الألوان والمواد. دهانات جوتن، الجزيرة، فاليو. خبرة 30 عاماً وضمان رسمي.',
-      url: 'https://wajd-al-asayel.vercel.app/dakhanat',
-      provider: {
-        '@type': 'HomeAndConstructionBusiness',
-        name: 'مؤسسة وجد الأصايل',
-        telephone: '+966556557498',
-        address: { '@type': 'PostalAddress', addressLocality: 'الدمام', addressCountry: 'SA' },
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '186', bestRating: '5' },
-      },
-    },
-    {
-      '@type': 'FAQPage',
-      mainEntity: [
-        { '@type': 'Question', name: 'كم تكلفة دهان غرفة بالدمام؟', acceptedAnswer: { '@type': 'Answer', text: 'تبدأ من 150 ريال للغرفة حسب المساحة. معاينة مجانية: 0556557498.' } },
-        { '@type': 'Question', name: 'ما أفضل نوع دهان للمنازل بالدمام؟', acceptedAnswer: { '@type': 'Answer', text: 'دهانات جوتن وفاليو للداخل، والسيليكون للخارج لمقاومة حرارة الدمام.' } },
-      ],
-    },
-  ],
-};
+const FAQ_ITEMS_DAKHANAT = [
+  {
+    q: 'ما أفضل نوع دهان للمنازل في الدمام؟',
+    a: 'نوصي بدهانات جوتن وفاليو للأسطح الداخلية لجودتها ومقاومتها للرطوبة، ودهانات السيليكون للأسطح الخارجية لمقاومتها لحرارة المنطقة الشرقية.',
+  },
+  {
+    q: 'كم تكلفة دهان غرفة بالدمام؟',
+    a: 'تبدأ تكلفة دهان الغرفة من ١٥٠ ريال سعودي وتتفاوت حسب المساحة ونوع الدهان. نوفر معاينة مجانية وعرض سعر مجاني. اتصل: 0556557498',
+  },
+  {
+    q: 'هل تنفذون دهانات للفلل والعمارات في الدمام والخبر؟',
+    a: 'نعم، نتخصص في دهانات الفلل والشقق والقصور والعمارات والمباني التجارية بالدمام والخبر وكافة مدن المنطقة الشرقية.',
+  },
+  {
+    q: 'هل تستخدمون دهانات جوتن الأصلية؟',
+    a: 'نعم، نستخدم دهانات جوتن والجزيرة وفاليو الأصلية المعتمدة، مع معالجة كاملة للجدران وتأسيس متين قبل الدهان لضمان نتيجة مثلية.',
+  },
+];
 
 export default function DahanatPage() {
-  useEffect(() => {
-    const prev = document.title;
-    document.title = 'دهانات الدمام والخبر | معلم دهانات متخصص — مؤسسة وجد الأصايل';
-    setMeta('description', 'أفضل معلم دهانات بالدمام والخبر: دهانات داخلية وخارجية فاخرة بدهانات جوتن، الجزيرة، فاليو. خبرة 30 عاماً وضمان رسمي. اتصل: 0556557498');
-    setMeta('keywords', 'دهانات الدمام, دهانات, معلم دهانات الدمام, دهانات جوتن, دهانات داخلية, دهانات خارجية الدمام, افضل دهانات الدمام');
-    setCanonical('https://wajd-al-asayel.vercel.app/dakhanat');
-    return () => { document.title = prev; };
-  }, []);
-
   return (
     <main id="dakhanat-main" className="relative z-20 text-right" dir="rtl">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(PAGE_SCHEMA) }} />
+      {/* SEO Component مركزي */}
+      <PageSEO
+        title={DAKHANAT_SEO.title}
+        description={DAKHANAT_SEO.description}
+        canonical={DAKHANAT_SEO.canonical}
+        ogTitle={DAKHANAT_SEO.ogTitle}
+        ogImage={DAKHANAT_SEO.ogImage}
+        jsonLd={DAKHANAT_JSONLD}
+      />
 
       {/* ══ HERO ══ */}
       <section className="relative w-full min-h-[70vh] sm:min-h-[80vh] flex items-end overflow-hidden bg-[var(--bg-primary)] pt-24 sm:pt-28">
         <div className="absolute inset-0 z-0">
-          <img
-            src="/images/IMG-20260921-WA0004.webp"
+          <img src="/images/joten-interior-painting-dammam.webp"
             alt="دهانات الدمام — مؤسسة وجد الأصايل"
             className="w-full h-full object-cover"
             loading="eager"
-            fetchPriority="high"
-          />
+            fetchPriority="high" decoding="sync" />
           <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-[var(--bg-primary)]/55 to-[var(--bg-primary)]/10" />
         </div>
 
@@ -142,7 +134,7 @@ export default function DahanatPage() {
                 className="group rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-light)] overflow-hidden hover:border-[#C19A6B]/60 hover:shadow-[0_8px_30px_rgba(193,154,107,0.15)] transition-all duration-300"
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-[var(--bg-elevated)]">
-                  <img src={service.imageUrl} alt={service.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <img src={service.imageUrl} alt={service.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
                   <span className="absolute top-3 right-3 px-3 py-1 rounded-full bg-[#050505]/80 backdrop-blur-md border border-[#38BDF8]/30 text-[10px] text-[#38BDF8] font-sans-clean">{service.category}</span>
                 </div>
@@ -198,19 +190,36 @@ export default function DahanatPage() {
         </div>
       </section>
 
+      {/* ══ أسئلة شائعة ══ */}
+      <section id="dakhanat-faq" className="py-12 sm:py-16 px-4 sm:px-6 md:px-12 lg:px-16 bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)]">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center gap-2 text-xs text-[#C19A6B] mb-3 font-semibold font-sans-clean">
+            <HelpCircle size={13} />
+            <span>أسئلة يسألها عملاؤنا</span>
+          </div>
+          <h2 className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[var(--text-primary)] mb-8">
+            أسئلة شائعة حول دهانات الدمام
+          </h2>
+          <dl className="space-y-5">
+            {FAQ_ITEMS_DAKHANAT.map((item, i) => (
+              <div
+                key={i}
+                className="rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-light)] p-5 sm:p-6"
+              >
+                <dt className="font-bold text-sm sm:text-base text-[var(--text-primary)] font-sans-clean mb-2">
+                  {item.q}
+                </dt>
+                <dd className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed font-sans-clean">
+                  {item.a}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
       {/* ══ التواصل ══ */}
       <ContactSection />
     </main>
   );
-}
-
-function setMeta(name: string, content: string) {
-  let el = document.querySelector<HTMLMetaElement>(`meta[name="${name}"]`);
-  if (!el) { el = document.createElement('meta'); el.name = name; document.head.appendChild(el); }
-  el.content = content;
-}
-function setCanonical(href: string) {
-  let el = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-  if (!el) { el = document.createElement('link'); el.rel = 'canonical'; document.head.appendChild(el); }
-  el.href = href;
 }

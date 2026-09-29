@@ -60,11 +60,9 @@ export default function VideoGallery() {
               >
                 <div className="aspect-video relative overflow-hidden">
                   {isYouTube ? (
-                    <img
-                      src={item.imageUrl}
+                    <img src={item.imageUrl}
                       alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
-                    />
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" loading="lazy" decoding="async" />
                   ) : (
                     <video
                       src={item.videoUrl}

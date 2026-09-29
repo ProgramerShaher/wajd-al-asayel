@@ -3,19 +3,19 @@ import { Sparkles, Phone, MapPin, CheckCircle2, ArrowDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTheme } from '@/context/ThemeContext';
 
-// 3 Unsplash images for the slideshow
+// 3 Real portfolio images for the slideshow
 const SLIDESHOW_IMAGES = [
   {
-    url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80',
-    label: 'تصميم داخلي فاخر',
+    url: '/images/dammam-luxury-decor-main.webp',
+    label: 'تصميم داخلي فاخر بالدمام',
   },
   {
-    url: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80',
-    label: 'صالة معيشة حديثة',
+    url: '/images/living-room-decor-marble-tv.webp',
+    label: 'صالة معيشة حديثة بالخبر',
   },
   {
-    url: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80',
-    label: 'ديكور أنيق وعصري',
+    url: '/images/joten-interior-painting-dammam.webp',
+    label: 'دهانات داخلية أنيقة وعصرية',
   },
 ];
 
@@ -51,15 +51,13 @@ export default function HeroSection() {
             transition={{ duration: 1.5, ease: 'easeOut' }}
             className="absolute inset-0 w-full h-full"
           >
-            <motion.img
-              initial={{ scale: 1.1 }}
+            <motion.img initial={{ scale: 1.1 }}
               animate={{ scale: 1 }}
               transition={{ duration: 6, ease: 'linear' }}
               src={SLIDESHOW_IMAGES[slideIndex].url}
               alt={SLIDESHOW_IMAGES[slideIndex].label}
               className="w-full h-full object-cover origin-center"
-              style={{ filter: 'brightness(0.7) saturate(1.15)' }}
-            />
+              style={{ filter: 'brightness(0.7) saturate(1.15)' }} loading="lazy" decoding="async" />
           </motion.div>
         </AnimatePresence>
 
@@ -205,14 +203,12 @@ export default function HeroSection() {
                       : 'border-white/20 w-11 h-7 xs:w-12 xs:h-8 sm:w-14 sm:h-10 opacity-50 scale-100'
                   }`}
                 >
-                  <img
-                    src={img.url}
+                  <img src={img.url}
                     alt={img.label}
                     width={80}
                     height={56}
                     loading="eager"
-                    className="w-full h-full object-cover"
-                  />
+                    className="w-full h-full object-cover" decoding="sync" />
                 </div>
               ))}
             </motion.div>

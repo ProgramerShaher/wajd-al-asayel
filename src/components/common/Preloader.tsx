@@ -10,7 +10,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
   const [isDone, setIsDone] = useState(false);
 
   useEffect(() => {
-    const duration = 1800; // ms
+    const duration = 900; // ms — تقليل وقت التحميل لتحسين LCP
     const intervalTime = 20;
     const steps = duration / intervalTime;
     let currentStep = 0;

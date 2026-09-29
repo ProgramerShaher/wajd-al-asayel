@@ -183,12 +183,10 @@ export default function ServicesHorizontal({ onSelectServiceForSample }: Service
           >
             {/* Top Media Container with Luxury Tilt Feel */}
             <div className="relative aspect-[16/10] overflow-hidden bg-[var(--bg-elevated)]">
-              <img
-                src={service.imageUrl}
+              <img src={service.imageUrl}
                 alt={service.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                loading="lazy"
-              />
+                loading="lazy" decoding="async" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
 
               {/* Number and Category Badge */}
