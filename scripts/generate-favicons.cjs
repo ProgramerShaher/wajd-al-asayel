@@ -50,7 +50,7 @@ async function generateIcons() {
   // 2. توليد أيقونة Maskable للأندرويد (تتضمن Safe Zone بنسبة 10% إلى 15% حواف لحمايتها من القص)
   const maskablePath = path.join(PUBLIC_DIR, 'icon-maskable-512x512.png');
   const innerIconSize = Math.round(512 * 0.8); // 80% من الحجم الكلي لمنطقة الأمان (Safe Zone)
-  
+
   const resizedInner = await sharp(sourceBuffer)
     .resize(innerIconSize, innerIconSize, { fit: 'contain', background: { r: 5, g: 5, b: 5, alpha: 1 } })
     .toBuffer();

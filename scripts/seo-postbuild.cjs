@@ -84,18 +84,18 @@ for (const gscFile of gscFiles) {
 }
 
 // ── 5. إضافة Open Graph image fallback check
-const ogImagePath = path.join(DIST_DIR, 'images', 'IMG-20260921-WA0008.webp');
+const ogImagePath = path.join(DIST_DIR, 'images', 'dammam-luxury-decor-main.webp');
 if (fs.existsSync(ogImagePath)) {
   console.log('✅ Open Graph image — موجودة');
 } else {
-  console.warn('⚠️  Open Graph image (IMG-20260921-WA0008.webp) — غير موجودة في dist/images/');
+  console.warn('⚠️  Open Graph image (dammam-luxury-decor-main.webp) — غير موجودة في dist/images/');
 }
 
 console.log('\n' + '═'.repeat(50));
 if (allGood) {
   console.log('✅ اكتملت عملية SEO Post-Build بنجاح!');
   console.log(`📅 التاريخ: ${TODAY}`);
-  console.log('🌐 الموقع جاهز للنشر على: https://wajd-al-asayel.vercel.app');
+  console.log('🌐 الموقع جاهز للنشر على: https://wajdalasayel.com');
 } else {
   console.warn('⚠️  اكتملت العملية مع بعض التحذيرات — راجع الرسائل أعلاه');
 }
