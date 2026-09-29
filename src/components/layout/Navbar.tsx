@@ -78,12 +78,13 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
   };
 
   const navLinks = [
-    { name: 'خدماتنا', href: '#services' },
-    { name: 'معرض أعمالنا', href: '#portfolio' },
-    { name: 'أنواع التشطيبات', href: '#inspector' },
-    { name: 'خطوات العمل', href: '#process' },
-    { name: 'عن المؤسسة', href: '#manifesto' },
-    { name: 'اتصل بنا', href: '#contact' },
+    { name: 'الرئيسية', href: '/' },
+    { name: 'ديكورات الدمام', href: '/dikurat' },
+    { name: 'دهانات الدمام', href: '/dakhanat' },
+    { name: 'عوازل الأسطح', href: '/awazel' },
+    { name: 'خدماتنا', href: '/#services' },
+    { name: 'أعمالنا', href: '/#portfolio' },
+    { name: 'اتصل بنا', href: '/#contact' },
   ];
 
   return (

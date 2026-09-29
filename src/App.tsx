@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Lenis from 'lenis';
 import Preloader from '@/components/common/Preloader';
 import CustomCursor from '@/components/common/CustomCursor';
@@ -10,7 +11,23 @@ import FloatingGalleryButton from '@/components/common/FloatingGalleryButton';
 import { ThemeProvider } from '@/context/ThemeContext';
 import Home from '@/pages/Home';
 
-export default function App() {
+// ── صفحات الخدمات المستقلة (Lazy loaded for performance)
+const DahanatPage = lazy(() => import('@/pages/services/DahanatPage'));
+const DikuratPage = lazy(() => import('@/pages/services/DikuratPage'));
+const AwazelPage = lazy(() => import('@/pages/services/AwazelPage'));
+const DahanatWaDikuratPage = lazy(() => import('@/pages/services/DahanatWaDikuratPage'));
+
+// ── Fallback بسيط أثناء تحميل الصفحة
+function PageLoader() {
+  return (
+    <div className="flex items-center justify-center min-h-[60vh]">
+      <div className="w-8 h-8 border-2 border-[#C19A6B] border-t-transparent rounded-full animate-spin" />
+    </div>
+  );
+}
+
+// ── Layout مشترك يُطبَّق على جميع الصفحات
+function AppLayout({ children }: { children: React.ReactNode }) {
   const [preloaderComplete, setPreloaderComplete] = useState(false);
 
   // Initialize Lenis butter-smooth scrolling
@@ -37,31 +54,59 @@ export default function App() {
   return (
     <ThemeProvider>
       <div className="relative min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] overflow-x-hidden selection:bg-[#38BDF8]/30 transition-colors duration-500">
-        {/* High-End Entrance Preloader */}
+        {/* High-End Entrance Preloader — فقط في الصفحة الرئيسية */}
         <Preloader onComplete={() => setPreloaderComplete(true)} />
 
-        {/* Tactile Ambient Canvas: Grain & Gold Dust Particles */}
+        {/* Tactile Ambient Canvas */}
         <NoiseCanvas />
 
-        {/* Fluid Custom Cursor with Magnetic Ring & Context Badges */}
+        {/* Fluid Custom Cursor */}
         <CustomCursor />
 
-        {/* Floating Glassmorphic Nav with Magnetic Hover & Sound Toggle */}
+        {/* Floating Glassmorphic Nav */}
         <Navbar />
 
-        {/* Main Luxury Experience Page */}
-        <Home />
+        {/* محتوى الصفحة */}
+        <Suspense fallback={<PageLoader />}>
+          {children}
+        </Suspense>
 
-        {/* Luxury Footer with World Clocks & Colophon */}
+        {/* Footer */}
         <Footer />
 
-        {/* Persistent Floating Gallery Action Button */}
+        {/* Floating Buttons */}
         <FloatingGalleryButton />
-
-        {/* Persistent Floating WhatsApp Action Button */}
         <FloatingWhatsApp />
       </div>
     </ThemeProvider>
   );
 }
 
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppLayout>
+        <Routes>
+          {/* الصفحة الرئيسية */}
+          <Route path="/" element={<Home />} />
+
+          {/* ══ صفحات الخدمات المستقلة للتصدر في البحث ══ */}
+          {/* /dakhanat — استهداف "دهانات" و"دهانات الدمام" */}
+          <Route path="/dakhanat" element={<DahanatPage />} />
+
+          {/* /dikurat — استهداف "ديكورات" و"ديكورات الدمام" */}
+          <Route path="/dikurat" element={<DikuratPage />} />
+
+          {/* /awazel — استهداف "عوازل" و"عوازل مائية الدمام" */}
+          <Route path="/awazel" element={<AwazelPage />} />
+
+          {/* /dakhanat-wa-dikurat — استهداف "دهانات وديكورات الدمام" */}
+          <Route path="/dakhanat-wa-dikurat" element={<DahanatWaDikuratPage />} />
+
+          {/* Fallback — أي مسار غير معروف يعود للرئيسية */}
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </AppLayout>
+    </BrowserRouter>
+  );
+}
