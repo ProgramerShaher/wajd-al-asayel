@@ -1,0 +1,881 @@
+{
+  "bedroom-modern-gypsum-decor": {
+    "baseName": "bedroom-modern-gypsum-decor",
+    "originalPath": "/images/bedroom-modern-gypsum-decor.webp",
+    "webp": "/images/bedroom-modern-gypsum-decor.webp",
+    "avif": "/images/bedroom-modern-gypsum-decor.avif",
+    "width": 1200,
+    "height": 1600,
+    "aspectRatio": "1200/1600",
+    "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAACwAwCdASoPABQAPzmEuVOvKKWisAgB4CcJaQAAXuVPPenh8Vwm2AD+jxQDd7o79ySGJq4VX5HLCp16iDBX15atUYrESe+RzflGmQbNuHqOZ9eSTLvVwoAA",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/bedroom-modern-gypsum-decor-400w.webp",
+        "avif": "/images/bedroom-modern-gypsum-decor-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/bedroom-modern-gypsum-decor-800w.webp",
+        "avif": "/images/bedroom-modern-gypsum-decor-800w.avif"
+      }
+    ]
+  },
+  "classic-foam-panels-design": {
+    "baseName": "classic-foam-panels-design",
+    "originalPath": "/images/classic-foam-panels-design.webp",
+    "webp": "/images/classic-foam-panels-design.webp",
+    "avif": "/images/classic-foam-panels-design.avif",
+    "width": 960,
+    "height": 1280,
+    "aspectRatio": "960/1280",
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAwCdASoPABQAPzmEuVOvKKWisAgB4CcJZQC7ACHPSemPf/r6xDAAAP6dfGdAAMXQuuLPUIZGQutggzhtKeTIezbd6Rq2u45AAA==",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/classic-foam-panels-design-400w.webp",
+        "avif": "/images/classic-foam-panels-design-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/classic-foam-panels-design-800w.webp",
+        "avif": "/images/classic-foam-panels-design-800w.avif"
+      }
+    ]
+  },
+  "cr-certificate": {
+    "baseName": "cr-certificate",
+    "originalPath": "/images/cr-certificate.webp",
+    "webp": "/images/cr-certificate.webp",
+    "avif": "/images/cr-certificate.avif",
+    "width": 740,
+    "height": 1600,
+    "aspectRatio": "740/1600",
+    "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACQAwCdASoJABQAPzmEuVOvKKWisAgB4CcJZwAAW9KPW3IFRC8AAP7r0POh/SC4ALp0TsMgR1OtKvY+G1HW6oeumMhJiOAA",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/cr-certificate-400w.webp",
+        "avif": "/images/cr-certificate-400w.avif"
+      }
+    ]
+  },
+  "crystal-panels-led-lighting-decor": {
+    "baseName": "crystal-panels-led-lighting-decor",
+    "originalPath": "/images/crystal-panels-led-lighting-decor.webp",
+    "webp": "/images/crystal-panels-led-lighting-decor.webp",
+    "avif": "/images/crystal-panels-led-lighting-decor.avif",
+    "width": 1200,
+    "height": 1600,
+    "aspectRatio": "1200/1600",
+    "blurDataURL": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACQAwCdASoPABQAPzmGuVOvKSWisAgB4CcJZQDDNA01szFA1FDwAHQjafB9rUHAXSYsILi1944chqUyoTaVjhoA",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/crystal-panels-led-lighting-decor-400w.webp",
+        "avif": "/images/crystal-panels-led-lighting-decor-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/crystal-panels-led-lighting-decor-800w.webp",
+        "avif": "/images/crystal-panels-led-lighting-decor-800w.avif"
+      }
+    ]
+  },
+  "dammam-luxury-decor-main": {
+    "baseName": "dammam-luxury-decor-main",
+    "originalPath": "/images/dammam-luxury-decor-main.webp",
+    "webp": "/images/dammam-luxury-decor-main.webp",
+    "avif": "/images/dammam-luxury-decor-main.avif",
+    "width": 1600,
+    "height": 1200,
+    "aspectRatio": "1600/1200",
+    "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAABQAwCdASoUAA8APzmEuVOvKKWisAgB4CcJZwBUfoTTZ0mDEADtRq9l3/pW0o4GS1uxMr4AMynMhvo2XGXOQQRbCAuZLOKZ17scXRH1t9YnxepjetiD3BwbHygAAA==",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/dammam-luxury-decor-main-400w.webp",
+        "avif": "/images/dammam-luxury-decor-main-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/dammam-luxury-decor-main-800w.webp",
+        "avif": "/images/dammam-luxury-decor-main-800w.avif"
+      },
+      {
+        "width": 1200,
+        "webp": "/images/dammam-luxury-decor-main-1200w.webp",
+        "avif": "/images/dammam-luxury-decor-main-1200w.avif"
+      }
+    ]
+  },
+  "exterior-villa-painting-khobar": {
+    "baseName": "exterior-villa-painting-khobar",
+    "originalPath": "/images/exterior-villa-painting-khobar.webp",
+    "webp": "/images/exterior-villa-painting-khobar.webp",
+    "avif": "/images/exterior-villa-painting-khobar.avif",
+    "width": 1600,
+    "height": 1200,
+    "aspectRatio": "1600/1200",
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADQAwCdASoUAA8APzmGulQvKSWjMAgB4CcJZwC7ACKS3fFVpprNFwAA/UP9cDmmrWTi2idavE+4x0AvioF4ZsJN7SPmTtL4JoaQefLVtalogAAA",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/exterior-villa-painting-khobar-400w.webp",
+        "avif": "/images/exterior-villa-painting-khobar-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/exterior-villa-painting-khobar-800w.webp",
+        "avif": "/images/exterior-villa-painting-khobar-800w.avif"
+      },
+      {
+        "width": 1200,
+        "webp": "/images/exterior-villa-painting-khobar-1200w.webp",
+        "avif": "/images/exterior-villa-painting-khobar-1200w.avif"
+      }
+    ]
+  },
+  "garden-pergolas-and-umbrellas": {
+    "baseName": "garden-pergolas-and-umbrellas",
+    "originalPath": "/images/garden-pergolas-and-umbrellas.webp",
+    "webp": "/images/garden-pergolas-and-umbrellas.webp",
+    "avif": "/images/garden-pergolas-and-umbrellas.avif",
+    "width": 1200,
+    "height": 1600,
+    "aspectRatio": "1200/1600",
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAACQAwCdASoPABQAPzmEuVOvKKWisAgB4CcJZwDDNA5dNY5Ms1ugAP28dXVKqrIOVf0q8rnioDECQv5dKu32C8VJL8kmL+XRIRUc2GJ4oJMRdUtDL+1HWUAbsAA=",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/garden-pergolas-and-umbrellas-400w.webp",
+        "avif": "/images/garden-pergolas-and-umbrellas-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/garden-pergolas-and-umbrellas-800w.webp",
+        "avif": "/images/garden-pergolas-and-umbrellas-800w.avif"
+      }
+    ]
+  },
+  "gypsum-board-ceiling-design": {
+    "baseName": "gypsum-board-ceiling-design",
+    "originalPath": "/images/gypsum-board-ceiling-design.webp",
+    "webp": "/images/gypsum-board-ceiling-design.webp",
+    "avif": "/images/gypsum-board-ceiling-design.avif",
+    "width": 1600,
+    "height": 1200,
+    "aspectRatio": "1600/1200",
+    "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAACwAwCdASoUAA8APzmEuVOvKKWisAgB4CcJZwCuHB5ca/sauWfkgADyZum7YsLXJwT1Wonn5JJluiP9hYI+4Xeo7NnNnWUc6OP3excsHGgAAA==",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/gypsum-board-ceiling-design-400w.webp",
+        "avif": "/images/gypsum-board-ceiling-design-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/gypsum-board-ceiling-design-800w.webp",
+        "avif": "/images/gypsum-board-ceiling-design-800w.avif"
+      },
+      {
+        "width": 1200,
+        "webp": "/images/gypsum-board-ceiling-design-1200w.webp",
+        "avif": "/images/gypsum-board-ceiling-design-1200w.avif"
+      }
+    ]
+  },
+  "interior-decor-project-14": {
+    "baseName": "interior-decor-project-14",
+    "originalPath": "/images/interior-decor-project-14.webp",
+    "webp": "/images/interior-decor-project-14.webp",
+    "avif": "/images/interior-decor-project-14.avif",
+    "width": 383,
+    "height": 510,
+    "aspectRatio": "383/510",
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACQAwCdASoPABQAPzmKulQvKaWjMAgB4CcJYwC7ABhtVHULEeogAP4GbenMjxx0zffdOp5Hfj8AvZy7FxeWuf7yz7R/RMbCU6rMJZl/AAA=",
+    "variants": []
+  },
+  "interior-decor-project-15": {
+    "baseName": "interior-decor-project-15",
+    "originalPath": "/images/interior-decor-project-15.webp",
+    "webp": "/images/interior-decor-project-15.webp",
+    "avif": "/images/interior-decor-project-15.avif",
+    "width": 1200,
+    "height": 1600,
+    "aspectRatio": "1200/1600",
+    "blurDataURL": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAABQBACdASoPABQAPzmEuVOvKKWisAgB4CcJbACdMoR3ACMDsscqzrrAfBSAAPxdHINHI1o8y3dUPit3aO9Yur7nzV1mbCvNRUSG0YpulvSJCTgaQqf9ArQPKj5USsMEae3vS4Z3GiMwJ9NocmDrTN0i3YAAAA==",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/interior-decor-project-15-400w.webp",
+        "avif": "/images/interior-decor-project-15-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/interior-decor-project-15-800w.webp",
+        "avif": "/images/interior-decor-project-15-800w.avif"
+      }
+    ]
+  },
+  "interior-decor-project-18": {
+    "baseName": "interior-decor-project-18",
+    "originalPath": "/images/interior-decor-project-18.webp",
+    "webp": "/images/interior-decor-project-18.webp",
+    "avif": "/images/interior-decor-project-18.avif",
+    "width": 900,
+    "height": 1600,
+    "aspectRatio": "900/1600",
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAwAwCdASoLABQAPzmEuVOvKKWisAgB4CcJZQAAUnHlw9QAAP5df9m/8I3hx9WyPjJzY5DJErsWCkbm97Y+VeunPD/sogKnT5uBwAAA",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/interior-decor-project-18-400w.webp",
+        "avif": "/images/interior-decor-project-18-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/interior-decor-project-18-800w.webp",
+        "avif": "/images/interior-decor-project-18-800w.avif"
+      }
+    ]
+  },
+  "interior-decor-project-19": {
+    "baseName": "interior-decor-project-19",
+    "originalPath": "/images/interior-decor-project-19.webp",
+    "webp": "/images/interior-decor-project-19.webp",
+    "avif": "/images/interior-decor-project-19.avif",
+    "width": 1200,
+    "height": 1600,
+    "aspectRatio": "1200/1600",
+    "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADwAwCdASoPABQAPzmEuVOvKKWisAgB4CcJZwDCgB6+VqpjaJYYlwugAP5YOX4AAQtOjHj8vNWRTS6TadtOOPI5E6Avk7uM0U2dA7ff/iMuad7aRQbgAA==",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/interior-decor-project-19-400w.webp",
+        "avif": "/images/interior-decor-project-19-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/interior-decor-project-19-800w.webp",
+        "avif": "/images/interior-decor-project-19-800w.avif"
+      }
+    ]
+  },
+  "interior-decor-project-28": {
+    "baseName": "interior-decor-project-28",
+    "originalPath": "/images/interior-decor-project-28.webp",
+    "webp": "/images/interior-decor-project-28.webp",
+    "avif": "/images/interior-decor-project-28.avif",
+    "width": 1200,
+    "height": 1600,
+    "aspectRatio": "1200/1600",
+    "blurDataURL": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAAAQBACdASoPABQAPzmGuVOvKSWisAgB4CcJYgC7LoAAV2KRwgRJWwiNgAD97yDI6LDvJ56FDVOOLsv0tUVUcfzU7Y/0QWMKkREleX+9+8dqeo28LNlpWPNjTZI8/0NyAjvKhjIVclHk0eex3PNBEviws7EAAA==",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/interior-decor-project-28-400w.webp",
+        "avif": "/images/interior-decor-project-28-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/interior-decor-project-28-800w.webp",
+        "avif": "/images/interior-decor-project-28-800w.avif"
+      }
+    ]
+  },
+  "interior-decor-project-32": {
+    "baseName": "interior-decor-project-32",
+    "originalPath": "/images/interior-decor-project-32.webp",
+    "webp": "/images/interior-decor-project-32.webp",
+    "avif": "/images/interior-decor-project-32.avif",
+    "width": 1200,
+    "height": 1600,
+    "aspectRatio": "1200/1600",
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAABQAwCdASoPABQAPzmGulQvKSWjMAgB4CcJZQAAOX7HW2tnsAD4IBPmtYEYmrXStaMorfnnIVCSApfS0hhegDREgRN+q789RFioAAAA",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/interior-decor-project-32-400w.webp",
+        "avif": "/images/interior-decor-project-32-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/interior-decor-project-32-800w.webp",
+        "avif": "/images/interior-decor-project-32-800w.avif"
+      }
+    ]
+  },
+  "interior-decor-project-33": {
+    "baseName": "interior-decor-project-33",
+    "originalPath": "/images/interior-decor-project-33.webp",
+    "webp": "/images/interior-decor-project-33.webp",
+    "avif": "/images/interior-decor-project-33.avif",
+    "width": 1200,
+    "height": 1600,
+    "aspectRatio": "1200/1600",
+    "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAwBACdASoPABQAPzmEuVOvKKWisAgB4CcJbACdMoADZlk5WRGps61TLagA/NZMvF4bTl2HwKSQjWE5FNnLQLp/ydIGOXbX7RqjuedjQE1nb8anou92fRqGtkAAAA==",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/interior-decor-project-33-400w.webp",
+        "avif": "/images/interior-decor-project-33-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/interior-decor-project-33-800w.webp",
+        "avif": "/images/interior-decor-project-33-800w.avif"
+      }
+    ]
+  },
+  "joten-interior-painting-dammam": {
+    "baseName": "joten-interior-painting-dammam",
+    "originalPath": "/images/joten-interior-painting-dammam.webp",
+    "webp": "/images/joten-interior-painting-dammam.webp",
+    "avif": "/images/joten-interior-painting-dammam.avif",
+    "width": 1200,
+    "height": 1600,
+    "aspectRatio": "1200/1600",
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACwAwCdASoPABQAPzmEuVOvKKWisAgB4CcJaQAAN8lq1EemmpJkAADzspUYg2T1PqdlULZwtkkhQbmeZkztkTbEjheiH9C+kmjAAA==",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/joten-interior-painting-dammam-400w.webp",
+        "avif": "/images/joten-interior-painting-dammam-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/joten-interior-painting-dammam-800w.webp",
+        "avif": "/images/joten-interior-painting-dammam-800w.avif"
+      }
+    ]
+  },
+  "living-room-decor-marble-tv": {
+    "baseName": "living-room-decor-marble-tv",
+    "originalPath": "/images/living-room-decor-marble-tv.webp",
+    "webp": "/images/living-room-decor-marble-tv.webp",
+    "avif": "/images/living-room-decor-marble-tv.avif",
+    "width": 665,
+    "height": 1280,
+    "aspectRatio": "665/1280",
+    "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAABwAwCdASoKABQAPzmGvFQvKSYjMAgB4CcJYwC06CyTSYVHLAAA/pEzo4vu6xuABUhU2XvG1+2Y+Aw13u9PcnCRzZdgAA==",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/living-room-decor-marble-tv-400w.webp",
+        "avif": "/images/living-room-decor-marble-tv-400w.avif"
+      }
+    ]
+  },
+  "luxury-interior-finishing-details": {
+    "baseName": "luxury-interior-finishing-details",
+    "originalPath": "/images/luxury-interior-finishing-details.webp",
+    "webp": "/images/luxury-interior-finishing-details.webp",
+    "avif": "/images/luxury-interior-finishing-details.avif",
+    "width": 960,
+    "height": 1280,
+    "aspectRatio": "960/1280",
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAABwAwCdASoPABQAPzmGuVOvKSWisAgB4CcJQBadAQch7NqEv+AA7gqObl6ywsc92m1mxa8ikBCyW5gAVmfV5yRe0JLhszwrNJo+FIEweIEBDCuAAAA=",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/luxury-interior-finishing-details-400w.webp",
+        "avif": "/images/luxury-interior-finishing-details-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/luxury-interior-finishing-details-800w.webp",
+        "avif": "/images/luxury-interior-finishing-details-800w.avif"
+      }
+    ]
+  },
+  "wajd-decor-project-1": {
+    "baseName": "wajd-decor-project-1",
+    "originalPath": "/images/wajd-decor-project-1.webp",
+    "webp": "/images/wajd-decor-project-1.webp",
+    "avif": "/images/wajd-decor-project-1.avif",
+    "width": 1600,
+    "height": 1200,
+    "aspectRatio": "1600/1200",
+    "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAACwAwCdASoUAA8APzmEuVOvKKWisAgB4CcJYwAAQ5LN4w7WuAqVwAD+eHDl+aud+V8gpl/fYNTSFrCfS/YldcsM4B/+jZipnNML3DKzixAEjeTwlF2ONQF2ePsXaOiplJJdXCE15TBAAA==",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/wajd-decor-project-1-400w.webp",
+        "avif": "/images/wajd-decor-project-1-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/wajd-decor-project-1-800w.webp",
+        "avif": "/images/wajd-decor-project-1-800w.avif"
+      },
+      {
+        "width": 1200,
+        "webp": "/images/wajd-decor-project-1-1200w.webp",
+        "avif": "/images/wajd-decor-project-1-1200w.avif"
+      }
+    ]
+  },
+  "wajd-decor-project-10": {
+    "baseName": "wajd-decor-project-10",
+    "originalPath": "/images/wajd-decor-project-10.webp",
+    "webp": "/images/wajd-decor-project-10.webp",
+    "avif": "/images/wajd-decor-project-10.avif",
+    "width": 1200,
+    "height": 1600,
+    "aspectRatio": "1200/1600",
+    "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAADQAwCdASoPABQAPzmEuVOvKKWisAgB4CcJZgC7ABnszODCrL8O19AA/ozqy/JGzI0tAldn7jW+smsJ+X9+n5AY6AkP9jlk8Dfj6/rfSext7aKRTA9EFWvpBiZllnXxa7uNj8RHve4AAA==",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/wajd-decor-project-10-400w.webp",
+        "avif": "/images/wajd-decor-project-10-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/wajd-decor-project-10-800w.webp",
+        "avif": "/images/wajd-decor-project-10-800w.avif"
+      }
+    ]
+  },
+  "wajd-decor-project-11": {
+    "baseName": "wajd-decor-project-11",
+    "originalPath": "/images/wajd-decor-project-11.webp",
+    "webp": "/images/wajd-decor-project-11.webp",
+    "avif": "/images/wajd-decor-project-11.avif",
+    "width": 1200,
+    "height": 1600,
+    "aspectRatio": "1200/1600",
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADQAwCdASoPABQAPzmGuVOvKSWisAgB4CcJZwAAOSHs6s5iG7W9PAAA/nGstGP/fmo9skfuV78fQA8VYCVYeUHkbqQgu7ncG8mz/ETSl85QQAAA",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/wajd-decor-project-11-400w.webp",
+        "avif": "/images/wajd-decor-project-11-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/wajd-decor-project-11-800w.webp",
+        "avif": "/images/wajd-decor-project-11-800w.avif"
+      }
+    ]
+  },
+  "wajd-decor-project-12": {
+    "baseName": "wajd-decor-project-12",
+    "originalPath": "/images/wajd-decor-project-12.webp",
+    "webp": "/images/wajd-decor-project-12.webp",
+    "avif": "/images/wajd-decor-project-12.avif",
+    "width": 1200,
+    "height": 1600,
+    "aspectRatio": "1200/1600",
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACQAwCdASoPABQAPzmGvFQvKSYjMAgB4CcJZQAARZYVkfZkVBhIAOJqlYau8sVHLaR9RnFzzeuQ160UTTxeHUBpuj3EHKRUbdsAAAAA",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/wajd-decor-project-12-400w.webp",
+        "avif": "/images/wajd-decor-project-12-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/wajd-decor-project-12-800w.webp",
+        "avif": "/images/wajd-decor-project-12-800w.avif"
+      }
+    ]
+  },
+  "wajd-decor-project-13": {
+    "baseName": "wajd-decor-project-13",
+    "originalPath": "/images/wajd-decor-project-13.webp",
+    "webp": "/images/wajd-decor-project-13.webp",
+    "avif": "/images/wajd-decor-project-13.avif",
+    "width": 960,
+    "height": 1280,
+    "aspectRatio": "960/1280",
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAwCdASoPABQAPzmGulQvKSWjMAgB4CcJZwDG9BuPdRj+86a0JoAA+E9bDaJ0fbVyzAK4eEyRAMAB+Bf/3dOxM6Y7Gp3wS2RnwAAA",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/wajd-decor-project-13-400w.webp",
+        "avif": "/images/wajd-decor-project-13-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/wajd-decor-project-13-800w.webp",
+        "avif": "/images/wajd-decor-project-13-800w.avif"
+      }
+    ]
+  },
+  "wajd-decor-project-14": {
+    "baseName": "wajd-decor-project-14",
+    "originalPath": "/images/wajd-decor-project-14.webp",
+    "webp": "/images/wajd-decor-project-14.webp",
+    "avif": "/images/wajd-decor-project-14.avif",
+    "width": 540,
+    "height": 555,
+    "aspectRatio": "540/555",
+    "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAACQBACdASoTABQAPzmOvFgvKaWjqAqp4CcJYgDG9BCK8KtHW+D6oyOUTBdL3AAAyjwPoViP/u5Mi68a0apiJQODEFesRm1er/IhYtY+rHfMeiL3XIR1FV9PkIWULX1WNpkkJ/AccAA=",
+    "variants": []
+  },
+  "wajd-decor-project-15": {
+    "baseName": "wajd-decor-project-15",
+    "originalPath": "/images/wajd-decor-project-15.webp",
+    "webp": "/images/wajd-decor-project-15.webp",
+    "avif": "/images/wajd-decor-project-15.avif",
+    "width": 518,
+    "height": 350,
+    "aspectRatio": "518/350",
+    "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAABQBACdASoUAA4APzmGuVOvKSWisAgB4CcJagCsOUAAzkk6NJzlUaWaaeQAAOvb/F/p8xruBNEh4O6XUJ8GhmJybw3OFma8IIwJRzrxYwxEIO/eaiqclDE9uiMAAA==",
+    "variants": []
+  },
+  "wajd-decor-project-16": {
+    "baseName": "wajd-decor-project-16",
+    "originalPath": "/images/wajd-decor-project-16.webp",
+    "webp": "/images/wajd-decor-project-16.webp",
+    "avif": "/images/wajd-decor-project-16.avif",
+    "width": 960,
+    "height": 1280,
+    "aspectRatio": "960/1280",
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACwAwCdASoPABQAPzmIu1QvKSYjMAgB4CcJZwDCgBiFCSPIG9sxOAD4UeuqC0sCb7b5nT5+dQnfx6vUHLlWUaDIp+PsxsMGbsLOwfgAAAA=",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/wajd-decor-project-16-400w.webp",
+        "avif": "/images/wajd-decor-project-16-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/wajd-decor-project-16-800w.webp",
+        "avif": "/images/wajd-decor-project-16-800w.avif"
+      }
+    ]
+  },
+  "wajd-decor-project-17": {
+    "baseName": "wajd-decor-project-17",
+    "originalPath": "/images/wajd-decor-project-17.webp",
+    "webp": "/images/wajd-decor-project-17.webp",
+    "avif": "/images/wajd-decor-project-17.avif",
+    "width": 1200,
+    "height": 1600,
+    "aspectRatio": "1200/1600",
+    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAABwAwCdASoPABQAPzmEuVOvKKWisAgB4CcJZQCdABAEYhd6/aAA/e0nDtsMm7hV12IGyffV17HuB3uyIASaIg210Lgf1n8uAAA=",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/wajd-decor-project-17-400w.webp",
+        "avif": "/images/wajd-decor-project-17-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/wajd-decor-project-17-800w.webp",
+        "avif": "/images/wajd-decor-project-17-800w.avif"
+      }
+    ]
+  },
+  "wajd-decor-project-18": {
+    "baseName": "wajd-decor-project-18",
+    "originalPath": "/images/wajd-decor-project-18.webp",
+    "webp": "/images/wajd-decor-project-18.webp",
+    "avif": "/images/wajd-decor-project-18.avif",
+    "width": 1200,
+    "height": 1600,
+    "aspectRatio": "1200/1600",
+    "blurDataURL": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAACwAwCdASoPABQAPzmGuVOvKSWisAgB4CcJbACdMoAC/iPLQjVlNAD8WoBREd4zWUOQKx+rbeKkcOg3BBIeAFUxs9+zsM/tuU6j0L3Wxv+ae0sKsjmSz/qvLxjWj5G7pUMMcGGTMuPbIpUXEr3zlzQA",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/wajd-decor-project-18-400w.webp",
+        "avif": "/images/wajd-decor-project-18-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/wajd-decor-project-18-800w.webp",
+        "avif": "/images/wajd-decor-project-18-800w.avif"
+      }
+    ]
+  },
+  "wajd-decor-project-19": {
+    "baseName": "wajd-decor-project-19",
+    "originalPath": "/images/wajd-decor-project-19.webp",
+    "webp": "/images/wajd-decor-project-19.webp",
+    "avif": "/images/wajd-decor-project-19.avif",
+    "width": 1200,
+    "height": 1600,
+    "aspectRatio": "1200/1600",
+    "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACwAwCdASoPABQAPzmGuVOvKSWisAgB4CcJYwCw7BmyTOZUgbH6AAD+VDKdVQkf+oqwgp49BbPQpSp+Txkn/C9rv67A2UuSIIfZrUJkiUIYIpfDMUiUVj4Xpso5+QAA",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/wajd-decor-project-19-400w.webp",
+        "avif": "/images/wajd-decor-project-19-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/wajd-decor-project-19-800w.webp",
+        "avif": "/images/wajd-decor-project-19-800w.avif"
+      }
+    ]
+  },
+  "wajd-decor-project-2": {
+    "baseName": "wajd-decor-project-2",
+    "originalPath": "/images/wajd-decor-project-2.webp",
+    "webp": "/images/wajd-decor-project-2.webp",
+    "avif": "/images/wajd-decor-project-2.avif",
+    "width": 1200,
+    "height": 1600,
+    "aspectRatio": "1200/1600",
+    "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAABwAwCdASoPABQAPzmEuVOvKKWisAgB4CcJZQC/OBZNW/09eAAA/hSKGUBYFYdYEQQG+70QlMAcSt4O8B33PwFEy4AAAA==",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/wajd-decor-project-2-400w.webp",
+        "avif": "/images/wajd-decor-project-2-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/wajd-decor-project-2-800w.webp",
+        "avif": "/images/wajd-decor-project-2-800w.avif"
+      }
+    ]
+  },
+  "wajd-decor-project-20": {
+    "baseName": "wajd-decor-project-20",
+    "originalPath": "/images/wajd-decor-project-20.webp",
+    "webp": "/images/wajd-decor-project-20.webp",
+    "avif": "/images/wajd-decor-project-20.avif",
+    "width": 960,
+    "height": 1280,
+    "aspectRatio": "960/1280",
+    "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAQBACdASoPABQAPzmGuVOvKSWisAgB4CcJbAC06BojAirFjj+pTEyXsAD+BoR7TSPWmGFQ3FxEEtmNIY6RFNPfm1zoANYKYL5CnsLPJCwSVwCMYTGRKrhMCptslsWZODzQbF0GlAAAAA==",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/wajd-decor-project-20-400w.webp",
+        "avif": "/images/wajd-decor-project-20-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/wajd-decor-project-20-800w.webp",
+        "avif": "/images/wajd-decor-project-20-800w.avif"
+      }
+    ]
+  },
+  "wajd-decor-project-21": {
+    "baseName": "wajd-decor-project-21",
+    "originalPath": "/images/wajd-decor-project-21.webp",
+    "webp": "/images/wajd-decor-project-21.webp",
+    "avif": "/images/wajd-decor-project-21.avif",
+    "width": 1200,
+    "height": 1600,
+    "aspectRatio": "1200/1600",
+    "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADQAwCdASoPABQAPzmEuVOvKKWisAgB4CcJbACsACKyqCP8V73roAAA9jdpGG/DL9dcJg6KNg6gSRZ6f0JDByo/SKd1qxGal/oHku4JP9HIGbE+NYLbvjdaXMqfwFagAAA=",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/wajd-decor-project-21-400w.webp",
+        "avif": "/images/wajd-decor-project-21-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/wajd-decor-project-21-800w.webp",
+        "avif": "/images/wajd-decor-project-21-800w.avif"
+      }
+    ]
+  },
+  "wajd-decor-project-3": {
+    "baseName": "wajd-decor-project-3",
+    "originalPath": "/images/wajd-decor-project-3.webp",
+    "webp": "/images/wajd-decor-project-3.webp",
+    "avif": "/images/wajd-decor-project-3.avif",
+    "width": 1200,
+    "height": 1600,
+    "aspectRatio": "1200/1600",
+    "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAACwAwCdASoPABQAPzmEuVOvKKWisAgB4CcJaReAAADSLwhqVIogkAD8XgJCg0QO1ldVmgcf9kHJ65Jm0HjXz0xzkqMoKq7KC9X1wx5j2+xESLl26GzwfjwL6yqvXT1u/1OeEAAA",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/wajd-decor-project-3-400w.webp",
+        "avif": "/images/wajd-decor-project-3-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/wajd-decor-project-3-800w.webp",
+        "avif": "/images/wajd-decor-project-3-800w.avif"
+      }
+    ]
+  },
+  "wajd-decor-project-4": {
+    "baseName": "wajd-decor-project-4",
+    "originalPath": "/images/wajd-decor-project-4.webp",
+    "webp": "/images/wajd-decor-project-4.webp",
+    "avif": "/images/wajd-decor-project-4.avif",
+    "width": 1600,
+    "height": 1200,
+    "aspectRatio": "1600/1200",
+    "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADQAwCdASoUAA8APzmEuVOvKKWisAgB4CcJZQDE2B9rDEYn5ly8MgAAzHFYUbRa3v2oE/DsHgdxcHpoa9mHO0wO6FGCrRMQJ8VeFtRnpVyRRMygFwCwAA==",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/wajd-decor-project-4-400w.webp",
+        "avif": "/images/wajd-decor-project-4-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/wajd-decor-project-4-800w.webp",
+        "avif": "/images/wajd-decor-project-4-800w.avif"
+      },
+      {
+        "width": 1200,
+        "webp": "/images/wajd-decor-project-4-1200w.webp",
+        "avif": "/images/wajd-decor-project-4-1200w.avif"
+      }
+    ]
+  },
+  "wajd-decor-project-5": {
+    "baseName": "wajd-decor-project-5",
+    "originalPath": "/images/wajd-decor-project-5.webp",
+    "webp": "/images/wajd-decor-project-5.webp",
+    "avif": "/images/wajd-decor-project-5.avif",
+    "width": 665,
+    "height": 1280,
+    "aspectRatio": "665/1280",
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACwAwCdASoKABQAPzmGuVOvKSWisAgB4CcJZQC/OCHEx7JTxcFuoADL9vng8cVEAAOMOVyc0TcASSMYQpjQkVbU86sMlKwC8EqqDeAA",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/wajd-decor-project-5-400w.webp",
+        "avif": "/images/wajd-decor-project-5-400w.avif"
+      }
+    ]
+  },
+  "wajd-decor-project-6": {
+    "baseName": "wajd-decor-project-6",
+    "originalPath": "/images/wajd-decor-project-6.webp",
+    "webp": "/images/wajd-decor-project-6.webp",
+    "avif": "/images/wajd-decor-project-6.avif",
+    "width": 665,
+    "height": 1280,
+    "aspectRatio": "665/1280",
+    "blurDataURL": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAAAwAwCdASoKABQAPzmGu1OvKSYisAgB4CcJaQAACBuDP3yAAMKk8ecPGvdCbx/rb40v2OeiL4D+c5GuG9UhwAAA",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/wajd-decor-project-6-400w.webp",
+        "avif": "/images/wajd-decor-project-6-400w.avif"
+      }
+    ]
+  },
+  "wajd-decor-project-7": {
+    "baseName": "wajd-decor-project-7",
+    "originalPath": "/images/wajd-decor-project-7.webp",
+    "webp": "/images/wajd-decor-project-7.webp",
+    "avif": "/images/wajd-decor-project-7.avif",
+    "width": 665,
+    "height": 1280,
+    "aspectRatio": "665/1280",
+    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAABwAwCdASoKABQAPzmEuVOvKKWisAgB4CcJQBYdgmd/+7n+1AAAjzEEfW9bL5TAGNX5cIgdkzP55FF1xBgx2bGRQM0T5stRoAA=",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/wajd-decor-project-7-400w.webp",
+        "avif": "/images/wajd-decor-project-7-400w.avif"
+      }
+    ]
+  },
+  "wajd-decor-project-8": {
+    "baseName": "wajd-decor-project-8",
+    "originalPath": "/images/wajd-decor-project-8.webp",
+    "webp": "/images/wajd-decor-project-8.webp",
+    "avif": "/images/wajd-decor-project-8.avif",
+    "width": 960,
+    "height": 1280,
+    "aspectRatio": "960/1280",
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAACwAwCdASoPABQAPzmEuVOvKKWisAgB4CcJaAAAYexxO7LTJPRBnAD+dMxW6eNeDEmuWWugGXWkb3qI3aTHun1tLHXm1IN8f4CzM/ACOMraSfxwZCw78AYAAAA=",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/wajd-decor-project-8-400w.webp",
+        "avif": "/images/wajd-decor-project-8-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/wajd-decor-project-8-800w.webp",
+        "avif": "/images/wajd-decor-project-8-800w.avif"
+      }
+    ]
+  },
+  "wajd-decor-project-9": {
+    "baseName": "wajd-decor-project-9",
+    "originalPath": "/images/wajd-decor-project-9.webp",
+    "webp": "/images/wajd-decor-project-9.webp",
+    "avif": "/images/wajd-decor-project-9.avif",
+    "width": 960,
+    "height": 1280,
+    "aspectRatio": "960/1280",
+    "blurDataURL": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAACQAwCdASoPABQAPzmEuVOvKKWisAgB4CcJQAHOAGtE8iEFpuuwAP6eyobjQCndgXavU60RxmYwOLLuG4MJkwRqAk3AVeRwJr95nRQzGKwAAA==",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/wajd-decor-project-9-400w.webp",
+        "avif": "/images/wajd-decor-project-9-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/wajd-decor-project-9-800w.webp",
+        "avif": "/images/wajd-decor-project-9-800w.avif"
+      }
+    ]
+  },
+  "white-bed": {
+    "baseName": "white-bed",
+    "originalPath": "/images/white-bed.webp",
+    "webp": "/images/white-bed.webp",
+    "avif": "/images/white-bed.avif",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": "1280/960",
+    "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAwCdASoUAA8APzmEuVOvKKWisAgB4CcJZwDKAB57UW2FB6MltxwA/lWoeR7+tW9dMZoYI2CoabCAmjnr0l0OgI/rZlPHmjh7DfckPbGska+cCFbO/tIz90n99wwfFzgAAA==",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/white-bed-400w.webp",
+        "avif": "/images/white-bed-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/white-bed-800w.webp",
+        "avif": "/images/white-bed-800w.avif"
+      },
+      {
+        "width": 1200,
+        "webp": "/images/white-bed-1200w.webp",
+        "avif": "/images/white-bed-1200w.avif"
+      }
+    ]
+  },
+  "wood-and-marble-alternative-panels": {
+    "baseName": "wood-and-marble-alternative-panels",
+    "originalPath": "/images/wood-and-marble-alternative-panels.webp",
+    "webp": "/images/wood-and-marble-alternative-panels.webp",
+    "avif": "/images/wood-and-marble-alternative-panels.avif",
+    "width": 1600,
+    "height": 1200,
+    "aspectRatio": "1600/1200",
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAABwAwCdASoUAA8APzmGuVOvKSWisAgB4CcJZwDKABAJGhWxAoAAn0WiDVR4x+UljT+piJ/RW33Q3kZo1tb1J6iRFDDD6jeBen6uf5mp5jtamhxAAAA=",
+    "variants": [
+      {
+        "width": 400,
+        "webp": "/images/wood-and-marble-alternative-panels-400w.webp",
+        "avif": "/images/wood-and-marble-alternative-panels-400w.avif"
+      },
+      {
+        "width": 800,
+        "webp": "/images/wood-and-marble-alternative-panels-800w.webp",
+        "avif": "/images/wood-and-marble-alternative-panels-800w.avif"
+      },
+      {
+        "width": 1200,
+        "webp": "/images/wood-and-marble-alternative-panels-1200w.webp",
+        "avif": "/images/wood-and-marble-alternative-panels-1200w.avif"
+      }
+    ]
+  }
+}
