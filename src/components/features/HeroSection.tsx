@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Sparkles, Phone, MapPin, CheckCircle2, ArrowDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 
 // 3 Unsplash images for the slideshow
 const SLIDESHOW_IMAGES = [
@@ -69,37 +69,37 @@ export default function HeroSection() {
       </div>
 
       {/* ── CONTENT ──────────────────────────────────── */}
-      <div className="relative z-10 min-h-[88vh] flex flex-col justify-between pt-20 sm:pt-28 pb-6 sm:pb-10 px-4 sm:px-6 md:px-16 max-w-7xl mx-auto w-full">
+      <div className="relative z-10 min-h-[85dvh] sm:min-h-[88dvh] flex flex-col justify-between pt-16 xs:pt-20 sm:pt-28 pb-5 sm:pb-8 md:pb-10 px-3.5 sm:px-6 md:px-12 lg:px-16 max-w-7xl mx-auto w-full">
 
         {/* Top bar */}
         <motion.div
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="flex flex-col sm:flex-row items-center justify-between gap-2 border-b border-white/10 pb-3 text-[10px] sm:text-xs text-white/55 font-sans-clean"
+          className="flex flex-col sm:flex-row items-center justify-between gap-1.5 sm:gap-2 border-b border-white/10 pb-2.5 sm:pb-3 text-[10px] sm:text-xs text-white/60 font-sans-clean text-center sm:text-right"
         >
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2">
             <MapPin size={11} className="text-[#C19A6B] flex-shrink-0" />
             <span>الدمام • الخبر • الظهران • المنطقة الشرقية</span>
           </div>
-          <div className="flex items-center gap-2 text-[#C19A6B] font-semibold">
-            <CheckCircle2 size={11} />
+          <div className="flex items-center gap-1.5 sm:gap-2 text-[#C19A6B] font-semibold">
+            <CheckCircle2 size={11} className="flex-shrink-0" />
             <span>خبرة أكثر من ٣٠ سنة في الدهانات والديكورات</span>
           </div>
         </motion.div>
 
         {/* Center hero content */}
-        <div className="flex-1 flex flex-col items-center justify-center text-center py-6 sm:py-10">
+        <div className="flex-1 flex flex-col items-center justify-center text-center py-5 sm:py-8 md:py-10">
 
           {/* Badge */}
           <motion.div
             initial={{ scale: 0.85, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-4 flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#C19A6B]/40 bg-black/50 backdrop-blur-md shadow-lg"
+            className="mb-3 sm:mb-4 flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full border border-[#C19A6B]/40 bg-black/50 backdrop-blur-md shadow-lg max-w-full"
           >
             <Sparkles size={11} className="text-[#C19A6B] animate-pulse flex-shrink-0" />
-            <span className="text-xs sm:text-base font-bold text-[#C19A6B] tracking-wide font-sans-clean drop-shadow-sm">
+            <span className="text-[11px] xs:text-xs sm:text-sm md:text-base font-bold text-[#C19A6B] tracking-wide font-sans-clean drop-shadow-sm text-center leading-tight">
               دهانات وديكورات • عوازل صوتية ومائية • درايش وأرضيات • أسقف وجدران
             </span>
           </motion.div>
@@ -109,13 +109,13 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.1 }}
-            className="font-display-luxury font-bold leading-[1.3] text-[14vw] sm:text-[10vw] md:text-[9vw] lg:text-[8vw] select-none"
+            className="font-display-luxury font-bold leading-[1.25] text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-[7.5vw] xl:text-[8vw] select-none"
             style={{
               backgroundImage: 'linear-gradient(180deg, #FFFFFF 0%, #F5E6C8 45%, #C19A6B 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               paddingBottom: '0.12em',
-              paddingTop: '0.2em',
+              paddingTop: '0.15em',
             }}
           >
             وجد الأصايل
@@ -125,7 +125,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="mt-3 sm:mt-4 max-w-xl text-sm sm:text-lg md:text-xl text-white/80 font-serif-luxury leading-relaxed px-2"
+            className="mt-2.5 sm:mt-4 max-w-2xl text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl text-white/85 font-serif-luxury leading-relaxed px-2"
           >
             تنفيذ خدمات الدهانات والديكورات وعوازل الصوت للجدران والأرضيات والأسقف والدرايش، والعوازل المائية والسطحية، بالإضافة إلى أعمال الأرضيات، الأسقف والجدران، وبديل الخشب والرخام.
           </motion.p>
@@ -134,7 +134,7 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="mt-2 text-[11px] sm:text-sm text-white/45 font-sans-clean"
+            className="mt-1.5 sm:mt-2 text-[10px] xs:text-[11px] sm:text-sm text-white/50 font-sans-clean"
           >
             معاينة مجانية • التزام تام بالمواعيد • جودة مضمونة
           </motion.p>
@@ -144,11 +144,11 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="mt-6 flex items-center justify-center gap-3"
+            className="mt-5 sm:mt-6 flex items-center justify-center gap-3"
           >
             <a
               href="tel:0536402106"
-              aria-label="اتصال"
+              aria-label="اتصال مباشر"
               className="w-12 h-12 sm:w-14 sm:h-14 rounded-full gold-gradient-bg flex items-center justify-center shadow-[0_0_24px_rgba(193,154,107,0.5)] hover:scale-110 active:scale-95 transition-all duration-300"
             >
               <Phone size={19} className="text-[#050505]" />
@@ -158,7 +158,7 @@ export default function HeroSection() {
               href="https://wa.me/966536402106"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="واتساب"
+              aria-label="تواصل عبر واتساب"
               className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-tr from-[#128C7E] to-[#25D366] flex items-center justify-center shadow-[0_0_24px_rgba(37,211,102,0.4)] hover:scale-110 active:scale-95 transition-all duration-300"
             >
               <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
@@ -172,16 +172,17 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
-            className="mt-5 flex items-center gap-2"
+            className="mt-4 sm:mt-5 flex items-center gap-2"
           >
             {/* Image dots */}
             {SLIDESHOW_IMAGES.map((_, i) => (
               <div
                 key={i}
-                className={`rounded-full transition-all duration-500 ${slideIndex === i
-                  ? 'w-6 h-2 bg-[#C19A6B] shadow-[0_0_8px_rgba(193,154,107,0.7)]'
-                  : 'w-2 h-2 bg-white/25'
-                  }`}
+                className={`rounded-full transition-all duration-500 ${
+                  slideIndex === i
+                    ? 'w-6 h-2 bg-[#C19A6B] shadow-[0_0_8px_rgba(193,154,107,0.7)]'
+                    : 'w-2 h-2 bg-white/25'
+                }`}
               />
             ))}
           </motion.div>
@@ -193,19 +194,23 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
               transition={{ duration: 0.6 }}
-              className="mt-5 flex items-center gap-2 justify-center"
+              className="mt-4 sm:mt-5 flex items-center gap-2 justify-center"
             >
               {SLIDESHOW_IMAGES.map((img, i) => (
                 <div
                   key={i}
-                  className={`relative rounded-lg overflow-hidden transition-all duration-500 border-2 ${slideIndex === i
-                    ? 'border-[#C19A6B] w-16 h-10 sm:w-20 sm:h-14 opacity-100 scale-110 shadow-[0_0_12px_rgba(193,154,107,0.5)]'
-                    : 'border-white/20 w-12 h-8 sm:w-14 sm:h-10 opacity-50 scale-100'
-                    }`}
+                  className={`relative rounded-lg overflow-hidden transition-all duration-500 border-2 ${
+                    slideIndex === i
+                      ? 'border-[#C19A6B] w-14 h-9 xs:w-16 xs:h-10 sm:w-20 sm:h-14 opacity-100 scale-105 shadow-[0_0_12px_rgba(193,154,107,0.5)]'
+                      : 'border-white/20 w-11 h-7 xs:w-12 xs:h-8 sm:w-14 sm:h-10 opacity-50 scale-100'
+                  }`}
                 >
                   <img
                     src={img.url}
                     alt={img.label}
+                    width={80}
+                    height={56}
+                    loading="eager"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -219,9 +224,9 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-3 border-t border-white/10 text-[10px] sm:text-xs text-white/55 font-sans-clean"
+          className="flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-3 pt-3 border-t border-white/10 text-[10px] sm:text-xs text-white/60 font-sans-clean"
         >
-          <div className="flex flex-wrap justify-center sm:justify-start items-center gap-2">
+          <div className="flex flex-wrap justify-center sm:justify-start items-center gap-1.5 sm:gap-2 text-center sm:text-right">
             <span className="text-[#C19A6B] font-semibold">تخصصاتنا:</span>
             <span>دهانات داخلية وخارجية</span>
             <span className="text-white/30">•</span>
@@ -233,7 +238,7 @@ export default function HeroSection() {
           </div>
           <a
             href="#services"
-            className="group flex items-center gap-2 text-[#C19A6B] hover:text-white transition-colors"
+            className="group flex items-center gap-2 text-[#C19A6B] hover:text-white transition-colors flex-shrink-0"
           >
             <span>استعراض الخدمات</span>
             <div className="w-6 h-6 rounded-full border border-[#C19A6B]/50 flex items-center justify-center group-hover:border-[#C19A6B] group-hover:bg-[#C19A6B]/10 transition-all">

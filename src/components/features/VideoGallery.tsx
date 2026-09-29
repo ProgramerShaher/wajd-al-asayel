@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { VIDEO_ITEMS } from '../data/studioData';
+import { VIDEO_ITEMS } from '@/data/studioData';
 import { Play, X } from 'lucide-react';
 
 export default function VideoGallery() {
@@ -25,9 +25,9 @@ export default function VideoGallery() {
   };
 
   return (
-    <section id="video-gallery" className="py-24 relative overflow-hidden bg-[var(--bg-secondary)]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+    <section id="video-gallery" className="py-10 sm:py-14 md:py-20 relative overflow-hidden bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)]">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 md:px-12 lg:px-16 relative z-10 text-right">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 sm:mb-12 gap-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -35,16 +35,16 @@ export default function VideoGallery() {
             transition={{ duration: 0.8 }}
             className="max-w-2xl"
           >
-            <h2 className="text-4xl md:text-5xl font-display-luxury text-[var(--text-primary)] mb-6">
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-display-luxury text-[var(--text-primary)] mb-3">
               المعرض المرئي
             </h2>
-            <p className="text-lg text-[var(--text-secondary)] font-sans-clean leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-base text-[var(--text-secondary)] font-sans-clean leading-relaxed">
               تغطية حية لأعمالنا تبرز دقة التفاصيل وجودة التنفيذ في مشاريعنا، لتعيش التجربة قبل البدء.
             </p>
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {VIDEO_ITEMS.map((item, index) => {
             const isYouTube = item.videoUrl ? isYouTubeUrl(item.videoUrl) : false;
             
@@ -55,7 +55,7 @@ export default function VideoGallery() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className={`relative group overflow-hidden rounded-2xl glass-card cursor-pointer col-span-12 md:col-span-6 lg:col-span-4`}
+                className="relative group overflow-hidden rounded-2xl glass-card cursor-pointer"
                 onClick={() => item.videoUrl && handleVideoClick(item.videoUrl)}
               >
                 <div className="aspect-video relative overflow-hidden">
@@ -78,23 +78,23 @@ export default function VideoGallery() {
                   
                   {/* Play Button Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors duration-300">
-                    <div className="w-16 h-16 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center border border-white/20 text-white transform group-hover:scale-110 transition-transform duration-300">
-                      <Play className="w-6 h-6 fill-current ml-1" />
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center border border-white/20 text-white transform group-hover:scale-110 transition-transform duration-300">
+                      <Play className="w-5 h-5 sm:w-6 sm:h-6 fill-current ml-1" />
                     </div>
                   </div>
 
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-80" />
                 </div>
                 
-                <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col md:flex-row justify-between items-end">
+                <div className="p-4 sm:p-5 flex flex-col justify-between">
                   <div>
-                    <div className="inline-block px-3 py-1 mb-3 text-xs font-semibold tracking-wider text-white bg-black/40 backdrop-blur-md border border-white/10 rounded-full">
+                    <div className="inline-block px-2.5 sm:px-3 py-0.5 sm:py-1 mb-2 text-[10px] sm:text-xs font-semibold tracking-wider text-[#C19A6B] bg-[var(--bg-elevated)] border border-[#C19A6B]/30 rounded-full font-sans-clean">
                       {item.category}
                     </div>
-                    <h3 className="text-xl md:text-2xl font-display-luxury text-white mb-2">
+                    <h3 className="text-base sm:text-xl font-display-luxury text-[var(--text-primary)] mb-1.5 leading-snug">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-gray-300 line-clamp-2 max-w-lg">
+                    <p className="text-xs text-[var(--text-secondary)] line-clamp-2 font-sans-clean leading-relaxed">
                       {item.curatorNotes}
                     </p>
                   </div>
@@ -108,19 +108,19 @@ export default function VideoGallery() {
       {/* Fullscreen Video Modal */}
       {activeVideo && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm p-3 sm:p-6"
           onClick={closeVideo}
         >
           <button
             onClick={closeVideo}
-            className="fixed top-6 right-6 sm:top-8 sm:right-8 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-red-600 hover:bg-red-700 shadow-[0_0_25px_rgba(220,38,38,0.7)] flex items-center justify-center text-white backdrop-blur-md transition-all z-[100]"
+            className="fixed top-4 left-4 sm:top-6 sm:left-6 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-red-600 hover:bg-red-700 shadow-[0_0_20px_rgba(220,38,38,0.6)] flex items-center justify-center text-white backdrop-blur-md transition-all z-[100]"
             aria-label="إغلاق الفيديو"
           >
-            <X className="w-7 h-7 sm:w-8 sm:h-8" />
+            <X className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
           
           <div 
-            className={`w-full ${isYouTubeUrl(activeVideo) ? 'max-w-[400px] aspect-[9/16]' : 'max-w-5xl aspect-[9/16] md:aspect-video'} rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/20 flex justify-center bg-black relative`}
+            className={`w-full ${isYouTubeUrl(activeVideo) ? 'max-w-[400px] aspect-[9/16]' : 'max-w-5xl aspect-[9/16] md:aspect-video'} max-h-[88dvh] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/20 flex justify-center bg-black relative`}
             onClick={(e) => e.stopPropagation()}
           >
             {isYouTubeUrl(activeVideo) ? (

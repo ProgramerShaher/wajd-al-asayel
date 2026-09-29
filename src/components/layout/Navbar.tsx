@@ -1,7 +1,7 @@
-﻿import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Volume2, VolumeX, Menu, X, Phone, MessageCircle, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 
 interface NavbarProps {
   onOpenSampleKit?: () => void;
@@ -32,7 +32,7 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
       if (audioRef.current && audioRef.current.paused) {
         audioRef.current.play().then(() => {
           setIsPlayingAudio(true);
-        }).catch(() => {});
+        }).catch(() => { });
       }
       window.removeEventListener('click', handleFirstInteraction);
       window.removeEventListener('touchstart', handleFirstInteraction);
@@ -53,7 +53,7 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
 
   const toggleAmbientSound = () => {
     if (!audioRef.current) return;
-    
+
     if (!isPlayingAudio) {
       audioRef.current.play().then(() => {
         setIsPlayingAudio(true);
@@ -90,28 +90,31 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
     <>
       <header
         id="main-nav-header"
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 py-3 md:py-5 px-3 md:px-10 flex justify-center ${
-          scrolled ? 'translate-y-0' : 'translate-y-1'
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 py-2.5 sm:py-3 md:py-4 px-2.5 sm:px-4 md:px-8 lg:px-10 flex justify-center ${
+          scrolled ? 'translate-y-0' : 'translate-y-0.5 sm:translate-y-1'
         }`}
       >
         <nav
-          className={`w-full max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all duration-500 glass-nav ${
-            scrolled
-              ? 'shadow-[0_10px_40px_-10px_rgba(0,0,0,0.4)]'
-              : ''
+          className={`w-full max-w-7xl mx-auto flex items-center justify-between p-1.5 sm:p-2 rounded-full transition-all duration-500 glass-nav ${
+            scrolled ? 'shadow-[0_10px_40px_-10px_rgba(0,0,0,0.4)]' : ''
           }`}
         >
           {/* Atelier Monogram & Brand */}
           <a
             href="#hero"
-            className="flex items-center gap-2.5 sm:gap-3 group"
+            className="flex items-center gap-2 sm:gap-3 group min-w-0"
             data-cursor="الرئيسية"
           >
-            <div className="relative w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center flex-shrink-0">
-              <img src="/wa-logo.png" alt="شعار وجد الأصايل" className="w-full h-full object-contain transition-transform duration-700 group-hover:rotate-12" loading="lazy" />
+            <div className="relative w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 flex items-center justify-center flex-shrink-0">
+              <img
+                src="/wa-logo.png"
+                alt="شعار وجد الأصايل"
+                className="w-full h-full object-contain transition-transform duration-700 group-hover:rotate-12"
+                loading="eager"
+              />
             </div>
-            <div className="flex items-center text-right">
-              <span className="font-serif-luxury text-xl sm:text-2xl md:text-3xl font-black tracking-wide leading-normal pb-1.5 pt-1 bg-gradient-to-r from-[#FFF0D4] via-[#E6C280] to-[#C19A6B] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(230,194,128,0.35)] group-hover:scale-105 transition-transform duration-300 select-none">
+            <div className="flex items-center text-right truncate">
+              <span className="font-serif-luxury text-lg xs:text-xl sm:text-2xl md:text-3xl font-black tracking-wide leading-normal pb-1 pt-0.5 bg-gradient-to-r from-[#FFF0D4] via-[#E6C280] to-[#C19A6B] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(230,194,128,0.35)] group-hover:scale-105 transition-transform duration-300 select-none whitespace-nowrap">
                 وجد الأصايل
               </span>
             </div>
@@ -126,7 +129,7 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
                 onMouseMove={handleMagneticMove}
                 onMouseLeave={handleMagneticLeave}
                 data-cursor="انتقال"
-                className="relative px-3 py-1.5 text-xs font-sans-clean font-medium text-[var(--text-secondary)] hover:text-[#C19A6B] transition-colors duration-200 rounded-full hover:bg-[var(--bg-elevated)]/60"
+                className="relative p-2 text-xs font-sans-clean font-medium text-[var(--text-secondary)] hover:text-[#C19A6B] transition-colors duration-200 rounded-full hover:bg-[var(--bg-elevated)]/60"
               >
                 {link.name}
               </a>
@@ -134,7 +137,7 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
           </div>
 
           {/* Right Action Cluster */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3 flex-shrink-0">
             {/* Location & Experience Badge */}
             <div className="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--bg-elevated)] border border-[#C19A6B]/30 text-[11px] text-[var(--text-secondary)] font-sans-clean font-light">
               <span className="w-1.5 h-1.5 rounded-full bg-[#C19A6B] animate-pulse" />
@@ -152,20 +155,6 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
               <span dir="ltr">0536402106</span>
             </a>
 
-            {/* Direct WhatsApp Button */}
-            <a
-              id="nav-whatsapp-btn"
-              href="https://wa.me/966536402106"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-cursor="واتساب"
-              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-sans-clean font-semibold btn-pill-inactive shadow-sm active:scale-95 transition-all text-[#25D366]"
-              title="مراسلة عبر واتساب"
-            >
-              <MessageCircle size={14} className="text-[#25D366]" />
-              <span className="hidden md:inline text-[var(--text-secondary)]">واتساب</span>
-            </a>
-
             {/* Theme Toggle Button (Dark / Light Mode) */}
             <button
               id="theme-toggle-btn"
@@ -173,38 +162,23 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
               data-cursor={isDark ? 'نهاري' : 'ليلي'}
               aria-label={isDark ? 'التبديل إلى الوضع النهاري' : 'التبديل إلى الوضع الليلي'}
               title={isDark ? 'التبديل إلى الوضع النهاري الفاخر' : 'التبديل إلى الوضع الليلي الملكي'}
-              className="p-2 rounded-full btn-pill-inactive transition-all duration-300 flex items-center justify-center active:scale-95 text-[#C19A6B] hover:text-[#38BDF8]"
+              className="p-1.5 sm:p-2 rounded-full btn-pill-inactive transition-all duration-300 flex items-center justify-center active:scale-95 text-[#C19A6B] hover:text-[#38BDF8]"
             >
               {isDark ? (
-                <Sun size={16} className="text-[#FFAE42] transition-transform duration-500 hover:rotate-90" />
+                <Sun size={15} className="text-[#FFAE42] transition-transform duration-500 hover:rotate-90" />
               ) : (
-                <Moon size={16} className="text-[#38BDF8] transition-transform duration-500 hover:-rotate-12" />
+                <Moon size={15} className="text-[#38BDF8] transition-transform duration-500 hover:-rotate-12" />
               )}
-            </button>
-
-            {/* Ambient Sound Toggle */}
-            <button
-              id="ambient-sound-toggle"
-              onClick={toggleAmbientSound}
-              data-cursor={isPlayingAudio ? 'كتم' : 'صوت'}
-              aria-label="تبديل الموسيقى المحيطية"
-              className={`p-2 rounded-full transition-all duration-300 flex items-center justify-center active:scale-95 ${
-                isPlayingAudio
-                  ? 'gold-gradient-bg text-[#050505] shadow-[0_0_15px_rgba(193,154,107,0.4)]'
-                  : 'btn-pill-inactive'
-              }`}
-            >
-              {isPlayingAudio ? <Volume2 size={15} /> : <VolumeX size={15} />}
             </button>
 
             {/* Mobile Hamburger */}
             <button
               id="mobile-nav-toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-full btn-pill-inactive transition-all flex items-center justify-center active:scale-95"
+              className="lg:hidden p-1.5 sm:p-2 rounded-full btn-pill-inactive transition-all flex items-center justify-center active:scale-95"
               aria-label="فتح القائمة"
             >
-              {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
+              {mobileMenuOpen ? <X size={17} /> : <Menu size={17} />}
             </button>
           </div>
         </nav>
@@ -219,10 +193,10 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-x-4 top-20 z-40 lg:hidden glass-nav rounded-2xl p-5 border border-[#C19A6B]/35 shadow-2xl text-right"
+            className="fixed inset-x-3 sm:inset-x-4 top-16 sm:top-20 z-40 lg:hidden glass-nav rounded-2xl p-4 sm:p-5 border border-[#C19A6B]/35 shadow-2xl text-right max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain"
           >
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center justify-between pb-3 border-b border-white/10">
+            <div className="flex flex-col gap-2.5 sm:gap-3">
+              <div className="flex items-center justify-between pb-2.5 sm:pb-3 border-b border-white/10">
                 <span className="text-xs font-serif-luxury text-[#C19A6B] font-bold">
                   وجد الأصايل • الدمام والخبر
                 </span>
@@ -230,9 +204,9 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
                 <button
                   type="button"
                   onClick={toggleTheme}
-                  className="px-3 py-1 rounded-full btn-pill-inactive text-xs flex items-center gap-1.5"
+                  className="px-2.5 sm:px-3 py-1 rounded-full btn-pill-inactive text-[11px] sm:text-xs flex items-center gap-1.5"
                 >
-                  {isDark ? <Sun size={13} className="text-[#FFAE42]" /> : <Moon size={13} className="text-[#38BDF8]" />}
+                  {isDark ? <Sun size={12} className="text-[#FFAE42]" /> : <Moon size={12} className="text-[#38BDF8]" />}
                   <span>{isDark ? 'الوضع النهاري' : 'الوضع الليلي'}</span>
                 </button>
               </div>
@@ -242,17 +216,17 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="font-serif-luxury text-lg text-[var(--text-primary)] hover:text-[#C19A6B] transition-colors py-1.5 flex items-center justify-between border-b border-[var(--border-subtle)]"
+                  className="font-serif-luxury text-base sm:text-lg text-[var(--text-primary)] hover:text-[#C19A6B] transition-colors py-1.5 flex items-center justify-between border-b border-[var(--border-subtle)]"
                 >
                   <span>{link.name}</span>
                   <span className="text-[#C19A6B] text-xs">←</span>
                 </a>
               ))}
 
-              <div className="pt-3 mt-1 flex flex-col gap-2.5">
+              <div className="pt-2 sm:pt-3 mt-1 flex flex-col gap-2">
                 <a
                   href="tel:0536402106"
-                  className="w-full text-center py-3 rounded-full gold-gradient-bg text-[#050505] text-xs font-bold font-sans-clean shadow-lg flex items-center justify-center gap-2"
+                  className="w-full text-center py-2.5 sm:py-3 rounded-full gold-gradient-bg text-[#050505] text-xs font-bold font-sans-clean shadow-lg flex items-center justify-center gap-2"
                 >
                   <Phone size={14} />
                   <span>اتصال مباشر: 0536402106</span>

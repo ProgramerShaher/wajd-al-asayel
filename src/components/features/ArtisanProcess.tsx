@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Clock, Hammer, CheckCircle2, ChevronLeft, ChevronRight, ShieldCheck, Wrench, Sparkles, Maximize2, X } from 'lucide-react';
-import { ARTISAN_STEPS } from '../data/studioData';
+import { ARTISAN_STEPS } from '@/data/studioData';
 
 export default function ArtisanProcess() {
   const [activeStepIndex, setActiveStepIndex] = useState(0);
@@ -20,18 +20,18 @@ export default function ArtisanProcess() {
   return (
     <section
       id="process"
-      className="relative w-full py-10 sm:py-14 md:py-20 px-4 sm:px-6 md:px-12 bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)] overflow-hidden text-right transition-colors duration-300"
+      className="relative w-full py-10 sm:py-14 md:py-20 px-3.5 sm:px-6 md:px-12 lg:px-16 bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)] overflow-hidden text-right transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto">
 
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-5 mb-6 sm:mb-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-5 mb-6 sm:mb-10">
           <div>
             <div className="flex items-center gap-2 text-xs text-[#C19A6B] mb-2 font-semibold font-sans-clean">
               <Hammer size={13} className="text-[#C19A6B]" />
               <span>معاينة مراحل العمل الفعلية</span>
             </div>
-            <h2 className="font-serif-luxury text-2xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight">
+            <h2 className="font-serif-luxury text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight">
               خطوات تنفيذ العمل من <span className="text-[#C19A6B]">البداية للتسليم</span>
             </h2>
           </div>
@@ -44,14 +44,14 @@ export default function ArtisanProcess() {
         <div className="md:hidden flex flex-col gap-4">
 
           {/* Step Selector - horizontal pill tabs */}
-          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 -mx-4 px-4 snap-x">
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 -mx-3.5 px-3.5 snap-x">
             {ARTISAN_STEPS.map((step, idx) => {
               const isActive = activeStepIndex === idx;
               return (
                 <button
                   key={step.step}
                   onClick={() => setActiveStepIndex(idx)}
-                  className={`flex-shrink-0 snap-start flex items-center gap-2 px-3 py-2 rounded-full text-xs font-sans-clean transition-all border ${
+                  className={`flex-shrink-0 snap-start flex items-center gap-2 px-3 py-1.5 xs:py-2 rounded-full text-xs font-sans-clean transition-all border ${
                     isActive
                       ? 'bg-[#C19A6B] text-black font-bold border-[#C19A6B] shadow-[0_0_12px_rgba(193,154,107,0.4)]'
                       : 'bg-[var(--bg-surface)] border-[var(--border-light)] text-[var(--text-muted)]'
@@ -79,7 +79,7 @@ export default function ArtisanProcess() {
               className="rounded-2xl bg-[var(--bg-surface)] border border-[#C19A6B]/40 overflow-hidden shadow-lg"
             >
               {/* Image */}
-              <div className="relative w-full aspect-[16/9] overflow-hidden group flex">
+              <div className="relative w-full aspect-[16/9] sm:aspect-[16/10] overflow-hidden group flex">
                 {activeStep.images.map((img, i) => (
                   <img
                     key={i}
@@ -92,7 +92,7 @@ export default function ArtisanProcess() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30 pointer-events-none" />
 
                 {/* Top Controls */}
-                <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
+                <div className="absolute top-2.5 left-2.5 right-2.5 sm:top-3 sm:left-3 sm:right-3 flex items-center justify-between z-10">
                   <span className="px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-[#38BDF8]/40 text-[10px] font-bold text-[#38BDF8] font-sans-clean flex items-center gap-1">
                     <ShieldCheck size={11} />
                     <span>المرحلة {activeStep.step}: {activeStep.name}</span>
@@ -101,14 +101,15 @@ export default function ArtisanProcess() {
                     <button
                       onClick={() => setIsFullscreen(true)}
                       className="p-1.5 rounded-lg bg-black/75 hover:bg-[#38BDF8] text-white hover:text-black transition-all backdrop-blur-md border border-white/10"
+                      aria-label="تكبير الصورة"
                     >
                       <Maximize2 size={12} />
                     </button>
                     <div className="flex items-center gap-0.5 bg-black/75 backdrop-blur-md rounded-lg p-0.5 border border-white/10">
-                      <button onClick={handlePrevStep} className="p-1 rounded hover:bg-[#38BDF8]/30 text-white/80 transition-colors">
+                      <button onClick={handlePrevStep} className="p-1 rounded hover:bg-[#38BDF8]/30 text-white/80 transition-colors" aria-label="المرحلة السابقة">
                         <ChevronRight size={14} />
                       </button>
-                      <button onClick={handleNextStep} className="p-1 rounded hover:bg-[#38BDF8]/30 text-white/80 transition-colors">
+                      <button onClick={handleNextStep} className="p-1 rounded hover:bg-[#38BDF8]/30 text-white/80 transition-colors" aria-label="المرحلة التالية">
                         <ChevronLeft size={14} />
                       </button>
                     </div>
@@ -116,8 +117,8 @@ export default function ArtisanProcess() {
                 </div>
 
                 {/* Bottom Caption */}
-                <div className="absolute bottom-0 left-0 right-0 p-3 z-10">
-                  <div className="p-3 rounded-xl bg-black/80 backdrop-blur-md border border-white/10 text-right">
+                <div className="absolute bottom-0 left-0 right-0 p-2.5 sm:p-3 z-10">
+                  <div className="p-2.5 sm:p-3 rounded-xl bg-black/80 backdrop-blur-md border border-white/10 text-right">
                     <div className="flex items-center justify-between gap-2 mb-1">
                       <span className="text-[10px] text-[#38BDF8] font-bold font-sans-clean">تفاصيل المرحلة:</span>
                       <span className="text-[10px] text-[var(--text-muted)] font-sans-clean flex items-center gap-1">
@@ -125,15 +126,15 @@ export default function ArtisanProcess() {
                         {activeStep.duration}
                       </span>
                     </div>
-                    <p className="text-[11px] text-white/85 font-sans-clean leading-relaxed">{activeStep.detail}</p>
+                    <p className="text-[11px] text-white/85 font-sans-clean leading-relaxed line-clamp-2">{activeStep.detail}</p>
                   </div>
                 </div>
               </div>
 
               {/* Materials bar */}
-              <div className="p-3.5 bg-[var(--bg-surface)] border-t border-[#C19A6B]/25 flex items-center justify-between gap-3">
+              <div className="p-3 sm:p-3.5 bg-[var(--bg-surface)] border-t border-[#C19A6B]/25 flex items-center justify-between gap-2.5 sm:gap-3">
                 <div className="flex-1 text-right min-w-0">
-                  <div className="flex items-center gap-1.5 text-[10px] text-[#C19A6B] font-semibold font-sans-clean mb-0.5">
+                  <div className="flex items-center gap-1 text-[10px] text-[#C19A6B] font-semibold font-sans-clean mb-0.5">
                     <Wrench size={11} />
                     <span>المواد المستخدمة:</span>
                   </div>
@@ -141,7 +142,7 @@ export default function ArtisanProcess() {
                 </div>
                 <a
                   href="#contact"
-                  className="flex-shrink-0 px-3 py-2 rounded-full gold-gradient-bg text-black text-[10px] font-bold font-sans-clean flex items-center gap-1 shadow-sm"
+                  className="flex-shrink-0 px-3 py-1.5 sm:py-2 rounded-full gold-gradient-bg text-black text-[10px] font-bold font-sans-clean flex items-center gap-1 shadow-sm"
                 >
                   <Sparkles size={10} />
                   <span>طلب تنفيذ</span>
@@ -151,14 +152,14 @@ export default function ArtisanProcess() {
           </AnimatePresence>
 
           {/* Steps quick list - Mobile */}
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 xs:grid-cols-2 gap-2">
             {ARTISAN_STEPS.map((step, idx) => {
               const isActive = activeStepIndex === idx;
               return (
                 <button
                   key={step.step}
                   onClick={() => setActiveStepIndex(idx)}
-                  className={`text-right p-3 rounded-xl border transition-all duration-300 flex items-center gap-2.5 ${
+                  className={`text-right p-2.5 sm:p-3 rounded-xl border transition-all duration-300 flex items-center gap-2.5 ${
                     isActive
                       ? 'bg-[var(--bg-elevated)] border-[#C19A6B] shadow-[0_4px_16px_rgba(193,154,107,0.2)] ring-1 ring-[#C19A6B]'
                       : 'bg-[var(--bg-surface)] border-[var(--border-light)] hover:border-[#C19A6B]/40'

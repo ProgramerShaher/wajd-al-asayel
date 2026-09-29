@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Sun, Sparkles, ZoomIn } from 'lucide-react';
-import { SWATCH_FINISHES } from '../data/studioData';
-import { SwatchFinish } from '../types';
+import { SWATCH_FINISHES } from '@/data/studioData';
+import { SwatchFinish } from '@/types';
 
 export default function MaterialInspector() {
   const [selectedFinish, setSelectedFinish] = useState<SwatchFinish>(SWATCH_FINISHES[0]);
@@ -27,7 +27,7 @@ export default function MaterialInspector() {
   return (
     <section
       id="inspector"
-      className="relative w-full py-10 sm:py-14 md:py-20 px-4 sm:px-6 md:px-16 bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)] overflow-hidden text-right transition-colors duration-300"
+      className="relative w-full py-10 sm:py-14 md:py-20 px-3.5 sm:px-6 md:px-12 lg:px-16 bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)] overflow-hidden text-right transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto">
 
@@ -37,7 +37,7 @@ export default function MaterialInspector() {
             <Sun size={13} />
             <span>معاينة خامات الديكور والدهان</span>
           </div>
-          <h2 className="font-serif-luxury text-2xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight">
+          <h2 className="font-serif-luxury text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight">
             تجربة الإضاءة وانعكاس <span className="text-[#C19A6B]">الخامات</span>
           </h2>
           <p className="mt-2 max-w-lg text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed font-sans-clean">
@@ -45,16 +45,16 @@ export default function MaterialInspector() {
           </p>
         </div>
 
-        {/* === MOBILE LAYOUT: stacked === */}
-        <div className="flex flex-col gap-4 lg:hidden">
+        {/* === MOBILE & TABLET LAYOUT: stacked with luxury centering === */}
+        <div className="flex flex-col gap-4 lg:hidden max-w-2xl mx-auto w-full">
 
-          {/* Interactive Swatch Canvas - Mobile: full width, smaller */}
+          {/* Interactive Swatch Canvas - Mobile / Tablet */}
           <div
             ref={swatchRef}
             onMouseMove={handleLightMove}
             onTouchStart={handleTouchMove}
             onTouchMove={handleTouchMove}
-            className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-[#C19A6B]/30 shadow-xl cursor-crosshair touch-none"
+            className="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-2xl overflow-hidden border border-[#C19A6B]/30 shadow-xl cursor-crosshair touch-none"
           >
             <img
               src={selectedFinish.imageUrl}
@@ -95,19 +95,19 @@ export default function MaterialInspector() {
             </div>
           </div>
 
-          <p className="text-center text-[10px] text-[var(--text-muted)] font-sans-clean">
+          <p className="text-center text-[10px] sm:text-xs text-[var(--text-muted)] font-sans-clean">
             مرر إصبعك على الصورة لاختبار الانعكاس الديناميكي
           </p>
 
           {/* Swatches - horizontal scroll on mobile */}
-          <div className="flex flex-row gap-2.5 overflow-x-auto no-scrollbar pb-1 -mx-4 px-4 snap-x snap-mandatory">
+          <div className="flex flex-row gap-2.5 overflow-x-auto no-scrollbar pb-1 -mx-3.5 px-3.5 sm:mx-0 sm:px-0 snap-x snap-mandatory">
             {SWATCH_FINISHES.map((swatch) => {
               const isSelected = selectedFinish.id === swatch.id;
               return (
                 <button
                   key={swatch.id}
                   onClick={() => setSelectedFinish(swatch)}
-                  className={`flex-shrink-0 snap-start flex items-center gap-2.5 p-3 rounded-xl border transition-all duration-300 w-[200px] text-right ${
+                  className={`flex-shrink-0 snap-start flex items-center gap-2.5 p-3 rounded-xl border transition-all duration-300 w-[180px] xs:w-[200px] text-right ${
                     isSelected
                       ? 'bg-[var(--bg-elevated)] border-[#C19A6B] shadow-[0_0_16px_rgba(193,154,107,0.3)] ring-1 ring-[#C19A6B]/50'
                       : 'bg-[var(--bg-surface)] border-[var(--border-light)] hover:border-[#C19A6B]/50'
@@ -131,7 +131,7 @@ export default function MaterialInspector() {
           </div>
 
           {/* Specs card - mobile */}
-          <div className="p-4 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-light)] shadow-sm">
+          <div className="p-4 sm:p-5 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-light)] shadow-sm">
             <div className="flex items-center justify-between mb-3">
               <span className="text-xs text-[#C19A6B] font-semibold font-sans-clean">مواصفات الخامة</span>
               <div
@@ -139,8 +139,8 @@ export default function MaterialInspector() {
                 style={{ backgroundColor: selectedFinish.baseHex }}
               />
             </div>
-            <h3 className="font-serif-luxury text-lg text-[var(--text-primary)] font-bold mb-1">{selectedFinish.name}</h3>
-            <p className="text-[11px] text-[var(--text-secondary)] leading-relaxed mb-3 font-sans-clean">{selectedFinish.description}</p>
+            <h3 className="font-serif-luxury text-base xs:text-lg text-[var(--text-primary)] font-bold mb-1">{selectedFinish.name}</h3>
+            <p className="text-[11px] sm:text-xs text-[var(--text-secondary)] leading-relaxed mb-3 font-sans-clean">{selectedFinish.description}</p>
 
             <div className="space-y-2.5 border-t border-[var(--border-subtle)] pt-3 text-xs font-sans-clean">
               <div>
@@ -157,7 +157,7 @@ export default function MaterialInspector() {
 
             <a
               href="#contact"
-              className="mt-3 w-full text-center block py-2 rounded-full btn-pill-inactive text-xs font-sans-clean font-bold transition-all active:scale-95"
+              className="mt-3 w-full text-center block py-2.5 rounded-full btn-pill-inactive text-xs font-sans-clean font-bold transition-all active:scale-95"
             >
               طلب معاينة وعينات الكتالوج
             </a>

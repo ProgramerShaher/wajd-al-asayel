@@ -1,0 +1,75 @@
+# ====================================================================
+# _headers - استراتيجية التخزين المؤقت (Cache-Control) لموقع وجد الأصايل
+# Vercel Edge Network Headers Configuration
+# هدف: أقصى سرعة تحميل وأعلى تقييم في PageSpeed Insights
+# ====================================================================
+
+# ── 1. ملف HTML الرئيسي: لا يُخزَّن مؤقتاً (لضمان ظهور التحديثات فوراً)
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(self)
+
+# ── 2. الصور (WebP/JPG/PNG/AVIF): تُخزَّن لمدة سنة كاملة (immutable)
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+  Vary: Accept-Encoding
+
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.avif
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+# ── 3. ملفات JavaScript و CSS (Vite يضيف Hash تلقائياً): سنة كاملة
+/assets/*.js
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: application/javascript; charset=utf-8
+
+/assets/*.css
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: text/css; charset=utf-8
+
+# ── 4. الخطوط (Fonts): تُخزَّن لمدة سنة
+/assets/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+
+# ── 5. ملفات الصوت والفيديو
+/audio/*
+  Cache-Control: public, max-age=604800
+  Accept-Ranges: bytes
+
+/*.mp4
+  Cache-Control: public, max-age=604800
+  Accept-Ranges: bytes
+
+# ── 6. ملفات الـ SEO الثابتة (لا تتغير كثيراً)
+/robots.txt
+  Cache-Control: public, max-age=86400
+  Content-Type: text/plain; charset=utf-8
+
+/sitemap.xml
+  Cache-Control: public, max-age=3600
+  Content-Type: application/xml; charset=utf-8
+
+# ── 7. الشعار والأيقونات
+/wa-logo.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/wa-logo.svg
+  Cache-Control: public, max-age=31536000, immutable

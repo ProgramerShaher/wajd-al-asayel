@@ -1,14 +1,17 @@
 {
-  "name": "react-example",
+  "name": "wajd-al-asayel",
+  "description": "الموقع الرسمي لمؤسسة وجد الأصايل للديكورات والدهانات والعوازل بالدمام والخبر",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "build": "vite build",
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "convert-images": "node convert-next-gen.cjs",
+    "optimize-media": "node scripts/optimize-media.cjs"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

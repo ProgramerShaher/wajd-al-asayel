@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, MapPin, Maximize2, X, Compass, ArrowUpRight, Image as ImageIcon, ZoomIn, Images } from 'lucide-react';
-import { PORTFOLIO_ITEMS } from '../data/studioData';
-import { PortfolioItem } from '../types';
-import ProfessionalGallery from './ProfessionalGallery';
+import { PORTFOLIO_ITEMS } from '@/data/studioData';
+import { PortfolioItem } from '@/types';
+import ProfessionalGallery from '@/components/features/ProfessionalGallery';
 
 export default function SpotlightGallery() {
   const [selectedCategory, setSelectedCategory] = useState<string>('الكل');
@@ -56,7 +56,7 @@ export default function SpotlightGallery() {
       id="portfolio"
       ref={galleryRef}
       onMouseMove={handleMouseMove}
-      className="relative w-full py-10 sm:py-14 md:py-20 px-4 sm:px-6 md:px-16 bg-[var(--bg-primary)] border-t border-[var(--border-subtle)] overflow-hidden text-right transition-colors duration-300"
+      className="relative w-full py-10 sm:py-14 md:py-20 px-3.5 sm:px-6 md:px-12 lg:px-16 bg-[var(--bg-primary)] border-t border-[var(--border-subtle)] overflow-hidden text-right transition-colors duration-300"
     >
       {/* THE MOUSE SPOTLIGHT OVERLAY */}
       <div
@@ -68,25 +68,25 @@ export default function SpotlightGallery() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 sm:gap-6 mb-8 sm:mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-12">
           <div>
             <div className="flex items-center gap-2 text-xs text-[#C19A6B] mb-2 sm:mb-3 font-semibold font-sans-clean">
               <Sparkles size={13} />
               <span>أعمال منفذة في الدمام والخبر</span>
             </div>
-            <h2 className="font-serif-luxury text-3xl sm:text-5xl md:text-6xl font-bold text-[var(--text-primary)]">
+            <h2 className="font-serif-luxury text-2xl xs:text-3xl sm:text-5xl md:text-6xl font-bold text-[var(--text-primary)]">
               معرض أعمال وجد الأصايل
             </h2>
           </div>
 
           {/* Category Filter Pills (Fluid Horizontal Thumb-Swipe on Mobile) */}
-          <div className="flex items-center gap-2.5 overflow-x-auto no-scrollbar py-2 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap">
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-2 -mx-3.5 px-3.5 sm:mx-0 sm:px-0 sm:flex-wrap">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 data-cursor="تصفية"
-                className={`whitespace-nowrap px-4 py-2 rounded-full text-xs font-sans-clean transition-all duration-300 flex-shrink-0 active:scale-95 ${
+                className={`whitespace-nowrap px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs font-sans-clean transition-all duration-300 flex-shrink-0 active:scale-95 ${
                   selectedCategory === cat
                     ? 'gold-gradient-bg text-[#050505] font-bold shadow-[0_0_20px_rgba(193,154,107,0.4)] scale-[1.02]'
                     : 'btn-pill-inactive hover:scale-[1.02]'
@@ -99,7 +99,7 @@ export default function SpotlightGallery() {
         </div>
 
         {/* CLEAN GRID LAYOUT */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-6 mt-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2.5 sm:gap-4 lg:gap-6 mt-6 sm:mt-10">
           {filteredItems.map((item, index) => {
             return (
               <motion.div
@@ -133,16 +133,16 @@ export default function SpotlightGallery() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
                 
                 {/* Content */}
-                <div className="absolute bottom-0 left-0 right-0 p-5 flex flex-col justify-end translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  <div className="text-[11px] text-[#C19A6B] font-bold font-sans-clean mb-1.5 uppercase tracking-wider">
+                <div className="absolute bottom-0 left-0 right-0 p-3 xs:p-4 sm:p-5 flex flex-col justify-end translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+                  <div className="text-[10px] sm:text-[11px] text-[#C19A6B] font-bold font-sans-clean mb-1 uppercase tracking-wider">
                     {item.category}
                   </div>
-                  <h3 className="font-serif-luxury text-lg text-white font-normal leading-tight mb-2">
+                  <h3 className="font-serif-luxury text-sm xs:text-base sm:text-lg text-white font-normal leading-tight mb-1.5 line-clamp-2">
                     {item.title}
                   </h3>
-                  <div className="text-xs text-white/60 flex items-center gap-1.5">
-                    <MapPin size={12} />
-                    <span>{item.location}</span>
+                  <div className="text-[11px] sm:text-xs text-white/60 flex items-center gap-1.5">
+                    <MapPin size={11} className="flex-shrink-0" />
+                    <span className="truncate">{item.location}</span>
                   </div>
                 </div>
               </motion.div>
@@ -151,13 +151,13 @@ export default function SpotlightGallery() {
         </div>
 
         {/* View All Button */}
-        <div className="mt-14 sm:mt-20 flex justify-center">
+        <div className="mt-10 sm:mt-16 md:mt-20 flex justify-center">
           <button 
             onClick={() => setIsProfessionalGalleryOpen(true)}
-            className="group relative flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-tr from-[#9B784B] via-[#C19A6B] to-[#E6C280] text-[#050505] font-bold text-lg font-sans-clean shadow-[0_10px_30px_rgba(193,154,107,0.3)] hover:shadow-[0_12px_40px_rgba(193,154,107,0.5)] hover:scale-105 active:scale-95 transition-all duration-300"
+            className="group relative flex items-center justify-center gap-2.5 sm:gap-3 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-tr from-[#9B784B] via-[#C19A6B] to-[#E6C280] text-[#050505] font-bold text-base sm:text-lg font-sans-clean shadow-[0_10px_30px_rgba(193,154,107,0.3)] hover:shadow-[0_12px_40px_rgba(193,154,107,0.5)] hover:scale-105 active:scale-95 transition-all duration-300"
           >
             <span className="absolute -inset-1 rounded-full bg-[#C19A6B] opacity-30 animate-pulse pointer-events-none" />
-            <Images size={24} className="drop-shadow-sm transition-transform group-hover:scale-110 duration-200" />
+            <Images size={22} className="drop-shadow-sm transition-transform group-hover:scale-110 duration-200" />
             <span>عرض الكل</span>
           </button>
         </div>
@@ -178,7 +178,7 @@ export default function SpotlightGallery() {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.96, opacity: 0, y: 15 }}
               transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              className="relative w-full max-w-4xl max-h-[92vh] sm:max-h-[86vh] overflow-y-auto rounded-2xl border border-[var(--border-light)] shadow-2xl p-4 sm:p-7 md:p-8 bg-[var(--bg-surface)] text-right transition-colors duration-300"
+              className="relative w-full max-w-4xl max-h-[92dvh] sm:max-h-[86vh] overflow-y-auto rounded-2xl border border-[var(--border-light)] shadow-2xl p-4 sm:p-7 md:p-8 bg-[var(--bg-surface)] text-right transition-colors duration-300"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Elegant Corner Close Button */}

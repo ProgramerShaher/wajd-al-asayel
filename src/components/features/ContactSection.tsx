@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, ArrowLeft, ShieldCheck, Mail, MapPin, Phone, User, MessageSquare, Check, CalendarCheck, CheckCircle2 } from 'lucide-react';
 
@@ -51,7 +51,7 @@ ${formData.message ? `ملاحظات: ${formData.message}` : ''}
   return (
     <section
       id="contact"
-      className="relative w-full py-12 md:py-20 px-4 sm:px-6 md:px-10 bg-[var(--bg-primary)] dark:bg-[#030205] border-t border-[var(--border-subtle)] dark:border-white/[0.03] overflow-hidden text-right transition-colors duration-300"
+      className="relative w-full py-10 sm:py-14 md:py-20 px-3.5 sm:px-6 md:px-10 bg-[var(--bg-primary)] dark:bg-[#030205] border-t border-[var(--border-subtle)] dark:border-white/[0.03] overflow-hidden text-right transition-colors duration-300"
     >
       {/* Absolute Ambient Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
@@ -61,12 +61,12 @@ ${formData.message ? `ملاحظات: ${formData.message}` : ''}
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--bg-elevated)] dark:bg-[#120F0D] border border-[#C19A6B]/30 dark:border-[#C19A6B]/20 text-[#C19A6B] text-[11px] font-bold tracking-widest mb-4 uppercase shadow-sm"
+            className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-[var(--bg-elevated)] dark:bg-[#120F0D] border border-[#C19A6B]/30 dark:border-[#C19A6B]/20 text-[#C19A6B] text-[10px] sm:text-[11px] font-bold tracking-widest mb-3 sm:mb-4 uppercase shadow-sm"
           >
             <Sparkles size={12} className="animate-pulse" />
             <span>نحن في خدمتك دائماً</span>
@@ -76,7 +76,7 @@ ${formData.message ? `ملاحظات: ${formData.message}` : ''}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] dark:bg-gradient-to-b dark:from-white dark:via-white dark:to-white/60 dark:bg-clip-text dark:text-transparent"
+            className="font-serif-luxury text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] dark:bg-gradient-to-b dark:from-white dark:via-white dark:to-white/60 dark:bg-clip-text dark:text-transparent"
           >
             تواصل مع خبرائنا
           </motion.h2>
@@ -85,7 +85,7 @@ ${formData.message ? `ملاحظات: ${formData.message}` : ''}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-[var(--text-secondary)] dark:text-[#8C867D] text-sm md:text-sm max-w-xl mx-auto mt-4 font-sans-clean leading-relaxed"
+            className="text-[var(--text-secondary)] dark:text-[#8C867D] text-xs sm:text-sm max-w-xl mx-auto mt-2.5 sm:mt-4 font-sans-clean leading-relaxed px-2"
           >
             دعنا نحول رؤيتك إلى واقع ملموس. احجز موعداً للمعاينة المجانية ورفع المقاسات، وسنقدم لك استشارة احترافية وتصميماً يليق بتطلعاتك.
           </motion.p>
@@ -100,7 +100,7 @@ ${formData.message ? `ملاحظات: ${formData.message}` : ''}
             viewport={{ once: true }}
             className="lg:col-span-7"
           >
-            <div className="relative p-5 sm:p-8 rounded-[1.5rem] bg-[var(--bg-surface)] dark:bg-gradient-to-br dark:from-[#12100E]/90 dark:to-[#0A0806]/90 border border-[var(--border-light)] dark:border-white/[0.04] shadow-[var(--card-shadow)] dark:shadow-2xl dark:backdrop-blur-3xl overflow-hidden transition-colors duration-300">
+            <div className="relative p-4 xs:p-5 sm:p-8 rounded-[1.5rem] bg-[var(--bg-surface)] dark:bg-gradient-to-br dark:from-[#12100E]/90 dark:to-[#0A0806]/90 border border-[var(--border-light)] dark:border-white/[0.04] shadow-[var(--card-shadow)] dark:shadow-2xl dark:backdrop-blur-3xl overflow-hidden transition-colors duration-300">
               <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#C19A6B]/30 to-transparent" />
               
               <AnimatePresence mode="wait">
@@ -109,18 +109,18 @@ ${formData.message ? `ملاحظات: ${formData.message}` : ''}
                     key="success"
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="flex flex-col items-center justify-center text-center py-16"
+                    className="flex flex-col items-center justify-center text-center py-12 sm:py-16"
                   >
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#C19A6B]/20 to-transparent border border-[#C19A6B]/30 flex items-center justify-center mb-4 shadow-[0_0_30px_rgba(193,154,107,0.2)]">
-                      <CheckCircle2 size={32} className="text-[#C19A6B]" />
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#C19A6B]/20 to-transparent border border-[#C19A6B]/30 flex items-center justify-center mb-4 shadow-[0_0_30px_rgba(193,154,107,0.2)]">
+                      <CheckCircle2 size={30} className="text-[#C19A6B]" />
                     </div>
-                    <h3 className="text-xl font-serif-luxury font-bold text-[var(--text-primary)] dark:text-white mb-2">تم استلام طلبك بنجاح</h3>
-                    <p className="text-[var(--text-secondary)] dark:text-[#A0A0A5] text-[13px] max-w-sm font-sans-clean leading-relaxed">
+                    <h3 className="text-lg sm:text-xl font-serif-luxury font-bold text-[var(--text-primary)] dark:text-white mb-2">تم استلام طلبك بنجاح</h3>
+                    <p className="text-[var(--text-secondary)] dark:text-[#A0A0A5] text-xs sm:text-[13px] max-w-sm font-sans-clean leading-relaxed px-2">
                       شكراً لثقتك بـ "وجد الأصايل". سيقوم أحد خبرائنا بالتواصل معك قريباً جداً لتحديد موعد المعاينة.
                     </p>
                     <button
                       onClick={() => setIsSubmitted(false)}
-                      className="mt-6 px-6 py-2 rounded-full border border-[var(--border-subtle)] dark:border-white/10 text-[var(--text-secondary)] dark:text-white/70 hover:text-[var(--text-primary)] dark:hover:text-white hover:bg-[var(--bg-elevated)] dark:hover:bg-white/5 transition-colors text-[13px] font-sans-clean"
+                      className="mt-5 sm:mt-6 px-6 py-2 rounded-full border border-[var(--border-subtle)] dark:border-white/10 text-[var(--text-secondary)] dark:text-white/70 hover:text-[var(--text-primary)] dark:hover:text-white hover:bg-[var(--bg-elevated)] dark:hover:bg-white/5 transition-colors text-xs sm:text-[13px] font-sans-clean"
                     >
                       إرسال طلب آخر
                     </button>
@@ -132,14 +132,14 @@ ${formData.message ? `ملاحظات: ${formData.message}` : ''}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="space-y-6 font-sans-clean"
+                    className="space-y-4 sm:space-y-6 font-sans-clean"
                   >
                     {/* Project Scope Grid */}
                     <div>
                       <label className="text-[11px] text-[#C19A6B] block mb-2 font-bold uppercase tracking-widest">
                         ١. نوع الخدمة
                       </label>
-                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5 sm:gap-2">
                         {scopeOptions.map((scope) => {
                           const isSelected = formData.projectScope === scope;
                           return (
@@ -147,7 +147,7 @@ ${formData.message ? `ملاحظات: ${formData.message}` : ''}
                               type="button"
                               key={scope}
                               onClick={() => setFormData({ ...formData, projectScope: scope })}
-                              className={`px-3 py-2.5 rounded-lg text-[11px] sm:text-xs font-medium transition-all duration-300 flex items-center justify-center gap-1.5 border ${
+                              className={`px-2.5 sm:px-3 py-2 sm:py-2.5 rounded-lg text-[10px] xs:text-[11px] sm:text-xs font-medium transition-all duration-300 flex items-center justify-center gap-1 sm:gap-1.5 border ${
                                 isSelected
                                   ? 'bg-[#C19A6B]/10 border-[#C19A6B]/50 text-[#C19A6B] shadow-[0_0_20px_rgba(193,154,107,0.15)]'
                                   : 'bg-[var(--bg-elevated)] dark:bg-[#181512]/50 border-[var(--border-subtle)] dark:border-white/5 text-[var(--text-secondary)] dark:text-[#8C867D] hover:bg-[var(--bg-primary)] dark:hover:bg-[#181512] hover:text-[var(--text-primary)] dark:hover:text-white hover:border-[#C19A6B]/30 dark:hover:border-white/10'
@@ -303,63 +303,63 @@ ${formData.message ? `ملاحظات: ${formData.message}` : ''}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="lg:col-span-5 flex flex-col justify-center space-y-4"
+            className="lg:col-span-5 flex flex-col justify-center space-y-3.5 sm:space-y-4"
           >
             {/* Premium Info Cards */}
-            <div className="p-5 rounded-2xl bg-[var(--bg-surface)] dark:bg-[#12100E]/50 border border-[var(--border-subtle)] dark:border-white/[0.03] shadow-sm dark:shadow-none dark:backdrop-blur-md flex items-start gap-4 hover:border-[#C19A6B]/30 dark:hover:border-[#C19A6B]/20 hover:bg-[var(--bg-elevated)] dark:hover:bg-[#12100E] transition-colors duration-300 group">
-              <div className="w-10 h-10 rounded-xl bg-[#C19A6B]/10 border border-[#C19A6B]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#C19A6B] group-hover:text-[#050505] text-[#C19A6B] transition-all duration-300">
-                <Phone size={18} />
+            <div className="p-4 sm:p-5 rounded-2xl bg-[var(--bg-surface)] dark:bg-[#12100E]/50 border border-[var(--border-subtle)] dark:border-white/[0.03] shadow-sm dark:shadow-none dark:backdrop-blur-md flex items-start gap-3 sm:gap-4 hover:border-[#C19A6B]/30 dark:hover:border-[#C19A6B]/20 hover:bg-[var(--bg-elevated)] dark:hover:bg-[#12100E] transition-colors duration-300 group">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#C19A6B]/10 border border-[#C19A6B]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#C19A6B] group-hover:text-[#050505] text-[#C19A6B] transition-all duration-300">
+                <Phone size={17} />
               </div>
               <div>
-                <span className="text-[11px] text-[var(--text-secondary)] dark:text-[#8C867D] block mb-0.5">خط التواصل المباشر</span>
-                <a href="tel:0536402106" className="text-lg font-bold text-[var(--text-primary)] dark:text-white tracking-wider font-mono hover:text-[#C19A6B] transition-colors" dir="ltr">
+                <span className="text-[10px] sm:text-[11px] text-[var(--text-secondary)] dark:text-[#8C867D] block mb-0.5">خط التواصل المباشر</span>
+                <a href="tel:0536402106" className="text-base sm:text-lg font-bold text-[var(--text-primary)] dark:text-white tracking-wider font-mono hover:text-[#C19A6B] transition-colors" dir="ltr">
                   0536402106 <br /> 0556557498
                 </a>
               </div>
             </div>
 
-            <div className="p-5 rounded-2xl bg-[var(--bg-surface)] dark:bg-[#12100E]/50 border border-[var(--border-subtle)] dark:border-white/[0.03] shadow-sm dark:shadow-none dark:backdrop-blur-md flex items-start gap-4 hover:border-[#C19A6B]/30 dark:hover:border-[#C19A6B]/20 hover:bg-[var(--bg-elevated)] dark:hover:bg-[#12100E] transition-colors duration-300 group">
-              <div className="w-10 h-10 rounded-xl bg-[var(--bg-elevated)] dark:bg-[#181512] border border-[var(--border-subtle)] dark:border-white/5 flex items-center justify-center flex-shrink-0 text-[var(--text-muted)] dark:text-white/50 group-hover:text-[#C19A6B] dark:group-hover:text-white transition-colors duration-300">
-                <CalendarCheck size={18} />
+            <div className="p-4 sm:p-5 rounded-2xl bg-[var(--bg-surface)] dark:bg-[#12100E]/50 border border-[var(--border-subtle)] dark:border-white/[0.03] shadow-sm dark:shadow-none dark:backdrop-blur-md flex items-start gap-3 sm:gap-4 hover:border-[#C19A6B]/30 dark:hover:border-[#C19A6B]/20 hover:bg-[var(--bg-elevated)] dark:hover:bg-[#12100E] transition-colors duration-300 group">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[var(--bg-elevated)] dark:bg-[#181512] border border-[var(--border-subtle)] dark:border-white/5 flex items-center justify-center flex-shrink-0 text-[var(--text-muted)] dark:text-white/50 group-hover:text-[#C19A6B] dark:group-hover:text-white transition-colors duration-300">
+                <CalendarCheck size={17} />
               </div>
               <div className="w-full">
-                <span className="text-[11px] text-[var(--text-secondary)] dark:text-[#8C867D] block mb-2">أوقات العمل والمعاينة</span>
-                <div className="space-y-1 w-full">
-                  <div className="flex items-center justify-between py-1.5 border-b border-[var(--border-subtle)] dark:border-white/5">
-                    <span className="text-[12px] text-[var(--text-secondary)] dark:text-[#8C867D]">أيام العمل</span>
-                    <span className="text-[11px] font-bold text-[#C19A6B] bg-[#C19A6B]/10 border border-[#C19A6B]/20 px-2 py-0.5 rounded-full">طوال أيام الأسبوع (يومياً)</span>
+                <span className="text-[10px] sm:text-[11px] text-[var(--text-secondary)] dark:text-[#8C867D] block mb-1.5 sm:mb-2">أوقات العمل والمعاينة</span>
+                <div className="space-y-1 w-full text-xs">
+                  <div className="flex items-center justify-between py-1 border-b border-[var(--border-subtle)] dark:border-white/5">
+                    <span className="text-[11px] sm:text-[12px] text-[var(--text-secondary)] dark:text-[#8C867D]">أيام العمل</span>
+                    <span className="text-[10px] sm:text-[11px] font-bold text-[#C19A6B] bg-[#C19A6B]/10 border border-[#C19A6B]/20 px-2 py-0.5 rounded-full">طوال أيام الأسبوع (يومياً)</span>
                   </div>
-                  <div className="flex items-center justify-between py-1.5 border-b border-[var(--border-subtle)] dark:border-white/5">
-                    <span className="text-[12px] text-[var(--text-secondary)] dark:text-[#8C867D]">ساعات العمل</span>
-                    <span className="text-[12px] font-medium text-[var(--text-primary)] dark:text-white/90" dir="ltr">08:00 AM - 10:00 PM</span>
+                  <div className="flex items-center justify-between py-1 border-b border-[var(--border-subtle)] dark:border-white/5">
+                    <span className="text-[11px] sm:text-[12px] text-[var(--text-secondary)] dark:text-[#8C867D]">ساعات العمل</span>
+                    <span className="text-[11px] sm:text-[12px] font-medium text-[var(--text-primary)] dark:text-white/90" dir="ltr">08:00 AM - 10:00 PM</span>
                   </div>
-                  <div className="flex items-center justify-between py-1.5">
-                    <span className="text-[12px] text-[var(--text-secondary)] dark:text-[#8C867D]">المعاينة الميدانية</span>
-                    <span className="text-[12px] font-medium text-[var(--text-primary)] dark:text-white/90">مجانية ومتاحة دائماً</span>
+                  <div className="flex items-center justify-between py-1">
+                    <span className="text-[11px] sm:text-[12px] text-[var(--text-secondary)] dark:text-[#8C867D]">المعاينة الميدانية</span>
+                    <span className="text-[11px] sm:text-[12px] font-medium text-[var(--text-primary)] dark:text-white/90">مجانية ومتاحة دائماً</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="p-5 rounded-2xl bg-[var(--bg-surface)] dark:bg-[#12100E]/50 border border-[var(--border-subtle)] dark:border-white/[0.03] shadow-sm dark:shadow-none dark:backdrop-blur-md flex items-start gap-4 hover:border-[#C19A6B]/30 dark:hover:border-[#C19A6B]/20 hover:bg-[var(--bg-elevated)] dark:hover:bg-[#12100E] transition-colors duration-300 group">
-              <div className="w-10 h-10 rounded-xl bg-[var(--bg-elevated)] dark:bg-[#181512] border border-[var(--border-subtle)] dark:border-white/5 flex items-center justify-center flex-shrink-0 text-[var(--text-muted)] dark:text-white/50 group-hover:text-[#C19A6B] dark:group-hover:text-white transition-colors duration-300">
-                <ShieldCheck size={18} />
+            <div className="p-4 sm:p-5 rounded-2xl bg-[var(--bg-surface)] dark:bg-[#12100E]/50 border border-[var(--border-subtle)] dark:border-white/[0.03] shadow-sm dark:shadow-none dark:backdrop-blur-md flex items-start gap-3 sm:gap-4 hover:border-[#C19A6B]/30 dark:hover:border-[#C19A6B]/20 hover:bg-[var(--bg-elevated)] dark:hover:bg-[#12100E] transition-colors duration-300 group">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[var(--bg-elevated)] dark:bg-[#181512] border border-[var(--border-subtle)] dark:border-white/5 flex items-center justify-center flex-shrink-0 text-[var(--text-muted)] dark:text-white/50 group-hover:text-[#C19A6B] dark:group-hover:text-white transition-colors duration-300">
+                <ShieldCheck size={17} />
               </div>
               <div>
-                <span className="text-[11px] text-[var(--text-secondary)] dark:text-[#8C867D] block mb-1">ضمان الجودة والأصالة</span>
-                <p className="text-[13px] font-medium text-[var(--text-primary)] dark:text-white/90 leading-relaxed">
+                <span className="text-[10px] sm:text-[11px] text-[var(--text-secondary)] dark:text-[#8C867D] block mb-1">ضمان الجودة والأصالة</span>
+                <p className="text-xs sm:text-[13px] font-medium text-[var(--text-primary)] dark:text-white/90 leading-relaxed">
                   نعتمد على مواد ودهانات أصلية 100% من جوتن والجزيرة، مع تنفيذ احترافي يضمن بقاء الجودة لسنوات طويلة بدون تشققات.
                 </p>
               </div>
             </div>
             
             {/* Minimal Location Indicator */}
-            <div className="pt-2 flex items-center gap-2.5 px-2">
+            <div className="pt-1 sm:pt-2 flex items-center gap-2 px-1">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C19A6B] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#C19A6B]"></span>
               </span>
-              <span className="text-[11px] text-[var(--text-secondary)] dark:text-[#8C867D]">متواجدون حالياً لخدمة: الدمام، الخبر، والظهران</span>
+              <span className="text-[10px] sm:text-[11px] text-[var(--text-secondary)] dark:text-[#8C867D]">متواجدون حالياً لخدمة: الدمام، الخبر، والظهران</span>
             </div>
           </motion.div>
 

@@ -1,4 +1,4 @@
-import { ServiceItem, PortfolioItem, SwatchFinish, ArtisanStep, StudioMetric } from '../types';
+import { ServiceItem, PortfolioItem, SwatchFinish, ArtisanStep, StudioMetric } from '@/types';
 
 // ====================================================================
 // مسارات الصور الحقيقية للمشاريع المنفذة

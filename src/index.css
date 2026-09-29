@@ -1,4 +1,4 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
 
 @layer base {
   :root {
@@ -41,6 +41,14 @@
     --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
   }
 
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+  }
+
   body {
     font-family: var(--font-sans);
     background-color: var(--bg-primary);
@@ -58,20 +66,50 @@
   }
 }
 
+/* Fluid responsive base typography */
 html {
-  font-size: 16.2px; /* Slightly larger on mobile */
+  font-size: 15px; /* Compact mobile (320px - 374px) */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media (min-width: 375px) {
+  html {
+    font-size: 15.6px; /* Standard mobile */
+  }
+}
+
+@media (min-width: 640px) {
+  html {
+    font-size: 16px; /* Phablets & landscape */
+  }
 }
 
 @media (min-width: 768px) {
   html {
-    font-size: 16.6px; /* Tablet */
+    font-size: 16.5px; /* Tablets / iPads */
   }
 }
 
 @media (min-width: 1024px) {
   html {
-    font-size: 17px; /* Desktop */
+    font-size: 17px; /* Desktop & Laptops */
   }
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 17.5px; /* Ultrawide & 4K */
+  }
+}
+
+/* Safe Area Insets Helpers */
+.safe-padding-bottom {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom, 1rem));
+}
+
+.safe-padding-top {
+  padding-top: max(1rem, env(safe-area-inset-top, 1rem));
 }
 
 .font-serif-luxury {

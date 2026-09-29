@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -9,65 +9,53 @@
     http://www.google.com/schemas/sitemap-image/1.1
     http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
 
-  <!-- الصفحة الرئيسية - أعلى أولوية -->
+  <!-- الصفحة الرئيسية المستهدفة لكلمة "ديكورات" بالأولوية القصوى 1.0 -->
   <url>
     <loc>https://wajd-al-asayel.vercel.app/</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    
+    <!-- أرشيف صور الديكورات والدهانات المعتمدة لأرشفة Google Images العالية -->
     <image:image>
       <image:loc>https://wajd-al-asayel.vercel.app/images/IMG-20260921-WA0008.webp</image:loc>
-      <image:title>وجد الأصايل - دهانات وديكورات الدمام والخبر</image:title>
-      <image:caption>أعمال ديكور وتشطيبات وجد الأصايل في الدمام والخبر</image:caption>
+      <image:title>ديكورات الدمام والخبر - مؤسسة وجد الأصايل</image:title>
+      <image:caption>تنفيذ أرقى أعمال الديكورات والدهانات وتشطيب الفلل والقصور بالدمام والخبر</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wajd-al-asayel.vercel.app/images/IMG-20260921-WA0018.webp</image:loc>
+      <image:title>ديكورات بانوهات مضيئة وكريستال جداري بالدمام</image:title>
+      <image:caption>بانوهات كريستال وإضاءة ليد ذهبية مخفية لتزيين صالات الاستقبال والمجالس</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wajd-al-asayel.vercel.app/images/IMG-20260921-WA0007.webp</image:loc>
+      <image:title>ديكورات شاشات تلفزيون وبديل الرخام والخشب بالخبر</image:title>
+      <image:caption>أحدث تصميمات ديكورات الشاشات الجدارية والرفوف العصرية بالدمام والخبر</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wajd-al-asayel.vercel.app/images/IMG-20260921-WA0014.webp</image:loc>
+      <image:title>ديكورات بديل الخشب الكوري وبديل الرخام للجدران</image:title>
+      <image:caption>تركيب شرائح وتكسيات بديل الخشب وبديل الرخام بمواصفات عالية ومقاومة للرطوبة</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wajd-al-asayel.vercel.app/images/IMG-20260921-WA0015.webp</image:loc>
+      <image:title>ديكورات جبس بورد وأسقف معلقة بالدمام</image:title>
+      <image:caption>تصاميم جبس بورد ناعمة وفخمة مع بيوت نور مخفية وتوزيع سبوت لايت هندسي</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wajd-al-asayel.vercel.app/images/IMG-20260921-WA0004.webp</image:loc>
+      <image:title>ديكورات أقواس ودهانات داخلية جوتن بالدمام</image:title>
+      <image:caption>تنفيذ أقواس وقناطر كلاسيكية وبانوهات فوم مع دهانات جوتن الفاخرة</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://wajd-al-asayel.vercel.app/images/IMG-20260921-WA0017.webp</image:loc>
-      <image:title>عوازل مائية وسطحية - وجد الأصايل</image:title>
-      <image:caption>خدمات العوازل المائية والسطحية بالمنطقة الشرقية</image:caption>
+      <image:title>عوازل مائية وحرارية للأسطح بالدمام والخبر</image:title>
+      <image:caption>عزل أسطح فوم وعوازل مائية معتمدة ضد تسربات الأمطار والحرارة مع ضمان 10 سنوات</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wajd-al-asayel.vercel.app/images/IMG-20260921-WA0016.webp</image:loc>
+      <image:title>ديكورات سواتر ومظلات وبرجولات حدائق بالدمام</image:title>
+      <image:caption>تصميم وتنفيذ أحدث السواتر والمظلات العصرية للمنازل والفلل بالشرقية</image:caption>
     </image:image>
   </url>
-
-  <!-- قسم المعرض -->
-  <url>
-    <loc>https://wajd-al-asayel.vercel.app/#gallery</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- قسم الخدمات -->
-  <url>
-    <loc>https://wajd-al-asayel.vercel.app/#services</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- قسم الفيديوهات -->
-  <url>
-    <loc>https://wajd-al-asayel.vercel.app/#videos</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- قسم التواصل -->
-  <url>
-    <loc>https://wajd-al-asayel.vercel.app/#contact</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- قسم لماذا نحن -->
-  <url>
-    <loc>https://wajd-al-asayel.vercel.app/#manifesto</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
 </urlset>
-
-
-

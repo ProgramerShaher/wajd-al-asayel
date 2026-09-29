@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Award, ShieldCheck, Sparkles, CheckCircle } from 'lucide-react';
-import { STUDIO_METRICS } from '../data/studioData';
+import { STUDIO_METRICS } from '@/data/studioData';
 
 export default function ManifestoSection() {
   const [activeTab, setActiveTab] = useState<'quality' | 'warranty' | 'execution'>('quality');
@@ -9,20 +9,20 @@ export default function ManifestoSection() {
   return (
     <section
       id="manifesto"
-      className="relative w-full py-10 sm:py-14 md:py-20 px-4 sm:px-6 md:px-16 bg-[var(--bg-primary)] overflow-hidden transition-colors duration-300"
+      className="relative w-full py-10 sm:py-14 md:py-20 px-3.5 sm:px-6 md:px-12 lg:px-16 bg-[var(--bg-primary)] overflow-hidden transition-colors duration-300"
     >
       {/* Background Accent Subtle Glow */}
       <div className="pointer-events-none absolute top-1/2 right-0 w-[350px] sm:w-[550px] h-[350px] sm:h-[550px] bg-[#C19A6B]/5 rounded-full blur-[100px] sm:blur-[140px]" />
 
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-12 text-right">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-6 mb-8 sm:mb-12 text-right">
           <div>
-            <div className="flex items-center gap-2.5 text-xs text-[#C19A6B] mb-2 sm:mb-3 font-semibold font-sans-clean">
+            <div className="flex items-center gap-2 text-xs text-[#C19A6B] mb-2 sm:mb-3 font-semibold font-sans-clean">
               <Sparkles size={13} />
               <span>خبرة تفوق ٣٠ سنة في المنطقة الشرقية</span>
             </div>
-            <h2 className="font-serif-luxury text-3xl sm:text-5xl md:text-6xl font-bold text-[var(--text-primary)] max-w-3xl leading-[1.2]">
+            <h2 className="font-serif-luxury text-2xl xs:text-3xl sm:text-5xl md:text-6xl font-bold text-[var(--text-primary)] max-w-3xl leading-[1.2]">
               دقة في التنفيذ <span className="text-[#C19A6B]">وجودة تدوم</span> لسنوات
             </h2>
           </div>
@@ -32,7 +32,7 @@ export default function ManifestoSection() {
         </div>
 
         {/* Bento Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 items-start">
           {/* Left Column: Visual & Certified Artisan Quote Card */}
           <div className="lg:col-span-7 flex flex-col gap-4 sm:gap-5">
             {/* Visual Architecture Showcase */}
@@ -40,48 +40,50 @@ export default function ManifestoSection() {
               <img
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop"
                 alt="تنفيذ دهانات وديكورات داخلية حديثة بالدمام والخبر"
+                width={1600}
+                height={1000}
                 className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700 ease-out"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-[var(--bg-primary)]/40 to-transparent" />
 
               {/* Bottom Caption Overlay */}
-              <div className="absolute bottom-4 right-4 left-4 sm:bottom-6 sm:right-6 sm:left-6 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+              <div className="absolute bottom-3 right-3 left-3 sm:bottom-6 sm:right-6 sm:left-6 flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 sm:gap-3">
                 <div className="text-right">
-                  <span className="text-xs text-[#38BDF8] block mb-1 font-semibold tracking-wide">
+                  <span className="text-[11px] sm:text-xs text-[#38BDF8] block mb-0.5 sm:mb-1 font-semibold tracking-wide">
                     مشروع سكني • الخبر
                   </span>
-                  <h3 className="font-serif-luxury text-lg sm:text-xl md:text-2xl text-[var(--text-primary)] font-bold">
+                  <h3 className="font-serif-luxury text-base xs:text-lg sm:text-xl md:text-2xl text-[var(--text-primary)] font-bold leading-snug">
                     تشطيب دهانات جوتن الحديثة مع بديل الخشب والرخام
                   </h3>
                 </div>
-                <div className="self-start sm:self-auto px-3.5 py-1.5 rounded-full bg-[var(--bg-surface)]/90 backdrop-blur-md border border-[#38BDF8]/40 text-xs text-[var(--text-primary)] font-sans-clean shadow-sm shrink-0">
+                <div className="self-start sm:self-auto px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-[var(--bg-surface)]/90 backdrop-blur-md border border-[#38BDF8]/40 text-[11px] sm:text-xs text-[var(--text-primary)] font-sans-clean shadow-sm shrink-0">
                   تنفيذ احترافي وضمان
                 </div>
               </div>
             </div>
 
-            {/* Certified Master Artisan Card (Cleanly placed below the image, perfectly balanced) */}
+            {/* Certified Master Artisan Card */}
             <motion.div
               whileHover={{ y: -3 }}
-              className="p-5 sm:p-6 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-light)] shadow-xl text-right transition-colors duration-300"
+              className="p-4 sm:p-6 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-light)] shadow-xl text-right transition-colors duration-300"
             >
-              <div className="flex items-center justify-between mb-3 text-xs sm:text-sm text-[#C19A6B] font-semibold">
-                <span className="flex items-center gap-2">
-                  <Award size={16} className="text-[#C19A6B]" />
-                  <span>معلم دهانات وديكورات معتمد</span>
+              <div className="flex items-center justify-between mb-2.5 sm:mb-3 text-xs sm:text-sm text-[#C19A6B] font-semibold gap-2">
+                <span className="flex items-center gap-1.5 sm:gap-2 truncate">
+                  <Award size={16} className="text-[#C19A6B] shrink-0" />
+                  <span className="truncate">معلم دهانات وديكورات معتمد</span>
                 </span>
                 <a
                   href="tel:0536402106"
-                  className="font-mono text-xs sm:text-sm text-[var(--text-primary)] hover:text-[#38BDF8] transition-colors flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-[var(--border-subtle)]"
+                  className="font-mono text-[11px] sm:text-sm text-[var(--text-primary)] hover:text-[#38BDF8] transition-colors flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-[var(--border-subtle)] shrink-0"
                 >
                   0536402106
                 </a>
               </div>
-              <p className="text-xs sm:text-sm text-[var(--text-primary)] leading-relaxed font-sans-clean mb-4">
+              <p className="text-xs sm:text-sm text-[var(--text-primary)] leading-relaxed font-sans-clean mb-3 sm:mb-4">
                 &ldquo;التأسيس الصحيح ومعالجة التشققات والرطوبة قبل الدهان هو سر استمرار لمعان ونقاء اللون لسنوات طويلة.&rdquo;
               </p>
-              <div className="pt-3 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs text-[var(--text-muted)] font-sans-clean">
+              <div className="pt-2.5 sm:pt-3 border-t border-[var(--border-subtle)] flex items-center justify-between text-[11px] sm:text-xs text-[var(--text-muted)] font-sans-clean">
                 <span className="font-semibold text-[var(--text-primary)]">معلم وجد الأصايل</span>
                 <span className="text-[#C19A6B] font-medium">الدمام والخبر • الشرقية</span>
               </div>
@@ -90,18 +92,18 @@ export default function ManifestoSection() {
             {/* Official Certification Badge */}
             <motion.div
               whileHover={{ y: -3 }}
-              className="p-4 sm:p-5 rounded-2xl bg-[var(--bg-surface)] border border-[#C19A6B]/30 shadow-lg text-right flex items-center gap-4 transition-colors duration-300"
+              className="p-3.5 sm:p-5 rounded-2xl bg-[var(--bg-surface)] border border-[#C19A6B]/30 shadow-lg text-right flex items-center gap-3 sm:gap-4 transition-colors duration-300"
             >
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-1.5">
-                  <CheckCircle size={16} className="text-[#38BDF8]" />
-                  <span className="text-[#C19A6B] font-bold text-sm">مؤسسة رسمية معتمدة</span>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-1.5 sm:gap-2 mb-1">
+                  <CheckCircle size={15} className="text-[#38BDF8] shrink-0" />
+                  <span className="text-[#C19A6B] font-bold text-xs sm:text-sm truncate">مؤسسة رسمية معتمدة</span>
                 </div>
-                <p className="text-xs text-[var(--text-secondary)] leading-relaxed font-sans-clean">
+                <p className="text-[11px] sm:text-xs text-[var(--text-secondary)] leading-relaxed font-sans-clean">
                   مؤسسة وجد الأصايل مسجلة رسمياً بسجل تجاري معتمد لمزاولة أعمال المقاولات والديكور والدهانات في المنطقة الشرقية.
                 </p>
               </div>
-              <div className="w-20 h-24 sm:w-24 sm:h-28 rounded-xl overflow-hidden border border-[#C19A6B]/40 shrink-0 shadow-inner bg-[var(--bg-primary)]">
+              <div className="w-16 h-20 xs:w-20 xs:h-24 sm:w-24 sm:h-28 rounded-xl overflow-hidden border border-[#C19A6B]/40 shrink-0 shadow-inner bg-[var(--bg-primary)] flex items-center justify-center">
                 <img 
                   src="/images/IMG-202609421-WA0002.jpg" 
                   alt="سجل تجاري مؤسسة وجد الأصايل مقاولات ديكور دهانات الدمام" 

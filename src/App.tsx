@@ -1,21 +1,14 @@
 import { useState, useEffect } from 'react';
 import Lenis from 'lenis';
-import Preloader from './components/Preloader';
-import CustomCursor from './components/CustomCursor';
-import NoiseCanvas from './components/NoiseCanvas';
-import Navbar from './components/Navbar';
-import HeroSection from './components/HeroSection';
-import ManifestoSection from './components/ManifestoSection';
-import ServicesHorizontal from './components/ServicesHorizontal';
-import MaterialInspector from './components/MaterialInspector';
-import SpotlightGallery from './components/SpotlightGallery';
-import VideoGallery from './components/VideoGallery';
-import ArtisanProcess from './components/ArtisanProcess';
-import ContactSection from './components/ContactSection';
-import Footer from './components/Footer';
-import FloatingWhatsApp from './components/FloatingWhatsApp';
-import FloatingGalleryButton from './components/FloatingGalleryButton';
-import { ThemeProvider } from './context/ThemeContext';
+import Preloader from '@/components/common/Preloader';
+import CustomCursor from '@/components/common/CustomCursor';
+import NoiseCanvas from '@/components/common/NoiseCanvas';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+import FloatingWhatsApp from '@/components/common/FloatingWhatsApp';
+import FloatingGalleryButton from '@/components/common/FloatingGalleryButton';
+import { ThemeProvider } from '@/context/ThemeContext';
+import Home from '@/pages/Home';
 
 export default function App() {
   const [preloaderComplete, setPreloaderComplete] = useState(false);
@@ -44,54 +37,31 @@ export default function App() {
   return (
     <ThemeProvider>
       <div className="relative min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] overflow-x-hidden selection:bg-[#38BDF8]/30 transition-colors duration-500">
-      {/* High-End Entrance Preloader */}
-      <Preloader onComplete={() => setPreloaderComplete(true)} />
+        {/* High-End Entrance Preloader */}
+        <Preloader onComplete={() => setPreloaderComplete(true)} />
 
-      {/* Tactile Ambient Canvas: Grain & Gold Dust Particles */}
-      <NoiseCanvas />
+        {/* Tactile Ambient Canvas: Grain & Gold Dust Particles */}
+        <NoiseCanvas />
 
-      {/* Fluid Custom Cursor with Magnetic Ring & Context Badges */}
-      <CustomCursor />
+        {/* Fluid Custom Cursor with Magnetic Ring & Context Badges */}
+        <CustomCursor />
 
-      {/* Floating Glassmorphic Nav with Magnetic Hover & Sound Toggle */}
-      <Navbar />
+        {/* Floating Glassmorphic Nav with Magnetic Hover & Sound Toggle */}
+        <Navbar />
 
-      {/* Main Luxury Experience */}
-      <main id="main-content" className="relative z-20">
-        {/* 01. Hero Section with Video-Masked Typography */}
-        <HeroSection />
+        {/* Main Luxury Experience Page */}
+        <Home />
 
-        {/* 02. The Atelier Manifesto (Asymmetric Editorial Bento Grid) */}
-        <ManifestoSection />
+        {/* Luxury Footer with World Clocks & Colophon */}
+        <Footer />
 
-        {/* 03. Haute Services Horizontal Showcase */}
-        <ServicesHorizontal />
+        {/* Persistent Floating Gallery Action Button */}
+        <FloatingGalleryButton />
 
-        {/* 04. Tactile Light & Swatch Inspector */}
-        <MaterialInspector />
-
-        {/* 05. The Private Archive (Interactive Spotlight Grid) */}
-        <SpotlightGallery />
-
-        {/* 05.5 Video Showcase */}
-        <VideoGallery />
-
-        {/* 06. The 5-Stage Artisan Alchemy */}
-        <ArtisanProcess />
-
-        {/* 07. Private Client Inquiry (Floating Labels with Gold Glow) */}
-        <ContactSection />
-      </main>
-
-      {/* Luxury Footer with World Clocks & Colophon */}
-      <Footer />
-
-      {/* Persistent Floating Gallery Action Button */}
-      <FloatingGalleryButton />
-
-      {/* Persistent Floating WhatsApp Action Button */}
-      <FloatingWhatsApp />
-    </div>
+        {/* Persistent Floating WhatsApp Action Button */}
+        <FloatingWhatsApp />
+      </div>
     </ThemeProvider>
   );
 }
+

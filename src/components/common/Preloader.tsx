@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface PreloaderProps {
@@ -42,7 +42,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
             y: '-100%',
             transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] }
           }}
-          className="fixed inset-0 z-50 flex flex-col justify-between bg-[#050505] p-8 md:p-16 select-none pointer-events-auto"
+          className="fixed inset-0 z-50 flex flex-col justify-between bg-[#050505] p-5 xs:p-8 md:p-16 select-none pointer-events-auto"
         >
           {/* Top atelier brand stamp */}
           <div className="flex items-center justify-between text-xs tracking-[0.2em] text-[#C19A6B]/90 font-serif-luxury">

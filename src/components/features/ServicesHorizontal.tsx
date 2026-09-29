@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect, useCallback } from 'react';
 import { ArrowLeft, ArrowRight, Sparkles, Check } from 'lucide-react';
-import { SERVICES_DATA } from '../data/studioData';
-import { ServiceItem } from '../types';
+import { SERVICES_DATA } from '@/data/studioData';
+import { ServiceItem } from '@/types';
 
 interface ServicesHorizontalProps {
   onSelectServiceForSample?: (service: ServiceItem) => void;
@@ -105,15 +105,15 @@ export default function ServicesHorizontal({ onSelectServiceForSample }: Service
       {/* Background Accent Ambient Radial Glow */}
       <div className="pointer-events-none absolute bottom-0 left-0 w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] bg-[#C19A6B]/5 rounded-full blur-[120px] sm:blur-[160px]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-16 mb-8 sm:mb-12">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 md:px-12 lg:px-16 mb-6 sm:mb-12">
         {/* Top Header Row with Navigation Controls */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 sm:gap-8 text-right">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-8 text-right">
           <div>
             <div className="flex items-center gap-2 text-xs text-[#C19A6B] mb-2 sm:mb-3 font-semibold font-sans-clean">
               <Sparkles size={13} />
               <span>خدماتنا المعتمدة بالدمام والخبر</span>
             </div>
-            <h2 className="font-serif-luxury text-3xl sm:text-5xl md:text-6xl font-bold text-[var(--text-primary)]">
+            <h2 className="font-serif-luxury text-2xl xs:text-3xl sm:text-5xl md:text-6xl font-bold text-[var(--text-primary)]">
               خدمات الدهانات والديكورات
             </h2>
           </div>
@@ -126,7 +126,7 @@ export default function ServicesHorizontal({ onSelectServiceForSample }: Service
                 onClick={handlePrev}
                 aria-label="الخدمة السابقة"
                 data-cursor="السابق"
-                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full btn-pill-inactive flex items-center justify-center active:scale-95 shadow-md hover:scale-105 transition-all"
+                className="w-9 h-9 sm:w-11 sm:h-11 rounded-full btn-pill-inactive flex items-center justify-center active:scale-95 shadow-md hover:scale-105 transition-all"
               >
                 <ArrowRight size={16} />
               </button>
@@ -135,7 +135,7 @@ export default function ServicesHorizontal({ onSelectServiceForSample }: Service
                 onClick={handleNext}
                 aria-label="الخدمة التالية"
                 data-cursor="التالي"
-                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full btn-pill-inactive flex items-center justify-center active:scale-95 shadow-md hover:scale-105 transition-all"
+                className="w-9 h-9 sm:w-11 sm:h-11 rounded-full btn-pill-inactive flex items-center justify-center active:scale-95 shadow-md hover:scale-105 transition-all"
               >
                 <ArrowLeft size={16} />
               </button>
@@ -144,15 +144,15 @@ export default function ServicesHorizontal({ onSelectServiceForSample }: Service
         </div>
 
         {/* Dynamic 5-Second Progress Bar & Step Dots */}
-        <div className="mt-4 flex items-center gap-2">
+        <div className="mt-3 sm:mt-4 flex items-center gap-1.5 sm:gap-2">
           {SERVICES_DATA.map((service, idx) => (
             <button
               key={service.id}
               onClick={() => scrollToService(idx)}
               className={`h-1.5 rounded-full transition-all duration-500 cursor-pointer ${
                 activeIndex === idx
-                  ? 'w-10 sm:w-14 gold-gradient-bg shadow-[0_0_10px_rgba(193,154,107,0.5)]'
-                  : 'w-3 sm:w-4 bg-[var(--border-light)] hover:bg-[#C19A6B]/40'
+                  ? 'w-8 sm:w-14 gold-gradient-bg shadow-[0_0_10px_rgba(193,154,107,0.5)]'
+                  : 'w-2.5 sm:w-4 bg-[var(--border-light)] hover:bg-[#C19A6B]/40'
               }`}
               title={service.title}
               aria-label={`الانتقال إلى ${service.title}`}
@@ -165,7 +165,7 @@ export default function ServicesHorizontal({ onSelectServiceForSample }: Service
       <div
         ref={scrollContainerRef}
         onScroll={handleContainerScroll}
-        className="w-full overflow-x-auto no-scrollbar scroll-smooth flex gap-4 sm:gap-6 md:gap-8 px-4 sm:px-6 md:px-16 pb-6 sm:pb-8 cursor-grab active:cursor-grabbing text-right snap-x snap-mandatory"
+        className="w-full overflow-x-auto no-scrollbar scroll-smooth flex gap-3.5 sm:gap-6 md:gap-8 px-3.5 sm:px-6 md:px-12 lg:px-16 pb-6 sm:pb-8 cursor-grab active:cursor-grabbing text-right snap-x snap-mandatory"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {SERVICES_DATA.map((service, index) => (
@@ -175,7 +175,7 @@ export default function ServicesHorizontal({ onSelectServiceForSample }: Service
               cardRefs.current[index] = el;
             }}
             data-cursor="فحص"
-            className={`flex-none w-[86vw] sm:w-[480px] md:w-[540px] snap-center rounded-2xl bg-[var(--bg-surface)] transition-all duration-500 overflow-hidden flex flex-col justify-between group border shadow-[var(--card-shadow)] ${
+            className={`flex-none w-[88vw] xs:w-[84vw] sm:w-[460px] md:w-[500px] lg:w-[540px] max-w-[92vw] snap-center rounded-2xl bg-[var(--bg-surface)] transition-all duration-500 overflow-hidden flex flex-col justify-between group border shadow-[var(--card-shadow)] ${
               activeIndex === index
                 ? 'border-[#C19A6B] shadow-[0_0_30px_rgba(193,154,107,0.25)]'
                 : 'border-[var(--border-light)] hover:border-[#C19A6B]/40'
@@ -192,23 +192,23 @@ export default function ServicesHorizontal({ onSelectServiceForSample }: Service
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
 
               {/* Number and Category Badge */}
-              <div className="absolute top-4 right-4 left-4 sm:top-5 sm:right-5 sm:left-5 flex justify-between items-center">
-                <span className="font-display-luxury text-2xl sm:text-3xl text-[#38BDF8] font-bold">
+              <div className="absolute top-3.5 right-3.5 left-3.5 sm:top-5 sm:right-5 sm:left-5 flex justify-between items-center">
+                <span className="font-display-luxury text-xl sm:text-3xl text-[#38BDF8] font-bold">
                   {service.number}
                 </span>
-                <span className="px-3 py-1 rounded-full bg-[#050505]/80 backdrop-blur-md border border-[#38BDF8]/30 text-[11px] sm:text-xs text-[#38BDF8] font-sans-clean shadow-sm">
+                <span className="px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-[#050505]/80 backdrop-blur-md border border-[#38BDF8]/30 text-[10px] sm:text-xs text-[#38BDF8] font-sans-clean shadow-sm">
                   {service.category}
                 </span>
               </div>
 
               {/* Specimen Tag */}
-              <div className="absolute bottom-3 right-4 sm:bottom-4 sm:right-5 text-[10px] sm:text-xs text-[#A0A0A5] font-mono">
+              <div className="absolute bottom-2.5 right-3.5 sm:bottom-4 sm:right-5 text-[10px] sm:text-xs text-[#A0A0A5] font-mono">
                 رمز الخدمة: <span className="text-[#38BDF8] font-bold">{service.sampleCode}</span>
               </div>
             </div>
 
             {/* Bottom Content Body */}
-            <div className="p-5 sm:p-7 flex flex-col justify-between flex-grow">
+            <div className="p-4 xs:p-5 sm:p-7 flex flex-col justify-between flex-grow">
               <div>
                 <h3 className="font-serif-luxury text-xl sm:text-2xl md:text-3xl text-[var(--text-primary)] font-normal leading-tight mb-1.5 group-hover:text-[#38BDF8] transition-colors duration-300">
                   {service.title}

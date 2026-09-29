@@ -11,7 +11,7 @@ interface GalleryPhoto {
   tag: string;
 }
 
-import { PORTFOLIO_ITEMS } from '../data/studioData';
+import { PORTFOLIO_ITEMS } from '@/data/studioData';
 
 const GALLERY_PHOTOS: GalleryPhoto[] = PORTFOLIO_ITEMS.map((item) => ({
   id: item.id,
@@ -83,7 +83,7 @@ function LightboxModal({
         animate={{ scale: 1, opacity: 1, y: 0 }}
         exit={{ scale: 0.92, opacity: 0 }}
         transition={{ type: 'spring', damping: 28, stiffness: 300 }}
-        className="relative w-[92vw] max-w-4xl max-h-[90vh] rounded-2xl overflow-hidden shadow-2xl touch-pan-y"
+        className="relative w-[95vw] sm:w-[90vw] max-w-4xl max-h-[92dvh] sm:max-h-[90vh] rounded-2xl overflow-hidden shadow-2xl touch-pan-y bg-black"
         onClick={(e) => e.stopPropagation()}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
@@ -100,20 +100,20 @@ function LightboxModal({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="w-full max-h-[70vh] object-cover"
+            className="w-full max-h-[58dvh] sm:max-h-[70vh] object-contain sm:object-cover bg-black/60"
           />
         </AnimatePresence>
 
         {/* Caption overlay */}
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent px-5 py-5">
-          <span className="inline-block px-2 py-0.5 text-[10px] bg-[#C19A6B]/30 border border-[#C19A6B]/50 rounded-full text-[#C19A6B] mb-2 font-sans-clean">
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/75 to-transparent px-4 py-4 sm:px-5 sm:py-5">
+          <span className="inline-block px-2 py-0.5 text-[10px] bg-[#C19A6B]/30 border border-[#C19A6B]/50 rounded-full text-[#C19A6B] mb-1.5 font-sans-clean">
             {photo.tag}
           </span>
-          <h3 className="text-white font-bold text-lg sm:text-xl font-display-luxury leading-tight">
+          <h3 className="text-white font-bold text-base sm:text-xl font-display-luxury leading-tight">
             {photo.title}
           </h3>
-          <p className="text-white/70 text-sm mt-1 font-sans-clean">{photo.description}</p>
-          <p className="text-white/35 text-xs mt-2 font-sans-clean">
+          <p className="text-white/70 text-xs sm:text-sm mt-1 font-sans-clean line-clamp-2">{photo.description}</p>
+          <p className="text-white/35 text-[10px] sm:text-xs mt-1.5 font-sans-clean">
             {current + 1} / {photos.length}
           </p>
         </div>
@@ -121,21 +121,21 @@ function LightboxModal({
         {/* Close */}
         <button
           onClick={onClose}
-          className="absolute top-3 left-3 w-9 h-9 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-black/80 hover:border-white/50 transition-all"
+          className="absolute top-3 left-3 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/70 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-black/90 hover:border-white/50 transition-all z-20"
         >
-          <X size={16} />
+          <X size={15} />
         </button>
 
         {/* Nav arrows */}
         <button
           onClick={prev}
-          className="absolute top-1/2 right-3 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-[#C19A6B]/80 hover:border-[#C19A6B] transition-all"
+          className="absolute top-1/2 right-2 sm:right-3 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-[#C19A6B]/80 hover:border-[#C19A6B] transition-all z-20"
         >
           <ChevronRight size={18} />
         </button>
         <button
           onClick={next}
-          className="absolute top-1/2 left-3 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-[#C19A6B]/80 hover:border-[#C19A6B] transition-all"
+          className="absolute top-1/2 left-2 sm:left-3 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-[#C19A6B]/80 hover:border-[#C19A6B] transition-all z-20"
         >
           <ChevronLeft size={18} />
         </button>
