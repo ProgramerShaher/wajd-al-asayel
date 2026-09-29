@@ -95,7 +95,7 @@ console.log('\n' + '═'.repeat(50));
 if (allGood) {
   console.log('✅ اكتملت عملية SEO Post-Build بنجاح!');
   console.log(`📅 التاريخ: ${TODAY}`);
-  console.log('🌐 الموقع جاهز للنشر على: https://wajdalasayel.com');
+  console.log('🌐 الموقع جاهز للنشر على: https://decorpaintsdammam.com');
 } else {
   console.warn('⚠️  اكتملت العملية مع بعض التحذيرات — راجع الرسائل أعلاه');
 }

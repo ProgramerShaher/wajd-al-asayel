@@ -1,6 +1,6 @@
 # ====================================================================
 # robots.txt - مؤسسة وجد الأصايل للديكورات والدهانات والعوازل
-# الموقع الرسمي: https://wajdalasayel.com/
+# الموقع الرسمي: https://decorpaintsdammam.com/
 # استراتيجية الفهرسة الكاملة لمحركات البحث وبوتات الذكاء الاصطناعي
 # ====================================================================
 
@@ -46,5 +46,5 @@ User-agent: Diffbot
 Allow: /
 
 # 4. خريطة الموقع والمضيف الرسمي
-Sitemap: https://wajdalasayel.com/sitemap.xml
-Host: https://wajdalasayel.com
+Sitemap: https://decorpaintsdammam.com/sitemap.xml
+Host: https://decorpaintsdammam.com

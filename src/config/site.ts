@@ -3,15 +3,15 @@
  * مكان مركزي وحيد لتحديد Domain الموقع
  * غيّر SITE_URL هنا فقط عند ربط الدومين الجديد
  *
- * الدومين الحالي (Vercel):  https://wajdalasayel.com
- * الدومين النهائي المستهدف: https://wajdalasayel.com
+ * الدومين الحالي (Vercel):  https://decorpaintsdammam.com
+ * الدومين النهائي المستهدف: https://decorpaintsdammam.com
  *
  * عند الانتقال: غيّر SITE_URL فقط ← كل الملفات تتحدث تلقائياً
  */
 
-export const SITE_URL = 'https://wajdalasayel.com';
+export const SITE_URL = 'https://decorpaintsdammam.com';
 // TODO: عند ربط الدومين النهائي:
-// export const SITE_URL = 'https://wajdalasayel.com';
+// export const SITE_URL = 'https://decorpaintsdammam.com';
 
 export const SITE_NAME = 'مؤسسة وجد الأصايل للديكورات والدهانات';
 export const SITE_NAME_SHORT = 'وجد الأصايل';
