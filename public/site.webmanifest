@@ -1,0 +1,82 @@
+{
+  "name": "وجد الأصايل للديكورات والدهانات",
+  "short_name": "وجد الأصايل",
+  "description": "الموقع الرسمي لمؤسسة وجد الأصايل لتنفيذ أرقى الديكورات العصرية، تكسيات بديل الخشب والرخام، الجبس بورد، الفوم، والدهانات والعوازل المائية بالدمام والخبر.",
+  "start_url": "/?source=pwa",
+  "id": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#050505",
+  "theme_color": "#C19A6B",
+  "dir": "rtl",
+  "lang": "ar",
+  "categories": ["lifestyle", "utilities", "business"],
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "خدمات الديكورات",
+      "short_name": "الديكورات",
+      "description": "استعراض بديل الخشب والرخام والجبس بورد",
+      "url": "/#services",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "معرض الأعمال",
+      "short_name": "المعرض",
+      "description": "مشاهدة أحدث مشاريع الفلل والقصور",
+      "url": "/#portfolio",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "طلب معاينة فورية",
+      "short_name": "اتصل بنا",
+      "description": "تواصل مباشرة مع المعلم للمعاينة",
+      "url": "/#contact",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}

@@ -11,7 +11,8 @@
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit",
     "convert-images": "node convert-next-gen.cjs",
-    "optimize-media": "node scripts/optimize-media.cjs"
+    "optimize-media": "node scripts/optimize-media.cjs",
+    "generate-favicons": "node scripts/generate-favicons.cjs"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",
