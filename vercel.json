@@ -1,11 +1,7 @@
 {
   "rewrites": [
-    { "source": "/dakhanat", "destination": "/index.html" },
-    { "source": "/dikurat", "destination": "/index.html" },
-    { "source": "/awazel", "destination": "/index.html" },
-    { "source": "/dakhanat-wa-dikurat", "destination": "/index.html" },
     {
-      "source": "/((?!_next|api|images|audio|assets|favicon|robots|sitemap|site.webmanifest|browserconfig|sw.js|wa-logo|google|icon|apple-touch).*)",
+      "source": "/((?!_next|api|images|audio|assets|favicon|robots|sitemap|site.webmanifest|browserconfig|sw.js|wa-logo|google|icon|apple-touch|browserconfig).*)",
       "destination": "/index.html"
     }
   ],
@@ -21,30 +17,12 @@
       ]
     },
     {
-      "source": "/dakhanat",
+      "source": "/index.html",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
-        { "key": "Content-Language", "value": "ar" }
-      ]
-    },
-    {
-      "source": "/dikurat",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
-        { "key": "Content-Language", "value": "ar" }
-      ]
-    },
-    {
-      "source": "/awazel",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
-        { "key": "Content-Language", "value": "ar" }
-      ]
-    },
-    {
-      "source": "/dakhanat-wa-dikurat",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
         { "key": "Content-Language", "value": "ar" }
       ]
     },
