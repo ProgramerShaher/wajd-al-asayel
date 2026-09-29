@@ -9,14 +9,16 @@
     http://www.google.com/schemas/sitemap-image/1.1
     http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
 
-  <!-- الصفحة الرئيسية المستهدفة لكلمة "ديكورات" بالأولوية القصوى 1.0 -->
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <!-- الصفحة الرئيسية: الأولوية القصوى 1.0 — "ديكورات | الدمام | وجد"     -->
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
   <url>
     <loc>https://wajd-al-asayel.vercel.app/</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     
-    <!-- أرشيف صور الديكورات والدهانات المعتمدة لأرشفة Google Images العالية -->
+    <!-- صور الديكورات الرئيسية للأرشفة في Google Images -->
     <image:image>
       <image:loc>https://wajd-al-asayel.vercel.app/images/IMG-20260921-WA0008.webp</image:loc>
       <image:title>ديكورات الدمام والخبر - مؤسسة وجد الأصايل</image:title>
@@ -58,4 +60,65 @@
       <image:caption>تصميم وتنفيذ أحدث السواتر والمظلات العصرية للمنازل والفلل بالشرقية</image:caption>
     </image:image>
   </url>
+
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <!-- قسم الخدمات: ديكورات الدمام والخبر (priority: 0.9)                    -->
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://wajd-al-asayel.vercel.app/#services</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <!-- قسم فاحص المواد: دهانات وبدائل الخشب والرخام (priority: 0.85)         -->
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://wajd-al-asayel.vercel.app/#inspector</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <!-- معرض أعمال وجد الأصايل: ديكورات وصور حقيقية (priority: 0.85)         -->
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://wajd-al-asayel.vercel.app/#portfolio</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <!-- معرض الفيديو: أعمال الديكورات والدهانات الحقيقية (priority: 0.8)      -->
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://wajd-al-asayel.vercel.app/#video-gallery</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <!-- عملية التنفيذ الاحترافية: 5 مراحل فن الديكور (priority: 0.75)         -->
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://wajd-al-asayel.vercel.app/#process</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <!-- تواصل معنا: حجز معاينة ديكورات الدمام (priority: 0.9)                 -->
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://wajd-al-asayel.vercel.app/#contact</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
 </urlset>

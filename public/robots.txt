@@ -1,7 +1,7 @@
 # ====================================================================
 # robots.txt - مؤسسة وجد الأصايل للديكورات والدهانات والعوازل
 # الموقع الرسمي: https://wajd-al-asayel.vercel.app/
-# استراتيجية الفهرسة الكاملة لمحركات البحث وبوتات الذكاء الاصطناعي (AI Search)
+# استراتيجية الفهرسة الكاملة لمحركات البحث وبوتات الذكاء الاصطناعي
 # ====================================================================
 
 # 1. القواعد العامة لكافة محركات البحث والعناكب
@@ -11,12 +11,15 @@ Allow: /images/
 Allow: /audio/
 Allow: /wa-logo.png
 Allow: /wa-logo.svg
-Disallow: /src/
+Allow: /site.webmanifest
+Allow: /sitemap.xml
+Allow: /robots.txt
+# حجب ملفات المصدر فقط - لا نحجب ملفات JSON الثابتة مثل webmanifest
 Disallow: /node_modules/
-Disallow: /dist/
-Disallow: /*.json$
-Disallow: /*.lock$
-Disallow: /.*
+Disallow: /src/
+Disallow: /.git/
+Disallow: /bun.lock
+Disallow: /package-lock.json
 
 # 2. محركات البحث العالمية الكبرى (Google, Bing, Yandex, Apple)
 User-agent: Googlebot
@@ -29,7 +32,6 @@ Allow: /
 Crawl-delay: 0
 
 # 3. محركات وعناكب الذكاء الاصطناعي التوليدي والبحث الذكي
-# تمكين الفهرسة الكاملة للظهور في محادثات واقتراحات الـ AI
 User-agent: GPTBot
 User-agent: ChatGPT-User
 User-agent: OAI-SearchBot
