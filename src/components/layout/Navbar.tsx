@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Volume2, VolumeX, Menu, X, Phone, MessageCircle, Sun, Moon } from 'lucide-react';
+import { Menu, X, Phone, MessageCircle, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '@/context/ThemeContext';
 
 interface NavbarProps {
@@ -77,13 +78,16 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
     e.currentTarget.style.transform = 'translate3d(0, 0, 0)';
   };
 
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
   const navLinks = [
-    { name: 'خدماتنا', href: '#services' },
-    { name: 'معرض أعمالنا', href: '#portfolio' },
-    { name: 'أنواع التشطيبات', href: '#inspector' },
-    { name: 'خطوات العمل', href: '#process' },
-    { name: 'عن المؤسسة', href: '#manifesto' },
-    { name: 'اتصل بنا', href: '#contact' },
+    { name: 'الرئيسية', href: '/', isRoute: true },
+    { name: 'ديكورات الدمام', href: '/dikurat', isRoute: true },
+    { name: 'دهانات الدمام', href: '/dakhanat', isRoute: true },
+    { name: 'معرض الأعمال', href: '/amal', isRoute: true },
+    { name: 'خدماتنا', href: isHome ? '#services' : '/#services', isRoute: false },
+    { name: 'اتصل بنا', href: isHome ? '#contact' : '/#contact', isRoute: false },
   ];
 
   return (
@@ -99,16 +103,16 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
             scrolled ? 'shadow-[0_10px_40px_-10px_rgba(0,0,0,0.4)]' : ''
           }`}
         >
-          {/* Atelier Monogram & Brand */}
-          <a
-            href="#hero"
+          {/* الشعار — يعود للرئيسية */}
+          <Link
+            to="/"
             className="flex items-center gap-2 sm:gap-3 group min-w-0"
             data-cursor="الرئيسية"
           >
             <div className="relative w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 flex items-center justify-center flex-shrink-0">
               <img
                 src="/wa-logo.png"
-                alt="شعار وجد الأصايل"
+                alt="شعار وجد الأصايل — ديكورات ودهانات الدمام"
                 className="w-full h-full object-contain transition-transform duration-700 group-hover:rotate-12"
                 loading="eager"
               />
@@ -118,21 +122,36 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
                 وجد الأصايل
               </span>
             </div>
-          </a>
+          </Link>
 
-          {/* Desktop Links with Magnetic Hover */}
+          {/* Desktop Links */}
           <div className="hidden lg:flex items-center gap-1 xl:gap-2">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onMouseMove={handleMagneticMove}
-                onMouseLeave={handleMagneticLeave}
-                data-cursor="انتقال"
-                className="relative p-2 text-xs font-sans-clean font-medium text-[var(--text-secondary)] hover:text-[#C19A6B] transition-colors duration-200 rounded-full hover:bg-[var(--bg-elevated)]/60"
-              >
-                {link.name}
-              </a>
+              link.isRoute ? (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  onMouseMove={handleMagneticMove as any}
+                  onMouseLeave={handleMagneticLeave as any}
+                  data-cursor="انتقال"
+                  className={`relative p-2 text-xs font-sans-clean font-medium transition-colors duration-200 rounded-full hover:bg-[var(--bg-elevated)]/60 ${
+                    location.pathname === link.href ? 'text-[#C19A6B] font-bold' : 'text-[var(--text-secondary)] hover:text-[#C19A6B]'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onMouseMove={handleMagneticMove}
+                  onMouseLeave={handleMagneticLeave}
+                  data-cursor="انتقال"
+                  className="relative p-2 text-xs font-sans-clean font-medium text-[var(--text-secondary)] hover:text-[#C19A6B] transition-colors duration-200 rounded-full hover:bg-[var(--bg-elevated)]/60"
+                >
+                  {link.name}
+                </a>
+              )
             ))}
           </div>
 
@@ -212,15 +231,27 @@ export default function Navbar({ onOpenSampleKit }: NavbarProps) {
               </div>
 
               {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="font-serif-luxury text-base sm:text-lg text-[var(--text-primary)] hover:text-[#C19A6B] transition-colors py-1.5 flex items-center justify-between border-b border-[var(--border-subtle)]"
-                >
-                  <span>{link.name}</span>
-                  <span className="text-[#C19A6B] text-xs">←</span>
-                </a>
+                link.isRoute ? (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="font-serif-luxury text-base sm:text-lg text-[var(--text-primary)] hover:text-[#C19A6B] transition-colors py-1.5 flex items-center justify-between border-b border-[var(--border-subtle)]"
+                  >
+                    <span>{link.name}</span>
+                    <span className="text-[#C19A6B] text-xs">←</span>
+                  </Link>
+                ) : (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="font-serif-luxury text-base sm:text-lg text-[var(--text-primary)] hover:text-[#C19A6B] transition-colors py-1.5 flex items-center justify-between border-b border-[var(--border-subtle)]"
+                  >
+                    <span>{link.name}</span>
+                    <span className="text-[#C19A6B] text-xs">←</span>
+                  </a>
+                )
               ))}
 
               <div className="pt-2 sm:pt-3 mt-1 flex flex-col gap-2">
