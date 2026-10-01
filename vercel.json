@@ -8,7 +8,7 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!_next|api|images|audio|assets|favicon|robots|sitemap|site.webmanifest|browserconfig|sw.js|wa-logo|google|icon|apple-touch|browserconfig).*)",
+      "source": "/((?!maintenance\\.html|_next|api|images|audio|assets|favicon|robots|sitemap|site.webmanifest|browserconfig|sw.js|wa-logo|google|icon|apple-touch|browserconfig).*)",
       "destination": "/index.html"
     }
   ],
