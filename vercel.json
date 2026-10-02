@@ -1,11 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/((?!maintenance\\.html|images|audio|assets|favicon|wa-logo).*)",
-      "destination": "/maintenance.html",
-      "permanent": false
-    }
-  ],
   "rewrites": [
     {
       "source": "/((?!maintenance\\.html|_next|api|images|audio|assets|favicon|robots|sitemap|site.webmanifest|browserconfig|sw.js|wa-logo|google|icon|apple-touch|browserconfig).*)",
